@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Nanvix UNO
 
 ## Overview
