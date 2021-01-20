@@ -40,6 +40,11 @@ Or you can build a Live System's Image by typing, at the same directory:
 make image
 ```
 
+**Nanvix UNO only:** Alternatively, you can execute the following file to build an Image:
+```sh
+bash uno_tools/maker.sh
+```
+
 ### macOS
 
 The support of Nanvix on macOS is still experimental.
@@ -70,6 +75,22 @@ bash tools/run/run.sh
 
 The script above accepts some optional parameters to configure bochs.
 Please, run `bash tools/run/run.sh --help` for more details.
+
+**Nanvix UNO only:** Alternatively, you can execute the following file to run the system:
+```sh
+bash uno_tools/runner.sh # Run the system
+```
+Or, to go even faster:
+```sh
+./maru.sh # Build an image and run it
+```
+
+## Exiting Nanvix
+
+To exit Nanvix, you must first use CTRL+Z to pause the system. Then, input the following command to exit *Bochs*:
+```sh
+kill -HUP %1
+```
 
 ## Documentation
 
