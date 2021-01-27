@@ -85,6 +85,37 @@ Or, to go even faster:
 ./maru.sh # Build an image and run it
 ```
 
+## Debugging Nanvix
+
+To run Nanvix in debug mode, you must open two shells.
+In the first shell type the following command at the root directory:
+
+```sh
+bash tools/run/run.sh --debug
+```
+**Nanvix UNO only:** Alternatively, you can execute the following file to run the system in debug mode:
+```sh
+bash uno_tools/debugger.sh # Run the system in debug mode
+```
+Or, to go even faster:
+```sh
+./mad.sh # Build an image and run it in debug mode
+```
+
+Nanvix will now start and listen for an upcoming connection on port 1234.
+
+Now, switch to the other terminal and launch `gdb`. In GDB, input the following lines:
+```sh
+target remote :1234
+handle SIGSEGV nostop noprint nopass
+cont
+```
+
+You may also load symbol files by inputting the following command before `cont`:
+```sh
+symbol-file bin/kernel
+```
+
 ## Exiting Nanvix
 
 To exit Nanvix, you must first use CTRL+Z to pause the system. Then, input the following command to exit *Bochs*:
