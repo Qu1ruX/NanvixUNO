@@ -1,8 +1,15 @@
 # Prerequisites
 *.d
 
-# Folders
+# Nanvix folders
 bin/
+nanvix-iso/
+
+# Nanvix files
+bochsout.txt
+initrd.img
+hdd.img
+nanvix.iso
 
 # Object files
 *.o
