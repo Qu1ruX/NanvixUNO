@@ -96,7 +96,7 @@ PUBLIC void yield(void)
 		/* Skip non-ready process. */
 		if (p->state != PROC_READY)
 			continue;
-		nbTicket+=p->nice+1;
+		nbTicket+=40-p->nice;
 	}
 
 
@@ -110,8 +110,8 @@ PUBLIC void yield(void)
 		if (p->state != PROC_READY)
 			continue;
 		/* Filling tickets array */
-		int priority=p->nice+1;
-		int nTickets=nbTicket-priority;
+		int priority=p->nice;
+		int nTickets=40-priority;
 		nbSeenTickets+=nTickets;
 		if(nbSeenTickets>=winner){
 			next=p;
