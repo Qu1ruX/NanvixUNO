@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structtms" kind="struct" language="C++" prot="public">
+    <compoundname>tms</compoundname>
+    <includes local="no">times.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structtms_1a91f4b238edfe62a27d24741703d8032d" prot="public" static="no" mutable="no">
+        <type>clock_t</type>
+        <definition>clock_t tms_utime</definition>
+        <argsstring></argsstring>
+        <name>tms_utime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>User CPU time. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/sys/times.h" line="31" column="1" bodyfile="include/sys/times.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtms_1ad261f5ea6bad377f54245d655a89afe3" prot="public" static="no" mutable="no">
+        <type>clock_t</type>
+        <definition>clock_t tms_stime</definition>
+        <argsstring></argsstring>
+        <name>tms_stime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>System CPU time. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/sys/times.h" line="32" column="1" bodyfile="include/sys/times.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtms_1a85c8c1434e61b9f4664852ceba960845" prot="public" static="no" mutable="no">
+        <type>clock_t</type>
+        <definition>clock_t tms_cutime</definition>
+        <argsstring></argsstring>
+        <name>tms_cutime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>User CPU time of terminated children. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/sys/times.h" line="33" column="1" bodyfile="include/sys/times.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtms_1a58ae47381d7b60044b8b49c426480a0e" prot="public" static="no" mutable="no">
+        <type>clock_t</type>
+        <definition>clock_t tms_cstime</definition>
+        <argsstring></argsstring>
+        <name>tms_cstime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>System CPU time of terminated children. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/sys/times.h" line="34" column="1" bodyfile="include/sys/times.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Process times. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/sys/times.h" line="30" column="1" bodyfile="include/sys/times.h" bodystart="29" bodyend="35"/>
+    <listofallmembers>
+      <member refid="structtms_1a58ae47381d7b60044b8b49c426480a0e" prot="public" virt="non-virtual"><scope>tms</scope><name>tms_cstime</name></member>
+      <member refid="structtms_1a85c8c1434e61b9f4664852ceba960845" prot="public" virt="non-virtual"><scope>tms</scope><name>tms_cutime</name></member>
+      <member refid="structtms_1ad261f5ea6bad377f54245d655a89afe3" prot="public" virt="non-virtual"><scope>tms</scope><name>tms_stime</name></member>
+      <member refid="structtms_1a91f4b238edfe62a27d24741703d8032d" prot="public" virt="non-virtual"><scope>tms</scope><name>tms_utime</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

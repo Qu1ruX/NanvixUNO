@@ -1,0 +1,227 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="pm_8c" kind="file" language="C++">
+    <compoundname>pm.c</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="pm_8c_1a21cfd478d5e96ddc97373d1b24d10d55" prot="public" static="no" mutable="no">
+        <type>EXTERN struct pde</type>
+        <definition>EXTERN struct pde idle_pgdir[]</definition>
+        <argsstring>[]</argsstring>
+        <name>idle_pgdir</name>
+        <briefdescription>
+<para>Idle process page directory. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/pm/pm.c" line="37" column="1" bodyfile="src/kernel/pm/pm.c" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="pm_8c_1a90215c1b6dfaf6d14272a808f43f11aa" prot="public" static="no" mutable="no">
+        <type>PUBLIC char</type>
+        <definition>PUBLIC char idle_kstack[KSTACK_SIZE]</definition>
+        <argsstring>[KSTACK_SIZE]</argsstring>
+        <name>idle_kstack</name>
+        <briefdescription>
+<para>Idle process kernel stack. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/pm/pm.c" line="42" column="1" bodyfile="src/kernel/pm/pm.c" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="pm_8c_1a69755a24a533fe6df3b1d0b3ea06dfee" prot="public" static="no" mutable="no">
+        <type>PUBLIC struct <ref refid="structprocess" kindref="compound">process</ref></type>
+        <definition>PUBLIC struct process proctab[PROC_MAX]</definition>
+        <argsstring>[PROC_MAX]</argsstring>
+        <name>proctab</name>
+        <briefdescription>
+<para>Process table. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/pm/pm.c" line="47" column="1" bodyfile="src/kernel/pm/pm.c" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="pm_8c_1ae81a7565d90797b1bbcf6654331afa5b" prot="public" static="no" mutable="no">
+        <type>PUBLIC struct <ref refid="structprocess" kindref="compound">process</ref> *</type>
+        <definition>PUBLIC struct process* curr_proc</definition>
+        <argsstring></argsstring>
+        <name>curr_proc</name>
+        <briefdescription>
+<para>Current running process. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/pm/pm.c" line="52" column="1" bodyfile="src/kernel/pm/pm.c" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="pm_8c_1a45961a28d52ac62143f7842cc7234790" prot="public" static="no" mutable="no">
+        <type>PUBLIC struct <ref refid="structprocess" kindref="compound">process</ref> *</type>
+        <definition>PUBLIC struct process* last_proc</definition>
+        <argsstring></argsstring>
+        <name>last_proc</name>
+        <briefdescription>
+<para>Last running process. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/pm/pm.c" line="57" column="1" bodyfile="src/kernel/pm/pm.c" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="pm_8c_1abb6a29e25bebe2b8198b6428a35f4cf8" prot="public" static="no" mutable="no">
+        <type>PUBLIC pid_t</type>
+        <definition>PUBLIC pid_t next_pid</definition>
+        <argsstring></argsstring>
+        <name>next_pid</name>
+        <briefdescription>
+<para>Next available process ID. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/pm/pm.c" line="62" column="1" bodyfile="src/kernel/pm/pm.c" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="pm_8c_1aa5da220291e62495538032db2700cb8b" prot="public" static="no" mutable="no">
+        <type>PUBLIC unsigned</type>
+        <definition>PUBLIC unsigned nprocs</definition>
+        <argsstring></argsstring>
+        <name>nprocs</name>
+        <briefdescription>
+<para>Current number of processes in the system. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/pm/pm.c" line="67" column="1" bodyfile="src/kernel/pm/pm.c" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="pm_8c_1a79f42ddea680e7b6dc98f99373a1826a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PUBLIC void</type>
+        <definition>PUBLIC void pm_init</definition>
+        <argsstring>(void)</argsstring>
+        <name>pm_init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Initializes the process management system. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/pm/pm.c" line="72" column="1" bodyfile="src/kernel/pm/pm.c" bodystart="72" bodyend="127"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright(C)<sp/>2011-2016<sp/>Pedro<sp/>H.<sp/>Penna<sp/><sp/><sp/>&lt;pedrohenriquepenna@gmail.com&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2015-2016<sp/>Davidson<sp/>Francis<sp/>&lt;davidsondfgl@hotmail.com&gt;</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2016-2016<sp/>Subhra<sp/>S.<sp/>Sarkar<sp/>&lt;rurtle.coder@gmail.com&gt;</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>Nanvix.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>Nanvix<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>Nanvix<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>Nanvix.<sp/>If<sp/>not,<sp/>see<sp/>&lt;http://www.gnu.org/licenses/&gt;.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;nanvix/config.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="const_8h" kindref="compound">nanvix/const.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;nanvix/dev.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="include_2nanvix_2fs_8h" kindref="compound">nanvix/fs.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="hal_8h" kindref="compound">nanvix/hal.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;nanvix/mm.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="pm_8h" kindref="compound">nanvix/pm.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="klib_8h" kindref="compound">nanvix/klib.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/stat.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;signal.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;limits.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal">EXTERN<sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">pde<sp/>idle_pgdir[];</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal">PUBLIC<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>idle_kstack[KSTACK_SIZE];</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal">PUBLIC<sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structprocess" kindref="compound">process</ref><sp/>proctab[PROC_MAX];</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal">PUBLIC<sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structprocess" kindref="compound">process</ref><sp/>*curr_proc<sp/>=<sp/>IDLE;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal">PUBLIC<sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structprocess" kindref="compound">process</ref><sp/>*last_proc<sp/>=<sp/>IDLE;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal">PUBLIC<sp/>pid_t<sp/>next_pid<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal">PUBLIC<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>nprocs<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal">PUBLIC<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="pm_8h_1ab9ba19a04021683e920868185eeda410" kindref="member">pm_init</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">{<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Loop<sp/>index.<sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structprocess" kindref="compound">process</ref><sp/>*p;<sp/></highlight><highlight class="comment">/*<sp/>Working<sp/>process.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Initialize<sp/>the<sp/>process<sp/>table.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(p<sp/>=<sp/>FIRST_PROC;<sp/>p<sp/>&lt;=<sp/>LAST_PROC;<sp/>p++)</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p-&gt;<ref refid="structprocess_1a8b08a4d2ec878257d64c55f64a62242c" kindref="member">flags</ref><sp/>=<sp/>0,<sp/>p-&gt;<ref refid="structprocess_1a2ae520db1099ff9c7da192764d4e4790" kindref="member">state</ref><sp/>=<sp/>PROC_DEAD;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Handcraft<sp/>init<sp/>process.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>IDLE-&gt;cr3<sp/>=<sp/>(dword_t)idle_pgdir;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>IDLE-&gt;intlvl<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>IDLE-&gt;flags<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>IDLE-&gt;received<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>IDLE-&gt;kstack<sp/>=<sp/>idle_kstack;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>IDLE-&gt;restorer<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>NR_SIGNALS;<sp/>i++)</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IDLE-&gt;handlers[i]<sp/>=<sp/>SIG_DFL;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>IDLE-&gt;irqlvl<sp/>=<sp/>INT_LVL_5;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>IDLE-&gt;pgdir<sp/>=<sp/>idle_pgdir;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>for<sp/>(i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>NR_PREGIONS;<sp/>i++)</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IDLE-&gt;pregs[i].reg<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>IDLE-&gt;size<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>for<sp/>(i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>OPEN_MAX;<sp/>i++)</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IDLE-&gt;ofiles[i]<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>IDLE-&gt;close<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>IDLE-&gt;umask<sp/>=<sp/>S_IXUSR<sp/>|<sp/>S_IWGRP<sp/>|<sp/>S_IXGRP<sp/>|<sp/>S_IWOTH<sp/>|<sp/>S_IXOTH;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>IDLE-&gt;tty<sp/>=<sp/>NULL_DEV;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>IDLE-&gt;status<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>IDLE-&gt;nchildren<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>IDLE-&gt;uid<sp/>=<sp/>SUPERUSER;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>IDLE-&gt;euid<sp/>=<sp/>SUPERUSER;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>IDLE-&gt;suid<sp/>=<sp/>SUPERUSER;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>IDLE-&gt;gid<sp/>=<sp/>SUPERGROUP;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>IDLE-&gt;egid<sp/>=<sp/>SUPERGROUP;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>IDLE-&gt;sgid<sp/>=<sp/>SUPERGROUP;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>IDLE-&gt;pid<sp/>=<sp/>next_pid++;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>IDLE-&gt;pgrp<sp/>=<sp/>IDLE;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>IDLE-&gt;father<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="klib_8h_1ab42f34a850c6ef2d734b87bdbc247820" kindref="member">kstrncpy</ref>(IDLE-&gt;name,<sp/></highlight><highlight class="stringliteral">&quot;idle&quot;</highlight><highlight class="normal">,<sp/>NAME_MAX);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>IDLE-&gt;utime<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>IDLE-&gt;ktime<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>IDLE-&gt;cutime<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>IDLE-&gt;cktime<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>IDLE-&gt;state<sp/>=<sp/>PROC_RUNNING;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>IDLE-&gt;counter<sp/>=<sp/>PROC_QUANTUM;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>IDLE-&gt;priority<sp/>=<sp/>PRIO_USER;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>IDLE-&gt;nice<sp/>=<sp/>NZERO;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>IDLE-&gt;alarm<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>IDLE-&gt;next<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>IDLE-&gt;chain<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>nprocs++;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>enable_interrupts();</highlight></codeline>
+<codeline lineno="127"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/kernel/pm/pm.c"/>
+  </compounddef>
+</doxygen>

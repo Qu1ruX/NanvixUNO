@@ -1,0 +1,395 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="hal_8h" kind="file" language="C++">
+    <compoundname>hal.h</compoundname>
+      <sectiondef kind="user-defined">
+      <header>Processor Control Functions</header>
+      <memberdef kind="function" id="hal_8h_1aa8584c0b2e377f61bc3d7f8ebc15667b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN int</type>
+        <definition>EXTERN int set_hwint</definition>
+        <argsstring>(int, void(*)(void))</argsstring>
+        <name>set_hwint</name>
+        <param>
+          <type>int</type>
+          <defname>num</defname>
+        </param>
+        <param>
+          <type>void(*)(void)</type>
+          <defname>handler</defname>
+        </param>
+        <briefdescription>
+<para>Sets hardware interrupt handler. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Interrupt number. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>handler</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Interrupt handler.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Upon successful completion, zero is returned. Upon failure, a negative number is returned instead. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/hal.h" line="57" column="1" bodyfile="src/kernel/arch/x86/hwint.c" bodystart="55" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="hal_8h_1a382653be35c2f9ce835414649244dd9d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN void</type>
+        <definition>EXTERN void enable_interrupts</definition>
+        <argsstring>(void)</argsstring>
+        <name>enable_interrupts</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/hal.h" line="58" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="hal_8h_1a5d92675a86ad6c8bec222a9825b1bd19" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN void</type>
+        <definition>EXTERN void disable_interrupts</definition>
+        <argsstring>(void)</argsstring>
+        <name>disable_interrupts</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/hal.h" line="59" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="hal_8h_1a2eb4e7d99317467223b4a5efb4156e04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN void</type>
+        <definition>EXTERN void halt</definition>
+        <argsstring>(void)</argsstring>
+        <name>halt</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/hal.h" line="60" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="hal_8h_1a201159bd951ff548517505b9cc49ef7d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN void</type>
+        <definition>EXTERN void processor_drop</definition>
+        <argsstring>(unsigned)</argsstring>
+        <name>processor_drop</name>
+        <param>
+          <type>unsigned</type>
+          <defname>irqlvl</defname>
+        </param>
+        <briefdescription>
+<para>Drops processor execution level. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>This function must be called in an interrupt-safe environment. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/hal.h" line="61" column="1" bodyfile="src/kernel/arch/x86/hal.c" bodystart="95" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="hal_8h_1a820e830ee87a4a272843364b0bc3e09c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN unsigned</type>
+        <definition>EXTERN unsigned processor_raise</definition>
+        <argsstring>(unsigned)</argsstring>
+        <name>processor_raise</name>
+        <param>
+          <type>unsigned</type>
+          <defname>irqlvl</defname>
+        </param>
+        <briefdescription>
+<para>Raises processor execution level. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>This function must be called in an interrupt-safe environment. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/hal.h" line="62" column="1" bodyfile="src/kernel/arch/x86/hal.c" bodystart="80" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="hal_8h_1abe7f60a6859fb4ae69b41e77b147955e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN void</type>
+        <definition>EXTERN void processor_reload</definition>
+        <argsstring>(void)</argsstring>
+        <name>processor_reload</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Reloads the processor execution level. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>This function must be called in an interrupt-safe environment. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/hal.h" line="63" column="1" bodyfile="src/kernel/arch/x86/hal.c" bodystart="105" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="hal_8h_1abc71ffda7b6505956581a9cec346a3c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN void</type>
+        <definition>EXTERN void setup</definition>
+        <argsstring>(void)</argsstring>
+        <name>setup</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/hal.h" line="64" column="1" bodyfile="src/kernel/arch/x86/setup.c" bodystart="197" bodyend="205"/>
+      </memberdef>
+      <memberdef kind="function" id="hal_8h_1a7e8d23c9469725d588f1baaf21b76d32" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN void</type>
+        <definition>EXTERN void user_mode</definition>
+        <argsstring>(addr_t, addr_t)</argsstring>
+        <name>user_mode</name>
+        <param>
+          <type>addr_t</type>
+        </param>
+        <param>
+          <type>addr_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/hal.h" line="65" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="hal_8h_1a77065241bb4ab59a5aeaf4096f497fda" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN void</type>
+        <definition>EXTERN void switch_to</definition>
+        <argsstring>(struct process *)</argsstring>
+        <name>switch_to</name>
+        <param>
+          <type>struct <ref refid="structprocess" kindref="compound">process</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/hal.h" line="66" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="hal_8h_1a4cd9e5dc0292a966bcd2df8bea8a159c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN unsigned</type>
+        <definition>EXTERN unsigned irq_lvl</definition>
+        <argsstring>(unsigned)</argsstring>
+        <name>irq_lvl</name>
+        <param>
+          <type>unsigned</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/hal.h" line="67" column="1" bodyfile="src/kernel/arch/x86/hal.c" bodystart="54" bodyend="57"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>I/O Functions</header>
+      <memberdef kind="function" id="hal_8h_1a3205c604e702bad91d25fef67e67aa05" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN void</type>
+        <definition>EXTERN void iowait</definition>
+        <argsstring>(void)</argsstring>
+        <name>iowait</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/hal.h" line="74" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="hal_8h_1ab847c5cc50ed472d78b6452215b0ceef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN void</type>
+        <definition>EXTERN void outputb</definition>
+        <argsstring>(word_t, byte_t)</argsstring>
+        <name>outputb</name>
+        <param>
+          <type>word_t</type>
+        </param>
+        <param>
+          <type>byte_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/hal.h" line="75" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="hal_8h_1ae12aa7bf9a025718cacc6a92bb009e3a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN void</type>
+        <definition>EXTERN void outputw</definition>
+        <argsstring>(word_t, word_t)</argsstring>
+        <name>outputw</name>
+        <param>
+          <type>word_t</type>
+        </param>
+        <param>
+          <type>word_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/hal.h" line="76" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="hal_8h_1a61ac1e522911e58f3ae5320f8c48b8fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN byte_t</type>
+        <definition>EXTERN byte_t inputb</definition>
+        <argsstring>(word_t)</argsstring>
+        <name>inputb</name>
+        <param>
+          <type>word_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/hal.h" line="77" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="hal_8h_1a5c01b4eca890c75746dc1c0a2ba43b5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN word_t</type>
+        <definition>EXTERN word_t inputw</definition>
+        <argsstring>(word_t)</argsstring>
+        <name>inputw</name>
+        <param>
+          <type>word_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/hal.h" line="78" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Memory Functions</header>
+      <memberdef kind="function" id="hal_8h_1a5c2cb9c82548e3c3d2f3c8bee5fba65b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN void</type>
+        <definition>EXTERN void physcpy</definition>
+        <argsstring>(addr_t, addr_t, size_t)</argsstring>
+        <name>physcpy</name>
+        <param>
+          <type>addr_t</type>
+        </param>
+        <param>
+          <type>addr_t</type>
+        </param>
+        <param>
+          <type><ref refid="decl_8h_1a028b7cbca0d37bbc9bc219370525227f" kindref="member">size_t</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/hal.h" line="85" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Hardware Abstraction Layer. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright(C)<sp/>2011-2016<sp/>Pedro<sp/>H.<sp/>Penna<sp/>&lt;pedrohenriquepenna@gmail.com&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>Nanvix.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>Nanvix<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>Nanvix<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>Nanvix.<sp/>If<sp/>not,<sp/>see<sp/>&lt;http://www.gnu.org/licenses/&gt;.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="preprocessor">#ifndef<sp/>NANVIX_HAL_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NANVIX_HAL_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_ASM_FILE_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&lt;i386/i386.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&lt;i386/int.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&lt;<ref refid="const_8h" kindref="compound">nanvix/const.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&lt;<ref refid="pm_8h" kindref="compound">nanvix/pm.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&lt;<ref refid="stdlib_8h" kindref="compound">stdlib.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Forward<sp/>definitions.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structprocess" kindref="compound">process</ref>;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="45"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>INT_LVL_0<sp/>0<sp/></highlight></codeline>
+<codeline lineno="46"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>INT_LVL_1<sp/>1<sp/></highlight></codeline>
+<codeline lineno="47"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>INT_LVL_2<sp/>2<sp/></highlight></codeline>
+<codeline lineno="48"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>INT_LVL_3<sp/>3<sp/></highlight></codeline>
+<codeline lineno="49"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>INT_LVL_4<sp/>4<sp/></highlight></codeline>
+<codeline lineno="50"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>INT_LVL_5<sp/>5<sp/></highlight></codeline>
+<codeline lineno="57"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>EXTERN<sp/>int<sp/>set_hwint(int,<sp/>void<sp/>(*)(void));</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>enable_interrupts(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>disable_interrupts(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>halt(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="hal_8h_1a201159bd951ff548517505b9cc49ef7d" kindref="member">processor_drop</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="hal_8h_1a820e830ee87a4a272843364b0bc3e09c" kindref="member">processor_raise</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="hal_8h_1abe7f60a6859fb4ae69b41e77b147955e" kindref="member">processor_reload</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setup(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>user_mode(addr_t,<sp/>addr_t);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>switch_to(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structprocess" kindref="compound">process</ref><sp/>*);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>irq_lvl(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>iowait(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>outputb(word_t,<sp/>byte_t);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>outputw(word_t,<sp/>word_t);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/>byte_t<sp/>inputb(word_t);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/>word_t<sp/>inputw(word_t);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>physcpy(addr_t,<sp/>addr_t,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="88"><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>_ASM_FILE_<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>NANVIX_HAL_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="include/nanvix/hal.h"/>
+  </compounddef>
+</doxygen>

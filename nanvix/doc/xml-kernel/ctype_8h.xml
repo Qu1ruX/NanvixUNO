@@ -1,0 +1,530 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="ctype_8h" kind="file" language="C++">
+    <compoundname>ctype.h</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="ctype_8h_1acd62d8601ce4a594b09f9d435e8e1001" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char * __ctype_ptr__</definition>
+        <argsstring></argsstring>
+        <name>__ctype_ptr__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ctype.h" line="101" column="1" bodyfile="include/ctype.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="ctype_8h_1a698ac061ca18050f6e861e3d4ea0a693" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int isalnum</definition>
+        <argsstring>(int)</argsstring>
+        <name>isalnum</name>
+        <param>
+          <type>int</type>
+          <defname>c</defname>
+        </param>
+        <briefdescription>
+<para>Tests for an alpha numeric character. </para>        </briefdescription>
+        <detaileddescription>
+<para>Tests whether <computeroutput>c</computeroutput> is a character of class alpha or digit in the current locale. The <computeroutput>c</computeroutput> argument is an int, the value of which the application ensures that it is representable as an unsigned char or equal to the value of the macro #EOF. If the argument has any other value, the behavior is undefined.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Character</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>to test.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns non-zero if <computeroutput>c</computeroutput> is an alphanumeric character; otherwise, it returns 0. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ctype.h" line="84" column="1" bodyfile="src/lib/libc/ctype/isalnum.c" bodystart="78" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="ctype_8h_1aa01365d84540f64f5ab5064d59b05c50" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int isalpha</definition>
+        <argsstring>(int)</argsstring>
+        <name>isalpha</name>
+        <param>
+          <type>int</type>
+          <defname>c</defname>
+        </param>
+        <briefdescription>
+<para>Tests for an alphabetic character. </para>        </briefdescription>
+        <detaileddescription>
+<para>Tests whether <computeroutput>c</computeroutput> is a character of class alpha in the current locale. The <computeroutput>c</computeroutput> argument is an int, the value of which the application ensures that it is representable as an unsigned char or equal to the value of the macro #EOF. If the argument has any other value, the behavior is undefined.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Character</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>to test.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns non-zero if <computeroutput>c</computeroutput> is an alphabetic character; otherwise, it returns 0. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ctype.h" line="85" column="1" bodyfile="src/lib/libc/ctype/isalpha.c" bodystart="79" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="ctype_8h_1a01b4aafb7a6967e1008cf07af46ab8a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int isascii</definition>
+        <argsstring>(int)</argsstring>
+        <name>isascii</name>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ctype.h" line="86" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="ctype_8h_1a44036fe83d96a567ad5cd8463e6c6ad0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int isblank</definition>
+        <argsstring>(int)</argsstring>
+        <name>isblank</name>
+        <param>
+          <type>int</type>
+          <defname>c</defname>
+        </param>
+        <briefdescription>
+<para>Tests for a blank character. </para>        </briefdescription>
+        <detaileddescription>
+<para>Tests whether <computeroutput>c</computeroutput> is a character of class blank in the current locale. The <computeroutput>c</computeroutput> argument is an int, the value of which the application shall ensure is representable as an unsigned char or equal to the value of the macro #EOF. If the argument has any other value, the behavior is undefined.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Character</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>to test.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns non-zero if <computeroutput>c</computeroutput> is a blank character; otherwise, it returns 0. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ctype.h" line="87" column="1" bodyfile="src/lib/libc/ctype/isblank.c" bodystart="79" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="ctype_8h_1add05f77f6d294add9d66f916a473944d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int iscntrl</definition>
+        <argsstring>(int)</argsstring>
+        <name>iscntrl</name>
+        <param>
+          <type>int</type>
+          <defname>c</defname>
+        </param>
+        <briefdescription>
+<para>Tests for a control character. </para>        </briefdescription>
+        <detaileddescription>
+<para>Tests whether <computeroutput>c</computeroutput> is a character of class cntrl in the current locale. The <computeroutput>c</computeroutput> argument is an int, the value of which the application shall ensure is representable as an unsigned char or equal to the value of the macro #EOF. If the argument has any other value, the behavior is undefined.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Character</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>to test.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns non-zero if <computeroutput>c</computeroutput> is a control character; otherwise, it returns 0. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ctype.h" line="88" column="1" bodyfile="src/lib/libc/ctype/iscntrl.c" bodystart="79" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="ctype_8h_1a6fa1e2a306d0a84071e1537071172243" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int isdigit</definition>
+        <argsstring>(int)</argsstring>
+        <name>isdigit</name>
+        <param>
+          <type>int</type>
+          <defname>c</defname>
+        </param>
+        <briefdescription>
+<para>Tests for a decimal digit. </para>        </briefdescription>
+        <detaileddescription>
+<para>Tests whether <computeroutput>c</computeroutput> is a character of class digit in the current locale. The <computeroutput>c</computeroutput> argument is an int, the value of which the application shall ensure is representable as an unsigned char or equal to the value of the macro #EOF. If the argument has any other value, the behavior is undefined.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Character</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>to test.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns non-zero if <computeroutput>c</computeroutput> is a decimal digit; otherwise, it returns 0. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ctype.h" line="89" column="1" bodyfile="src/lib/libc/ctype/isdigit.c" bodystart="79" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="ctype_8h_1a2c577bd448930963c5298244e447f628" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int isgraph</definition>
+        <argsstring>(int)</argsstring>
+        <name>isgraph</name>
+        <param>
+          <type>int</type>
+          <defname>c</defname>
+        </param>
+        <briefdescription>
+<para>Tests for a printable character. </para>        </briefdescription>
+        <detaileddescription>
+<para>Tests whether <computeroutput>c</computeroutput> is a character of class print in the current locale. The <computeroutput>c</computeroutput> argument is an int, the value of which the application shall ensure is representable as an unsigned char or equal to the value of the macro #EOF. If the argument has any other value, the behavior is undefined.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Character</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>to test.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns non-zero if <computeroutput>c</computeroutput> is a printable character; otherwise, it returns 0. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ctype.h" line="90" column="1" bodyfile="src/lib/libc/ctype/isprint.c" bodystart="79" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="ctype_8h_1a3e54aea830ac25564dacd5c84d3d2abe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int islower</definition>
+        <argsstring>(int)</argsstring>
+        <name>islower</name>
+        <param>
+          <type>int</type>
+          <defname>c</defname>
+        </param>
+        <briefdescription>
+<para>Tests for a lowercase letter. </para>        </briefdescription>
+        <detaileddescription>
+<para>Tests whether <computeroutput>c</computeroutput> is a character of class lower in the current locale. The <computeroutput>c</computeroutput> argument is an int, the value of which the application shall ensure is representable as an unsigned char or equal to the value of the macro #EOF. If the argument has any other value, the behavior is undefined.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Character</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>to test.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns non-zero if <computeroutput>c</computeroutput> is a lowercase letter; otherwise, it returns 0. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ctype.h" line="91" column="1" bodyfile="src/lib/libc/ctype/islower.c" bodystart="79" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="ctype_8h_1a4aa9b67cdd7a681884a87aa4275fda21" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int isprint</definition>
+        <argsstring>(int)</argsstring>
+        <name>isprint</name>
+        <param>
+          <type>int</type>
+          <defname>c</defname>
+        </param>
+        <briefdescription>
+<para>Tests for a visible character. </para>        </briefdescription>
+        <detaileddescription>
+<para>Tests whether <computeroutput>c</computeroutput> is a character of class graph in the current locale. The <computeroutput>c</computeroutput> argument is an int, the value of which the application shall ensure is representable as an unsigned char or equal to the value of the macro #EOF. If the argument has any other value, the behavior is undefined.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Character</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>to test.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns non-zero if <computeroutput>c</computeroutput> is a character with a visible representation; otherwise, it returns 0. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ctype.h" line="92" column="1" bodyfile="src/lib/libc/ctype/isgraph.c" bodystart="79" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="ctype_8h_1a60ec8845aa835495aa89054301069b59" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int ispunct</definition>
+        <argsstring>(int)</argsstring>
+        <name>ispunct</name>
+        <param>
+          <type>int</type>
+          <defname>c</defname>
+        </param>
+        <briefdescription>
+<para>Tests for a punctuation character. </para>        </briefdescription>
+        <detaileddescription>
+<para>Tests whether <computeroutput>c</computeroutput> is a character of class punct in the current locale. The <computeroutput>c</computeroutput> argument is an int, the value of which the application shall ensure is representable as an unsigned char or equal to the value of the macro #EOF. If the argument has any other value, the behavior is undefined.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Character</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>to test.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns non-zero if <computeroutput>c</computeroutput> is a punctuation character; otherwise, it returns 0. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ctype.h" line="93" column="1" bodyfile="src/lib/libc/ctype/ispunct.c" bodystart="79" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="ctype_8h_1a9e4f3a211671d05c9df210bb611719bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int isspace</definition>
+        <argsstring>(int)</argsstring>
+        <name>isspace</name>
+        <param>
+          <type>int</type>
+          <defname>c</defname>
+        </param>
+        <briefdescription>
+<para>Tests for a white-space character. </para>        </briefdescription>
+        <detaileddescription>
+<para>Tests whether <computeroutput>c</computeroutput> is a character of class space in the current locale. The <computeroutput>c</computeroutput> argument is an int, the value of which the application shall ensure is representable as an unsigned char or equal to the value of the macro #EOF. If the argument has any other value, the behavior is undefined.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Character</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>to test.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns non-zero if <computeroutput>c</computeroutput> is a white-space character; otherwise, it returns 0. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ctype.h" line="94" column="1" bodyfile="src/lib/libc/ctype/isspace.c" bodystart="79" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="ctype_8h_1a368c0edfaa1eef894f7a21733be2f26b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int isupper</definition>
+        <argsstring>(int)</argsstring>
+        <name>isupper</name>
+        <param>
+          <type>int</type>
+          <defname>c</defname>
+        </param>
+        <briefdescription>
+<para>Tests for an uppercase letter. </para>        </briefdescription>
+        <detaileddescription>
+<para>Tests whether <computeroutput>c</computeroutput> is a character of class upper in the current locale. The <computeroutput>c</computeroutput> argument is an int, the value of which the application shall ensure is representable as an unsigned char or equal to the value of the macro #EOF. If the argument has any other value, the behavior is undefined.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Character</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>to test.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns non-zero if <computeroutput>c</computeroutput> is an uppercase letter; otherwise, it returns 0. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ctype.h" line="95" column="1" bodyfile="src/lib/libc/ctype/isupper.c" bodystart="79" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="ctype_8h_1af5b7c16911f155152e74cfd43c510b05" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int isxdigit</definition>
+        <argsstring>(int)</argsstring>
+        <name>isxdigit</name>
+        <param>
+          <type>int</type>
+          <defname>c</defname>
+        </param>
+        <briefdescription>
+<para>Tests for a hexadecimal digit. </para>        </briefdescription>
+        <detaileddescription>
+<para>Tests whether <computeroutput>c</computeroutput> is a character of class xdigit in the current locale. The <computeroutput>c</computeroutput> argument is an int, the value of which the application shall ensure is representable as an unsigned char or equal to the value of the macro #EOF. If the argument has any other value, the behavior is undefined.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Character</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>to test.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns non-zero if <computeroutput>c</computeroutput> is a hexadecimal digit; otherwise, it returns 0. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ctype.h" line="96" column="1" bodyfile="src/lib/libc/ctype/isxdigit.c" bodystart="79" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="ctype_8h_1a50f9246b180d1423593a5219375ec590" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int tolower</definition>
+        <argsstring>(int)</argsstring>
+        <name>tolower</name>
+        <param>
+          <type>int</type>
+          <defname>c</defname>
+        </param>
+        <briefdescription>
+<para>Transliterates uppercase characters to lowercase. </para>        </briefdescription>
+        <detaileddescription>
+<para>If <computeroutput>c</computeroutput> represents an uppercase letter, and there exists a corresponding lowercase letter as defined by character type information in the current locale, the result is the corresponding lowercase letter.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Character</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>to transliterate.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns the lowercase letter corresponding to the argument passed; otherwise, they returns the argument unchanged. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ctype.h" line="97" column="1" bodyfile="src/lib/libc/ctype/tolower.c" bodystart="85" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="ctype_8h_1ab6182394c667c4e4426f98af3309c30d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int toupper</definition>
+        <argsstring>(int)</argsstring>
+        <name>toupper</name>
+        <param>
+          <type>int</type>
+          <defname>c</defname>
+        </param>
+        <briefdescription>
+<para>Transliterates lowercase characters to uppercase. </para>        </briefdescription>
+        <detaileddescription>
+<para>If <computeroutput>c</computeroutput> represents an lowercase letter, and there exists a corresponding uppercase letter as defined by character type information in the current locale, the result is the corresponding uppercase letter.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Character</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>to transliterate.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns the uppercase letter corresponding to the argument passed; otherwise, they returns the argument unchanged. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ctype.h" line="98" column="1" bodyfile="src/lib/libc/ctype/toupper.c" bodystart="85" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="ctype_8h_1a51384f815318500e9783c03a7d956e0d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int toascii</definition>
+        <argsstring>(int)</argsstring>
+        <name>toascii</name>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ctype.h" line="106" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Character types library. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright(C)<sp/>2016-2017<sp/>Davidson<sp/>Francis<sp/>&lt;davidsondfgl@gmail.com&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Pedro<sp/>H.<sp/>Penna<sp/>&lt;pedrohenriquepenna@gmail.com&gt;</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>Nanvix.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Nanvix<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>Nanvix<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>Nanvix.<sp/>If<sp/>not,<sp/>see<sp/>&lt;http://www.gnu.org/licenses/&gt;.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>1994-2009<sp/><sp/>Red<sp/>Hat,<sp/>Inc.<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>This<sp/>copyrighted<sp/>material<sp/>is<sp/>made<sp/>available<sp/>to<sp/>anyone<sp/>wishing<sp/>to<sp/>use,</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>modify,<sp/>copy,<sp/>or<sp/>redistribute<sp/>it<sp/>subject<sp/>to<sp/>the<sp/>terms<sp/>and<sp/>conditions</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>of<sp/>the<sp/>BSD<sp/>License.<sp/><sp/><sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>it<sp/>will<sp/>be<sp/>useful,<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY<sp/>expressed<sp/>or<sp/>implied,</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>including<sp/>the<sp/>implied<sp/>warranties<sp/>of<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>A<sp/>copy<sp/>of<sp/>this<sp/>license<sp/>is<sp/>available<sp/>at<sp/></highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>http://www.opensource.org/licenses.<sp/>Any<sp/>Red<sp/>Hat<sp/>trademarks<sp/>that<sp/>are</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*<sp/>incorporated<sp/>in<sp/>the<sp/>source<sp/>code<sp/>or<sp/>documentation<sp/>are<sp/>not<sp/>subject<sp/>to</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/>*<sp/>the<sp/>BSD<sp/>License<sp/>and<sp/>may<sp/>only<sp/>be<sp/>used<sp/>or<sp/>replicated<sp/>with<sp/>the<sp/>express</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/>permission<sp/>of<sp/>Red<sp/>Hat,<sp/>Inc.</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>1981-2000<sp/>The<sp/>Regents<sp/>of<sp/>the<sp/>University<sp/>of<sp/>California.</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>*<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without<sp/>modification,</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>*<sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright<sp/>notice,<sp/></highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>*<sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright<sp/>notice,</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the<sp/>documentation</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>*<sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>the<sp/>University<sp/>nor<sp/>the<sp/>names<sp/>of<sp/>its<sp/>contributors<sp/></highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/>may<sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived<sp/>from<sp/>this<sp/>software<sp/></highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS<sp/>&quot;AS<sp/>IS&quot;</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/>*<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,<sp/>THE<sp/>IMPLIED</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/>*<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/>*<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>OWNER<sp/>OR<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/>*<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/>*<sp/>NOT<sp/>LIMITED<sp/>TO,<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/>*<sp/>PROFITS;<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/>*<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR<sp/>OTHERWISE)</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/>*<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY</highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/>*<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="preprocessor">#ifndef<sp/>CTYPE_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CTYPE_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>_U<sp/><sp/>01</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>_L<sp/><sp/>02</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>_N<sp/><sp/>04</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>_S<sp/><sp/>010</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>_P<sp/><sp/>020</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>_C<sp/><sp/>040</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>_X<sp/><sp/>0100</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>_B<sp/><sp/>0200</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Forward<sp/>definitions.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="ctype_8h_1a698ac061ca18050f6e861e3d4ea0a693" kindref="member">isalnum</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="ctype_8h_1aa01365d84540f64f5ab5064d59b05c50" kindref="member">isalpha</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>isascii(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="ctype_8h_1a44036fe83d96a567ad5cd8463e6c6ad0" kindref="member">isblank</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="ctype_8h_1add05f77f6d294add9d66f916a473944d" kindref="member">iscntrl</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="ctype_8h_1a6fa1e2a306d0a84071e1537071172243" kindref="member">isdigit</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="ctype_8h_1a2c577bd448930963c5298244e447f628" kindref="member">isgraph</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="ctype_8h_1a3e54aea830ac25564dacd5c84d3d2abe" kindref="member">islower</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="ctype_8h_1a4aa9b67cdd7a681884a87aa4275fda21" kindref="member">isprint</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="ctype_8h_1a60ec8845aa835495aa89054301069b59" kindref="member">ispunct</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="ctype_8h_1a9e4f3a211671d05c9df210bb611719bf" kindref="member">isspace</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="ctype_8h_1a368c0edfaa1eef894f7a21733be2f26b" kindref="member">isupper</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="ctype_8h_1af5b7c16911f155152e74cfd43c510b05" kindref="member">isxdigit</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="ctype_8h_1a50f9246b180d1423593a5219375ec590" kindref="member">tolower</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="ctype_8h_1ab6182394c667c4e4426f98af3309c30d" kindref="member">toupper</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Forward<sp/>Definitions.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*__ctype_ptr__;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_XOPEN_SOURCE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Forward<sp/>definitions.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>toascii(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>CTYPE_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="include/ctype.h"/>
+  </compounddef>
+</doxygen>

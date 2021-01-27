@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structutimbuf" kind="struct" language="C++" prot="public">
+    <compoundname>utimbuf</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structutimbuf_1a3ffc5c44c36bf6f78b3dfe01fbc7a598" prot="public" static="no" mutable="no">
+        <type>time_t</type>
+        <definition>time_t actime</definition>
+        <argsstring></argsstring>
+        <name>actime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/utime.h" line="31" column="1" bodyfile="include/utime.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structutimbuf_1a7aac7ecbcf9b32959cbbc5ed70425ce7" prot="public" static="no" mutable="no">
+        <type>time_t</type>
+        <definition>time_t modtime</definition>
+        <argsstring></argsstring>
+        <name>modtime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/utime.h" line="32" column="1" bodyfile="include/utime.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/utime.h" line="30" column="1" bodyfile="include/utime.h" bodystart="29" bodyend="33"/>
+    <listofallmembers>
+      <member refid="structutimbuf_1a3ffc5c44c36bf6f78b3dfe01fbc7a598" prot="public" virt="non-virtual"><scope>utimbuf</scope><name>actime</name></member>
+      <member refid="structutimbuf_1a7aac7ecbcf9b32959cbbc5ed70425ce7" prot="public" virt="non-virtual"><scope>utimbuf</scope><name>modtime</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="struct__atexit" kind="struct" language="C++" prot="public">
+    <compoundname>_atexit</compoundname>
+    <includes local="no">atexit.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct__atexit_1aaf873953e3eb4fe9c34d373453a1bce5" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int _ind</definition>
+        <argsstring></argsstring>
+        <name>_ind</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Next available index. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/lib/libc/stdlib/atexit.h" line="69" column="1" bodyfile="src/lib/libc/stdlib/atexit.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__atexit_1ad3f8ea9c4170e8a13aabb53046fbf4ff" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* _fns[ATEXIT_MAX])(void)</definition>
+        <argsstring>[ATEXIT_MAX])(void)</argsstring>
+        <name>_fns</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="group__stdlib_1ga7cb771250232f7f27f31079208f4428a" kindref="member">atexit()</ref> table. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/lib/libc/stdlib/atexit.h" line="70" column="1" bodyfile="src/lib/libc/stdlib/atexit.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="group__stdlib_1ga7cb771250232f7f27f31079208f4428a" kindref="member">atexit()</ref> information. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/lib/libc/stdlib/atexit.h" line="68" column="1" bodyfile="src/lib/libc/stdlib/atexit.h" bodystart="67" bodyend="71"/>
+    <listofallmembers>
+      <member refid="struct__atexit_1ad3f8ea9c4170e8a13aabb53046fbf4ff" prot="public" virt="non-virtual"><scope>_atexit</scope><name>_fns</name></member>
+      <member refid="struct__atexit_1aaf873953e3eb4fe9c34d373453a1bce5" prot="public" virt="non-virtual"><scope>_atexit</scope><name>_ind</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

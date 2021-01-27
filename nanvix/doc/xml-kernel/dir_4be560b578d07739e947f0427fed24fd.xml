@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_4be560b578d07739e947f0427fed24fd" kind="dir">
+    <compoundname>src/ubin</compoundname>
+    <innerdir refid="dir_35425b435f94f90a52f4ad0aa5195661">src/ubin/cat</innerdir>
+    <innerdir refid="dir_b30feaa8fade78e97ec80d3f0d37cff7">src/ubin/chgrp</innerdir>
+    <innerdir refid="dir_80b2e1af9a6f89e17a9df1b835809d60">src/ubin/chmod</innerdir>
+    <innerdir refid="dir_1f44428521b354c391525db498db4661">src/ubin/chown</innerdir>
+    <innerdir refid="dir_53382a4077a80859561f3aaec0dd1f08">src/ubin/clear</innerdir>
+    <innerdir refid="dir_01e1793da479657c2182ae42776da61e">src/ubin/cp</innerdir>
+    <innerdir refid="dir_7655ac0ca0a9a1d7ef2ea8d69da20723">src/ubin/echo</innerdir>
+    <innerdir refid="dir_094595b30bb7d1fe969edff429af3bbb">src/ubin/kill</innerdir>
+    <innerdir refid="dir_eb7bdad7f5f136bbebee4614e7ec1993">src/ubin/ln</innerdir>
+    <innerdir refid="dir_30eb2b58cfa3b88de6202914569581f7">src/ubin/login</innerdir>
+    <innerdir refid="dir_57f1a78a0f31f6c68b85b1b1cef3771f">src/ubin/ls</innerdir>
+    <innerdir refid="dir_9cf1b61f677b1fba216065274986c197">src/ubin/mkdir</innerdir>
+    <innerdir refid="dir_1c4852b188b251e0287898b66ae16199">src/ubin/mv</innerdir>
+    <innerdir refid="dir_7e5fb21eeed22c07edd8b719645542a3">src/ubin/nice</innerdir>
+    <innerdir refid="dir_d5c6cc47a8bd9c751c23836eb6381f7c">src/ubin/nim</innerdir>
+    <innerdir refid="dir_fa9cc89ca0ef10fd565e8c4b7edd11f3">src/ubin/ps</innerdir>
+    <innerdir refid="dir_24e66a4b5b2337a64e4f0ba95da01485">src/ubin/pwd</innerdir>
+    <innerdir refid="dir_f116e76cd26246f7206d4a0343e1e690">src/ubin/rm</innerdir>
+    <innerdir refid="dir_157e76646dd5b26547a587d79596b435">src/ubin/rmdir</innerdir>
+    <innerdir refid="dir_adcd26a0b5f9a8f414b6891ee90a0c40">src/ubin/sleep</innerdir>
+    <innerdir refid="dir_a5859b17303a022d610237951525080d">src/ubin/stat</innerdir>
+    <innerdir refid="dir_4db6d27a51da02308ee3b6e0fd51865b">src/ubin/sync</innerdir>
+    <innerdir refid="dir_14b6a809153b4392a013648717030e37">src/ubin/touch</innerdir>
+    <innerdir refid="dir_41f1b571f4246d07ec60389e371ced8f">src/ubin/tsh</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/ubin/"/>
+  </compounddef>
+</doxygen>

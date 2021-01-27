@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structaccount" kind="struct" language="C++" prot="public">
+    <compoundname>account</compoundname>
+    <includes local="no">accounts.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structaccount_1a9b6a0ae12dcef98352cee8783a66c6d6" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char name[USERNAME_MAX]</definition>
+        <argsstring>[USERNAME_MAX]</argsstring>
+        <name>name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>User name. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/accounts.h" line="40" column="1" bodyfile="include/nanvix/accounts.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structaccount_1a49e5a06f39e5a66962e33fce9e04ae05" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char password[PASSWORD_MAX]</definition>
+        <argsstring>[PASSWORD_MAX]</argsstring>
+        <name>password</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>User&apos;s password. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/accounts.h" line="41" column="1" bodyfile="include/nanvix/accounts.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structaccount_1a1163f413982fef86f5c8313564d8589c" prot="public" static="no" mutable="no">
+        <type>uid_t</type>
+        <definition>uid_t uid</definition>
+        <argsstring></argsstring>
+        <name>uid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>User&apos;s ID. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/accounts.h" line="42" column="1" bodyfile="include/nanvix/accounts.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structaccount_1accbf90b0b518578acff258d328c5575d" prot="public" static="no" mutable="no">
+        <type>gid_t</type>
+        <definition>gid_t gid</definition>
+        <argsstring></argsstring>
+        <name>gid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>User&apos;s group ID. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/accounts.h" line="43" column="1" bodyfile="include/nanvix/accounts.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>User&apos;s account information. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/nanvix/accounts.h" line="39" column="1" bodyfile="include/nanvix/accounts.h" bodystart="38" bodyend="44"/>
+    <listofallmembers>
+      <member refid="structaccount_1accbf90b0b518578acff258d328c5575d" prot="public" virt="non-virtual"><scope>account</scope><name>gid</name></member>
+      <member refid="structaccount_1a9b6a0ae12dcef98352cee8783a66c6d6" prot="public" virt="non-virtual"><scope>account</scope><name>name</name></member>
+      <member refid="structaccount_1a49e5a06f39e5a66962e33fce9e04ae05" prot="public" virt="non-virtual"><scope>account</scope><name>password</name></member>
+      <member refid="structaccount_1a1163f413982fef86f5c8313564d8589c" prot="public" virt="non-virtual"><scope>account</scope><name>uid</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

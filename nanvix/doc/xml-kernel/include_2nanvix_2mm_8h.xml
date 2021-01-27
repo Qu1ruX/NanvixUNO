@@ -1,0 +1,343 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="include_2nanvix_2mm_8h" kind="file" language="C++">
+    <compoundname>mm.h</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="include_2nanvix_2mm_8h_1a7919f961d0769a19e31a791bc8491625" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN int</type>
+        <definition>EXTERN int chkmem</definition>
+        <argsstring>(const void *, size_t, mode_t)</argsstring>
+        <name>chkmem</name>
+        <param>
+          <type>const void *</type>
+          <defname>addr</defname>
+        </param>
+        <param>
+          <type><ref refid="decl_8h_1a028b7cbca0d37bbc9bc219370525227f" kindref="member">size_t</ref></type>
+          <defname>size</defname>
+        </param>
+        <param>
+          <type>mode_t</type>
+          <defname>mask</defname>
+        </param>
+        <briefdescription>
+<para>Checks access permissions to a memory area. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>addr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Address to be checked. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of memory area. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Access permissions mask.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Non-zero if access is authorized, and zero otherwise. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/mm.h" line="60" column="1" bodyfile="src/kernel/mm/mm.c" bodystart="86" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="include_2nanvix_2mm_8h_1a777cc645901a056d80765b2f510851ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN int</type>
+        <definition>EXTERN int fubyte</definition>
+        <argsstring>(const void *)</argsstring>
+        <name>fubyte</name>
+        <param>
+          <type>const void *</type>
+          <defname>addr</defname>
+        </param>
+        <briefdescription>
+<para>Fetches a byte from user address space. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>addr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Address where the byte should be fetched.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Upon successful completion the byte fetched is returned (casted to int). Upon failure, -1 is returned instead. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/mm.h" line="61" column="1" bodyfile="src/kernel/mm/mm.c" bodystart="121" bodyend="142"/>
+      </memberdef>
+      <memberdef kind="function" id="include_2nanvix_2mm_8h_1a05d39b1244453a9dd2b8127f30503af3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN int</type>
+        <definition>EXTERN int fudword</definition>
+        <argsstring>(const void *)</argsstring>
+        <name>fudword</name>
+        <param>
+          <type>const void *</type>
+          <defname>addr</defname>
+        </param>
+        <briefdescription>
+<para>Fetches a double word (4 bytes) from user address space. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>addr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Address where the byte should be fetched.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Upon successful completion the byte fetched is returned (casted to int). Upon failure, -1 is returned instead. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/mm.h" line="62" column="1" bodyfile="src/kernel/mm/mm.c" bodystart="152" bodyend="173"/>
+      </memberdef>
+      <memberdef kind="function" id="include_2nanvix_2mm_8h_1a734af8d9a740122d9cea0be5849d83c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN int</type>
+        <definition>EXTERN int crtpgdir</definition>
+        <argsstring>(struct process *)</argsstring>
+        <name>crtpgdir</name>
+        <param>
+          <type>struct <ref refid="structprocess" kindref="compound">process</ref> *</type>
+          <defname>proc</defname>
+        </param>
+        <briefdescription>
+<para>Creates a page directory for a process. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>proc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Target process.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Upon successful completion, zero is returned. Upon failure, non-zero is returned instead. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/mm.h" line="63" column="1" bodyfile="src/kernel/mm/paging.c" bodystart="600" bodyend="644"/>
+      </memberdef>
+      <memberdef kind="function" id="include_2nanvix_2mm_8h_1aa9b6734e5df041ab233913d14cfdeb29" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN int</type>
+        <definition>EXTERN int pfault</definition>
+        <argsstring>(addr_t)</argsstring>
+        <name>pfault</name>
+        <param>
+          <type>addr_t</type>
+          <defname>addr</defname>
+        </param>
+        <briefdescription>
+<para>Handles a protection page fault. </para>        </briefdescription>
+        <detaileddescription>
+<para>addr Faulting address.</para><para><simplesect kind="return"><para>Upon successful completion, zero is returned. Upon failure, non-zero is returned instead. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/mm.h" line="64" column="1" bodyfile="src/kernel/mm/paging.c" bodystart="743" bodyend="797"/>
+      </memberdef>
+      <memberdef kind="function" id="include_2nanvix_2mm_8h_1aa467202fe6be7ff43b4700e9f95aeba5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN int</type>
+        <definition>EXTERN int vfault</definition>
+        <argsstring>(addr_t)</argsstring>
+        <name>vfault</name>
+        <param>
+          <type>addr_t</type>
+          <defname>addr</defname>
+        </param>
+        <briefdescription>
+<para>Handles a validity page fault. </para>        </briefdescription>
+        <detaileddescription>
+<para>addr Faulting address.</para><para><simplesect kind="return"><para>Upon successful completion, zero is returned. Upon failure, non-zero is returned instead. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/mm.h" line="65" column="1" bodyfile="src/kernel/mm/paging.c" bodystart="667" bodyend="734"/>
+      </memberdef>
+      <memberdef kind="function" id="include_2nanvix_2mm_8h_1a9fe2c2bc7bb4cdda7538631936a79064" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN void</type>
+        <definition>EXTERN void dstrypgdir</definition>
+        <argsstring>(struct process *)</argsstring>
+        <name>dstrypgdir</name>
+        <param>
+          <type>struct <ref refid="structprocess" kindref="compound">process</ref> *</type>
+          <defname>proc</defname>
+        </param>
+        <briefdescription>
+<para>Destroys the page directory of a process. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>proc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Target process.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>The current running process may not be the target process. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/mm.h" line="66" column="1" bodyfile="src/kernel/mm/paging.c" bodystart="653" bodyend="657"/>
+      </memberdef>
+      <memberdef kind="function" id="include_2nanvix_2mm_8h_1afc182d71e76729ce11bdfab8e174cb25" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN void</type>
+        <definition>EXTERN void putkpg</definition>
+        <argsstring>(void *)</argsstring>
+        <name>putkpg</name>
+        <param>
+          <type>void *</type>
+          <defname>kpg</defname>
+        </param>
+        <briefdescription>
+<para>Releases kernel page. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>kpg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Kernel page to be released. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/mm.h" line="67" column="1" bodyfile="src/kernel/mm/paging.c" bodystart="255" bodyend="267"/>
+      </memberdef>
+      <memberdef kind="function" id="include_2nanvix_2mm_8h_1aecf3746146b9d256027333449a560061" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN void</type>
+        <definition>EXTERN void mm_init</definition>
+        <argsstring>(void)</argsstring>
+        <name>mm_init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Initializes the memory system. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/mm.h" line="68" column="1" bodyfile="src/kernel/mm/mm.c" bodystart="72" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="include_2nanvix_2mm_8h_1a3a7a36e1f2c7a6e6884b9f667e80c3e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN void *</type>
+        <definition>EXTERN void* getkpg</definition>
+        <argsstring>(int)</argsstring>
+        <name>getkpg</name>
+        <param>
+          <type>int</type>
+          <defname>clean</defname>
+        </param>
+        <briefdescription>
+<para>Allocates a kernel page. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>clean</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Should the page be cleaned?</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Upon success, a pointer to a page is returned. Upon failure, a NULL pointer is returned instead. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/mm.h" line="69" column="1" bodyfile="src/kernel/mm/paging.c" bodystart="220" bodyend="248"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright(C)<sp/>2011-2016<sp/>Pedro<sp/>H.<sp/>Penna<sp/>&lt;pedrohenriquepenna@gmail.com&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>Nanvix.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>Nanvix<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>Nanvix<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>Nanvix.<sp/>If<sp/>not,<sp/>see<sp/>&lt;http://www.gnu.org/licenses/&gt;.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>MM_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MM_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&lt;<ref refid="const_8h" kindref="compound">nanvix/const.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&lt;<ref refid="hal_8h" kindref="compound">nanvix/hal.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&lt;<ref refid="pm_8h" kindref="compound">nanvix/pm.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&lt;sys/types.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Kernel<sp/>stack<sp/>size.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>KSTACK_SIZE<sp/>4096</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Virtual<sp/>memory<sp/>layout.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>UBASE_VIRT<sp/><sp/><sp/>0x00800000<sp/></highlight><highlight class="comment">/*<sp/>User<sp/>base.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>BUFFERS_VIRT<sp/>0xc0008000<sp/></highlight><highlight class="comment">/*<sp/>Buffers.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>KBASE_VIRT<sp/><sp/><sp/>0xc0000000<sp/></highlight><highlight class="comment">/*<sp/>Kernel<sp/>base.<sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>KPOOL_VIRT<sp/><sp/><sp/>0xc0400000<sp/></highlight><highlight class="comment">/*<sp/>Kernel<sp/>page<sp/>pool.<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>INITRD_VIRT<sp/><sp/>0xc0800000<sp/></highlight><highlight class="comment">/*<sp/>Initial<sp/>RAM<sp/>disk.<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Physical<sp/>memory<sp/>layout.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>KBASE_PHYS<sp/><sp/><sp/>0x00000000<sp/></highlight><highlight class="comment">/*<sp/>Kernel<sp/>base.<sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>BUFFERS_PHYS<sp/>0x00008000<sp/></highlight><highlight class="comment">/*<sp/>Buffers.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>KPOOL_PHYS<sp/><sp/><sp/>0x00400000<sp/></highlight><highlight class="comment">/*<sp/>Kernel<sp/>page<sp/>pool.<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>UBASE_PHYS<sp/><sp/><sp/>0x00800000<sp/></highlight><highlight class="comment">/*<sp/>User<sp/>base.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>User<sp/>memory<sp/>layout.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>USTACK_ADDR<sp/>0xc0000000<sp/></highlight><highlight class="comment">/*<sp/>User<sp/>stack.<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>UHEAP_ADDR<sp/><sp/>0xa0000000<sp/></highlight><highlight class="comment">/*<sp/>User<sp/>heap.<sp/><sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Kernel<sp/>memory<sp/>size:<sp/>4<sp/>MB.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>KMEM_SIZE<sp/>0x00400000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Kernel<sp/>page<sp/>pool<sp/>size:<sp/>4<sp/>MB.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>KPOOL_SIZE<sp/>0x00400000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>User<sp/>memory<sp/>size.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>UMEM_SIZE<sp/>(MEMORY_SIZE<sp/>-<sp/>KMEM_SIZE<sp/>-<sp/>KPOOL_SIZE)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_ASM_FILE_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Forward<sp/>definitions.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>chkmem(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">,<sp/>mode_t);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fubyte(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fudword(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>crtpgdir(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structprocess" kindref="compound">process</ref><sp/>*);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pfault(addr_t);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>vfault(addr_t);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>dstrypgdir(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structprocess" kindref="compound">process</ref><sp/>*);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>putkpg(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>mm_init(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*getkpg(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>_ASM_FILE_<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>MM_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="include/nanvix/mm.h"/>
+  </compounddef>
+</doxygen>

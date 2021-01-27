@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_e08066ec624bb199e087a112c3da4daa" kind="dir">
+    <compoundname>src/lib/libc/stdio</compoundname>
+    <innerfile refid="fclose_8c">fclose.c</innerfile>
+    <innerfile refid="fflush_8c">fflush.c</innerfile>
+    <innerfile refid="fgets_8c">fgets.c</innerfile>
+    <innerfile refid="flags_8c">flags.c</innerfile>
+    <innerfile refid="fopen_8c">fopen.c</innerfile>
+    <innerfile refid="fprintf_8c">fprintf.c</innerfile>
+    <innerfile refid="fputc_8c">fputc.c</innerfile>
+    <innerfile refid="fputs_8c">fputs.c</innerfile>
+    <innerfile refid="freopen_8c">freopen.c</innerfile>
+    <innerfile refid="getc_8c">getc.c</innerfile>
+    <innerfile refid="gets_8c">gets.c</innerfile>
+    <innerfile refid="printf_8c">printf.c</innerfile>
+    <innerfile refid="putc_8c">putc.c</innerfile>
+    <innerfile refid="puts_8c">puts.c</innerfile>
+    <innerfile refid="setvbuf_8c">setvbuf.c</innerfile>
+    <innerfile refid="stdio_8c">stdio.c</innerfile>
+    <innerfile refid="src_2lib_2libc_2stdio_2stdio_8h">stdio.h</innerfile>
+    <innerfile refid="vfprintf_8c">vfprintf.c</innerfile>
+    <innerfile refid="vsprintf_8c">vsprintf.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/lib/libc/stdio/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_9196295e642a708c0712729712455dd2" kind="dir">
+    <compoundname>src/kernel/pm</compoundname>
+    <innerfile refid="die_8c">die.c</innerfile>
+    <innerfile refid="pm_8c">pm.c</innerfile>
+    <innerfile refid="sched_8c">sched.c</innerfile>
+    <innerfile refid="kernel_2pm_2signal_8c">signal.c</innerfile>
+    <innerfile refid="kernel_2pm_2sleep_8c">sleep.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/kernel/pm/"/>
+  </compounddef>
+</doxygen>

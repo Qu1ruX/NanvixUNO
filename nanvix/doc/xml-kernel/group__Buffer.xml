@@ -1,0 +1,288 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="group__Buffer" kind="group">
+    <compoundname>Buffer</compoundname>
+    <title>Buffer Module</title>
+    <innerclass refid="structbuffer" prot="public">buffer</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__Buffer_1gaa7ac4063de8512ef7cd6c511f3d68c0b" prot="public" static="no">
+        <name>buffer_flags</name>
+        <enumvalue id="group__Buffer_1ggaa7ac4063de8512ef7cd6c511f3d68c0ba9ea0749530e7b16baf92b2a83dd9e2b5" prot="public">
+          <name>BUFFER_DIRTY</name>
+          <initializer>= (1 &lt;&lt; 0)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Dirty? </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__Buffer_1ggaa7ac4063de8512ef7cd6c511f3d68c0bab7b18409664caf35549856188e7d9373" prot="public">
+          <name>BUFFER_VALID</name>
+          <initializer>= (1 &lt;&lt; 1)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Valid? </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__Buffer_1ggaa7ac4063de8512ef7cd6c511f3d68c0ba68246cb49ecf5d0650e962a6cf879138" prot="public">
+          <name>BUFFER_LOCKED</name>
+          <initializer>= (1 &lt;&lt; 2)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Locked? </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__Buffer_1ggaa7ac4063de8512ef7cd6c511f3d68c0ba9ca00e7bffc6925e96464de34778f34c" prot="public">
+          <name>BUFFER_SYNC</name>
+          <initializer>= (1 &lt;&lt; 3)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Synchronous write? </para>          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Buffer flags. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/fs.h" line="47" column="1" bodyfile="src/kernel/fs/fs.h" bodystart="46" bodyend="52"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__Buffer_1ga7c7e4c5feaa3d1b717fbdc33c8dd7715" prot="public" static="no">
+        <type>struct <ref refid="structbuffer" kindref="compound">buffer</ref> *</type>
+        <definition>typedef struct buffer* buffer_t</definition>
+        <argsstring></argsstring>
+        <name>buffer_t</name>
+        <briefdescription>
+<para>Opaque pointer to a block buffer. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="59" column="1" bodyfile="include/nanvix/fs.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__Buffer_1ga45a654e2d1994709ac5b6c89a2210e84" prot="public" static="no">
+        <type>const struct <ref refid="structbuffer" kindref="compound">buffer</ref> *</type>
+        <definition>typedef const struct buffer* const_buffer_t</definition>
+        <argsstring></argsstring>
+        <name>const_buffer_t</name>
+        <briefdescription>
+<para>Opaque pointer to a constant buffer. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="64" column="1" bodyfile="include/nanvix/fs.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__Buffer_1ga8b1e8b87d95e8dc0729640bc0876af7f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN void</type>
+        <definition>EXTERN void bsync</definition>
+        <argsstring>(void)</argsstring>
+        <name>bsync</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Synchronizes the block buffer cache. </para>        </briefdescription>
+        <detaileddescription>
+<para>Flushes all valid block buffers onto underlying devices. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="67" column="1" bodyfile="src/kernel/fs/buffer.c" bodystart="360" bodyend="392"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Buffer_1gaf186e2f6bebc404209c7946a82720490" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN void</type>
+        <definition>EXTERN void blklock</definition>
+        <argsstring>(buffer_t)</argsstring>
+        <name>blklock</name>
+        <param>
+          <type><ref refid="group__Buffer_1ga7c7e4c5feaa3d1b717fbdc33c8dd7715" kindref="member">buffer_t</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="68" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Buffer_1gaf5da577d3faa98303820930730e66a5a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN void</type>
+        <definition>EXTERN void blkunlock</definition>
+        <argsstring>(buffer_t)</argsstring>
+        <name>blkunlock</name>
+        <param>
+          <type><ref refid="group__Buffer_1ga7c7e4c5feaa3d1b717fbdc33c8dd7715" kindref="member">buffer_t</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="69" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Buffer_1ga2b567ccf6dc409304b569553c43e0128" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN void</type>
+        <definition>EXTERN void brelse</definition>
+        <argsstring>(buffer_t)</argsstring>
+        <name>brelse</name>
+        <param>
+          <type><ref refid="group__Buffer_1ga7c7e4c5feaa3d1b717fbdc33c8dd7715" kindref="member">buffer_t</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="70" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Buffer_1ga29b2bc5da947fe8b2363ad2879447d93" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN <ref refid="group__Buffer_1ga7c7e4c5feaa3d1b717fbdc33c8dd7715" kindref="member">buffer_t</ref></type>
+        <definition>EXTERN buffer_t bread</definition>
+        <argsstring>(dev_t, block_t)</argsstring>
+        <name>bread</name>
+        <param>
+          <type>dev_t</type>
+          <defname>dev</defname>
+        </param>
+        <param>
+          <type><ref refid="include_2fs_2minix_8h_1a77ecea3fce28a16f79db79aa58256855" kindref="member">block_t</ref></type>
+          <defname>num</defname>
+        </param>
+        <briefdescription>
+<para>Reads a block from a device. </para>        </briefdescription>
+        <detaileddescription>
+<para>Reads the block numbered num synchronously from the device numbered dev.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Device number. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Block number.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Upon successful completion, a pointer to a buffer holding the requested block is returned. In this case, the block buffer is ensured to be locked. Upon failure, a NULL pointer is returned instead.</para></simplesect>
+<simplesect kind="note"><para>The device number should be valid. </para></simplesect>
+<simplesect kind="note"><para>The block number should be valid. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="71" column="1" bodyfile="src/kernel/fs/buffer.c" bodystart="306" bodyend="323"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Buffer_1ga4413176bb1d2adaa907a1a2ea8759ec1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN void</type>
+        <definition>EXTERN void bwrite</definition>
+        <argsstring>(buffer_t)</argsstring>
+        <name>bwrite</name>
+        <param>
+          <type><ref refid="group__Buffer_1ga7c7e4c5feaa3d1b717fbdc33c8dd7715" kindref="member">buffer_t</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="72" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Buffer_1ga52a77b024f0a2c25f3769b8df441c160" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN void</type>
+        <definition>EXTERN void buffer_dirty</definition>
+        <argsstring>(buffer_t, int)</argsstring>
+        <name>buffer_dirty</name>
+        <param>
+          <type><ref refid="group__Buffer_1ga7c7e4c5feaa3d1b717fbdc33c8dd7715" kindref="member">buffer_t</ref></type>
+        </param>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="73" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Buffer_1ga3d233154fd94ab2ae5cd2455c6a86eb3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN void *</type>
+        <definition>EXTERN void* buffer_data</definition>
+        <argsstring>(const_buffer_t)</argsstring>
+        <name>buffer_data</name>
+        <param>
+          <type><ref refid="group__Buffer_1ga45a654e2d1994709ac5b6c89a2210e84" kindref="member">const_buffer_t</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="74" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Buffer_1gab4212458394458c43aef7eddad343813" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN dev_t</type>
+        <definition>EXTERN dev_t buffer_dev</definition>
+        <argsstring>(const_buffer_t)</argsstring>
+        <name>buffer_dev</name>
+        <param>
+          <type><ref refid="group__Buffer_1ga45a654e2d1994709ac5b6c89a2210e84" kindref="member">const_buffer_t</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="75" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Buffer_1gabf90226e1f3ddd050895f5b6a49323db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN <ref refid="include_2fs_2minix_8h_1a77ecea3fce28a16f79db79aa58256855" kindref="member">block_t</ref></type>
+        <definition>EXTERN block_t buffer_num</definition>
+        <argsstring>(const_buffer_t)</argsstring>
+        <name>buffer_num</name>
+        <param>
+          <type><ref refid="group__Buffer_1ga45a654e2d1994709ac5b6c89a2210e84" kindref="member">const_buffer_t</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="76" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Buffer_1ga449ec2c78f0cbef7a2ba10e55d4259af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN int</type>
+        <definition>EXTERN int buffer_is_sync</definition>
+        <argsstring>(const_buffer_t)</argsstring>
+        <name>buffer_is_sync</name>
+        <param>
+          <type><ref refid="group__Buffer_1ga45a654e2d1994709ac5b6c89a2210e84" kindref="member">const_buffer_t</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="77" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

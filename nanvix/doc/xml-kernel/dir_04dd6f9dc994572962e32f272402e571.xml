@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_04dd6f9dc994572962e32f272402e571" kind="dir">
+    <compoundname>tools/minix</compoundname>
+    <innerfile refid="tools_2minix_2bitmap_8c">bitmap.c</innerfile>
+    <innerfile refid="bitmap_8h">bitmap.h</innerfile>
+    <innerfile refid="tools_2minix_2cp_8c">cp.c</innerfile>
+    <innerfile refid="minix_8c">minix.c</innerfile>
+    <innerfile refid="tools_2minix_2minix_8h">minix.h</innerfile>
+    <innerfile refid="tools_2minix_2mkdir_8c">mkdir.c</innerfile>
+    <innerfile refid="mkfs_8c">mkfs.c</innerfile>
+    <innerfile refid="mknod_8c">mknod.c</innerfile>
+    <innerfile refid="tools_2minix_2stat_8h">stat.h</innerfile>
+    <innerfile refid="util_8c">util.c</innerfile>
+    <innerfile refid="util_8h">util.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="tools/minix/"/>
+  </compounddef>
+</doxygen>

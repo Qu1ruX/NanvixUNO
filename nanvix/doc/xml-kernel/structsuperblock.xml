@@ -1,0 +1,321 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structsuperblock" kind="struct" language="C++" prot="public">
+    <compoundname>superblock</compoundname>
+    <includes local="no">fs.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structsuperblock_1a6a9e89d63eb610dfe238b0a840979421" prot="public" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned count</definition>
+        <argsstring></argsstring>
+        <name>count</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Reference count. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/fs.h" line="135" column="1" bodyfile="src/kernel/fs/fs.h" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structsuperblock_1a103343dc452e5f0e8e525f446f012fee" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structbuffer" kindref="compound">buffer</ref> *</type>
+        <definition>struct buffer* buf</definition>
+        <argsstring></argsstring>
+        <name>buf</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Buffer disk superblock. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/fs.h" line="136" column="1" bodyfile="src/kernel/fs/fs.h" bodystart="136" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structsuperblock_1a93504876b72e69f07871772eb128e3d1" prot="public" static="no" mutable="no">
+        <type>ino_t</type>
+        <definition>ino_t ninodes</definition>
+        <argsstring></argsstring>
+        <name>ninodes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of inodes. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/fs.h" line="137" column="1" bodyfile="src/kernel/fs/fs.h" bodystart="137" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structsuperblock_1a2913dc8576a928e424368ac0e3643db3" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structbuffer" kindref="compound">buffer</ref> *</type>
+        <definition>struct buffer* imap[IMAP_SIZE]</definition>
+        <argsstring>[IMAP_SIZE]</argsstring>
+        <name>imap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Inode map. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/fs.h" line="138" column="1" bodyfile="src/kernel/fs/fs.h" bodystart="138" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structsuperblock_1ab5e85a03949f20bbaee32cac42a83a4b" prot="public" static="no" mutable="no">
+        <type><ref refid="include_2fs_2minix_8h_1a77ecea3fce28a16f79db79aa58256855" kindref="member">block_t</ref></type>
+        <definition>block_t imap_blocks</definition>
+        <argsstring></argsstring>
+        <name>imap_blocks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of inode map blocks. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/fs.h" line="139" column="1" bodyfile="src/kernel/fs/fs.h" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structsuperblock_1ab5eff66b558c0b780d2aa1f7fc4b7b47" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structbuffer" kindref="compound">buffer</ref> *</type>
+        <definition>struct buffer* zmap[ZMAP_SIZE]</definition>
+        <argsstring>[ZMAP_SIZE]</argsstring>
+        <name>zmap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Zone map. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/fs.h" line="140" column="1" bodyfile="src/kernel/fs/fs.h" bodystart="140" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structsuperblock_1abb42d1cb8207c76e12f36d7f933847b7" prot="public" static="no" mutable="no">
+        <type><ref refid="include_2fs_2minix_8h_1a77ecea3fce28a16f79db79aa58256855" kindref="member">block_t</ref></type>
+        <definition>block_t zmap_blocks</definition>
+        <argsstring></argsstring>
+        <name>zmap_blocks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of zone map blocks. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/fs.h" line="141" column="1" bodyfile="src/kernel/fs/fs.h" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structsuperblock_1a6720b56ef0bb6703ba9a22b1e90cd1ed" prot="public" static="no" mutable="no">
+        <type><ref refid="include_2fs_2minix_8h_1a77ecea3fce28a16f79db79aa58256855" kindref="member">block_t</ref></type>
+        <definition>block_t first_data_block</definition>
+        <argsstring></argsstring>
+        <name>first_data_block</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>First data block. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/fs.h" line="142" column="1" bodyfile="src/kernel/fs/fs.h" bodystart="142" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structsuperblock_1ae076ec1b6fab67b323ce59bb39919f03" prot="public" static="no" mutable="no">
+        <type>off_t</type>
+        <definition>off_t max_size</definition>
+        <argsstring></argsstring>
+        <name>max_size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Maximum file size. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/fs.h" line="143" column="1" bodyfile="src/kernel/fs/fs.h" bodystart="143" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structsuperblock_1a14ce7590e799f6386999379b28ca167b" prot="public" static="no" mutable="no">
+        <type><ref refid="include_2fs_2minix_8h_1a77ecea3fce28a16f79db79aa58256855" kindref="member">block_t</ref></type>
+        <definition>block_t zones</definition>
+        <argsstring></argsstring>
+        <name>zones</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of zones. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/fs.h" line="144" column="1" bodyfile="src/kernel/fs/fs.h" bodystart="144" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structsuperblock_1afc8b220c6e92f5fcc41dee7e75501a1b" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structinode" kindref="compound">inode</ref> *</type>
+        <definition>struct inode* root</definition>
+        <argsstring></argsstring>
+        <name>root</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Inode for root directory. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/fs.h" line="145" column="1" bodyfile="src/kernel/fs/fs.h" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structsuperblock_1ac7d627a4346b2e56650db38ba268c242" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structinode" kindref="compound">inode</ref> *</type>
+        <definition>struct inode* mp</definition>
+        <argsstring></argsstring>
+        <name>mp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Inode mounted on. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/fs.h" line="146" column="1" bodyfile="src/kernel/fs/fs.h" bodystart="146" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structsuperblock_1a8910285a0352a5c710e65ec9ecbe32a1" prot="public" static="no" mutable="no">
+        <type>dev_t</type>
+        <definition>dev_t dev</definition>
+        <argsstring></argsstring>
+        <name>dev</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Underlying device. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/fs.h" line="147" column="1" bodyfile="src/kernel/fs/fs.h" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structsuperblock_1a8eea88528a75f696f8ca2c7672fbc0c2" prot="public" static="no" mutable="no">
+        <type>enum <ref refid="group__Superblock_1ga7bb5bede8fcda9ee9438bbc55cafc47b" kindref="member">superblock_flags</ref></type>
+        <definition>enum superblock_flags flags</definition>
+        <argsstring></argsstring>
+        <name>flags</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Flags. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/fs.h" line="147" column="1" bodyfile="src/kernel/fs/fs.h" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structsuperblock_1a6a0f3511801d7c3e533aa89b790d3a6f" prot="public" static="no" mutable="no">
+        <type>ino_t</type>
+        <definition>ino_t isearch</definition>
+        <argsstring></argsstring>
+        <name>isearch</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Inodes below this are in use. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/fs.h" line="149" column="1" bodyfile="src/kernel/fs/fs.h" bodystart="149" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structsuperblock_1a4054b5f51f01fa8ce3e5aae124b8d45c" prot="public" static="no" mutable="no">
+        <type><ref refid="include_2fs_2minix_8h_1a77ecea3fce28a16f79db79aa58256855" kindref="member">block_t</ref></type>
+        <definition>block_t zsearch</definition>
+        <argsstring></argsstring>
+        <name>zsearch</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Zones below this are in use. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/fs.h" line="150" column="1" bodyfile="src/kernel/fs/fs.h" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structsuperblock_1a6e44a17eef6d95b2e6832c26e469d505" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structprocess" kindref="compound">process</ref> *</type>
+        <definition>struct process* chain</definition>
+        <argsstring></argsstring>
+        <name>chain</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Waiting chain. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/fs.h" line="151" column="1" bodyfile="src/kernel/fs/fs.h" bodystart="151" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>In-core superblock. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="123">
+        <label>inode</label>
+        <link refid="structinode"/>
+        <childnode refid="123" relation="usage">
+          <edgelabel>free_next</edgelabel>
+          <edgelabel>hash_prev</edgelabel>
+          <edgelabel>hash_next</edgelabel>
+        </childnode>
+        <childnode refid="124" relation="usage">
+          <edgelabel>chain</edgelabel>
+        </childnode>
+        <childnode refid="122" relation="usage">
+          <edgelabel>sb</edgelabel>
+        </childnode>
+      </node>
+      <node id="124">
+        <label>process</label>
+        <link refid="structprocess"/>
+        <childnode refid="123" relation="usage">
+          <edgelabel>root</edgelabel>
+          <edgelabel>pwd</edgelabel>
+        </childnode>
+        <childnode refid="125" relation="usage">
+          <edgelabel>fss</edgelabel>
+        </childnode>
+        <childnode refid="124" relation="usage">
+          <edgelabel>next</edgelabel>
+          <edgelabel>pgrp</edgelabel>
+          <edgelabel>chain</edgelabel>
+          <edgelabel>father</edgelabel>
+        </childnode>
+      </node>
+      <node id="125">
+        <label>fpu</label>
+        <link refid="structfpu"/>
+      </node>
+      <node id="126">
+        <label>buffer</label>
+        <link refid="structbuffer"/>
+        <childnode refid="124" relation="usage">
+          <edgelabel>chain</edgelabel>
+        </childnode>
+        <childnode refid="126" relation="usage">
+          <edgelabel>free_next</edgelabel>
+          <edgelabel>hash_prev</edgelabel>
+          <edgelabel>free_prev</edgelabel>
+          <edgelabel>hash_next</edgelabel>
+        </childnode>
+      </node>
+      <node id="122">
+        <label>superblock</label>
+        <link refid="structsuperblock"/>
+        <childnode refid="123" relation="usage">
+          <edgelabel>root</edgelabel>
+          <edgelabel>mp</edgelabel>
+        </childnode>
+        <childnode refid="124" relation="usage">
+          <edgelabel>chain</edgelabel>
+        </childnode>
+        <childnode refid="126" relation="usage">
+          <edgelabel>zmap</edgelabel>
+          <edgelabel>imap</edgelabel>
+          <edgelabel>buf</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/kernel/fs/fs.h" line="134" column="1" bodyfile="src/kernel/fs/fs.h" bodystart="133" bodyend="152"/>
+    <listofallmembers>
+      <member refid="structsuperblock_1a103343dc452e5f0e8e525f446f012fee" prot="public" virt="non-virtual"><scope>superblock</scope><name>buf</name></member>
+      <member refid="structsuperblock_1a6e44a17eef6d95b2e6832c26e469d505" prot="public" virt="non-virtual"><scope>superblock</scope><name>chain</name></member>
+      <member refid="structsuperblock_1a6a9e89d63eb610dfe238b0a840979421" prot="public" virt="non-virtual"><scope>superblock</scope><name>count</name></member>
+      <member refid="structsuperblock_1a8910285a0352a5c710e65ec9ecbe32a1" prot="public" virt="non-virtual"><scope>superblock</scope><name>dev</name></member>
+      <member refid="structsuperblock_1a6720b56ef0bb6703ba9a22b1e90cd1ed" prot="public" virt="non-virtual"><scope>superblock</scope><name>first_data_block</name></member>
+      <member refid="structsuperblock_1a8eea88528a75f696f8ca2c7672fbc0c2" prot="public" virt="non-virtual"><scope>superblock</scope><name>flags</name></member>
+      <member refid="structsuperblock_1a2913dc8576a928e424368ac0e3643db3" prot="public" virt="non-virtual"><scope>superblock</scope><name>imap</name></member>
+      <member refid="structsuperblock_1ab5e85a03949f20bbaee32cac42a83a4b" prot="public" virt="non-virtual"><scope>superblock</scope><name>imap_blocks</name></member>
+      <member refid="structsuperblock_1a6a0f3511801d7c3e533aa89b790d3a6f" prot="public" virt="non-virtual"><scope>superblock</scope><name>isearch</name></member>
+      <member refid="structsuperblock_1ae076ec1b6fab67b323ce59bb39919f03" prot="public" virt="non-virtual"><scope>superblock</scope><name>max_size</name></member>
+      <member refid="structsuperblock_1ac7d627a4346b2e56650db38ba268c242" prot="public" virt="non-virtual"><scope>superblock</scope><name>mp</name></member>
+      <member refid="structsuperblock_1a93504876b72e69f07871772eb128e3d1" prot="public" virt="non-virtual"><scope>superblock</scope><name>ninodes</name></member>
+      <member refid="structsuperblock_1afc8b220c6e92f5fcc41dee7e75501a1b" prot="public" virt="non-virtual"><scope>superblock</scope><name>root</name></member>
+      <member refid="structsuperblock_1ab5eff66b558c0b780d2aa1f7fc4b7b47" prot="public" virt="non-virtual"><scope>superblock</scope><name>zmap</name></member>
+      <member refid="structsuperblock_1abb42d1cb8207c76e12f36d7f933847b7" prot="public" virt="non-virtual"><scope>superblock</scope><name>zmap_blocks</name></member>
+      <member refid="structsuperblock_1a14ce7590e799f6386999379b28ca167b" prot="public" virt="non-virtual"><scope>superblock</scope><name>zones</name></member>
+      <member refid="structsuperblock_1a4054b5f51f01fa8ce3e5aae124b8d45c" prot="public" virt="non-virtual"><scope>superblock</scope><name>zsearch</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

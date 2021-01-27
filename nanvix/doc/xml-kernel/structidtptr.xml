@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structidtptr" kind="struct" language="C++" prot="public">
+    <compoundname>idtptr</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structidtptr_1a245260f6f74972558f61b85227df5aae" prot="public" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned size</definition>
+        <argsstring></argsstring>
+        <name>size</name>
+        <bitfield> 16</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/i386/idt.h" line="59" column="1" bodyfile="include/i386/idt.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structidtptr_1adf555db4592f76d0d672f3bd61377272" prot="public" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned ptr</definition>
+        <argsstring></argsstring>
+        <name>ptr</name>
+        <bitfield> 32</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/i386/idt.h" line="60" column="1" bodyfile="include/i386/idt.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/i386/idt.h" line="58" column="1" bodyfile="include/i386/idt.h" bodystart="57" bodyend="61"/>
+    <listofallmembers>
+      <member refid="structidtptr_1adf555db4592f76d0d672f3bd61377272" prot="public" virt="non-virtual"><scope>idtptr</scope><name>ptr</name></member>
+      <member refid="structidtptr_1a245260f6f74972558f61b85227df5aae" prot="public" virt="non-virtual"><scope>idtptr</scope><name>size</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

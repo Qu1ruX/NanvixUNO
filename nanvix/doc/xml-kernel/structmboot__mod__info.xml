@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structmboot__mod__info" kind="struct" language="C++" prot="public">
+    <compoundname>mboot_mod_info</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structmboot__mod__info_1ad29166e39422175c35f21b518f3e5679" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t mod_start</definition>
+        <argsstring></argsstring>
+        <name>mod_start</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/mboot.h" line="156" column="1" bodyfile="include/nanvix/mboot.h" bodystart="156" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmboot__mod__info_1a583303ad2b8847fa1aa3187807ec0eba" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t mod_end</definition>
+        <argsstring></argsstring>
+        <name>mod_end</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/mboot.h" line="157" column="1" bodyfile="include/nanvix/mboot.h" bodystart="157" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmboot__mod__info_1a0b8f85b5256a3670365258c1c29d4708" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t cmdline</definition>
+        <argsstring></argsstring>
+        <name>cmdline</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/mboot.h" line="158" column="1" bodyfile="include/nanvix/mboot.h" bodystart="158" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmboot__mod__info_1af2191e484304a1e686e883bd359037a3" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t pad</definition>
+        <argsstring></argsstring>
+        <name>pad</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/mboot.h" line="159" column="1" bodyfile="include/nanvix/mboot.h" bodystart="159" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/nanvix/mboot.h" line="155" column="1" bodyfile="include/nanvix/mboot.h" bodystart="154" bodyend="160"/>
+    <listofallmembers>
+      <member refid="structmboot__mod__info_1a0b8f85b5256a3670365258c1c29d4708" prot="public" virt="non-virtual"><scope>mboot_mod_info</scope><name>cmdline</name></member>
+      <member refid="structmboot__mod__info_1a583303ad2b8847fa1aa3187807ec0eba" prot="public" virt="non-virtual"><scope>mboot_mod_info</scope><name>mod_end</name></member>
+      <member refid="structmboot__mod__info_1ad29166e39422175c35f21b518f3e5679" prot="public" virt="non-virtual"><scope>mboot_mod_info</scope><name>mod_start</name></member>
+      <member refid="structmboot__mod__info_1af2191e484304a1e686e883bd359037a3" prot="public" virt="non-virtual"><scope>mboot_mod_info</scope><name>pad</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

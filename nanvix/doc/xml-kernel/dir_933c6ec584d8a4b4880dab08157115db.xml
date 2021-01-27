@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_933c6ec584d8a4b4880dab08157115db" kind="dir">
+    <compoundname>src/kernel/dev/ata</compoundname>
+    <innerfile refid="ata_8c">ata.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/kernel/dev/ata/"/>
+  </compounddef>
+</doxygen>

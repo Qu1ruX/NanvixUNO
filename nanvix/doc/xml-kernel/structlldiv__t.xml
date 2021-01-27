@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structlldiv__t" kind="struct" language="C++" prot="public">
+    <compoundname>lldiv_t</compoundname>
+    <includes local="no">stdlib.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structlldiv__t_1a2065955c249938f83ebf6bc6c07b4200" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int quot</definition>
+        <argsstring></argsstring>
+        <name>quot</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Quotient. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="124" column="1" bodyfile="include/stdlib.h" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structlldiv__t_1a1ba4c6426d29538ceed6a0db9b4e1df6" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int rem</definition>
+        <argsstring></argsstring>
+        <name>rem</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Remainder. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="125" column="1" bodyfile="include/stdlib.h" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Structure type returned by the <ref refid="lldiv_8c_1acff655c44dded09639f738e54050ff99" kindref="member">lldiv()</ref> function. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/stdlib.h" line="123" column="1" bodyfile="include/stdlib.h" bodystart="122" bodyend="126"/>
+    <listofallmembers>
+      <member refid="structlldiv__t_1a2065955c249938f83ebf6bc6c07b4200" prot="public" virt="non-virtual"><scope>lldiv_t</scope><name>quot</name></member>
+      <member refid="structlldiv__t_1a1ba4c6426d29538ceed6a0db9b4e1df6" prot="public" virt="non-virtual"><scope>lldiv_t</scope><name>rem</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

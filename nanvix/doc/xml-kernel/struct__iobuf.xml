@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="struct__iobuf" kind="struct" language="C++" prot="public">
+    <compoundname>_iobuf</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct__iobuf_1a6f8059414f0228f0256115e024eeed4b" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int fd</definition>
+        <argsstring></argsstring>
+        <name>fd</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdio.h" line="54" column="1" bodyfile="include/stdio.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__iobuf_1ac8bf36fe0577cba66bccda3a6f7e80a4" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int flags</definition>
+        <argsstring></argsstring>
+        <name>flags</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdio.h" line="55" column="1" bodyfile="include/stdio.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__iobuf_1a1fe855c208bc17a51a4d34fefdb2d5b1" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* buf</definition>
+        <argsstring></argsstring>
+        <name>buf</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdio.h" line="56" column="1" bodyfile="include/stdio.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__iobuf_1a935adc2e417a61d7eb6f04efb18ba031" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* ptr</definition>
+        <argsstring></argsstring>
+        <name>ptr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdio.h" line="57" column="1" bodyfile="include/stdio.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__iobuf_1a5ddcae5d6a7f9f0a2fa1efd5e8cf8dcb" prot="public" static="no" mutable="no">
+        <type><ref refid="decl_8h_1a028b7cbca0d37bbc9bc219370525227f" kindref="member">size_t</ref></type>
+        <definition>size_t bufsiz</definition>
+        <argsstring></argsstring>
+        <name>bufsiz</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdio.h" line="58" column="1" bodyfile="include/stdio.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__iobuf_1ad43c3812e6d13e0518d9f8b8f463ffcf" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int count</definition>
+        <argsstring></argsstring>
+        <name>count</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdio.h" line="59" column="1" bodyfile="include/stdio.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/stdio.h" line="53" column="1" bodyfile="include/stdio.h" bodystart="52" bodyend="60"/>
+    <listofallmembers>
+      <member refid="struct__iobuf_1a1fe855c208bc17a51a4d34fefdb2d5b1" prot="public" virt="non-virtual"><scope>_iobuf</scope><name>buf</name></member>
+      <member refid="struct__iobuf_1a5ddcae5d6a7f9f0a2fa1efd5e8cf8dcb" prot="public" virt="non-virtual"><scope>_iobuf</scope><name>bufsiz</name></member>
+      <member refid="struct__iobuf_1ad43c3812e6d13e0518d9f8b8f463ffcf" prot="public" virt="non-virtual"><scope>_iobuf</scope><name>count</name></member>
+      <member refid="struct__iobuf_1a6f8059414f0228f0256115e024eeed4b" prot="public" virt="non-virtual"><scope>_iobuf</scope><name>fd</name></member>
+      <member refid="struct__iobuf_1ac8bf36fe0577cba66bccda3a6f7e80a4" prot="public" virt="non-virtual"><scope>_iobuf</scope><name>flags</name></member>
+      <member refid="struct__iobuf_1a935adc2e417a61d7eb6f04efb18ba031" prot="public" virt="non-virtual"><scope>_iobuf</scope><name>ptr</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

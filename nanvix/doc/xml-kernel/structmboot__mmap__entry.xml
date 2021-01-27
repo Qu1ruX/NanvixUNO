@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structmboot__mmap__entry" kind="struct" language="C++" prot="public">
+    <compoundname>mboot_mmap_entry</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structmboot__mmap__entry_1ab2c6b258f02add8fdf4cfc7c371dd772" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t size</definition>
+        <argsstring></argsstring>
+        <name>size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/mboot.h" line="145" column="1" bodyfile="include/nanvix/mboot.h" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmboot__mmap__entry_1a0e89cf6b9f6cd3125470b1bed2b823df" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t addr</definition>
+        <argsstring></argsstring>
+        <name>addr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/mboot.h" line="146" column="1" bodyfile="include/nanvix/mboot.h" bodystart="146" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmboot__mmap__entry_1accdb2dff228b7a3ea4c3f61937a82412" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t len</definition>
+        <argsstring></argsstring>
+        <name>len</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/mboot.h" line="147" column="1" bodyfile="include/nanvix/mboot.h" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmboot__mmap__entry_1ad44b615021ed3ccb734fcaf583ef4a03" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/mboot.h" line="148" column="1" bodyfile="include/nanvix/mboot.h" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/nanvix/mboot.h" line="144" column="1" bodyfile="include/nanvix/mboot.h" bodystart="143" bodyend="149"/>
+    <listofallmembers>
+      <member refid="structmboot__mmap__entry_1a0e89cf6b9f6cd3125470b1bed2b823df" prot="public" virt="non-virtual"><scope>mboot_mmap_entry</scope><name>addr</name></member>
+      <member refid="structmboot__mmap__entry_1accdb2dff228b7a3ea4c3f61937a82412" prot="public" virt="non-virtual"><scope>mboot_mmap_entry</scope><name>len</name></member>
+      <member refid="structmboot__mmap__entry_1ab2c6b258f02add8fdf4cfc7c371dd772" prot="public" virt="non-virtual"><scope>mboot_mmap_entry</scope><name>size</name></member>
+      <member refid="structmboot__mmap__entry_1ad44b615021ed3ccb734fcaf583ef4a03" prot="public" virt="non-virtual"><scope>mboot_mmap_entry</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

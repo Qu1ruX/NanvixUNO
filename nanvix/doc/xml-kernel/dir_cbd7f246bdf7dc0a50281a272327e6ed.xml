@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_cbd7f246bdf7dc0a50281a272327e6ed" kind="dir">
+    <compoundname>src/kernel</compoundname>
+    <innerdir refid="dir_76e3dd4d2fa719e8d3b096e9aa563982">src/kernel/arch</innerdir>
+    <innerdir refid="dir_ded79e13d094e2e28e320a578653e8ca">src/kernel/dev</innerdir>
+    <innerdir refid="dir_f848a285e60993dcb3189737897d2857">src/kernel/fs</innerdir>
+    <innerdir refid="dir_fafaf58eb94b29847c162377b43e204d">src/kernel/init</innerdir>
+    <innerdir refid="dir_b9f617180931236d77069079c3889df0">src/kernel/lib</innerdir>
+    <innerdir refid="dir_80965eb3ba1160063c01e5ec79f497d2">src/kernel/mm</innerdir>
+    <innerdir refid="dir_9196295e642a708c0712729712455dd2">src/kernel/pm</innerdir>
+    <innerdir refid="dir_4b0b675971e8b75ff33680b3a878a76d">src/kernel/sys</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/kernel/"/>
+  </compounddef>
+</doxygen>

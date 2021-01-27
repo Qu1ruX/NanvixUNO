@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_ba1170166f7a12b6f4580d442fef8172" kind="dir">
+    <compoundname>src/lib/libc/signal</compoundname>
+    <innerfile refid="lib_2libc_2signal_2kill_8c">kill.c</innerfile>
+    <innerfile refid="restorer_8S">restorer.S</innerfile>
+    <innerfile refid="lib_2libc_2signal_2signal_8c">signal.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/lib/libc/signal/"/>
+  </compounddef>
+</doxygen>

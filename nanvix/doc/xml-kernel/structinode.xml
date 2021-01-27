@@ -1,0 +1,349 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structinode" kind="struct" language="C++" prot="public">
+    <compoundname>inode</compoundname>
+    <includes local="no">fs.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structinode_1adc8d3cf511ceb277aea0cfa1cd027c59" prot="public" static="no" mutable="no">
+        <type>mode_t</type>
+        <definition>mode_t mode</definition>
+        <argsstring></argsstring>
+        <name>mode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Access permissions. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="107" column="1" bodyfile="include/nanvix/fs.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structinode_1a69d0273ae6c733dad4776b909dd7e02f" prot="public" static="no" mutable="no">
+        <type>nlink_t</type>
+        <definition>nlink_t nlinks</definition>
+        <argsstring></argsstring>
+        <name>nlinks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of links to the file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="108" column="1" bodyfile="include/nanvix/fs.h" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structinode_1a1163f413982fef86f5c8313564d8589c" prot="public" static="no" mutable="no">
+        <type>uid_t</type>
+        <definition>uid_t uid</definition>
+        <argsstring></argsstring>
+        <name>uid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>User id of the file&apos;s owner </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="109" column="1" bodyfile="include/nanvix/fs.h" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structinode_1accbf90b0b518578acff258d328c5575d" prot="public" static="no" mutable="no">
+        <type>gid_t</type>
+        <definition>gid_t gid</definition>
+        <argsstring></argsstring>
+        <name>gid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Group number of owner user. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="110" column="1" bodyfile="include/nanvix/fs.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structinode_1a65d5c96f1fdbf3564bad2718c601486b" prot="public" static="no" mutable="no">
+        <type>off_t</type>
+        <definition>off_t size</definition>
+        <argsstring></argsstring>
+        <name>size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>File size (in bytes). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="111" column="1" bodyfile="include/nanvix/fs.h" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structinode_1ab842bdb7d02be824fb48613032b4ff36" prot="public" static="no" mutable="no">
+        <type>time_t</type>
+        <definition>time_t time</definition>
+        <argsstring></argsstring>
+        <name>time</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Time when the file was last accessed. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="112" column="1" bodyfile="include/nanvix/fs.h" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structinode_1ae5c3ea3e32f0923d8efe751c0a2570ed" prot="public" static="no" mutable="no">
+        <type><ref refid="include_2fs_2minix_8h_1a77ecea3fce28a16f79db79aa58256855" kindref="member">block_t</ref></type>
+        <definition>block_t blocks[NR_ZONES]</definition>
+        <argsstring>[NR_ZONES]</argsstring>
+        <name>blocks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Zone numbers. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="113" column="1" bodyfile="include/nanvix/fs.h" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structinode_1a8910285a0352a5c710e65ec9ecbe32a1" prot="public" static="no" mutable="no">
+        <type>dev_t</type>
+        <definition>dev_t dev</definition>
+        <argsstring></argsstring>
+        <name>dev</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Underlying device. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="114" column="1" bodyfile="include/nanvix/fs.h" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structinode_1ad1d7499ae8796d8bf180f17286f763e6" prot="public" static="no" mutable="no">
+        <type>ino_t</type>
+        <definition>ino_t num</definition>
+        <argsstring></argsstring>
+        <name>num</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Inode number. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="115" column="1" bodyfile="include/nanvix/fs.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structinode_1a5817239a4592432fa9915f9db1b1fbcf" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structsuperblock" kindref="compound">superblock</ref> *</type>
+        <definition>struct superblock* sb</definition>
+        <argsstring></argsstring>
+        <name>sb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Superblock. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="116" column="1" bodyfile="include/nanvix/fs.h" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structinode_1a6a9e89d63eb610dfe238b0a840979421" prot="public" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned count</definition>
+        <argsstring></argsstring>
+        <name>count</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Reference count. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="117" column="1" bodyfile="include/nanvix/fs.h" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structinode_1a719244f3b9b6ec8bbb92c325d93bb0ad" prot="public" static="no" mutable="no">
+        <type>enum <ref refid="group__Inode_1gab4246414e685d03bec8337675be83358" kindref="member">inode_flags</ref></type>
+        <definition>enum inode_flags flags</definition>
+        <argsstring></argsstring>
+        <name>flags</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Flags. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="117" column="1" bodyfile="include/nanvix/fs.h" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structinode_1abfc96d914fa717d2d7929e19b459aaff" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* pipe</definition>
+        <argsstring></argsstring>
+        <name>pipe</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pipe page. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="119" column="1" bodyfile="include/nanvix/fs.h" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structinode_1a1a857f7e78ca73df4a4d56283fe69686" prot="public" static="no" mutable="no">
+        <type>off_t</type>
+        <definition>off_t head</definition>
+        <argsstring></argsstring>
+        <name>head</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pipe head. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="120" column="1" bodyfile="include/nanvix/fs.h" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structinode_1aa334dce97989b011fbc8f6b7dd13f646" prot="public" static="no" mutable="no">
+        <type>off_t</type>
+        <definition>off_t tail</definition>
+        <argsstring></argsstring>
+        <name>tail</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pipe tail. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="121" column="1" bodyfile="include/nanvix/fs.h" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structinode_1a9776b1dad74677d378945b1123eb4b86" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structinode" kindref="compound">inode</ref> *</type>
+        <definition>struct inode* free_next</definition>
+        <argsstring></argsstring>
+        <name>free_next</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Next inode in the free list. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="122" column="1" bodyfile="include/nanvix/fs.h" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structinode_1ad5b1058d6f322202f54656cc8a121dc5" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structinode" kindref="compound">inode</ref> *</type>
+        <definition>struct inode* hash_next</definition>
+        <argsstring></argsstring>
+        <name>hash_next</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Next inode in the hash table. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="123" column="1" bodyfile="include/nanvix/fs.h" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structinode_1a3cc3f0ca8f8c6058f9fd798719096f4a" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structinode" kindref="compound">inode</ref> *</type>
+        <definition>struct inode* hash_prev</definition>
+        <argsstring></argsstring>
+        <name>hash_prev</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Previous inode in the hash table. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="124" column="1" bodyfile="include/nanvix/fs.h" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structinode_1a6e44a17eef6d95b2e6832c26e469d505" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structprocess" kindref="compound">process</ref> *</type>
+        <definition>struct process* chain</definition>
+        <argsstring></argsstring>
+        <name>chain</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sleeping chain. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="125" column="1" bodyfile="include/nanvix/fs.h" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>In-core inode. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="67">
+        <label>inode</label>
+        <link refid="structinode"/>
+        <childnode refid="67" relation="usage">
+          <edgelabel>free_next</edgelabel>
+          <edgelabel>hash_prev</edgelabel>
+          <edgelabel>hash_next</edgelabel>
+        </childnode>
+        <childnode refid="68" relation="usage">
+          <edgelabel>chain</edgelabel>
+        </childnode>
+        <childnode refid="70" relation="usage">
+          <edgelabel>sb</edgelabel>
+        </childnode>
+      </node>
+      <node id="68">
+        <label>process</label>
+        <link refid="structprocess"/>
+        <childnode refid="67" relation="usage">
+          <edgelabel>root</edgelabel>
+          <edgelabel>pwd</edgelabel>
+        </childnode>
+        <childnode refid="69" relation="usage">
+          <edgelabel>fss</edgelabel>
+        </childnode>
+        <childnode refid="68" relation="usage">
+          <edgelabel>next</edgelabel>
+          <edgelabel>pgrp</edgelabel>
+          <edgelabel>chain</edgelabel>
+          <edgelabel>father</edgelabel>
+        </childnode>
+      </node>
+      <node id="69">
+        <label>fpu</label>
+        <link refid="structfpu"/>
+      </node>
+      <node id="71">
+        <label>buffer</label>
+        <link refid="structbuffer"/>
+        <childnode refid="68" relation="usage">
+          <edgelabel>chain</edgelabel>
+        </childnode>
+        <childnode refid="71" relation="usage">
+          <edgelabel>free_next</edgelabel>
+          <edgelabel>hash_prev</edgelabel>
+          <edgelabel>free_prev</edgelabel>
+          <edgelabel>hash_next</edgelabel>
+        </childnode>
+      </node>
+      <node id="70">
+        <label>superblock</label>
+        <link refid="structsuperblock"/>
+        <childnode refid="67" relation="usage">
+          <edgelabel>root</edgelabel>
+          <edgelabel>mp</edgelabel>
+        </childnode>
+        <childnode refid="68" relation="usage">
+          <edgelabel>chain</edgelabel>
+        </childnode>
+        <childnode refid="71" relation="usage">
+          <edgelabel>zmap</edgelabel>
+          <edgelabel>imap</edgelabel>
+          <edgelabel>buf</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/nanvix/fs.h" line="106" column="1" bodyfile="include/nanvix/fs.h" bodystart="105" bodyend="126"/>
+    <listofallmembers>
+      <member refid="structinode_1ae5c3ea3e32f0923d8efe751c0a2570ed" prot="public" virt="non-virtual"><scope>inode</scope><name>blocks</name></member>
+      <member refid="structinode_1a6e44a17eef6d95b2e6832c26e469d505" prot="public" virt="non-virtual"><scope>inode</scope><name>chain</name></member>
+      <member refid="structinode_1a6a9e89d63eb610dfe238b0a840979421" prot="public" virt="non-virtual"><scope>inode</scope><name>count</name></member>
+      <member refid="structinode_1a8910285a0352a5c710e65ec9ecbe32a1" prot="public" virt="non-virtual"><scope>inode</scope><name>dev</name></member>
+      <member refid="structinode_1a719244f3b9b6ec8bbb92c325d93bb0ad" prot="public" virt="non-virtual"><scope>inode</scope><name>flags</name></member>
+      <member refid="structinode_1a9776b1dad74677d378945b1123eb4b86" prot="public" virt="non-virtual"><scope>inode</scope><name>free_next</name></member>
+      <member refid="structinode_1accbf90b0b518578acff258d328c5575d" prot="public" virt="non-virtual"><scope>inode</scope><name>gid</name></member>
+      <member refid="structinode_1ad5b1058d6f322202f54656cc8a121dc5" prot="public" virt="non-virtual"><scope>inode</scope><name>hash_next</name></member>
+      <member refid="structinode_1a3cc3f0ca8f8c6058f9fd798719096f4a" prot="public" virt="non-virtual"><scope>inode</scope><name>hash_prev</name></member>
+      <member refid="structinode_1a1a857f7e78ca73df4a4d56283fe69686" prot="public" virt="non-virtual"><scope>inode</scope><name>head</name></member>
+      <member refid="structinode_1adc8d3cf511ceb277aea0cfa1cd027c59" prot="public" virt="non-virtual"><scope>inode</scope><name>mode</name></member>
+      <member refid="structinode_1a69d0273ae6c733dad4776b909dd7e02f" prot="public" virt="non-virtual"><scope>inode</scope><name>nlinks</name></member>
+      <member refid="structinode_1ad1d7499ae8796d8bf180f17286f763e6" prot="public" virt="non-virtual"><scope>inode</scope><name>num</name></member>
+      <member refid="structinode_1abfc96d914fa717d2d7929e19b459aaff" prot="public" virt="non-virtual"><scope>inode</scope><name>pipe</name></member>
+      <member refid="structinode_1a5817239a4592432fa9915f9db1b1fbcf" prot="public" virt="non-virtual"><scope>inode</scope><name>sb</name></member>
+      <member refid="structinode_1a65d5c96f1fdbf3564bad2718c601486b" prot="public" virt="non-virtual"><scope>inode</scope><name>size</name></member>
+      <member refid="structinode_1aa334dce97989b011fbc8f6b7dd13f646" prot="public" virt="non-virtual"><scope>inode</scope><name>tail</name></member>
+      <member refid="structinode_1ab842bdb7d02be824fb48613032b4ff36" prot="public" virt="non-virtual"><scope>inode</scope><name>time</name></member>
+      <member refid="structinode_1a1163f413982fef86f5c8313564d8589c" prot="public" virt="non-virtual"><scope>inode</scope><name>uid</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

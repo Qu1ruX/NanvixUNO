@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="todo" kind="page">
+    <compoundname>todo</compoundname>
+    <title>Todo List</title>
+    <detaileddescription>
+<para><variablelist>
+<varlistentry><term><anchor id="todo_1_todo000007"/>Module <ref refid="unsetenv_8c_1amgrp60fad171fb08d3612b1d630fc9beb8f2" kindref="member">Environment variable name.</ref>  </term></varlistentry>
+<listitem><para>The unsetenv() function shall fail if the name argument points to an empty string or points to a string containing an &apos;=&apos; character.  </para></listitem>
+<varlistentry><term><anchor id="todo_1_todo000003"/>Global <ref refid="inode_8c_1af2fbee2851d56741295ec2374571bd9b" kindref="member">inode_alloc</ref>  (struct superblock *sb)</term></varlistentry>
+<listitem><para>Use isearch.  </para></listitem>
+<varlistentry><term><anchor id="todo_1_todo000005"/>Global <ref refid="group__stdlib_1gafa148085b6fa9594b4c35e100d94a183" kindref="member">realloc</ref>  (void *, size_t)</term></varlistentry>
+<listitem><para>Check if we can simply expand.  </para></listitem>
+<varlistentry><term><anchor id="todo_1_todo000006"/>Global <ref refid="group__stdlib_1ga4f163149d0e7590ff98d7c8bbd17583d" kindref="member">setenv</ref>  (const char *, const char *, int)</term></varlistentry>
+<listitem><para>The <ref refid="group__stdlib_1ga4f163149d0e7590ff98d7c8bbd17583d" kindref="member">setenv()</ref> function shall fail if the envname argument points to an empty string or points to a string containing an &apos;=&apos; character.  </para></listitem>
+<varlistentry><term><anchor id="todo_1_todo000001"/>Module <ref refid="group__stdlib" kindref="compound">stdlib</ref>  </term></varlistentry>
+<listitem><para><ref refid="group__stdlib_1ga8dec7c95227ff149687066cf04029191" kindref="member">abort()</ref> </para><para>atof() </para><para>mbstowcs() </para><para>strtod() </para><para>strtold() </para><para>strtof() </para><para>strtold() </para><para>wcstombs() </para><para>mkdtemp() </para><para>mkstemp() </para><para>posix_memalign() </para><para>rand_r() </para><para>a64l() </para><para>drand48() </para><para>erand48() </para><para>grantpt() </para><para>initstate() </para><para>jrand48() </para><para>l64a() </para><para>lcong48() </para><para>lrand48() </para><para>mrand48() </para><para>nrand48() </para><para>posix_openpt() </para><para>ptsname() </para><para>putenv() </para><para>random() </para><para>realpath() </para><para>seed48() </para><para>setkey() </para><para>setstate() </para><para>srand48() </para><para>srandom() </para><para>unlockpt()  </para></listitem>
+<varlistentry><term><anchor id="todo_1_todo000008"/>Global <ref refid="group__stringlib_1ga475622e0ad1d42f098afa1c08af954ad" kindref="member">strcoll</ref>  (const char *, const char *)</term></varlistentry>
+<listitem><para>Perform comparison using collating information. </para></listitem>
+<varlistentry><term><anchor id="todo_1_todo000009"/>Global <ref refid="group__stringlib_1gaa464a810f15e69fe6d985c4edb2e626e" kindref="member">strerror</ref>  (int)</term></varlistentry>
+<listitem><para>Use collating information. </para></listitem>
+<varlistentry><term><anchor id="todo_1_todo000004"/>Global <ref refid="group__Superblock_1gaf3241b4775bb4293a26a72010487c3e7" kindref="member">superblock_read</ref>  (dev_t dev)</term></varlistentry>
+<listitem><para>Check for read error on <ref refid="group__Buffer_1ga29b2bc5da947fe8b2363ad2879447d93" kindref="member">bread()</ref>. </para></listitem>
+</variablelist>
+</para>    </detaileddescription>
+  </compounddef>
+</doxygen>

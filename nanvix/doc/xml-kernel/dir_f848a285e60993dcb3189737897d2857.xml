@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_f848a285e60993dcb3189737897d2857" kind="dir">
+    <compoundname>src/kernel/fs</compoundname>
+    <innerfile refid="block_8c">block.c</innerfile>
+    <innerfile refid="buffer_8c">buffer.c</innerfile>
+    <innerfile refid="file_8c">file.c</innerfile>
+    <innerfile refid="fs_8c">fs.c</innerfile>
+    <innerfile refid="src_2kernel_2fs_2fs_8h">fs.h</innerfile>
+    <innerfile refid="inode_8c">inode.c</innerfile>
+    <innerfile refid="kernel_2fs_2pipe_8c">pipe.c</innerfile>
+    <innerfile refid="super_8c">super.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/kernel/fs/"/>
+  </compounddef>
+</doxygen>

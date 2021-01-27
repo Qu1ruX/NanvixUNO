@@ -1,0 +1,1207 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="inode_8c" kind="file" language="C++">
+    <compoundname>inode.c</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="inode_8c_1a4d4fb94a11af1768abab7ca481d59223" prot="public" static="no" mutable="no">
+        <type>PRIVATE struct <ref refid="structinode" kindref="compound">inode</ref></type>
+        <definition>PRIVATE struct inode inodes[NR_INODES]</definition>
+        <argsstring>[NR_INODES]</argsstring>
+        <name>inodes</name>
+        <briefdescription>
+<para>In-core inodes table. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/inode.c" line="43" column="1" bodyfile="src/kernel/fs/inode.c" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="inode_8c_1a79198fa5912a9748f0aa98835b4dd64d" prot="public" static="no" mutable="no">
+        <type>PRIVATE struct <ref refid="structinode" kindref="compound">inode</ref> *</type>
+        <definition>PRIVATE struct inode* free_inodes</definition>
+        <argsstring></argsstring>
+        <name>free_inodes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/inode.c" line="51" column="1" bodyfile="src/kernel/fs/inode.c" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="inode_8c_1a4cc94580adc1946c7c26a8e85533abec" prot="public" static="no" mutable="no">
+        <type>PRIVATE struct <ref refid="structinode" kindref="compound">inode</ref> *</type>
+        <definition>PRIVATE struct inode* hashtab[HASHTAB_SIZE]</definition>
+        <argsstring>[HASHTAB_SIZE]</argsstring>
+        <name>hashtab</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/inode.c" line="54" column="1" bodyfile="src/kernel/fs/inode.c" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="inode_8c_1a0ef8d6b728d07475cf30186b82139f83" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PRIVATE struct <ref refid="structinode" kindref="compound">inode</ref> *</type>
+        <definition>PRIVATE struct inode* inode_cache_evict</definition>
+        <argsstring>(void)</argsstring>
+        <name>inode_cache_evict</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Evicts an free inode from the inode cache. </para>        </briefdescription>
+        <detaileddescription>
+<para>Searches the inode cache for a free inode and returns it.</para><para><simplesect kind="return"><para>If a free inode is found, that inode is locked and then returned. However, no there is no free inode, a #NULL pointer is returned instead. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/inode.c" line="71" column="1" bodyfile="src/kernel/fs/inode.c" bodystart="71" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="inode_8c_1afef800ebea5b7ab82bae8e17c5df8206" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PRIVATE void</type>
+        <definition>PRIVATE void inode_cache_insert</definition>
+        <argsstring>(struct inode *ip)</argsstring>
+        <name>inode_cache_insert</name>
+        <param>
+          <type>struct <ref refid="structinode" kindref="compound">inode</ref> *</type>
+          <declname>ip</declname>
+        </param>
+        <briefdescription>
+<para>Inserts an inode in the inode cache. </para>        </briefdescription>
+        <detaileddescription>
+<para>Inserts the inode pointed to by <computeroutput>ip</computeroutput> in the inode cache.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ip</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Inode to be inserted back in the inode cache.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>The inode must be locked. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/inode.c" line="106" column="1" bodyfile="src/kernel/fs/inode.c" bodystart="106" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="inode_8c_1a9534a3fe110804751220bff8e68e479b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PRIVATE void</type>
+        <definition>PRIVATE void inode_cache_remove</definition>
+        <argsstring>(struct inode *ip)</argsstring>
+        <name>inode_cache_remove</name>
+        <param>
+          <type>struct <ref refid="structinode" kindref="compound">inode</ref> *</type>
+          <declname>ip</declname>
+        </param>
+        <briefdescription>
+<para>Removes an inode from the inode cache. </para>        </briefdescription>
+        <detaileddescription>
+<para>Removes the inode pointed to by <computeroutput>ip</computeroutput> form the inode cache.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ip</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Inode to be removed from the cache.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>The inode must be locked. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/inode.c" line="129" column="1" bodyfile="src/kernel/fs/inode.c" bodystart="129" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="function" id="inode_8c_1a120a8aecc1260756d55735ccbd36b829" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PRIVATE void</type>
+        <definition>PRIVATE void inode_write</definition>
+        <argsstring>(struct inode *ip)</argsstring>
+        <name>inode_write</name>
+        <param>
+          <type>struct <ref refid="structinode" kindref="compound">inode</ref> *</type>
+          <declname>ip</declname>
+        </param>
+        <briefdescription>
+<para>Writes an inode to disk. </para>        </briefdescription>
+        <detaileddescription>
+<para>Writes the inode pointed to by <computeroutput>ip</computeroutput> to disk.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ip</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Inode to be written to disk.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>The inode must be locked. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/inode.c" line="149" column="1" bodyfile="src/kernel/fs/inode.c" bodystart="149" bodyend="188"/>
+      </memberdef>
+      <memberdef kind="function" id="inode_8c_1ac41d3e33814fffad2aebfb7e79a0d28e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PRIVATE struct <ref refid="structinode" kindref="compound">inode</ref> *</type>
+        <definition>PRIVATE struct inode* inode_read</definition>
+        <argsstring>(dev_t dev, ino_t num)</argsstring>
+        <name>inode_read</name>
+        <param>
+          <type>dev_t</type>
+          <declname>dev</declname>
+        </param>
+        <param>
+          <type>ino_t</type>
+          <declname>num</declname>
+        </param>
+        <briefdescription>
+<para>Reads an inode from the disk. </para>        </briefdescription>
+        <detaileddescription>
+<para>Reads the inode with number <computeroutput>num</computeroutput> from the device <computeroutput>dev</computeroutput>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Device where the inode is located. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of the inode that shall be read.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Upon successful completion a pointer to a in-core inode is returned. In this case, the inode is ensured to be locked. Upon failure, a #NULL pointer is returned instead.</para></simplesect>
+<simplesect kind="note"><para>The device number must be valid. </para></simplesect>
+<simplesect kind="note"><para>The inode number must be valid. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/inode.c" line="205" column="1" bodyfile="src/kernel/fs/inode.c" bodystart="205" bodyend="264"/>
+      </memberdef>
+      <memberdef kind="function" id="inode_8c_1a49771ab9a952f1f1a223f5b3c575fdf4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PRIVATE void</type>
+        <definition>PRIVATE void inode_free</definition>
+        <argsstring>(struct inode *ip)</argsstring>
+        <name>inode_free</name>
+        <param>
+          <type>struct <ref refid="structinode" kindref="compound">inode</ref> *</type>
+          <declname>ip</declname>
+        </param>
+        <briefdescription>
+<para>Frees an inode. </para>        </briefdescription>
+        <detaileddescription>
+<para>Frees the inode pointed to by <computeroutput>ip</computeroutput>.</para><para>The inode must be locked. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/inode.c" line="273" column="1" bodyfile="src/kernel/fs/inode.c" bodystart="273" bodyend="290"/>
+      </memberdef>
+      <memberdef kind="function" id="inode_8c_1a0fc0a3dbe6cedf4391b29c481d46b5fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PUBLIC void</type>
+        <definition>PUBLIC void inode_lock</definition>
+        <argsstring>(struct inode *ip)</argsstring>
+        <name>inode_lock</name>
+        <param>
+          <type>struct <ref refid="structinode" kindref="compound">inode</ref> *</type>
+          <declname>ip</declname>
+        </param>
+        <briefdescription>
+<para>Locks an inode. </para>        </briefdescription>
+        <detaileddescription>
+<para>Locks the inode pointed to by <computeroutput>ip</computeroutput>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/inode.c" line="297" column="1" bodyfile="src/kernel/fs/inode.c" bodystart="297" bodyend="302"/>
+      </memberdef>
+      <memberdef kind="function" id="inode_8c_1adff7b8ffa9e7f1816fb48ab665467886" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PUBLIC void</type>
+        <definition>PUBLIC void inode_unlock</definition>
+        <argsstring>(struct inode *ip)</argsstring>
+        <name>inode_unlock</name>
+        <param>
+          <type>struct <ref refid="structinode" kindref="compound">inode</ref> *</type>
+          <declname>ip</declname>
+        </param>
+        <briefdescription>
+<para>Unlocks an inode. </para>        </briefdescription>
+        <detaileddescription>
+<para>Unlocks the inode pointed to by <computeroutput>ip</computeroutput>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ip</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Inode to be unlocked.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>The inode must be locked. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/inode.c" line="313" column="1" bodyfile="src/kernel/fs/inode.c" bodystart="313" bodyend="317"/>
+      </memberdef>
+      <memberdef kind="function" id="inode_8c_1a93bea3f2926998774852f43a36ccfec7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PUBLIC void</type>
+        <definition>PUBLIC void inode_sync</definition>
+        <argsstring>(void)</argsstring>
+        <name>inode_sync</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Synchronizes the in-core inode table. </para>        </briefdescription>
+        <detaileddescription>
+<para>Synchronizes the in-core inode table by flushing all valid inodes onto underlying devices. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/inode.c" line="325" column="1" bodyfile="src/kernel/fs/inode.c" bodystart="325" bodyend="341"/>
+      </memberdef>
+      <memberdef kind="function" id="inode_8c_1af441e6184b34d780b0225ab8238ba7f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PUBLIC void</type>
+        <definition>PUBLIC void inode_truncate</definition>
+        <argsstring>(struct inode *ip)</argsstring>
+        <name>inode_truncate</name>
+        <param>
+          <type>struct <ref refid="structinode" kindref="compound">inode</ref> *</type>
+          <declname>ip</declname>
+        </param>
+        <briefdescription>
+<para>Truncates an inode. </para>        </briefdescription>
+        <detaileddescription>
+<para>Truncates the inode pointed to by <computeroutput>ip</computeroutput> by freeing all underling blocks.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ip</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Inode that shall be truncated.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>The inode must be locked. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/inode.c" line="353" column="1" bodyfile="src/kernel/fs/inode.c" bodystart="353" bodyend="384"/>
+      </memberdef>
+      <memberdef kind="function" id="inode_8c_1af2fbee2851d56741295ec2374571bd9b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PUBLIC struct <ref refid="structinode" kindref="compound">inode</ref> *</type>
+        <definition>PUBLIC struct inode* inode_alloc</definition>
+        <argsstring>(struct superblock *sb)</argsstring>
+        <name>inode_alloc</name>
+        <param>
+          <type>struct <ref refid="structsuperblock" kindref="compound">superblock</ref> *</type>
+          <declname>sb</declname>
+        </param>
+        <briefdescription>
+<para>Allocates an inode. </para>        </briefdescription>
+        <detaileddescription>
+<para>Allocates an inode in the file system that is associated to the superblock pointed to by <computeroutput>sb</computeroutput>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Superblock where the inode shall be allocated.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Upon successful completion, a pointed to the inode is returned. In this case, the inode is ensured to be locked. Upon failure, a #NULL pointer is returned instead.</para></simplesect>
+<simplesect kind="note"><para>The superblock must not be locked.</para></simplesect>
+<xrefsect id="todo_1_todo000003"><xreftitle>Todo</xreftitle><xrefdescription><para>Use isearch. </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/inode.c" line="402" column="1" bodyfile="src/kernel/fs/inode.c" bodystart="402" bodyend="469"/>
+      </memberdef>
+      <memberdef kind="function" id="inode_8c_1a56d01cfc2abfc617a9bc95081972a98e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PUBLIC struct <ref refid="structinode" kindref="compound">inode</ref> *</type>
+        <definition>PUBLIC struct inode* inode_get</definition>
+        <argsstring>(dev_t dev, ino_t num)</argsstring>
+        <name>inode_get</name>
+        <param>
+          <type>dev_t</type>
+          <declname>dev</declname>
+        </param>
+        <param>
+          <type>ino_t</type>
+          <declname>num</declname>
+        </param>
+        <briefdescription>
+<para>Gets an inode. </para>        </briefdescription>
+        <detaileddescription>
+<para>Gets the inode with number <computeroutput>num</computeroutput> from the device <computeroutput>dev</computeroutput>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Device where the inode is located. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of the inode.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Upon successful completion, a pointer to the inode is returned. In this case, the inode is ensured to be locked. Upon failure, a #NULL pointer is returned instead.</para></simplesect>
+<simplesect kind="note"><para>The device number must be valid. </para></simplesect>
+<simplesect kind="note"><para>The inode number must be valid. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/inode.c" line="486" column="1" bodyfile="src/kernel/fs/inode.c" bodystart="486" bodyend="527"/>
+      </memberdef>
+      <memberdef kind="function" id="inode_8c_1a67dd567960eadadaac8457245acaa3e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PUBLIC struct <ref refid="structinode" kindref="compound">inode</ref> *</type>
+        <definition>PUBLIC struct inode* inode_pipe</definition>
+        <argsstring>(void)</argsstring>
+        <name>inode_pipe</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/inode.c" line="532" column="1" bodyfile="src/kernel/fs/inode.c" bodystart="532" bodyend="570"/>
+      </memberdef>
+      <memberdef kind="function" id="inode_8c_1a511a54a9313efc3b4b23a4b7fa7d88e1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>PUBLIC void</type>
+        <definition>PUBLIC void inode_touch</definition>
+        <argsstring>(struct inode *ip)</argsstring>
+        <name>inode_touch</name>
+        <param>
+          <type>struct <ref refid="structinode" kindref="compound">inode</ref> *</type>
+          <declname>ip</declname>
+        </param>
+        <briefdescription>
+<para>Updates the time stamp of an inode. </para>        </briefdescription>
+        <detaileddescription>
+<para>Updates the time stamp of the inode pointed to by <computeroutput>ip</computeroutput> to current time.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ip</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Inode to be touched.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>The inode must be locked. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/inode.c" line="582" column="1" bodyfile="src/kernel/fs/inode.c" bodystart="582" bodyend="586"/>
+      </memberdef>
+      <memberdef kind="function" id="inode_8c_1afc75c7ff0268016ee89fc028264ddf59" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PUBLIC void</type>
+        <definition>PUBLIC void inode_put</definition>
+        <argsstring>(struct inode *ip)</argsstring>
+        <name>inode_put</name>
+        <param>
+          <type>struct <ref refid="structinode" kindref="compound">inode</ref> *</type>
+          <declname>ip</declname>
+        </param>
+        <briefdescription>
+<para>Releases a in-core inode. </para>        </briefdescription>
+        <detaileddescription>
+<para>Releases the inc-core inode pointed to by <computeroutput>ip</computeroutput>. If its reference count drops to zero, all underlying resources are freed and then the inode is marked as invalid.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ip</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Inode that shall be released.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>The inode must be valid </para></simplesect>
+<simplesect kind="note"><para>The inode must be locked. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/inode.c" line="600" column="1" bodyfile="src/kernel/fs/inode.c" bodystart="600" bodyend="635"/>
+      </memberdef>
+      <memberdef kind="function" id="inode_8c_1a0ab364513b5c0c9b76444f54d558edbb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PRIVATE const char *</type>
+        <definition>PRIVATE const char* break_path</definition>
+        <argsstring>(const char *pathname, char *filename)</argsstring>
+        <name>break_path</name>
+        <param>
+          <type>const char *</type>
+          <declname>pathname</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+<para>Breaks a path. </para>        </briefdescription>
+        <detaileddescription>
+<para>Parses the path pointed to by <computeroutput>pathname</computeroutput> extracting the first path-part from it. The path-part is stored in the array pointed to by <computeroutput>filename</computeroutput>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pathname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path that shall be broken. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array where the first path-part should be save.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Upon successful completion, a pointer to the second path-part is returned, so a new call to this function can be made to parse the remainder of the path. Upon failure, a #NULL pointer is returned instead. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/inode.c" line="652" column="1" bodyfile="src/kernel/fs/inode.c" bodystart="652" bodyend="677"/>
+      </memberdef>
+      <memberdef kind="function" id="inode_8c_1af2409dbf44e62db8e371b6a83693e166" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PUBLIC struct <ref refid="structinode" kindref="compound">inode</ref> *</type>
+        <definition>PUBLIC struct inode* inode_dname</definition>
+        <argsstring>(const char *path, const char **name)</argsstring>
+        <name>inode_dname</name>
+        <param>
+          <type>const char *</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>const char **</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/inode.c" line="682" column="1" bodyfile="src/kernel/fs/inode.c" bodystart="682" bodyend="803"/>
+      </memberdef>
+      <memberdef kind="function" id="inode_8c_1aa634699437f714d30888bdf9123b7a62" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PUBLIC struct <ref refid="structinode" kindref="compound">inode</ref> *</type>
+        <definition>PUBLIC struct inode* inode_name</definition>
+        <argsstring>(const char *pathname)</argsstring>
+        <name>inode_name</name>
+        <param>
+          <type>const char *</type>
+          <declname>pathname</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/inode.c" line="808" column="1" bodyfile="src/kernel/fs/inode.c" bodystart="808" bodyend="839"/>
+      </memberdef>
+      <memberdef kind="function" id="inode_8c_1a711a8dcaba9652f2eb2ae43cbec8ae38" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PUBLIC void</type>
+        <definition>PUBLIC void inode_init</definition>
+        <argsstring>(void)</argsstring>
+        <name>inode_init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Initializes the inode table. </para>        </briefdescription>
+        <detaileddescription>
+<para>Initializes the in-core inode table by marking all in-core inodes as invalid and not locked. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/inode.c" line="847" column="1" bodyfile="src/kernel/fs/inode.c" bodystart="847" bodyend="866"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Inode module implementation. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright(C)<sp/>2011-2016<sp/>Pedro<sp/>H.<sp/>Penna<sp/>&lt;pedrohenriquepenna@gmail.com&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>Nanvix.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>Nanvix<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>Nanvix<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>Nanvix.<sp/>If<sp/>not,<sp/>see<sp/>&lt;http://www.gnu.org/licenses/&gt;.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="preprocessor">#include<sp/>&lt;nanvix/clock.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;nanvix/config.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="const_8h" kindref="compound">nanvix/const.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;nanvix/dev.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="include_2nanvix_2fs_8h" kindref="compound">nanvix/fs.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="klib_8h" kindref="compound">nanvix/klib.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;nanvix/mm.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="errno_8h" kindref="compound">errno.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;limits.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;fs.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Number<sp/>of<sp/>inodes<sp/>per<sp/>block.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INODES_PER_BLOCK<sp/>(BLOCK_SIZE/sizeof(struct<sp/>d_inode))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal">PRIVATE<sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structinode" kindref="compound">inode</ref><sp/><ref refid="inode_8c_1a4d4fb94a11af1768abab7ca481d59223" kindref="member">inodes</ref>[NR_INODES];</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="preprocessor">#define<sp/>HASHTAB_SIZE<sp/>227</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Free<sp/>inodes.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal">PRIVATE<sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structinode" kindref="compound">inode</ref><sp/>*free_inodes<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Inodes<sp/>hash<sp/>table.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal">PRIVATE<sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structinode" kindref="compound">inode</ref><sp/>*hashtab[HASHTAB_SIZE];</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="preprocessor">#define<sp/>HASH(dev,<sp/>num)<sp/>\</highlight></codeline>
+<codeline lineno="60"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>(((dev)^(num))%HASHTAB_SIZE)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal">PRIVATE<sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structinode" kindref="compound">inode</ref><sp/>*<ref refid="inode_8c_1a0ef8d6b728d07475cf30186b82139f83" kindref="member">inode_cache_evict</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structinode" kindref="compound">inode</ref><sp/>*ip;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="76"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>No<sp/>free<sp/>inodes.<sp/></highlight></codeline>
+<codeline lineno="77"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>If<sp/>this<sp/>happens<sp/>too<sp/>often,<sp/>it<sp/></highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>may<sp/>indicate<sp/>that<sp/>inode<sp/>cache</highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>is<sp/>too<sp/>small.</highlight></codeline>
+<codeline lineno="80"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(free_inodes<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="klib_8h_1aaa663a13f0d3c7289b139360848772c0" kindref="member">kprintf</ref>(</highlight><highlight class="stringliteral">&quot;fs:<sp/>inode<sp/>table<sp/>overflow&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(NULL);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Remove<sp/>inode<sp/>from<sp/>free<sp/>list.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>ip<sp/>=<sp/>free_inodes;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>free_inodes<sp/>=<sp/>free_inodes-&gt;<ref refid="structinode_1a9776b1dad74677d378945b1123eb4b86" kindref="member">free_next</ref>;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>ip-&gt;<ref refid="structinode_1a6a9e89d63eb610dfe238b0a840979421" kindref="member">count</ref>++;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="inode_8c_1a0fc0a3dbe6cedf4391b29c481d46b5fa" kindref="member">inode_lock</ref>(ip);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(ip);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal">PRIVATE<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="inode_8c_1afef800ebea5b7ab82bae8e17c5df8206" kindref="member">inode_cache_insert</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structinode" kindref="compound">inode</ref><sp/>*ip)</highlight></codeline>
+<codeline lineno="107"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>i<sp/>=<sp/>HASH(ip-&gt;<ref refid="structinode_1a8910285a0352a5c710e65ec9ecbe32a1" kindref="member">dev</ref>,<sp/>ip-&gt;<ref refid="structinode_1ad1d7499ae8796d8bf180f17286f763e6" kindref="member">num</ref>);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Insert<sp/>the<sp/>inode<sp/>in<sp/>the<sp/>hash<sp/>table.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>ip-&gt;<ref refid="structinode_1ad5b1058d6f322202f54656cc8a121dc5" kindref="member">hash_next</ref><sp/>=<sp/>hashtab[i];</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>ip-&gt;<ref refid="structinode_1a3cc3f0ca8f8c6058f9fd798719096f4a" kindref="member">hash_prev</ref><sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>hashtab[i]<sp/>=<sp/>ip;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ip-&gt;<ref refid="structinode_1ad5b1058d6f322202f54656cc8a121dc5" kindref="member">hash_next</ref><sp/>!=<sp/>NULL)</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ip-&gt;<ref refid="structinode_1ad5b1058d6f322202f54656cc8a121dc5" kindref="member">hash_next</ref>-&gt;<ref refid="structinode_1a3cc3f0ca8f8c6058f9fd798719096f4a" kindref="member">hash_prev</ref><sp/>=<sp/>ip;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal">PRIVATE<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="inode_8c_1a9534a3fe110804751220bff8e68e479b" kindref="member">inode_cache_remove</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structinode" kindref="compound">inode</ref><sp/>*ip)</highlight></codeline>
+<codeline lineno="130"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Remove<sp/>inode<sp/>from<sp/>the<sp/>hash<sp/>table.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ip-&gt;<ref refid="structinode_1a3cc3f0ca8f8c6058f9fd798719096f4a" kindref="member">hash_prev</ref><sp/>!=<sp/>NULL)</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ip-&gt;<ref refid="structinode_1a3cc3f0ca8f8c6058f9fd798719096f4a" kindref="member">hash_prev</ref>-&gt;<ref refid="structinode_1ad5b1058d6f322202f54656cc8a121dc5" kindref="member">hash_next</ref><sp/>=<sp/>ip-&gt;<ref refid="structinode_1ad5b1058d6f322202f54656cc8a121dc5" kindref="member">hash_next</ref>;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hashtab[HASH(ip-&gt;<ref refid="structinode_1a8910285a0352a5c710e65ec9ecbe32a1" kindref="member">dev</ref>,<sp/>ip-&gt;<ref refid="structinode_1ad1d7499ae8796d8bf180f17286f763e6" kindref="member">num</ref>)]<sp/>=<sp/>ip-&gt;<ref refid="structinode_1ad5b1058d6f322202f54656cc8a121dc5" kindref="member">hash_next</ref>;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ip-&gt;<ref refid="structinode_1ad5b1058d6f322202f54656cc8a121dc5" kindref="member">hash_next</ref><sp/>!=<sp/>NULL)</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ip-&gt;<ref refid="structinode_1ad5b1058d6f322202f54656cc8a121dc5" kindref="member">hash_next</ref>-&gt;<ref refid="structinode_1a3cc3f0ca8f8c6058f9fd798719096f4a" kindref="member">hash_prev</ref><sp/>=<sp/>ip-&gt;<ref refid="structinode_1a3cc3f0ca8f8c6058f9fd798719096f4a" kindref="member">hash_prev</ref>;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal">PRIVATE<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="inode_8c_1a120a8aecc1260756d55735ccbd36b829" kindref="member">inode_write</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structinode" kindref="compound">inode</ref><sp/>*ip)</highlight></codeline>
+<codeline lineno="150"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="include_2fs_2minix_8h_1a77ecea3fce28a16f79db79aa58256855" kindref="member">block_t</ref><sp/>blk;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Block.<sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structbuffer" kindref="compound">buffer</ref><sp/>*buf;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Buffer.<sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structd__inode" kindref="compound">d_inode</ref><sp/>*d_i;<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Disk<sp/>inode.<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structsuperblock" kindref="compound">superblock</ref><sp/>*sb;<sp/></highlight><highlight class="comment">/*<sp/>Super<sp/>block.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Nothing<sp/>to<sp/>be<sp/>done.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(ip-&gt;<ref refid="structinode_1a719244f3b9b6ec8bbb92c325d93bb0ad" kindref="member">flags</ref><sp/>&amp;<sp/><ref refid="group__Inode_1ggab4246414e685d03bec8337675be83358ad6a80ff19140aea8d1d6bfeee63d9cf8" kindref="member">INODE_DIRTY</ref>))</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__Superblock_1ga4ef02b583308d00506b5000837010523" kindref="member">superblock_lock</ref>(sb<sp/>=<sp/>ip-&gt;<ref refid="structinode_1a5817239a4592432fa9915f9db1b1fbcf" kindref="member">sb</ref>);</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>blk<sp/>=<sp/>2<sp/>+<sp/>sb-&gt;<ref refid="structsuperblock_1ab5e85a03949f20bbaee32cac42a83a4b" kindref="member">imap_blocks</ref><sp/>+<sp/>sb-&gt;<ref refid="structsuperblock_1abb42d1cb8207c76e12f36d7f933847b7" kindref="member">zmap_blocks</ref><sp/>+<sp/>(ip-&gt;<ref refid="structinode_1ad1d7499ae8796d8bf180f17286f763e6" kindref="member">num</ref><sp/>-<sp/>1)/INODES_PER_BLOCK;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Read<sp/>chunk<sp/>of<sp/>disk<sp/>inodes.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>buf<sp/>=<sp/><ref refid="group__Buffer_1ga29b2bc5da947fe8b2363ad2879447d93" kindref="member">bread</ref>(ip-&gt;<ref refid="structinode_1a8910285a0352a5c710e65ec9ecbe32a1" kindref="member">dev</ref>,<sp/>blk);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(buf<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="klib_8h_1aaa663a13f0d3c7289b139360848772c0" kindref="member">kprintf</ref>(</highlight><highlight class="stringliteral">&quot;fs:<sp/>failed<sp/>to<sp/>write<sp/>inode<sp/>%d<sp/>to<sp/>disk&quot;</highlight><highlight class="normal">,<sp/>ip-&gt;<ref refid="structinode_1ad1d7499ae8796d8bf180f17286f763e6" kindref="member">num</ref>);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__Superblock_1gaa1e437c51f1035512ba17835840934e5" kindref="member">superblock_unlock</ref>(sb);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>d_i<sp/>=<sp/>&amp;(((</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structd__inode" kindref="compound">d_inode</ref><sp/>*)buf-&gt;<ref refid="structbuffer_1a735984d41155bc1032e09bece8f8d66d" kindref="member">data</ref>)[(ip-&gt;<ref refid="structinode_1ad1d7499ae8796d8bf180f17286f763e6" kindref="member">num</ref><sp/>-<sp/>1)%INODES_PER_BLOCK]);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Write<sp/>inode<sp/>to<sp/>buffer.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>d_i-&gt;<ref refid="structd__inode_1a9eee4a25778387fbad93e9124af9e5bd" kindref="member">i_mode</ref><sp/>=<sp/>ip-&gt;<ref refid="structinode_1adc8d3cf511ceb277aea0cfa1cd027c59" kindref="member">mode</ref>;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/>d_i-&gt;<ref refid="structd__inode_1a94a41350f69f5ccedc2ff3e7fa9ecbe8" kindref="member">i_nlinks</ref><sp/>=<sp/>ip-&gt;<ref refid="structinode_1a69d0273ae6c733dad4776b909dd7e02f" kindref="member">nlinks</ref>;</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/>d_i-&gt;<ref refid="structd__inode_1aff08dfb7dbc7206c82ff538e601203a0" kindref="member">i_uid</ref><sp/>=<sp/>ip-&gt;<ref refid="structinode_1a1163f413982fef86f5c8313564d8589c" kindref="member">uid</ref>;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>d_i-&gt;<ref refid="structd__inode_1a448bd1a4b2e6f2bc53187708c03e2021" kindref="member">i_gid</ref><sp/>=<sp/>ip-&gt;<ref refid="structinode_1accbf90b0b518578acff258d328c5575d" kindref="member">gid</ref>;</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/>d_i-&gt;<ref refid="structd__inode_1a4a7737b2dcb0a6a6e1c6cd969b2d1f0c" kindref="member">i_size</ref><sp/>=<sp/>ip-&gt;<ref refid="structinode_1a65d5c96f1fdbf3564bad2718c601486b" kindref="member">size</ref>;</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/>d_i-&gt;<ref refid="structd__inode_1aa407fcf811c1cb6b2c6a336c3ea274c3" kindref="member">i_time</ref><sp/>=<sp/>ip-&gt;<ref refid="structinode_1ab842bdb7d02be824fb48613032b4ff36" kindref="member">time</ref>;</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>NR_ZONES;<sp/>i++)</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>d_i-&gt;<ref refid="structd__inode_1af5170a32e5fa6f65dd00853e15447104" kindref="member">i_zones</ref>[i]<sp/>=<sp/>ip-&gt;<ref refid="structinode_1ae5c3ea3e32f0923d8efe751c0a2570ed" kindref="member">blocks</ref>[i];</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/>ip-&gt;<ref refid="structinode_1a719244f3b9b6ec8bbb92c325d93bb0ad" kindref="member">flags</ref><sp/>&amp;=<sp/>~<ref refid="group__Inode_1ggab4246414e685d03bec8337675be83358ad6a80ff19140aea8d1d6bfeee63d9cf8" kindref="member">INODE_DIRTY</ref>;</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>buffer_dirty(buf,<sp/>1);</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/>brelse(buf);</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__Superblock_1gaa1e437c51f1035512ba17835840934e5" kindref="member">superblock_unlock</ref>(sb);</highlight></codeline>
+<codeline lineno="188"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal">PRIVATE<sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structinode" kindref="compound">inode</ref><sp/>*<ref refid="inode_8c_1ac41d3e33814fffad2aebfb7e79a0d28e" kindref="member">inode_read</ref>(dev_t<sp/><ref refid="structinode_1a8910285a0352a5c710e65ec9ecbe32a1" kindref="member">dev</ref>,<sp/>ino_t<sp/><ref refid="structinode_1ad1d7499ae8796d8bf180f17286f763e6" kindref="member">num</ref>)</highlight></codeline>
+<codeline lineno="206"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="include_2fs_2minix_8h_1a77ecea3fce28a16f79db79aa58256855" kindref="member">block_t</ref><sp/>blk;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Block.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structinode" kindref="compound">inode</ref><sp/>*ip;<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>In-core<sp/>inode.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structbuffer" kindref="compound">buffer</ref><sp/>*buf;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Buffer.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structd__inode" kindref="compound">d_inode</ref><sp/>*d_i;<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Disk<sp/>inode.<sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structsuperblock" kindref="compound">superblock</ref><sp/>*sb;<sp/></highlight><highlight class="comment">/*<sp/>Super<sp/>block.<sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Get<sp/>superblock.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/>sb<sp/>=<sp/><ref refid="group__Superblock_1ga92964453ed18c8ceeaaf5d3f2d560bca" kindref="member">superblock_get</ref>(dev);</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(sb<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>error0;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Calculate<sp/>block<sp/>number.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/>blk<sp/>=<sp/>2<sp/>+<sp/>sb-&gt;<ref refid="structsuperblock_1ab5e85a03949f20bbaee32cac42a83a4b" kindref="member">imap_blocks</ref><sp/>+<sp/>sb-&gt;<ref refid="structsuperblock_1abb42d1cb8207c76e12f36d7f933847b7" kindref="member">zmap_blocks</ref><sp/>+<sp/>(num<sp/>-<sp/>1)/INODES_PER_BLOCK;</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Read<sp/>chunk<sp/>of<sp/>disk<sp/>inodes.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/>buf<sp/>=<sp/><ref refid="group__Buffer_1ga29b2bc5da947fe8b2363ad2879447d93" kindref="member">bread</ref>(dev,<sp/>blk);</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(buf<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="klib_8h_1aaa663a13f0d3c7289b139360848772c0" kindref="member">kprintf</ref>(</highlight><highlight class="stringliteral">&quot;fs:<sp/>failed<sp/>to<sp/>read<sp/>inode<sp/>%d<sp/>from<sp/>disk&quot;</highlight><highlight class="normal">,<sp/>num);</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>error1;</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/>d_i<sp/>=<sp/>&amp;(((</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structd__inode" kindref="compound">d_inode</ref><sp/>*)buf-&gt;<ref refid="structbuffer_1a735984d41155bc1032e09bece8f8d66d" kindref="member">data</ref>)[(num<sp/>-<sp/>1)%INODES_PER_BLOCK]);</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Invalid<sp/>disk<sp/>inode.<sp/>*/</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(d_i-&gt;<ref refid="structd__inode_1a94a41350f69f5ccedc2ff3e7fa9ecbe8" kindref="member">i_nlinks</ref><sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>error1;</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Get<sp/>a<sp/>free<sp/>in-core<sp/>inode.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/>ip<sp/>=<sp/><ref refid="inode_8c_1a0ef8d6b728d07475cf30186b82139f83" kindref="member">inode_cache_evict</ref>();</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ip<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>error1;</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Initialize<sp/>in-core<sp/>inode.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/>ip-&gt;<ref refid="structinode_1adc8d3cf511ceb277aea0cfa1cd027c59" kindref="member">mode</ref><sp/>=<sp/>d_i-&gt;<ref refid="structd__inode_1a9eee4a25778387fbad93e9124af9e5bd" kindref="member">i_mode</ref>;</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/>ip-&gt;<ref refid="structinode_1a69d0273ae6c733dad4776b909dd7e02f" kindref="member">nlinks</ref><sp/>=<sp/>d_i-&gt;<ref refid="structd__inode_1a94a41350f69f5ccedc2ff3e7fa9ecbe8" kindref="member">i_nlinks</ref>;</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/>ip-&gt;<ref refid="structinode_1a1163f413982fef86f5c8313564d8589c" kindref="member">uid</ref><sp/>=<sp/>d_i-&gt;<ref refid="structd__inode_1aff08dfb7dbc7206c82ff538e601203a0" kindref="member">i_uid</ref>;</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/>ip-&gt;<ref refid="structinode_1accbf90b0b518578acff258d328c5575d" kindref="member">gid</ref><sp/>=<sp/>d_i-&gt;<ref refid="structd__inode_1a448bd1a4b2e6f2bc53187708c03e2021" kindref="member">i_gid</ref>;</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/>ip-&gt;<ref refid="structinode_1a65d5c96f1fdbf3564bad2718c601486b" kindref="member">size</ref><sp/>=<sp/>d_i-&gt;<ref refid="structd__inode_1a4a7737b2dcb0a6a6e1c6cd969b2d1f0c" kindref="member">i_size</ref>;</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/>ip-&gt;<ref refid="structinode_1ab842bdb7d02be824fb48613032b4ff36" kindref="member">time</ref><sp/>=<sp/>d_i-&gt;<ref refid="structd__inode_1aa407fcf811c1cb6b2c6a336c3ea274c3" kindref="member">i_time</ref>;</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>NR_ZONES;<sp/>i++)</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ip-&gt;<ref refid="structinode_1ae5c3ea3e32f0923d8efe751c0a2570ed" kindref="member">blocks</ref>[i]<sp/>=<sp/>d_i-&gt;<ref refid="structd__inode_1af5170a32e5fa6f65dd00853e15447104" kindref="member">i_zones</ref>[i];</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/>ip-&gt;<ref refid="structinode_1a8910285a0352a5c710e65ec9ecbe32a1" kindref="member">dev</ref><sp/>=<sp/>dev;</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/>ip-&gt;<ref refid="structinode_1ad1d7499ae8796d8bf180f17286f763e6" kindref="member">num</ref><sp/>=<sp/>num;</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/>ip-&gt;<ref refid="structinode_1a5817239a4592432fa9915f9db1b1fbcf" kindref="member">sb</ref><sp/>=<sp/>sb;</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/>ip-&gt;<ref refid="structinode_1a719244f3b9b6ec8bbb92c325d93bb0ad" kindref="member">flags</ref><sp/>&amp;=<sp/>~(<ref refid="group__Inode_1ggab4246414e685d03bec8337675be83358ad6a80ff19140aea8d1d6bfeee63d9cf8" kindref="member">INODE_DIRTY</ref><sp/>|<sp/><ref refid="group__Inode_1ggab4246414e685d03bec8337675be83358a2e5100181ea108e80913e0d7a485c845" kindref="member">INODE_MOUNT</ref><sp/>|<sp/><ref refid="group__Inode_1ggab4246414e685d03bec8337675be83358ae6294bb0bb395134806c93027cd62eee" kindref="member">INODE_PIPE</ref>);</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/>ip-&gt;<ref refid="structinode_1a719244f3b9b6ec8bbb92c325d93bb0ad" kindref="member">flags</ref><sp/>|=<sp/><ref refid="group__Inode_1ggab4246414e685d03bec8337675be83358af5a98fef4b30a15a7a5f19b116b75cdf" kindref="member">INODE_VALID</ref>;</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/>brelse(buf);</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__Superblock_1ga60c77faf6a4d5c316eed12ba021bf837" kindref="member">superblock_put</ref>(sb);</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(ip);</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal">error1:</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__Superblock_1ga60c77faf6a4d5c316eed12ba021bf837" kindref="member">superblock_put</ref>(sb);</highlight></codeline>
+<codeline lineno="262"><highlight class="normal">error0:</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(NULL);</highlight></codeline>
+<codeline lineno="264"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal">PRIVATE<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="inode_8c_1a49771ab9a952f1f1a223f5b3c575fdf4" kindref="member">inode_free</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structinode" kindref="compound">inode</ref><sp/>*ip)</highlight></codeline>
+<codeline lineno="274"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="include_2fs_2minix_8h_1a77ecea3fce28a16f79db79aa58256855" kindref="member">block_t</ref><sp/>blk;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Block<sp/>number.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structsuperblock" kindref="compound">superblock</ref><sp/>*sb;<sp/></highlight><highlight class="comment">/*<sp/>Underlying<sp/>super<sp/>block.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/>blk<sp/>=<sp/>(ip-&gt;<ref refid="structinode_1ad1d7499ae8796d8bf180f17286f763e6" kindref="member">num</ref><sp/>-<sp/>1)/(BLOCK_SIZE<sp/>&lt;&lt;<sp/>3);</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__Superblock_1ga4ef02b583308d00506b5000837010523" kindref="member">superblock_lock</ref>(sb<sp/>=<sp/>ip-&gt;<ref refid="structinode_1a5817239a4592432fa9915f9db1b1fbcf" kindref="member">sb</ref>);</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/>bitmap_clear(sb-&gt;<ref refid="structsuperblock_1a2913dc8576a928e424368ac0e3643db3" kindref="member">imap</ref>[blk]-&gt;<ref refid="structbuffer_1a735984d41155bc1032e09bece8f8d66d" kindref="member">data</ref>,<sp/>(ip-&gt;<ref refid="structinode_1ad1d7499ae8796d8bf180f17286f763e6" kindref="member">num</ref><sp/>-<sp/>1)%(BLOCK_SIZE<sp/>&lt;&lt;<sp/>3));</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/>sb-&gt;<ref refid="structsuperblock_1a2913dc8576a928e424368ac0e3643db3" kindref="member">imap</ref>[blk]-&gt;<ref refid="structbuffer_1a8ceea6ca386afaa3ad7fb4e26227b0a0" kindref="member">flags</ref><sp/>|=<sp/><ref refid="group__Buffer_1ggaa7ac4063de8512ef7cd6c511f3d68c0ba9ea0749530e7b16baf92b2a83dd9e2b5" kindref="member">BUFFER_DIRTY</ref>;</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ip-&gt;<ref refid="structinode_1ad1d7499ae8796d8bf180f17286f763e6" kindref="member">num</ref><sp/>&lt;<sp/>sb-&gt;<ref refid="structsuperblock_1a6a0f3511801d7c3e533aa89b790d3a6f" kindref="member">isearch</ref>)</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sb-&gt;<ref refid="structsuperblock_1a6a0f3511801d7c3e533aa89b790d3a6f" kindref="member">isearch</ref><sp/>=<sp/>ip-&gt;<ref refid="structinode_1ad1d7499ae8796d8bf180f17286f763e6" kindref="member">num</ref>;</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/>sb-&gt;<ref refid="structsuperblock_1a8eea88528a75f696f8ca2c7672fbc0c2" kindref="member">flags</ref><sp/>|=<sp/><ref refid="group__Superblock_1gga7bb5bede8fcda9ee9438bbc55cafc47bac3e4f8bf48565fc230656ff10457a5fa" kindref="member">SUPERBLOCK_DIRTY</ref>;</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__Superblock_1gaa1e437c51f1035512ba17835840934e5" kindref="member">superblock_unlock</ref>(sb);</highlight></codeline>
+<codeline lineno="290"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"></highlight></codeline>
+<codeline lineno="297"><highlight class="normal">PUBLIC<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="inode_8c_1a0fc0a3dbe6cedf4391b29c481d46b5fa" kindref="member">inode_lock</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structinode" kindref="compound">inode</ref><sp/>*ip)</highlight></codeline>
+<codeline lineno="298"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(ip-&gt;<ref refid="structinode_1a719244f3b9b6ec8bbb92c325d93bb0ad" kindref="member">flags</ref><sp/>&amp;<sp/><ref refid="group__Inode_1ggab4246414e685d03bec8337675be83358a328495688a8ce4a237f41fb5de6cb5dd" kindref="member">INODE_LOCKED</ref>)</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="pm_8h_1a8c4dedf40a191460646b9c8485630586" kindref="member">sleep</ref>(&amp;ip-&gt;<ref refid="structinode_1a6e44a17eef6d95b2e6832c26e469d505" kindref="member">chain</ref>,<sp/>PRIO_INODE);</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/>ip-&gt;<ref refid="structinode_1a719244f3b9b6ec8bbb92c325d93bb0ad" kindref="member">flags</ref><sp/>|=<sp/><ref refid="group__Inode_1ggab4246414e685d03bec8337675be83358a328495688a8ce4a237f41fb5de6cb5dd" kindref="member">INODE_LOCKED</ref>;</highlight></codeline>
+<codeline lineno="302"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"></highlight></codeline>
+<codeline lineno="313"><highlight class="normal">PUBLIC<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="inode_8c_1adff7b8ffa9e7f1816fb48ab665467886" kindref="member">inode_unlock</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structinode" kindref="compound">inode</ref><sp/>*ip)</highlight></codeline>
+<codeline lineno="314"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="pm_8h_1a17553686b616b68f1b306ae7cb5261ec" kindref="member">wakeup</ref>(&amp;ip-&gt;<ref refid="structinode_1a6e44a17eef6d95b2e6832c26e469d505" kindref="member">chain</ref>);</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/>ip-&gt;<ref refid="structinode_1a719244f3b9b6ec8bbb92c325d93bb0ad" kindref="member">flags</ref><sp/>&amp;=<sp/>~<ref refid="group__Inode_1ggab4246414e685d03bec8337675be83358a328495688a8ce4a237f41fb5de6cb5dd" kindref="member">INODE_LOCKED</ref>;</highlight></codeline>
+<codeline lineno="317"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"></highlight></codeline>
+<codeline lineno="325"><highlight class="normal">PUBLIC<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="inode_8c_1a93bea3f2926998774852f43a36ccfec7" kindref="member">inode_sync</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="326"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Write<sp/>valid<sp/>inodes<sp/>to<sp/>disk.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structinode" kindref="compound">inode</ref><sp/>*ip<sp/>=<sp/>&amp;<ref refid="inode_8c_1a4d4fb94a11af1768abab7ca481d59223" kindref="member">inodes</ref>[0];<sp/>ip<sp/>&lt;<sp/>&amp;<ref refid="inode_8c_1a4d4fb94a11af1768abab7ca481d59223" kindref="member">inodes</ref>[NR_INODES];<sp/>ip++)</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="inode_8c_1a0fc0a3dbe6cedf4391b29c481d46b5fa" kindref="member">inode_lock</ref>(ip);</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Write<sp/>only<sp/>valid<sp/>inodes.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ip-&gt;<ref refid="structinode_1a719244f3b9b6ec8bbb92c325d93bb0ad" kindref="member">flags</ref><sp/>&amp;<sp/><ref refid="group__Inode_1ggab4246414e685d03bec8337675be83358af5a98fef4b30a15a7a5f19b116b75cdf" kindref="member">INODE_VALID</ref>)</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(ip-&gt;<ref refid="structinode_1a719244f3b9b6ec8bbb92c325d93bb0ad" kindref="member">flags</ref><sp/>&amp;<sp/><ref refid="group__Inode_1ggab4246414e685d03bec8337675be83358ae6294bb0bb395134806c93027cd62eee" kindref="member">INODE_PIPE</ref>))</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="inode_8c_1a120a8aecc1260756d55735ccbd36b829" kindref="member">inode_write</ref>(ip);</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="inode_8c_1adff7b8ffa9e7f1816fb48ab665467886" kindref="member">inode_unlock</ref>(ip);</highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="341"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"></highlight></codeline>
+<codeline lineno="353"><highlight class="normal">PUBLIC<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="inode_8c_1af441e6184b34d780b0225ab8238ba7f3" kindref="member">inode_truncate</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structinode" kindref="compound">inode</ref><sp/>*ip)</highlight></codeline>
+<codeline lineno="354"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structsuperblock" kindref="compound">superblock</ref><sp/>*sb;</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="357"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__Superblock_1ga4ef02b583308d00506b5000837010523" kindref="member">superblock_lock</ref>(sb<sp/>=<sp/>ip-&gt;<ref refid="structinode_1a5817239a4592432fa9915f9db1b1fbcf" kindref="member">sb</ref>);</highlight></codeline>
+<codeline lineno="358"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="359"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Free<sp/>direct<sp/>zone.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="360"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>0;<sp/>j<sp/>&lt;<sp/>NR_ZONES_DIRECT;<sp/>j++)</highlight></codeline>
+<codeline lineno="361"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="362"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="include_2nanvix_2fs_8h_1a1bdc7f72083592051ec5d51d52c5f46b" kindref="member">block_free</ref>(sb,<sp/>ip-&gt;<ref refid="structinode_1ae5c3ea3e32f0923d8efe751c0a2570ed" kindref="member">blocks</ref>[j],<sp/>0);</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ip-&gt;<ref refid="structinode_1ae5c3ea3e32f0923d8efe751c0a2570ed" kindref="member">blocks</ref>[j]<sp/>=<sp/>BLOCK_NULL;</highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="365"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="366"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Free<sp/>singly<sp/>indirect<sp/>zones.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="367"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>0;<sp/>j<sp/>&lt;<sp/>NR_ZONES_SINGLE;<sp/>j++)</highlight></codeline>
+<codeline lineno="368"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="369"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="include_2nanvix_2fs_8h_1a1bdc7f72083592051ec5d51d52c5f46b" kindref="member">block_free</ref>(sb,<sp/>ip-&gt;<ref refid="structinode_1ae5c3ea3e32f0923d8efe751c0a2570ed" kindref="member">blocks</ref>[NR_ZONES_DIRECT<sp/>+<sp/>j],<sp/>1);</highlight></codeline>
+<codeline lineno="370"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ip-&gt;<ref refid="structinode_1ae5c3ea3e32f0923d8efe751c0a2570ed" kindref="member">blocks</ref>[NR_ZONES_DIRECT<sp/>+<sp/>j]<sp/>=<sp/>BLOCK_NULL;</highlight></codeline>
+<codeline lineno="371"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="372"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="373"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Free<sp/>double<sp/>indirect<sp/>zones.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="374"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>0;<sp/>j<sp/>&lt;<sp/>NR_ZONES_DOUBLE;<sp/>j++)</highlight></codeline>
+<codeline lineno="375"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="376"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="include_2nanvix_2fs_8h_1a1bdc7f72083592051ec5d51d52c5f46b" kindref="member">block_free</ref>(sb,<sp/>ip-&gt;<ref refid="structinode_1ae5c3ea3e32f0923d8efe751c0a2570ed" kindref="member">blocks</ref>[NR_ZONES_DIRECT<sp/>+<sp/>NR_ZONES_SINGLE<sp/>+<sp/>j],<sp/>2);</highlight></codeline>
+<codeline lineno="377"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ip-&gt;<ref refid="structinode_1ae5c3ea3e32f0923d8efe751c0a2570ed" kindref="member">blocks</ref>[NR_ZONES_DIRECT<sp/>+<sp/>NR_ZONES_SINGLE<sp/>+<sp/>j]<sp/>=<sp/>BLOCK_NULL;</highlight></codeline>
+<codeline lineno="378"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="379"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="380"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__Superblock_1gaa1e437c51f1035512ba17835840934e5" kindref="member">superblock_unlock</ref>(sb);</highlight></codeline>
+<codeline lineno="381"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="382"><highlight class="normal"><sp/><sp/><sp/><sp/>ip-&gt;<ref refid="structinode_1a65d5c96f1fdbf3564bad2718c601486b" kindref="member">size</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="383"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="inode_8c_1a511a54a9313efc3b4b23a4b7fa7d88e1" kindref="member">inode_touch</ref>(ip);</highlight></codeline>
+<codeline lineno="384"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="385"><highlight class="normal"></highlight></codeline>
+<codeline lineno="402"><highlight class="normal">PUBLIC<sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structinode" kindref="compound">inode</ref><sp/>*<ref refid="inode_8c_1af2fbee2851d56741295ec2374571bd9b" kindref="member">inode_alloc</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structsuperblock" kindref="compound">superblock</ref><sp/>*sb)</highlight></codeline>
+<codeline lineno="403"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="404"><highlight class="normal"><sp/><sp/><sp/><sp/>ino_t<sp/><ref refid="structinode_1ad1d7499ae8796d8bf180f17286f763e6" kindref="member">num</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Inode<sp/>number.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="405"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="klib_8h_1a0164fa8884f20b6ddf102067090a82db" kindref="member">bit_t</ref><sp/>bit;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Bit<sp/>number<sp/>in<sp/>the<sp/>bitmap.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="406"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>i;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Number<sp/>of<sp/>current<sp/>block.<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="407"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structinode" kindref="compound">inode</ref><sp/>*ip;<sp/></highlight><highlight class="comment">/*<sp/>Inode.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="408"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="409"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__Superblock_1ga4ef02b583308d00506b5000837010523" kindref="member">superblock_lock</ref>(sb);</highlight></codeline>
+<codeline lineno="410"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="411"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Search<sp/>for<sp/>free<sp/>inode.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="412"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>sb-&gt;<ref refid="structsuperblock_1ab5e85a03949f20bbaee32cac42a83a4b" kindref="member">imap_blocks</ref>;<sp/>i++)</highlight></codeline>
+<codeline lineno="413"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="414"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bit<sp/>=<sp/><ref refid="klib_8h_1a2b64976de3a1868972fcd49fca351777" kindref="member">bitmap_first_free</ref>(sb-&gt;<ref refid="structsuperblock_1a2913dc8576a928e424368ac0e3643db3" kindref="member">imap</ref>[i]-&gt;<ref refid="structbuffer_1a735984d41155bc1032e09bece8f8d66d" kindref="member">data</ref>,<sp/>BLOCK_SIZE);</highlight></codeline>
+<codeline lineno="415"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="416"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Found.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="417"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bit<sp/>!=<sp/>BITMAP_FULL)</highlight></codeline>
+<codeline lineno="418"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>found;</highlight></codeline>
+<codeline lineno="419"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="420"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="421"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>error0;</highlight></codeline>
+<codeline lineno="422"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="423"><highlight class="normal">found:</highlight></codeline>
+<codeline lineno="424"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="425"><highlight class="normal"><sp/><sp/><sp/><sp/>num<sp/>=<sp/>bit<sp/>+<sp/>i*(BLOCK_SIZE<sp/>&lt;&lt;<sp/>3)<sp/>+<sp/>1;</highlight></codeline>
+<codeline lineno="426"><highlight class="normal"></highlight></codeline>
+<codeline lineno="427"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="428"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Remember<sp/>disk<sp/>block<sp/>number<sp/>to</highlight></codeline>
+<codeline lineno="429"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>speedup<sp/>next<sp/>allocation.<sp/></highlight></codeline>
+<codeline lineno="430"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="431"><highlight class="normal"><sp/><sp/><sp/><sp/>sb-&gt;<ref refid="structsuperblock_1a6a0f3511801d7c3e533aa89b790d3a6f" kindref="member">isearch</ref><sp/>=<sp/><ref refid="structinode_1ad1d7499ae8796d8bf180f17286f763e6" kindref="member">num</ref>;</highlight></codeline>
+<codeline lineno="432"><highlight class="normal"></highlight></codeline>
+<codeline lineno="433"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Get<sp/>a<sp/>free<sp/>in-core<sp/>inode.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="434"><highlight class="normal"><sp/><sp/><sp/><sp/>ip<sp/>=<sp/><ref refid="inode_8c_1a0ef8d6b728d07475cf30186b82139f83" kindref="member">inode_cache_evict</ref>();</highlight></codeline>
+<codeline lineno="435"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ip<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="436"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>error0;</highlight></codeline>
+<codeline lineno="437"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="438"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Allocate<sp/>inode.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="439"><highlight class="normal"><sp/><sp/><sp/><sp/>bitmap_set(sb-&gt;<ref refid="structsuperblock_1a2913dc8576a928e424368ac0e3643db3" kindref="member">imap</ref>[i]-&gt;<ref refid="structbuffer_1a735984d41155bc1032e09bece8f8d66d" kindref="member">data</ref>,<sp/>bit);</highlight></codeline>
+<codeline lineno="440"><highlight class="normal"><sp/><sp/><sp/><sp/>sb-&gt;<ref refid="structsuperblock_1a2913dc8576a928e424368ac0e3643db3" kindref="member">imap</ref>[i]-&gt;<ref refid="structbuffer_1a8ceea6ca386afaa3ad7fb4e26227b0a0" kindref="member">flags</ref><sp/>|=<sp/><ref refid="group__Buffer_1ggaa7ac4063de8512ef7cd6c511f3d68c0ba9ea0749530e7b16baf92b2a83dd9e2b5" kindref="member">BUFFER_DIRTY</ref>;</highlight></codeline>
+<codeline lineno="441"><highlight class="normal"><sp/><sp/><sp/><sp/>sb-&gt;<ref refid="structsuperblock_1a8eea88528a75f696f8ca2c7672fbc0c2" kindref="member">flags</ref><sp/>|=<sp/><ref refid="group__Superblock_1gga7bb5bede8fcda9ee9438bbc55cafc47bac3e4f8bf48565fc230656ff10457a5fa" kindref="member">SUPERBLOCK_DIRTY</ref>;</highlight></codeline>
+<codeline lineno="442"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="443"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/></highlight></codeline>
+<codeline lineno="444"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Initialize<sp/>inode.<sp/></highlight></codeline>
+<codeline lineno="445"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>mode<sp/>will<sp/>be<sp/>initialized<sp/>later.</highlight></codeline>
+<codeline lineno="446"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="447"><highlight class="normal"><sp/><sp/><sp/><sp/>ip-&gt;<ref refid="structinode_1a69d0273ae6c733dad4776b909dd7e02f" kindref="member">nlinks</ref><sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="448"><highlight class="normal"><sp/><sp/><sp/><sp/>ip-&gt;<ref refid="structinode_1a1163f413982fef86f5c8313564d8589c" kindref="member">uid</ref><sp/>=<sp/>curr_proc-&gt;<ref refid="structprocess_1ad6f2829bdccd287271b1cfbb41dd364b" kindref="member">euid</ref>;</highlight></codeline>
+<codeline lineno="449"><highlight class="normal"><sp/><sp/><sp/><sp/>ip-&gt;<ref refid="structinode_1accbf90b0b518578acff258d328c5575d" kindref="member">gid</ref><sp/>=<sp/>curr_proc-&gt;<ref refid="structprocess_1aa51c114049e13d20ab39c82046b1f5fa" kindref="member">egid</ref>;</highlight></codeline>
+<codeline lineno="450"><highlight class="normal"><sp/><sp/><sp/><sp/>ip-&gt;<ref refid="structinode_1a65d5c96f1fdbf3564bad2718c601486b" kindref="member">size</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="451"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>0;<sp/>j<sp/>&lt;<sp/>NR_ZONES;<sp/>j++)</highlight></codeline>
+<codeline lineno="452"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ip-&gt;<ref refid="structinode_1ae5c3ea3e32f0923d8efe751c0a2570ed" kindref="member">blocks</ref>[j]<sp/>=<sp/>BLOCK_NULL;</highlight></codeline>
+<codeline lineno="453"><highlight class="normal"><sp/><sp/><sp/><sp/>ip-&gt;<ref refid="structinode_1a8910285a0352a5c710e65ec9ecbe32a1" kindref="member">dev</ref><sp/>=<sp/>sb-&gt;<ref refid="structsuperblock_1a8910285a0352a5c710e65ec9ecbe32a1" kindref="member">dev</ref>;</highlight></codeline>
+<codeline lineno="454"><highlight class="normal"><sp/><sp/><sp/><sp/>ip-&gt;<ref refid="structinode_1ad1d7499ae8796d8bf180f17286f763e6" kindref="member">num</ref><sp/>=<sp/>num;</highlight></codeline>
+<codeline lineno="455"><highlight class="normal"><sp/><sp/><sp/><sp/>ip-&gt;<ref refid="structinode_1a5817239a4592432fa9915f9db1b1fbcf" kindref="member">sb</ref><sp/>=<sp/>sb;</highlight></codeline>
+<codeline lineno="456"><highlight class="normal"><sp/><sp/><sp/><sp/>ip-&gt;<ref refid="structinode_1a719244f3b9b6ec8bbb92c325d93bb0ad" kindref="member">flags</ref><sp/>&amp;=<sp/>~(<ref refid="group__Inode_1ggab4246414e685d03bec8337675be83358a2e5100181ea108e80913e0d7a485c845" kindref="member">INODE_MOUNT</ref><sp/>|<sp/><ref refid="group__Inode_1ggab4246414e685d03bec8337675be83358ae6294bb0bb395134806c93027cd62eee" kindref="member">INODE_PIPE</ref>);</highlight></codeline>
+<codeline lineno="457"><highlight class="normal"><sp/><sp/><sp/><sp/>ip-&gt;<ref refid="structinode_1a719244f3b9b6ec8bbb92c325d93bb0ad" kindref="member">flags</ref><sp/>|=<sp/><ref refid="group__Inode_1ggab4246414e685d03bec8337675be83358af5a98fef4b30a15a7a5f19b116b75cdf" kindref="member">INODE_VALID</ref>;</highlight></codeline>
+<codeline lineno="458"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="inode_8c_1a511a54a9313efc3b4b23a4b7fa7d88e1" kindref="member">inode_touch</ref>(ip);</highlight></codeline>
+<codeline lineno="459"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="460"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="inode_8c_1afef800ebea5b7ab82bae8e17c5df8206" kindref="member">inode_cache_insert</ref>(ip);</highlight></codeline>
+<codeline lineno="461"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="462"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__Superblock_1gaa1e437c51f1035512ba17835840934e5" kindref="member">superblock_unlock</ref>(sb);</highlight></codeline>
+<codeline lineno="463"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="464"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(ip);</highlight></codeline>
+<codeline lineno="465"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="466"><highlight class="normal">error0:</highlight></codeline>
+<codeline lineno="467"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__Superblock_1gaa1e437c51f1035512ba17835840934e5" kindref="member">superblock_unlock</ref>(sb);</highlight></codeline>
+<codeline lineno="468"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(NULL);</highlight></codeline>
+<codeline lineno="469"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="470"><highlight class="normal"></highlight></codeline>
+<codeline lineno="486"><highlight class="normal">PUBLIC<sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structinode" kindref="compound">inode</ref><sp/>*<ref refid="inode_8c_1a56d01cfc2abfc617a9bc95081972a98e" kindref="member">inode_get</ref>(dev_t<sp/>dev,<sp/>ino_t<sp/>num)</highlight></codeline>
+<codeline lineno="487"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="488"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structinode" kindref="compound">inode</ref><sp/>*ip;</highlight></codeline>
+<codeline lineno="489"><highlight class="normal"></highlight></codeline>
+<codeline lineno="490"><highlight class="normal">repeat:</highlight></codeline>
+<codeline lineno="491"><highlight class="normal"></highlight></codeline>
+<codeline lineno="492"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Search<sp/>in<sp/>the<sp/>hash<sp/>table.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="493"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(ip<sp/>=<sp/>hashtab[HASH(dev,<sp/>num)];<sp/>ip<sp/>!=<sp/>NULL;<sp/>ip<sp/>=<sp/>ip-&gt;<ref refid="structinode_1ad5b1058d6f322202f54656cc8a121dc5" kindref="member">hash_next</ref>)</highlight></codeline>
+<codeline lineno="494"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="495"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Not<sp/>found.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="496"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ip-&gt;<ref refid="structinode_1a8910285a0352a5c710e65ec9ecbe32a1" kindref="member">dev</ref><sp/>!=<sp/>dev<sp/>||<sp/>ip-&gt;<ref refid="structinode_1ad1d7499ae8796d8bf180f17286f763e6" kindref="member">num</ref><sp/>!=<sp/>num)</highlight></codeline>
+<codeline lineno="497"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="498"><highlight class="normal"></highlight></codeline>
+<codeline lineno="499"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Inode<sp/>is<sp/>locked.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="500"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ip-&gt;<ref refid="structinode_1a719244f3b9b6ec8bbb92c325d93bb0ad" kindref="member">flags</ref><sp/>&amp;<sp/><ref refid="group__Inode_1ggab4246414e685d03bec8337675be83358a328495688a8ce4a237f41fb5de6cb5dd" kindref="member">INODE_LOCKED</ref>)</highlight></codeline>
+<codeline lineno="501"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="502"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="pm_8h_1a8c4dedf40a191460646b9c8485630586" kindref="member">sleep</ref>(&amp;ip-&gt;<ref refid="structinode_1a6e44a17eef6d95b2e6832c26e469d505" kindref="member">chain</ref>,<sp/>PRIO_INODE);</highlight></codeline>
+<codeline lineno="503"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>repeat;</highlight></codeline>
+<codeline lineno="504"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="505"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="506"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Cross<sp/>mount<sp/>point.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="507"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ip-&gt;<ref refid="structinode_1a719244f3b9b6ec8bbb92c325d93bb0ad" kindref="member">flags</ref><sp/>&amp;<sp/><ref refid="group__Inode_1ggab4246414e685d03bec8337675be83358a2e5100181ea108e80913e0d7a485c845" kindref="member">INODE_MOUNT</ref>)</highlight></codeline>
+<codeline lineno="508"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="509"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dev<sp/>=<sp/>ip-&gt;<ref refid="structinode_1a8910285a0352a5c710e65ec9ecbe32a1" kindref="member">dev</ref>;</highlight></codeline>
+<codeline lineno="510"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>repeat;</highlight></codeline>
+<codeline lineno="511"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="512"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="513"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ip-&gt;<ref refid="structinode_1a6a9e89d63eb610dfe238b0a840979421" kindref="member">count</ref>++;</highlight></codeline>
+<codeline lineno="514"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="inode_8c_1a0fc0a3dbe6cedf4391b29c481d46b5fa" kindref="member">inode_lock</ref>(ip);</highlight></codeline>
+<codeline lineno="515"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="516"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(ip);</highlight></codeline>
+<codeline lineno="517"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="518"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="519"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Read<sp/>inode.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="520"><highlight class="normal"><sp/><sp/><sp/><sp/>ip<sp/>=<sp/><ref refid="inode_8c_1ac41d3e33814fffad2aebfb7e79a0d28e" kindref="member">inode_read</ref>(dev,<sp/>num);</highlight></codeline>
+<codeline lineno="521"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ip<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="522"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(NULL);</highlight></codeline>
+<codeline lineno="523"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="524"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="inode_8c_1afef800ebea5b7ab82bae8e17c5df8206" kindref="member">inode_cache_insert</ref>(ip);</highlight></codeline>
+<codeline lineno="525"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="526"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(ip);</highlight></codeline>
+<codeline lineno="527"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="528"><highlight class="normal"></highlight></codeline>
+<codeline lineno="529"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="530"><highlight class="comment"><sp/>*<sp/>Gets<sp/>a<sp/>pipe<sp/>inode.</highlight></codeline>
+<codeline lineno="531"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="532"><highlight class="normal">PUBLIC<sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structinode" kindref="compound">inode</ref><sp/>*inode_pipe(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="533"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="534"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="structinode_1abfc96d914fa717d2d7929e19b459aaff" kindref="member">pipe</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Pipe<sp/>page.<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="535"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structinode" kindref="compound">inode</ref><sp/>*<ref refid="structinode" kindref="compound">inode</ref>;<sp/></highlight><highlight class="comment">/*<sp/>Pipe<sp/>inode.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="536"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="537"><highlight class="normal"><sp/><sp/><sp/><sp/>pipe<sp/>=<sp/>getkpg(0);</highlight></codeline>
+<codeline lineno="538"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="539"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Failed<sp/>to<sp/>get<sp/>pipe<sp/>page.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="540"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pipe<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="541"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>error0;</highlight></codeline>
+<codeline lineno="542"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="543"><highlight class="normal"><sp/><sp/><sp/><sp/>inode<sp/>=<sp/><ref refid="inode_8c_1a0ef8d6b728d07475cf30186b82139f83" kindref="member">inode_cache_evict</ref>();</highlight></codeline>
+<codeline lineno="544"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="545"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>No<sp/>free<sp/>inode.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="546"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(inode<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="547"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>error1;</highlight></codeline>
+<codeline lineno="548"><highlight class="normal"></highlight></codeline>
+<codeline lineno="549"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Initialize<sp/>inode.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="550"><highlight class="normal"><sp/><sp/><sp/><sp/>inode-&gt;<ref refid="structinode_1adc8d3cf511ceb277aea0cfa1cd027c59" kindref="member">mode</ref><sp/>=<sp/>MAY_READ<sp/>|<sp/>MAY_WRITE<sp/>|<sp/>S_IFIFO;</highlight></codeline>
+<codeline lineno="551"><highlight class="normal"><sp/><sp/><sp/><sp/>inode-&gt;<ref refid="structinode_1a69d0273ae6c733dad4776b909dd7e02f" kindref="member">nlinks</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="552"><highlight class="normal"><sp/><sp/><sp/><sp/>inode-&gt;<ref refid="structinode_1a1163f413982fef86f5c8313564d8589c" kindref="member">uid</ref><sp/>=<sp/>curr_proc-&gt;<ref refid="structprocess_1a1163f413982fef86f5c8313564d8589c" kindref="member">uid</ref>;</highlight></codeline>
+<codeline lineno="553"><highlight class="normal"><sp/><sp/><sp/><sp/>inode-&gt;<ref refid="structinode_1accbf90b0b518578acff258d328c5575d" kindref="member">gid</ref><sp/>=<sp/>curr_proc-&gt;<ref refid="structprocess_1accbf90b0b518578acff258d328c5575d" kindref="member">gid</ref>;</highlight></codeline>
+<codeline lineno="554"><highlight class="normal"><sp/><sp/><sp/><sp/>inode-&gt;<ref refid="structinode_1a65d5c96f1fdbf3564bad2718c601486b" kindref="member">size</ref><sp/>=<sp/>PAGE_SIZE;</highlight></codeline>
+<codeline lineno="555"><highlight class="normal"><sp/><sp/><sp/><sp/>inode-&gt;<ref refid="structinode_1ab842bdb7d02be824fb48613032b4ff36" kindref="member">time</ref><sp/>=<sp/>CURRENT_TIME;</highlight></codeline>
+<codeline lineno="556"><highlight class="normal"><sp/><sp/><sp/><sp/>inode-&gt;<ref refid="structinode_1a8910285a0352a5c710e65ec9ecbe32a1" kindref="member">dev</ref><sp/>=<sp/>NULL_DEV;</highlight></codeline>
+<codeline lineno="557"><highlight class="normal"><sp/><sp/><sp/><sp/>inode-&gt;<ref refid="structinode_1ad1d7499ae8796d8bf180f17286f763e6" kindref="member">num</ref><sp/>=<sp/>INODE_NULL;</highlight></codeline>
+<codeline lineno="558"><highlight class="normal"><sp/><sp/><sp/><sp/>inode-&gt;<ref refid="structinode_1a6a9e89d63eb610dfe238b0a840979421" kindref="member">count</ref><sp/>=<sp/>2;</highlight></codeline>
+<codeline lineno="559"><highlight class="normal"><sp/><sp/><sp/><sp/>inode-&gt;<ref refid="structinode_1a719244f3b9b6ec8bbb92c325d93bb0ad" kindref="member">flags</ref><sp/>|=<sp/>~(<ref refid="group__Inode_1ggab4246414e685d03bec8337675be83358ad6a80ff19140aea8d1d6bfeee63d9cf8" kindref="member">INODE_DIRTY</ref><sp/>|<sp/><ref refid="group__Inode_1ggab4246414e685d03bec8337675be83358a2e5100181ea108e80913e0d7a485c845" kindref="member">INODE_MOUNT</ref>)<sp/>&amp;<sp/>(<ref refid="group__Inode_1ggab4246414e685d03bec8337675be83358af5a98fef4b30a15a7a5f19b116b75cdf" kindref="member">INODE_VALID</ref><sp/>|<sp/><ref refid="group__Inode_1ggab4246414e685d03bec8337675be83358ae6294bb0bb395134806c93027cd62eee" kindref="member">INODE_PIPE</ref>);</highlight></codeline>
+<codeline lineno="560"><highlight class="normal"><sp/><sp/><sp/><sp/>inode-&gt;<ref refid="structinode_1abfc96d914fa717d2d7929e19b459aaff" kindref="member">pipe</ref><sp/>=<sp/><ref refid="structinode_1abfc96d914fa717d2d7929e19b459aaff" kindref="member">pipe</ref>;</highlight></codeline>
+<codeline lineno="561"><highlight class="normal"><sp/><sp/><sp/><sp/>inode-&gt;<ref refid="structinode_1a1a857f7e78ca73df4a4d56283fe69686" kindref="member">head</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="562"><highlight class="normal"><sp/><sp/><sp/><sp/>inode-&gt;<ref refid="structinode_1aa334dce97989b011fbc8f6b7dd13f646" kindref="member">tail</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="563"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="564"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(inode);</highlight></codeline>
+<codeline lineno="565"><highlight class="normal"></highlight></codeline>
+<codeline lineno="566"><highlight class="normal">error1:</highlight></codeline>
+<codeline lineno="567"><highlight class="normal"><sp/><sp/><sp/><sp/>putkpg(pipe);</highlight></codeline>
+<codeline lineno="568"><highlight class="normal">error0:</highlight></codeline>
+<codeline lineno="569"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(NULL);</highlight></codeline>
+<codeline lineno="570"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="571"><highlight class="normal"></highlight></codeline>
+<codeline lineno="582"><highlight class="normal">PUBLIC<sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="inode_8c_1a511a54a9313efc3b4b23a4b7fa7d88e1" kindref="member">inode_touch</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>inode<sp/>*ip)</highlight></codeline>
+<codeline lineno="583"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="584"><highlight class="normal"><sp/><sp/><sp/><sp/>ip-&gt;<ref refid="structinode_1ab842bdb7d02be824fb48613032b4ff36" kindref="member">time</ref><sp/>=<sp/>CURRENT_TIME;</highlight></codeline>
+<codeline lineno="585"><highlight class="normal"><sp/><sp/><sp/><sp/>ip-&gt;<ref refid="structinode_1a719244f3b9b6ec8bbb92c325d93bb0ad" kindref="member">flags</ref><sp/>|=<sp/><ref refid="group__Inode_1ggab4246414e685d03bec8337675be83358ad6a80ff19140aea8d1d6bfeee63d9cf8" kindref="member">INODE_DIRTY</ref>;</highlight></codeline>
+<codeline lineno="586"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="587"><highlight class="normal"></highlight></codeline>
+<codeline lineno="600"><highlight class="normal">PUBLIC<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="inode_8c_1afc75c7ff0268016ee89fc028264ddf59" kindref="member">inode_put</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>inode<sp/>*ip)</highlight></codeline>
+<codeline lineno="601"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="602"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Double<sp/>free.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="603"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ip-&gt;<ref refid="structinode_1a6a9e89d63eb610dfe238b0a840979421" kindref="member">count</ref><sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="604"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="klib_8h_1a04d9437f531c5286968b3fd38bb990cd" kindref="member">kpanic</ref>(</highlight><highlight class="stringliteral">&quot;freeing<sp/>inode<sp/>twice&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="605"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="606"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Release<sp/>underlying<sp/>resources.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="607"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(--ip-&gt;<ref refid="structinode_1a6a9e89d63eb610dfe238b0a840979421" kindref="member">count</ref><sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="608"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="609"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Pipe<sp/>inode.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="610"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ip-&gt;<ref refid="structinode_1a719244f3b9b6ec8bbb92c325d93bb0ad" kindref="member">flags</ref><sp/>&amp;<sp/><ref refid="group__Inode_1ggab4246414e685d03bec8337675be83358ae6294bb0bb395134806c93027cd62eee" kindref="member">INODE_PIPE</ref>)</highlight></codeline>
+<codeline lineno="611"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>putkpg(ip-&gt;<ref refid="structinode_1abfc96d914fa717d2d7929e19b459aaff" kindref="member">pipe</ref>);</highlight></codeline>
+<codeline lineno="612"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="613"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>File<sp/>inode.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="614"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="615"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="616"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Free<sp/>underlying<sp/>disk<sp/>blocks.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="617"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ip-&gt;<ref refid="structinode_1a69d0273ae6c733dad4776b909dd7e02f" kindref="member">nlinks</ref><sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="618"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="619"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="inode_8c_1a49771ab9a952f1f1a223f5b3c575fdf4" kindref="member">inode_free</ref>(ip);</highlight></codeline>
+<codeline lineno="620"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="inode_8c_1af441e6184b34d780b0225ab8238ba7f3" kindref="member">inode_truncate</ref>(ip);</highlight></codeline>
+<codeline lineno="621"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="622"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="623"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="inode_8c_1a120a8aecc1260756d55735ccbd36b829" kindref="member">inode_write</ref>(ip);</highlight></codeline>
+<codeline lineno="624"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="inode_8c_1a9534a3fe110804751220bff8e68e479b" kindref="member">inode_cache_remove</ref>(ip);</highlight></codeline>
+<codeline lineno="625"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="626"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="627"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Insert<sp/>inode<sp/>in<sp/>the<sp/>free<sp/>list.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="628"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ip-&gt;<ref refid="structinode_1a9776b1dad74677d378945b1123eb4b86" kindref="member">free_next</ref><sp/>=<sp/>free_inodes;</highlight></codeline>
+<codeline lineno="629"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free_inodes<sp/>=<sp/>ip;</highlight></codeline>
+<codeline lineno="630"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="631"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ip-&gt;<ref refid="structinode_1a719244f3b9b6ec8bbb92c325d93bb0ad" kindref="member">flags</ref><sp/>&amp;=<sp/>~<ref refid="group__Inode_1ggab4246414e685d03bec8337675be83358af5a98fef4b30a15a7a5f19b116b75cdf" kindref="member">INODE_VALID</ref>;</highlight></codeline>
+<codeline lineno="632"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="633"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="634"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="inode_8c_1adff7b8ffa9e7f1816fb48ab665467886" kindref="member">inode_unlock</ref>(ip);</highlight></codeline>
+<codeline lineno="635"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="636"><highlight class="normal"></highlight></codeline>
+<codeline lineno="652"><highlight class="normal">PRIVATE<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="inode_8c_1a0ab364513b5c0c9b76444f54d558edbb" kindref="member">break_path</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*pathname,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*filename)</highlight></codeline>
+<codeline lineno="653"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="654"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*p2;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Write<sp/>pointer.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="655"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*p1;<sp/></highlight><highlight class="comment">/*<sp/>Read<sp/>pointer.<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="656"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="657"><highlight class="normal"><sp/><sp/><sp/><sp/>p1<sp/>=<sp/>pathname;</highlight></codeline>
+<codeline lineno="658"><highlight class="normal"><sp/><sp/><sp/><sp/>p2<sp/>=<sp/>filename;</highlight></codeline>
+<codeline lineno="659"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="660"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Skip<sp/>those.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="661"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(*p1<sp/>==<sp/></highlight><highlight class="charliteral">&apos;/&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="662"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p1++;</highlight></codeline>
+<codeline lineno="663"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="664"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Get<sp/>file<sp/>name.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="665"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>((*p1<sp/>!=<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">)<sp/>&amp;&amp;<sp/>(*p1<sp/>!=<sp/></highlight><highlight class="charliteral">&apos;/&apos;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="666"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="667"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>File<sp/>name<sp/>too<sp/>long.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="668"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((p2<sp/>-<sp/>filename)<sp/>&gt;<sp/>NAME_MAX)</highlight></codeline>
+<codeline lineno="669"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(NULL);</highlight></codeline>
+<codeline lineno="670"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="671"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*p2++<sp/>=<sp/>*p1++;</highlight></codeline>
+<codeline lineno="672"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="673"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="674"><highlight class="normal"><sp/><sp/><sp/><sp/>*p2<sp/>=<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="675"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="676"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(p1);</highlight></codeline>
+<codeline lineno="677"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="678"><highlight class="normal"></highlight></codeline>
+<codeline lineno="679"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="680"><highlight class="comment"><sp/>*<sp/>Gets<sp/>inode<sp/>of<sp/>the<sp/>topmost<sp/>directory<sp/>of<sp/>a<sp/>path.</highlight></codeline>
+<codeline lineno="681"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="682"><highlight class="normal">PUBLIC<sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">inode<sp/>*inode_dname(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*path,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**name)</highlight></codeline>
+<codeline lineno="683"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="684"><highlight class="normal"><sp/><sp/><sp/><sp/>dev_t<sp/><ref refid="structinode_1a8910285a0352a5c710e65ec9ecbe32a1" kindref="member">dev</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Current<sp/>device.<sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="685"><highlight class="normal"><sp/><sp/><sp/><sp/>ino_t<sp/>ent;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Directory<sp/>entry.<sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="686"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">inode<sp/>*i;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Working<sp/>inode.<sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="687"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*p;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Current<sp/>path.<sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="688"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structsuperblock" kindref="compound">superblock</ref><sp/>*sb;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Working<sp/>superblock.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="689"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>filename[NAME_MAX<sp/>+<sp/>1];<sp/></highlight><highlight class="comment">/*<sp/>File<sp/>name.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="690"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="691"><highlight class="normal"><sp/><sp/><sp/><sp/>p<sp/>=<sp/>path;</highlight></codeline>
+<codeline lineno="692"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="693"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Absolute<sp/>path.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="694"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(*p<sp/>==<sp/></highlight><highlight class="charliteral">&apos;/&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="695"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i<sp/>=<sp/>curr_proc-&gt;<ref refid="structprocess_1afc8b220c6e92f5fcc41dee7e75501a1b" kindref="member">root</ref>;</highlight></codeline>
+<codeline lineno="696"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="697"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Relative<sp/>path.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="698"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(*p<sp/>!=<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="699"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i<sp/>=<sp/>curr_proc-&gt;<ref refid="structprocess_1a4cecc27afcd525b5d208273c6807f881" kindref="member">pwd</ref>;</highlight></codeline>
+<codeline lineno="700"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="701"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Empty<sp/>path<sp/>name.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="702"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="703"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="704"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>curr_proc-&gt;<ref refid="structprocess_1ad65a8842cc674e3ddf69355898c0ecbf" kindref="member">errno</ref><sp/>=<sp/>-EINVAL;</highlight></codeline>
+<codeline lineno="705"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(NULL);</highlight></codeline>
+<codeline lineno="706"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="707"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="708"><highlight class="normal"><sp/><sp/><sp/><sp/>i-&gt;<ref refid="structinode_1a6a9e89d63eb610dfe238b0a840979421" kindref="member">count</ref>++;</highlight></codeline>
+<codeline lineno="709"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="inode_8c_1a0fc0a3dbe6cedf4391b29c481d46b5fa" kindref="member">inode_lock</ref>(i);</highlight></codeline>
+<codeline lineno="710"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="711"><highlight class="normal"><sp/><sp/><sp/><sp/>p<sp/>=<sp/><ref refid="inode_8c_1a0ab364513b5c0c9b76444f54d558edbb" kindref="member">break_path</ref>((*name)<sp/>=<sp/>p,<sp/>filename);</highlight></codeline>
+<codeline lineno="712"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="713"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Failed<sp/>to<sp/>break<sp/>path.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="714"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(p<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="715"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>error0;</highlight></codeline>
+<codeline lineno="716"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="717"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Parse<sp/>all<sp/>file<sp/>path.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="718"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(*p<sp/>!=<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="719"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="720"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Not<sp/>a<sp/>directory.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="721"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!S_ISDIR(i-&gt;<ref refid="structinode_1adc8d3cf511ceb277aea0cfa1cd027c59" kindref="member">mode</ref>))</highlight></codeline>
+<codeline lineno="722"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="723"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>curr_proc-&gt;<ref refid="structprocess_1ad65a8842cc674e3ddf69355898c0ecbf" kindref="member">errno</ref><sp/>=<sp/>-ENOTDIR;</highlight></codeline>
+<codeline lineno="724"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>error0;</highlight></codeline>
+<codeline lineno="725"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="726"><highlight class="normal"></highlight></codeline>
+<codeline lineno="727"><highlight class="normal">again:</highlight></codeline>
+<codeline lineno="728"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="729"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Permission<sp/>denied.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="730"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!permission(i-&gt;<ref refid="structinode_1adc8d3cf511ceb277aea0cfa1cd027c59" kindref="member">mode</ref>,<sp/>i-&gt;<ref refid="structinode_1a1163f413982fef86f5c8313564d8589c" kindref="member">uid</ref>,<sp/>i-&gt;<ref refid="structinode_1accbf90b0b518578acff258d328c5575d" kindref="member">gid</ref>,<sp/>curr_proc,<sp/>MAY_EXEC,<sp/>0))</highlight></codeline>
+<codeline lineno="731"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="732"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>curr_proc-&gt;<ref refid="structprocess_1ad65a8842cc674e3ddf69355898c0ecbf" kindref="member">errno</ref><sp/>=<sp/>-EACCES;</highlight></codeline>
+<codeline lineno="733"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>error0;</highlight></codeline>
+<codeline lineno="734"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="735"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="736"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Root<sp/>directory<sp/>reached.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="737"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((curr_proc-&gt;<ref refid="structprocess_1afc8b220c6e92f5fcc41dee7e75501a1b" kindref="member">root</ref>-&gt;<ref refid="structinode_1ad1d7499ae8796d8bf180f17286f763e6" kindref="member">num</ref><sp/>==<sp/>i-&gt;<ref refid="structinode_1ad1d7499ae8796d8bf180f17286f763e6" kindref="member">num</ref>)<sp/>&amp;&amp;<sp/>(!<ref refid="klib_8h_1a6441e5bbc8c0d26c4f3f90d8a48e3ffb" kindref="member">kstrcmp</ref>(filename,<sp/></highlight><highlight class="stringliteral">&quot;..&quot;</highlight><highlight class="normal">)))</highlight></codeline>
+<codeline lineno="738"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="739"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="740"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="741"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p<sp/>=<sp/><ref refid="inode_8c_1a0ab364513b5c0c9b76444f54d558edbb" kindref="member">break_path</ref>((*name)<sp/>=<sp/>p,<sp/>filename);</highlight></codeline>
+<codeline lineno="742"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="743"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(p<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="744"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>error0;</highlight></codeline>
+<codeline lineno="745"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="746"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(!<ref refid="klib_8h_1a6441e5bbc8c0d26c4f3f90d8a48e3ffb" kindref="member">kstrcmp</ref>(filename,<sp/></highlight><highlight class="stringliteral">&quot;..&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="747"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="748"><highlight class="normal"></highlight></codeline>
+<codeline lineno="749"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ent<sp/>=<sp/><ref refid="include_2nanvix_2fs_8h_1a7234db19331e6107d879d0dc08ecb976" kindref="member">dir_search</ref>(i,<sp/>filename);</highlight></codeline>
+<codeline lineno="750"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="751"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>No<sp/>such<sp/>file<sp/>or<sp/>directory.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="752"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ent<sp/>==<sp/>INODE_NULL)</highlight></codeline>
+<codeline lineno="753"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="754"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>This<sp/>path<sp/>was<sp/>really<sp/>invalid.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="755"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(*p<sp/>!=<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="756"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="757"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>curr_proc-&gt;<ref refid="structprocess_1ad65a8842cc674e3ddf69355898c0ecbf" kindref="member">errno</ref><sp/>=<sp/>-ENOENT;</highlight></codeline>
+<codeline lineno="758"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>error0;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="759"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="760"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="761"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Let<sp/>someone<sp/>else<sp/>decide<sp/>what<sp/>to<sp/>do.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="762"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="763"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="764"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="765"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Cross<sp/>mount<sp/>point.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="766"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((i-&gt;<ref refid="structinode_1ad1d7499ae8796d8bf180f17286f763e6" kindref="member">num</ref><sp/>==<sp/>INODE_ROOT)<sp/>&amp;&amp;<sp/>(!<ref refid="klib_8h_1a6441e5bbc8c0d26c4f3f90d8a48e3ffb" kindref="member">kstrcmp</ref>(filename,<sp/></highlight><highlight class="stringliteral">&quot;..&quot;</highlight><highlight class="normal">)))</highlight></codeline>
+<codeline lineno="767"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="768"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sb<sp/>=<sp/>i-&gt;<ref refid="structinode_1a5817239a4592432fa9915f9db1b1fbcf" kindref="member">sb</ref>;</highlight></codeline>
+<codeline lineno="769"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="inode_8c_1afc75c7ff0268016ee89fc028264ddf59" kindref="member">inode_put</ref>(i);</highlight></codeline>
+<codeline lineno="770"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i<sp/>=<sp/>sb-&gt;<ref refid="structsuperblock_1ac7d627a4346b2e56650db38ba268c242" kindref="member">mp</ref>;</highlight></codeline>
+<codeline lineno="771"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="inode_8c_1a0fc0a3dbe6cedf4391b29c481d46b5fa" kindref="member">inode_lock</ref>(i);</highlight></codeline>
+<codeline lineno="772"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i-&gt;<ref refid="structinode_1a6a9e89d63eb610dfe238b0a840979421" kindref="member">count</ref>++;</highlight></codeline>
+<codeline lineno="773"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>again;</highlight></codeline>
+<codeline lineno="774"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="775"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="776"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dev<sp/>=<sp/>i-&gt;<ref refid="structinode_1a8910285a0352a5c710e65ec9ecbe32a1" kindref="member">dev</ref>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="777"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="inode_8c_1afc75c7ff0268016ee89fc028264ddf59" kindref="member">inode_put</ref>(i);</highlight></codeline>
+<codeline lineno="778"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i<sp/>=<sp/><ref refid="inode_8c_1a56d01cfc2abfc617a9bc95081972a98e" kindref="member">inode_get</ref>(dev,<sp/>ent);</highlight></codeline>
+<codeline lineno="779"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="780"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Failed<sp/>to<sp/>get<sp/>inode.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="781"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(i<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="782"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(NULL);</highlight></codeline>
+<codeline lineno="783"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="784"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p<sp/>=<sp/><ref refid="inode_8c_1a0ab364513b5c0c9b76444f54d558edbb" kindref="member">break_path</ref>((*name)<sp/>=<sp/>p,<sp/>filename);</highlight></codeline>
+<codeline lineno="785"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="786"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Failed<sp/>to<sp/>break<sp/>path.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="787"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(p<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="788"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>error0;</highlight></codeline>
+<codeline lineno="789"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="790"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="791"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Special<sp/>treatment<sp/>for<sp/>root<sp/>directory.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="792"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="klib_8h_1a6441e5bbc8c0d26c4f3f90d8a48e3ffb" kindref="member">kstrcmp</ref>(*name,<sp/></highlight><highlight class="stringliteral">&quot;/&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="793"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="794"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(**name<sp/>==<sp/></highlight><highlight class="charliteral">&apos;/&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="795"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*name)++;</highlight></codeline>
+<codeline lineno="796"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="797"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="798"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(i);</highlight></codeline>
+<codeline lineno="799"><highlight class="normal"></highlight></codeline>
+<codeline lineno="800"><highlight class="normal">error0:</highlight></codeline>
+<codeline lineno="801"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="inode_8c_1afc75c7ff0268016ee89fc028264ddf59" kindref="member">inode_put</ref>(i);</highlight></codeline>
+<codeline lineno="802"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(NULL);</highlight></codeline>
+<codeline lineno="803"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="804"><highlight class="normal"></highlight></codeline>
+<codeline lineno="805"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="806"><highlight class="comment"><sp/>*<sp/>Converts<sp/>a<sp/>path<sp/>name<sp/>to<sp/>inode.</highlight></codeline>
+<codeline lineno="807"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="808"><highlight class="normal">PUBLIC<sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">inode<sp/>*inode_name(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*pathname)</highlight></codeline>
+<codeline lineno="809"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="810"><highlight class="normal"><sp/><sp/><sp/><sp/>dev_t<sp/><ref refid="structinode_1a8910285a0352a5c710e65ec9ecbe32a1" kindref="member">dev</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Device<sp/>number.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="811"><highlight class="normal"><sp/><sp/><sp/><sp/>ino_t<sp/><ref refid="structinode_1ad1d7499ae8796d8bf180f17286f763e6" kindref="member">num</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Inode<sp/>number.<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="812"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>File<sp/>name.<sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="813"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">inode<sp/>*inode;<sp/></highlight><highlight class="comment">/*<sp/>Working<sp/>inode.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="814"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="815"><highlight class="normal"><sp/><sp/><sp/><sp/>inode<sp/>=<sp/>inode_dname(pathname,<sp/>&amp;name);</highlight></codeline>
+<codeline lineno="816"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="817"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Failed<sp/>to<sp/>get<sp/>directory<sp/>inode.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="818"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(inode<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="819"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(NULL);</highlight></codeline>
+<codeline lineno="820"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="821"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Special<sp/>treatment<sp/>for<sp/>the<sp/>root<sp/>directory.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="822"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="klib_8h_1a6441e5bbc8c0d26c4f3f90d8a48e3ffb" kindref="member">kstrcmp</ref>(name,</highlight><highlight class="stringliteral">&quot;/&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="823"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>num<sp/>=<sp/>curr_proc-&gt;<ref refid="structprocess_1afc8b220c6e92f5fcc41dee7e75501a1b" kindref="member">root</ref>-&gt;<ref refid="structinode_1ad1d7499ae8796d8bf180f17286f763e6" kindref="member">num</ref>;</highlight></codeline>
+<codeline lineno="824"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="825"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>num<sp/>=<sp/><ref refid="include_2nanvix_2fs_8h_1a7234db19331e6107d879d0dc08ecb976" kindref="member">dir_search</ref>(inode,<sp/>name);</highlight></codeline>
+<codeline lineno="826"><highlight class="normal"></highlight></codeline>
+<codeline lineno="827"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>File<sp/>not<sp/>found.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="828"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(num<sp/>==<sp/>INODE_NULL)</highlight></codeline>
+<codeline lineno="829"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="830"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="inode_8c_1afc75c7ff0268016ee89fc028264ddf59" kindref="member">inode_put</ref>(inode);</highlight></codeline>
+<codeline lineno="831"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>curr_proc-&gt;<ref refid="structprocess_1ad65a8842cc674e3ddf69355898c0ecbf" kindref="member">errno</ref><sp/>=<sp/>-ENOENT;</highlight></codeline>
+<codeline lineno="832"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(NULL);</highlight></codeline>
+<codeline lineno="833"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="834"><highlight class="normal"></highlight></codeline>
+<codeline lineno="835"><highlight class="normal"><sp/><sp/><sp/><sp/>dev<sp/>=<sp/>inode-&gt;<ref refid="structinode_1a8910285a0352a5c710e65ec9ecbe32a1" kindref="member">dev</ref>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="836"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="inode_8c_1afc75c7ff0268016ee89fc028264ddf59" kindref="member">inode_put</ref>(inode);</highlight></codeline>
+<codeline lineno="837"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="838"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="inode_8c_1a56d01cfc2abfc617a9bc95081972a98e" kindref="member">inode_get</ref>(dev,<sp/>num));</highlight></codeline>
+<codeline lineno="839"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="840"><highlight class="normal"></highlight></codeline>
+<codeline lineno="847"><highlight class="normal">PUBLIC<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="inode_8c_1a711a8dcaba9652f2eb2ae43cbec8ae38" kindref="member">inode_init</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="848"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="849"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="klib_8h_1aaa663a13f0d3c7289b139360848772c0" kindref="member">kprintf</ref>(</highlight><highlight class="stringliteral">&quot;fs:<sp/>initializing<sp/>inode<sp/>cache&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="850"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="851"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Initialize<sp/>inodes.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="852"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>NR_INODES;<sp/>i++)</highlight></codeline>
+<codeline lineno="853"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="854"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>inodes[i].count<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="855"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>inodes[i].flags<sp/>=<sp/>~(<ref refid="group__Inode_1ggab4246414e685d03bec8337675be83358a328495688a8ce4a237f41fb5de6cb5dd" kindref="member">INODE_LOCKED</ref><sp/>|<sp/><ref refid="group__Inode_1ggab4246414e685d03bec8337675be83358af5a98fef4b30a15a7a5f19b116b75cdf" kindref="member">INODE_VALID</ref>);</highlight></codeline>
+<codeline lineno="856"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>inodes[i].chain<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="857"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>inodes[i].free_next<sp/>=<sp/>((i<sp/>+<sp/>1)<sp/>&lt;<sp/>NR_INODES)<sp/>?<sp/>&amp;inodes[i<sp/>+<sp/>1]<sp/>:<sp/>NULL;</highlight></codeline>
+<codeline lineno="858"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>inodes[i].hash_next<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="859"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>inodes[i].hash_prev<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="860"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="861"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="862"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Initialize<sp/>inode<sp/>cache.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="863"><highlight class="normal"><sp/><sp/><sp/><sp/>free_inodes<sp/>=<sp/>&amp;inodes[0];</highlight></codeline>
+<codeline lineno="864"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>HASHTAB_SIZE;<sp/>i++)</highlight></codeline>
+<codeline lineno="865"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hashtab[i]<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="866"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/kernel/fs/inode.c"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_51c8b322e6e93444118683924203761a" kind="dir">
+    <compoundname>src/lib/libc/sys/wait</compoundname>
+    <innerfile refid="lib_2libc_2sys_2wait_2wait_8c">wait.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/lib/libc/sys/wait/"/>
+  </compounddef>
+</doxygen>

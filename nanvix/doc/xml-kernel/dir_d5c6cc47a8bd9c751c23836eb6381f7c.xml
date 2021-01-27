@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_d5c6cc47a8bd9c751c23836eb6381f7c" kind="dir">
+    <compoundname>src/ubin/nim</compoundname>
+    <innerfile refid="nim_8c">nim.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/ubin/nim/"/>
+  </compounddef>
+</doxygen>

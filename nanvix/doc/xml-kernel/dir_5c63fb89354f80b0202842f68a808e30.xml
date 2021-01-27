@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_5c63fb89354f80b0202842f68a808e30" kind="dir">
+    <compoundname>src/kernel/dev/tty</compoundname>
+    <innerfile refid="console_8c">console.c</innerfile>
+    <innerfile refid="keyboard_8c">keyboard.c</innerfile>
+    <innerfile refid="tty_8c">tty.c</innerfile>
+    <innerfile refid="src_2kernel_2dev_2tty_2tty_8h">tty.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/kernel/dev/tty/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,245 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="history_8c" kind="file" language="C++">
+    <compoundname>history.c</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="history_8c_1af24a3741a3c4ed37174bede121ce8b6b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct <ref refid="structhistory" kindref="compound">history</ref> *</type>
+        <definition>struct history* history_init</definition>
+        <argsstring>(int size)</argsstring>
+        <name>history_init</name>
+        <param>
+          <type>int</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+<para>Creates a command history. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ubin/tsh/history.c" line="31" column="1" bodyfile="src/ubin/tsh/history.c" bodystart="31" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="history_8c_1a1b213c2bf4d6820cea47b9c8bfcb6553" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void history_destroy</definition>
+        <argsstring>(struct history *hist)</argsstring>
+        <name>history_destroy</name>
+        <param>
+          <type>struct <ref refid="structhistory" kindref="compound">history</ref> *</type>
+          <declname>hist</declname>
+        </param>
+        <briefdescription>
+<para>Destroys a command history. </para>        </briefdescription>
+        <detaileddescription>
+<para>hist Target command history. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ubin/tsh/history.c" line="63" column="1" bodyfile="src/ubin/tsh/history.c" bodystart="63" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="history_8c_1a29a495bcb46d50e2108676cdb29bec25" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int history_full</definition>
+        <argsstring>(struct history *hist)</argsstring>
+        <name>history_full</name>
+        <param>
+          <type>struct <ref refid="structhistory" kindref="compound">history</ref> *</type>
+          <declname>hist</declname>
+        </param>
+        <briefdescription>
+<para>Asserts if a command history is full. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>hist</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Target command history. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ubin/tsh/history.c" line="76" column="1" bodyfile="src/ubin/tsh/history.c" bodystart="76" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="history_8c_1af7e07856eb158993303bee2da9522406" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* history_next</definition>
+        <argsstring>(struct history *hist)</argsstring>
+        <name>history_next</name>
+        <param>
+          <type>struct <ref refid="structhistory" kindref="compound">history</ref> *</type>
+          <declname>hist</declname>
+        </param>
+        <briefdescription>
+<para>Returns the next command on a command history. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ubin/tsh/history.c" line="84" column="1" bodyfile="src/ubin/tsh/history.c" bodystart="84" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="history_8c_1ae7f3c95b9d1ae05a79ff01648fedb31d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* history_previous</definition>
+        <argsstring>(struct history *hist)</argsstring>
+        <name>history_previous</name>
+        <param>
+          <type>struct <ref refid="structhistory" kindref="compound">history</ref> *</type>
+          <declname>hist</declname>
+        </param>
+        <briefdescription>
+<para>Returns the previous command on a command history. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ubin/tsh/history.c" line="107" column="1" bodyfile="src/ubin/tsh/history.c" bodystart="107" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="history_8c_1ae1d447bcf821f00c2c893d333ba55960" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void history_push</definition>
+        <argsstring>(struct history *hist, char *s)</argsstring>
+        <name>history_push</name>
+        <param>
+          <type>struct <ref refid="structhistory" kindref="compound">history</ref> *</type>
+          <declname>hist</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>Pushes a new element on the history. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/ubin/tsh/history.c" line="123" column="1" bodyfile="src/ubin/tsh/history.c" bodystart="123" bodyend="138"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright(C)<sp/>2011-2016<sp/>Pedro<sp/>H.<sp/>Penna<sp/><sp/><sp/>&lt;pedrohenriquepenna@gmail.com&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2016-2016<sp/>Subhra<sp/>S.<sp/>Sarkar<sp/>&lt;rurtle.coder@gmail.com&gt;</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>Nanvix.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Nanvix<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>Nanvix<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>Nanvix.<sp/>If<sp/>not,<sp/>see<sp/>&lt;http://www.gnu.org/licenses/&gt;.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="stddef_8h" kindref="compound">stddef.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="string_8h" kindref="compound">string.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;tsh.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;history.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structhistory" kindref="compound">history</ref><sp/>*history_init(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structhistory_1a439227feff9d7f55384e8780cfc2eb82" kindref="member">size</ref>)</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structhistory" kindref="compound">history</ref><sp/>*hist;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>hist<sp/>=<sp/><ref refid="group__stdlib_1ga1c8580582aae58105f16108d4ec89e9a" kindref="member">malloc</ref>(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structhistory" kindref="compound">history</ref>));</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(hist<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(stderr,<sp/></highlight><highlight class="stringliteral">&quot;%s:<sp/>failed<sp/>to<sp/>allocate<sp/>history<sp/>buffer\n&quot;</highlight><highlight class="normal">,<sp/>TSH_NAME);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__stdlib_1ga6f255d924f7a6bb2c4be0c8c2f2d9ce3" kindref="member">exit</ref>(EXIT_FAILURE);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>hist-&gt;<ref refid="structhistory_1af93f4f37fc2ad9c37af4a715423b110c" kindref="member">top</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>hist-&gt;<ref refid="structhistory_1a439227feff9d7f55384e8780cfc2eb82" kindref="member">size</ref><sp/>=<sp/><ref refid="structhistory_1a439227feff9d7f55384e8780cfc2eb82" kindref="member">size</ref>;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>hist-&gt;<ref refid="structhistory_1a533391314665d6bf1b5575e9a9cd8552" kindref="member">p</ref><sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>hist-&gt;<ref refid="structhistory_1a439227feff9d7f55384e8780cfc2eb82" kindref="member">size</ref>;<sp/>i++)</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hist-&gt;<ref refid="structhistory_1a3574b8973d7771c98f7edf714c1acb26" kindref="member">log</ref>[i]<sp/>=<sp/><ref refid="group__stdlib_1ga77e880b1033d5a912be4333fc5d31eef" kindref="member">calloc</ref>(LINELEN,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(hist-&gt;<ref refid="structhistory_1a3574b8973d7771c98f7edf714c1acb26" kindref="member">log</ref>[i]<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(stderr,<sp/></highlight><highlight class="stringliteral">&quot;%s:<sp/>failed<sp/>to<sp/>allocate<sp/>history<sp/>buffer\n&quot;</highlight><highlight class="normal">,<sp/>TSH_NAME);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__stdlib_1ga6f255d924f7a6bb2c4be0c8c2f2d9ce3" kindref="member">exit</ref>(EXIT_FAILURE);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(hist);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>history_destroy(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structhistory" kindref="compound">history</ref><sp/>*hist)</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">{<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>hist-&gt;<ref refid="structhistory_1a439227feff9d7f55384e8780cfc2eb82" kindref="member">size</ref>;<sp/>i++)</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__stdlib_1gaf07d89f5ceaea0c7c8252cc41fd75f37" kindref="member">free</ref>(hist-&gt;<ref refid="structhistory_1a3574b8973d7771c98f7edf714c1acb26" kindref="member">log</ref>[i]);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__stdlib_1gaf07d89f5ceaea0c7c8252cc41fd75f37" kindref="member">free</ref>(hist);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>history_full(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structhistory" kindref="compound">history</ref><sp/>*hist)</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(hist-&gt;<ref refid="structhistory_1af93f4f37fc2ad9c37af4a715423b110c" kindref="member">top</ref><sp/>==<sp/>hist-&gt;<ref refid="structhistory_1a439227feff9d7f55384e8780cfc2eb82" kindref="member">size</ref>);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*history_next(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structhistory" kindref="compound">history</ref><sp/>*hist)</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>History<sp/>is<sp/>empty.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(hist-&gt;<ref refid="structhistory_1af93f4f37fc2ad9c37af4a715423b110c" kindref="member">top</ref><sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="91"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>We&apos;ve<sp/>printed<sp/>command<sp/>at</highlight></codeline>
+<codeline lineno="92"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>index<sp/>0<sp/>before.</highlight></codeline>
+<codeline lineno="93"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(hist-&gt;<ref refid="structhistory_1a533391314665d6bf1b5575e9a9cd8552" kindref="member">p</ref><sp/>&lt;<sp/>0)</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hist-&gt;<ref refid="structhistory_1a533391314665d6bf1b5575e9a9cd8552" kindref="member">p</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>End<sp/>of<sp/>the<sp/>history.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(hist-&gt;<ref refid="structhistory_1a533391314665d6bf1b5575e9a9cd8552" kindref="member">p</ref><sp/>==<sp/>(hist-&gt;<ref refid="structhistory_1af93f4f37fc2ad9c37af4a715423b110c" kindref="member">top</ref><sp/>-<sp/>1))</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(hist-&gt;<ref refid="structhistory_1a3574b8973d7771c98f7edf714c1acb26" kindref="member">log</ref>[++hist-&gt;<ref refid="structhistory_1a533391314665d6bf1b5575e9a9cd8552" kindref="member">p</ref>]);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*history_previous(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structhistory" kindref="compound">history</ref><sp/>*hist)</highlight></codeline>
+<codeline lineno="108"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>History<sp/>is<sp/>empty.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(hist-&gt;<ref refid="structhistory_1af93f4f37fc2ad9c37af4a715423b110c" kindref="member">top</ref><sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Start<sp/>of<sp/>the<sp/>history.<sp/>*/</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(hist-&gt;<ref refid="structhistory_1a533391314665d6bf1b5575e9a9cd8552" kindref="member">p</ref><sp/>&lt;<sp/>0)</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(hist-&gt;<ref refid="structhistory_1a3574b8973d7771c98f7edf714c1acb26" kindref="member">log</ref>[0]);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(hist-&gt;<ref refid="structhistory_1a3574b8973d7771c98f7edf714c1acb26" kindref="member">log</ref>[hist-&gt;<ref refid="structhistory_1a533391314665d6bf1b5575e9a9cd8552" kindref="member">p</ref>--]);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>history_push(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structhistory" kindref="compound">history</ref><sp/>*hist,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*s)</highlight></codeline>
+<codeline lineno="124"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Dont<sp/>do<sp/>that.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(*s<sp/>==<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Shift<sp/>elements.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(history_full(hist))</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>hist-&gt;<ref refid="structhistory_1af93f4f37fc2ad9c37af4a715423b110c" kindref="member">top</ref>;<sp/>i++)</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="strncpy_8c_1a31c95a7c8039b460bbc5416df853a57d" kindref="member">strncpy</ref>(hist-&gt;<ref refid="structhistory_1a3574b8973d7771c98f7edf714c1acb26" kindref="member">log</ref>[i],<sp/>hist-&gt;<ref refid="structhistory_1a3574b8973d7771c98f7edf714c1acb26" kindref="member">log</ref>[i<sp/>+<sp/>1],<sp/>LINELEN);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hist-&gt;<ref refid="structhistory_1af93f4f37fc2ad9c37af4a715423b110c" kindref="member">top</ref>--;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="strncpy_8c_1a31c95a7c8039b460bbc5416df853a57d" kindref="member">strncpy</ref>(hist-&gt;<ref refid="structhistory_1a3574b8973d7771c98f7edf714c1acb26" kindref="member">log</ref>[hist-&gt;<ref refid="structhistory_1a533391314665d6bf1b5575e9a9cd8552" kindref="member">p</ref><sp/>=<sp/>hist-&gt;<ref refid="structhistory_1af93f4f37fc2ad9c37af4a715423b110c" kindref="member">top</ref>++],<sp/>s,<sp/>LINELEN);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/ubin/tsh/history.c"/>
+  </compounddef>
+</doxygen>

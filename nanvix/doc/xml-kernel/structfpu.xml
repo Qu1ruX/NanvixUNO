@@ -1,0 +1,296 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structfpu" kind="struct" language="C++" prot="public">
+    <compoundname>fpu</compoundname>
+    <includes local="no">fpu.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structfpu_1a5263b40a7e5209114ed583d0a40258d5" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t cw</definition>
+        <argsstring></argsstring>
+        <name>cw</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/i386/fpu.h" line="39" column="1" bodyfile="include/i386/fpu.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfpu_1aca6856d597fc49d0c02d3dd56848d603" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t un1</definition>
+        <argsstring></argsstring>
+        <name>un1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Control Word. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/i386/fpu.h" line="40" column="1" bodyfile="include/i386/fpu.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfpu_1a40aa640cd32fc53807a4dc72f8826d71" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t sw</definition>
+        <argsstring></argsstring>
+        <name>sw</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Unused. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/i386/fpu.h" line="41" column="1" bodyfile="include/i386/fpu.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfpu_1a8b10e24bfe078402fa2d03b28dd20dae" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t un2</definition>
+        <argsstring></argsstring>
+        <name>un2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Status Word. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/i386/fpu.h" line="42" column="1" bodyfile="include/i386/fpu.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfpu_1a0663f6d57bd1046110104ef96e9ceff8" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t tw</definition>
+        <argsstring></argsstring>
+        <name>tw</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Unused. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/i386/fpu.h" line="43" column="1" bodyfile="include/i386/fpu.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfpu_1aa003f3ec88229fc473f372d468604aad" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t un3</definition>
+        <argsstring></argsstring>
+        <name>un3</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Tag Word. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/i386/fpu.h" line="44" column="1" bodyfile="include/i386/fpu.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfpu_1af0b153fb2c1dcd9080607b0caaeae5a7" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t fip</definition>
+        <argsstring></argsstring>
+        <name>fip</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Unused. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/i386/fpu.h" line="45" column="1" bodyfile="include/i386/fpu.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfpu_1a7ee4b05a9f81c6b1bffac2c9780efa3f" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t fcs</definition>
+        <argsstring></argsstring>
+        <name>fcs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Instruction Pointer. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/i386/fpu.h" line="46" column="1" bodyfile="include/i386/fpu.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfpu_1a4a3484c146e3bfe6c9215efd1f36c959" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t un4</definition>
+        <argsstring></argsstring>
+        <name>un4</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Code Segment. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/i386/fpu.h" line="47" column="1" bodyfile="include/i386/fpu.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfpu_1a195fbebd40ca322de4f764a4e596bb40" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t foo</definition>
+        <argsstring></argsstring>
+        <name>foo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Unused. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/i386/fpu.h" line="48" column="1" bodyfile="include/i386/fpu.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfpu_1a9e68a4b3697e0315a98d00ae88d2b9d4" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t fds</definition>
+        <argsstring></argsstring>
+        <name>fds</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Operand Address. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/i386/fpu.h" line="49" column="1" bodyfile="include/i386/fpu.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfpu_1a335e2dd3bf38c3fea1999e66fcecbe61" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t un5</definition>
+        <argsstring></argsstring>
+        <name>un5</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Data Segment. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/i386/fpu.h" line="50" column="1" bodyfile="include/i386/fpu.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfpu_1ae0a79c49e6f0d403dfc3faf0acd7de4d" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t st0[FPU_REGISTER_WIDTH]</definition>
+        <argsstring>[FPU_REGISTER_WIDTH]</argsstring>
+        <name>st0</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Unused. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/i386/fpu.h" line="51" column="1" bodyfile="include/i386/fpu.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfpu_1ac0a3f3af82c0f52b2571db393512f7c5" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t st1[FPU_REGISTER_WIDTH]</definition>
+        <argsstring>[FPU_REGISTER_WIDTH]</argsstring>
+        <name>st1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>ST(0) register. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/i386/fpu.h" line="52" column="1" bodyfile="include/i386/fpu.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfpu_1af7c755260e2e98f55d231a835425944f" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t st2[FPU_REGISTER_WIDTH]</definition>
+        <argsstring>[FPU_REGISTER_WIDTH]</argsstring>
+        <name>st2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>ST(1) register. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/i386/fpu.h" line="53" column="1" bodyfile="include/i386/fpu.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfpu_1a384f279abf7287bc1ae9e955962d3e2f" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t st3[FPU_REGISTER_WIDTH]</definition>
+        <argsstring>[FPU_REGISTER_WIDTH]</argsstring>
+        <name>st3</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>ST(2) register. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/i386/fpu.h" line="54" column="1" bodyfile="include/i386/fpu.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfpu_1aac577dfe2ded368b27b02d4efec28bb5" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t st4[FPU_REGISTER_WIDTH]</definition>
+        <argsstring>[FPU_REGISTER_WIDTH]</argsstring>
+        <name>st4</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>ST(3) register. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/i386/fpu.h" line="55" column="1" bodyfile="include/i386/fpu.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfpu_1aa85c7255dea65387fd722065caa6bb7e" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t st5[FPU_REGISTER_WIDTH]</definition>
+        <argsstring>[FPU_REGISTER_WIDTH]</argsstring>
+        <name>st5</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>ST(4) register. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/i386/fpu.h" line="56" column="1" bodyfile="include/i386/fpu.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfpu_1a48b709ec108bcb092fda981bedd3eb05" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t st6[FPU_REGISTER_WIDTH]</definition>
+        <argsstring>[FPU_REGISTER_WIDTH]</argsstring>
+        <name>st6</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>ST(5) register. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/i386/fpu.h" line="57" column="1" bodyfile="include/i386/fpu.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfpu_1ae92e46fc8d2ca90f3a268524f3549f25" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t st7[FPU_REGISTER_WIDTH]</definition>
+        <argsstring>[FPU_REGISTER_WIDTH]</argsstring>
+        <name>st7</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>ST(6) register. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/i386/fpu.h" line="58" column="1" bodyfile="include/i386/fpu.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>FPU state. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/i386/fpu.h" line="38" column="1" bodyfile="include/i386/fpu.h" bodystart="37" bodyend="59"/>
+    <listofallmembers>
+      <member refid="structfpu_1a5263b40a7e5209114ed583d0a40258d5" prot="public" virt="non-virtual"><scope>fpu</scope><name>cw</name></member>
+      <member refid="structfpu_1a7ee4b05a9f81c6b1bffac2c9780efa3f" prot="public" virt="non-virtual"><scope>fpu</scope><name>fcs</name></member>
+      <member refid="structfpu_1a9e68a4b3697e0315a98d00ae88d2b9d4" prot="public" virt="non-virtual"><scope>fpu</scope><name>fds</name></member>
+      <member refid="structfpu_1af0b153fb2c1dcd9080607b0caaeae5a7" prot="public" virt="non-virtual"><scope>fpu</scope><name>fip</name></member>
+      <member refid="structfpu_1a195fbebd40ca322de4f764a4e596bb40" prot="public" virt="non-virtual"><scope>fpu</scope><name>foo</name></member>
+      <member refid="structfpu_1ae0a79c49e6f0d403dfc3faf0acd7de4d" prot="public" virt="non-virtual"><scope>fpu</scope><name>st0</name></member>
+      <member refid="structfpu_1ac0a3f3af82c0f52b2571db393512f7c5" prot="public" virt="non-virtual"><scope>fpu</scope><name>st1</name></member>
+      <member refid="structfpu_1af7c755260e2e98f55d231a835425944f" prot="public" virt="non-virtual"><scope>fpu</scope><name>st2</name></member>
+      <member refid="structfpu_1a384f279abf7287bc1ae9e955962d3e2f" prot="public" virt="non-virtual"><scope>fpu</scope><name>st3</name></member>
+      <member refid="structfpu_1aac577dfe2ded368b27b02d4efec28bb5" prot="public" virt="non-virtual"><scope>fpu</scope><name>st4</name></member>
+      <member refid="structfpu_1aa85c7255dea65387fd722065caa6bb7e" prot="public" virt="non-virtual"><scope>fpu</scope><name>st5</name></member>
+      <member refid="structfpu_1a48b709ec108bcb092fda981bedd3eb05" prot="public" virt="non-virtual"><scope>fpu</scope><name>st6</name></member>
+      <member refid="structfpu_1ae92e46fc8d2ca90f3a268524f3549f25" prot="public" virt="non-virtual"><scope>fpu</scope><name>st7</name></member>
+      <member refid="structfpu_1a40aa640cd32fc53807a4dc72f8826d71" prot="public" virt="non-virtual"><scope>fpu</scope><name>sw</name></member>
+      <member refid="structfpu_1a0663f6d57bd1046110104ef96e9ceff8" prot="public" virt="non-virtual"><scope>fpu</scope><name>tw</name></member>
+      <member refid="structfpu_1aca6856d597fc49d0c02d3dd56848d603" prot="public" virt="non-virtual"><scope>fpu</scope><name>un1</name></member>
+      <member refid="structfpu_1a8b10e24bfe078402fa2d03b28dd20dae" prot="public" virt="non-virtual"><scope>fpu</scope><name>un2</name></member>
+      <member refid="structfpu_1aa003f3ec88229fc473f372d468604aad" prot="public" virt="non-virtual"><scope>fpu</scope><name>un3</name></member>
+      <member refid="structfpu_1a4a3484c146e3bfe6c9215efd1f36c959" prot="public" virt="non-virtual"><scope>fpu</scope><name>un4</name></member>
+      <member refid="structfpu_1a335e2dd3bf38c3fea1999e66fcecbe61" prot="public" virt="non-virtual"><scope>fpu</scope><name>un5</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

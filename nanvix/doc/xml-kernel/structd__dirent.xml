@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structd__dirent" kind="struct" language="C++" prot="public">
+    <compoundname>d_dirent</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structd__dirent_1a5e2d0fb4cc76afd8f8d42dce0349aebe" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t d_ino</definition>
+        <argsstring></argsstring>
+        <name>d_ino</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>File serial number. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/fs/minix.h" line="162" column="1" bodyfile="include/fs/minix.h" bodystart="162" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structd__dirent_1ac0626025dcd8407b225ac12c607ea920" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char d_name[MINIX_NAME_MAX]</definition>
+        <argsstring>[MINIX_NAME_MAX]</argsstring>
+        <name>d_name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Name of entry. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/fs/minix.h" line="163" column="1" bodyfile="include/fs/minix.h" bodystart="163" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/fs/minix.h" line="161" column="1" bodyfile="include/fs/minix.h" bodystart="160" bodyend="164"/>
+    <listofallmembers>
+      <member refid="structd__dirent_1a5e2d0fb4cc76afd8f8d42dce0349aebe" prot="public" virt="non-virtual"><scope>d_dirent</scope><name>d_ino</name></member>
+      <member refid="structd__dirent_1ac0626025dcd8407b225ac12c607ea920" prot="public" virt="non-virtual"><scope>d_dirent</scope><name>d_name</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

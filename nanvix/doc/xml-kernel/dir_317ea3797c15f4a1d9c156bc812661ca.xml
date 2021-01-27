@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_317ea3797c15f4a1d9c156bc812661ca" kind="dir">
+    <compoundname>include/sys</compoundname>
+    <innerfile refid="sem_8h">sem.h</innerfile>
+    <innerfile refid="include_2sys_2stat_8h">stat.h</innerfile>
+    <innerfile refid="times_8h">times.h</innerfile>
+    <innerfile refid="types_8h">types.h</innerfile>
+    <innerfile refid="utsname_8h">utsname.h</innerfile>
+    <innerfile refid="wait_8h">wait.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/sys/"/>
+  </compounddef>
+</doxygen>

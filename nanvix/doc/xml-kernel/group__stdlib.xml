@@ -1,0 +1,1673 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="group__stdlib" kind="group">
+    <compoundname>stdlib</compoundname>
+    <title>Standard Library</title>
+    <innerclass refid="structdiv__t" prot="public">div_t</innerclass>
+    <innerclass refid="structldiv__t" prot="public">ldiv_t</innerclass>
+    <innerclass refid="structlldiv__t" prot="public">lldiv_t</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__stdlib_1gacf4a2778f9a4d5e0bf2d32c5cde485a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _Exit</definition>
+        <argsstring>(int)</argsstring>
+        <name>_Exit</name>
+        <param>
+          <type>int</type>
+          <defname>status</defname>
+        </param>
+        <briefdescription>
+<para>Terminates the calling process. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>status</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Exiting status. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="134" column="1" bodyfile="src/lib/libc/stdlib/_Exit.c" bodystart="33" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1ga8dec7c95227ff149687066cf04029191" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void abort</definition>
+        <argsstring>(void)</argsstring>
+        <name>abort</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Causes abnormal process termination. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="135" column="1" bodyfile="src/lib/libc/stdlib/abort.c" bodystart="32" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1ga2503bc813e76c9ff8b3523db10bdc06e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int abs</definition>
+        <argsstring>(int)</argsstring>
+        <name>abs</name>
+        <param>
+          <type>int</type>
+          <defname>i</defname>
+        </param>
+        <briefdescription>
+<para>Returns an integer absolute value. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>i</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Integer operand.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The absolute value of its integer operand. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="136" column="1" bodyfile="src/lib/libc/stdlib/abs.c" bodystart="33" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1ga7cb771250232f7f27f31079208f4428a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int atexit</definition>
+        <argsstring>(void(*)(void))</argsstring>
+        <name>atexit</name>
+        <param>
+          <type>void(*)(void)</type>
+          <defname>func</defname>
+        </param>
+        <briefdescription>
+<para>Registers a function to run at process termination. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>func</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Function to be registered.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Upon successful completion 0 is returned; otherwise, a non-zero value is returned. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="137" column="1" bodyfile="src/lib/libc/stdlib/atexit.c" bodystart="76" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1ga3c03a473fd58b46d02952cbb6f4a83af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double atof</definition>
+        <argsstring>(const char *)</argsstring>
+        <name>atof</name>
+        <param>
+          <type>const char *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="138" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1ga4e157d18591ba54c92e4da99a3d1ccae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int atoi</definition>
+        <argsstring>(const char *)</argsstring>
+        <name>atoi</name>
+        <param>
+          <type>const char *</type>
+          <defname>str</defname>
+        </param>
+        <briefdescription>
+<para>Converts a string to an integer. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String to convert.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The converted value if the value can be represented. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="139" column="1" bodyfile="src/lib/libc/stdlib/atoi.c" bodystart="35" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1gabcc2e53ab0b26e5bbf55d597af030327" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long atol</definition>
+        <argsstring>(const char *)</argsstring>
+        <name>atol</name>
+        <param>
+          <type>const char *</type>
+          <defname>str</defname>
+        </param>
+        <briefdescription>
+<para>Converts a string to a long integer. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String to convert.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The converted value if the value can be represented. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="140" column="1" bodyfile="src/lib/libc/stdlib/atol.c" bodystart="35" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1ga4a184533926b5b5e4e595f52919df116" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long long</type>
+        <definition>long long atoll</definition>
+        <argsstring>(const char *)</argsstring>
+        <name>atoll</name>
+        <param>
+          <type>const char *</type>
+          <defname>nptr</defname>
+        </param>
+        <briefdescription>
+<para>Converts a string to a long long integer. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>nptr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String to convert.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The converted value if the value can be represented. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="141" column="1" bodyfile="src/lib/libc/stdlib/atoll.c" bodystart="35" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1ga49a76993c8406bc5a389dfabb8089bd1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* bsearch</definition>
+        <argsstring>(const void *, const void *, size_t, size_t, int(*)(const void *, const void *))</argsstring>
+        <name>bsearch</name>
+        <param>
+          <type>const void *</type>
+          <defname>key</defname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <defname>base</defname>
+        </param>
+        <param>
+          <type><ref refid="decl_8h_1a028b7cbca0d37bbc9bc219370525227f" kindref="member">size_t</ref></type>
+          <defname>nmemb</defname>
+        </param>
+        <param>
+          <type><ref refid="decl_8h_1a028b7cbca0d37bbc9bc219370525227f" kindref="member">size_t</ref></type>
+          <defname>size</defname>
+        </param>
+        <param>
+          <type>int(*)(const void *, const void *)</type>
+          <defname>compar</defname>
+        </param>
+        <briefdescription>
+<para>Performs a binary search on a sorted table. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Key to compare. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Base of the array. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nmemb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of elements in the array. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of each element. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>compar</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Comparison function.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A pointer to a matching member of the array, or a null pointer if no match is found. If two or more members compare equal, which member is returned is unspecified. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="142" column="1" bodyfile="src/lib/libc/stdlib/bsearch.c" bodystart="75" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1ga77e880b1033d5a912be4333fc5d31eef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* calloc</definition>
+        <argsstring>(size_t, size_t)</argsstring>
+        <name>calloc</name>
+        <param>
+          <type><ref refid="decl_8h_1a028b7cbca0d37bbc9bc219370525227f" kindref="member">size_t</ref></type>
+          <defname>n</defname>
+        </param>
+        <param>
+          <type><ref refid="decl_8h_1a028b7cbca0d37bbc9bc219370525227f" kindref="member">size_t</ref></type>
+          <defname>size</defname>
+        </param>
+        <briefdescription>
+<para>Allocates a chunk of memory and cleans it. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of elements to allocate. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of each element.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Upon successful completion with both <linebreak/>
+ and <computeroutput>size</computeroutput> non-zero, <ref refid="group__stdlib_1ga77e880b1033d5a912be4333fc5d31eef" kindref="member">calloc()</ref> returns a pointer to the allocated space. If either <computeroutput>n</computeroutput> or <computeroutput>size</computeroutput> is 0, then either a null pointer or a unique pointer value that can be successfully passed to <ref refid="group__stdlib_1gaf07d89f5ceaea0c7c8252cc41fd75f37" kindref="member">free()</ref> is returned. Otherwise, it returns a null pointer and set errno to indicate the error. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="144" column="1" bodyfile="src/lib/libc/stdlib/calloc.c" bodystart="42" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1gad17e77a41f50034681a0c419c664e721" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structdiv__t" kindref="compound">div_t</ref></type>
+        <definition>div_t div</definition>
+        <argsstring>(int, int)</argsstring>
+        <name>div</name>
+        <param>
+          <type>int</type>
+          <defname>numer</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>denom</defname>
+        </param>
+        <briefdescription>
+<para>Computes the quotient and remainder of an integer division. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>numer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Numerator. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>denom</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Denominator.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A structure of type <ref refid="structdiv__t" kindref="compound">div_t</ref>, comprising both the quotient and the remainder. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="145" column="1" bodyfile="src/lib/libc/stdlib/div.c" bodystart="71" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1ga6f255d924f7a6bb2c4be0c8c2f2d9ce3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void exit</definition>
+        <argsstring>(int)</argsstring>
+        <name>exit</name>
+        <param>
+          <type>int</type>
+          <defname>status</defname>
+        </param>
+        <briefdescription>
+<para>Terminates the calling process. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>status</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Exit status. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="146" column="1" bodyfile="src/lib/libc/stdlib/exit.c" bodystart="40" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1gaf07d89f5ceaea0c7c8252cc41fd75f37" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void free</definition>
+        <argsstring>(void *)</argsstring>
+        <name>free</name>
+        <param>
+          <type>void *</type>
+          <defname>ptr</defname>
+        </param>
+        <briefdescription>
+<para>Frees allocated memory. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ptr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Memory area to free. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="147" column="1" bodyfile="src/lib/libc/stdlib/malloc.c" bodystart="62" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1ga872ac3564834aa0ba70a9e1bd3c2f9de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* getenv</definition>
+        <argsstring>(const char *)</argsstring>
+        <name>getenv</name>
+        <param>
+          <type>const char *</type>
+          <defname>name</defname>
+        </param>
+        <briefdescription>
+<para>Gets value of an environment variable. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A pointer to a string containing the value for the specified name, upon successful completion. If the specified name cannot be found in the environment of the calling process, a null pointer is returned instead. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="148" column="1" bodyfile="src/lib/libc/stdlib/getenv.c" bodystart="111" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1gacef82b884418ad50ae51cadb8eb35069" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long labs</definition>
+        <argsstring>(long)</argsstring>
+        <name>labs</name>
+        <param>
+          <type>long</type>
+          <defname>x</defname>
+        </param>
+        <briefdescription>
+<para>Returns a long integer absolute value. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Operand.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The absolute value of the long integer operand. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="149" column="1" bodyfile="src/lib/libc/stdlib/labs.c" bodystart="33" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1ga9961db60c90864f8b8497073dd749d83" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structldiv__t" kindref="compound">ldiv_t</ref></type>
+        <definition>ldiv_t ldiv</definition>
+        <argsstring>(long, long)</argsstring>
+        <name>ldiv</name>
+        <param>
+          <type>long</type>
+          <defname>numer</defname>
+        </param>
+        <param>
+          <type>long</type>
+          <defname>denom</defname>
+        </param>
+        <briefdescription>
+<para>Computes quotient and remainder of a long division. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>numer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Numerator. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>denom</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Denominator.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A structure of type <ref refid="structldiv__t" kindref="compound">ldiv_t</ref>, comprising both the quotient and the remainder. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="150" column="1" bodyfile="src/lib/libc/stdlib/ldiv.c" bodystart="71" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1gaed06afcfed16ae2e80a211efddbb7081" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long long</type>
+        <definition>long long llabs</definition>
+        <argsstring>(long long)</argsstring>
+        <name>llabs</name>
+        <param>
+          <type>long</type>
+          <declname>long</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="151" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1ga1b9b0a37de5270109f0393520d75b30d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structlldiv__t" kindref="compound">lldiv_t</ref></type>
+        <definition>lldiv_t lldiv</definition>
+        <argsstring>(long long, long long)</argsstring>
+        <name>lldiv</name>
+        <param>
+          <type>long</type>
+          <declname>long</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>long</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="152" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1ga1c8580582aae58105f16108d4ec89e9a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* malloc</definition>
+        <argsstring>(size_t)</argsstring>
+        <name>malloc</name>
+        <param>
+          <type><ref refid="decl_8h_1a028b7cbca0d37bbc9bc219370525227f" kindref="member">size_t</ref></type>
+          <defname>size</defname>
+        </param>
+        <briefdescription>
+<para>Allocates memory. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of bytes to allocate.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Upon successful completion with size not equal to 0, <ref refid="group__stdlib_1ga1c8580582aae58105f16108d4ec89e9a" kindref="member">malloc()</ref> returns a pointer to the allocated space. If size is 0, either a null pointer or a unique pointer that can be successfully passed to <ref refid="group__stdlib_1gaf07d89f5ceaea0c7c8252cc41fd75f37" kindref="member">free()</ref> is returned. Otherwise, it returns a null pointer and set errno to indicate the error. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="153" column="1" bodyfile="src/lib/libc/stdlib/malloc.c" bodystart="142" bodyend="194"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1gae650100e5bb658ce0ed1e25349f63123" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int mblen</definition>
+        <argsstring>(const char *, size_t)</argsstring>
+        <name>mblen</name>
+        <param>
+          <type>const char *</type>
+          <defname>s</defname>
+        </param>
+        <param>
+          <type><ref refid="decl_8h_1a028b7cbca0d37bbc9bc219370525227f" kindref="member">size_t</ref></type>
+          <defname>n</defname>
+        </param>
+        <briefdescription>
+<para>Gets number of bytes in a character. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Multi-byte character. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Maximum number of bytes to consider.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>If s is a null pointer, <ref refid="group__stdlib_1gae650100e5bb658ce0ed1e25349f63123" kindref="member">mblen()</ref> returns a non-zero or 0 value, if character encodings, respectively, do or do not have state-dependent encodings. If s is not a null pointer, <ref refid="group__stdlib_1gae650100e5bb658ce0ed1e25349f63123" kindref="member">mblen()</ref> either returns 0 (if s points to the null byte), or returns the number of bytes that constitute the character (if the next n or fewer bytes form a valid character), or return -1 (if they do not form a valid character) and is set errno to indicate the error. In no case shall the value returned be greater than <computeroutput>n</computeroutput> or the value of the MB_CUR_MAX macro.</para></simplesect>
+<simplesect kind="note"><para>The <ref refid="group__stdlib_1gae650100e5bb658ce0ed1e25349f63123" kindref="member">mblen()</ref> function is not thread-safe. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="154" column="1" bodyfile="src/lib/libc/stdlib/mblen.c" bodystart="66" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1ga918c5f7675fba519c224b1e4c5e20a6a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="decl_8h_1a028b7cbca0d37bbc9bc219370525227f" kindref="member">size_t</ref></type>
+        <definition>size_t mbstowcs</definition>
+        <argsstring>(wchar_t *restrict, const char *restrict, size_t)</argsstring>
+        <name>mbstowcs</name>
+        <param>
+          <type><ref refid="decl_8h_1a2e9a8173645cde5c5e7ae1eaa41d27ce" kindref="member">wchar_t</ref> *</type>
+          <declname>restrict</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>restrict</declname>
+        </param>
+        <param>
+          <type><ref refid="decl_8h_1a028b7cbca0d37bbc9bc219370525227f" kindref="member">size_t</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="155" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1ga518b2677fda26df5c9c9eb31b2edee67" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int mbtowc</definition>
+        <argsstring>(wchar_t *restrict, const char *restrict, size_t)</argsstring>
+        <name>mbtowc</name>
+        <param>
+          <type><ref refid="decl_8h_1a2e9a8173645cde5c5e7ae1eaa41d27ce" kindref="member">wchar_t</ref> *</type>
+          <declname>restrict</declname>
+          <defname>pwc</defname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>restrict</declname>
+          <defname>s</defname>
+        </param>
+        <param>
+          <type><ref refid="decl_8h_1a028b7cbca0d37bbc9bc219370525227f" kindref="member">size_t</ref></type>
+          <defname>n</defname>
+        </param>
+        <briefdescription>
+<para>Converts a character to a wide-character code. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pwc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Wide-character code. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Wide-character. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of bytes to consider.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>If <computeroutput>s</computeroutput> is a null pointer, <ref refid="group__stdlib_1ga518b2677fda26df5c9c9eb31b2edee67" kindref="member">mbtowc()</ref> returns a non-zero or 0 value, if character encodings, respectively, do or do not have state- dependent encodings. If <computeroutput>s</computeroutput> is not a null pointer, <ref refid="group__stdlib_1ga518b2677fda26df5c9c9eb31b2edee67" kindref="member">mbtowc()</ref> either returns 0 (if s points to the null byte), or returns the number of bytes that constitute the converted character (if the next <computeroutput>n</computeroutput> or fewer bytes form a valid character), or return -1 and sets errno to indicate the error (if they do not form a valid character).</para></simplesect>
+In no case the value returned is greater than <computeroutput>n</computeroutput> or the value of the MB_CUR_MAX macro.</para><para><simplesect kind="note"><para>The <ref refid="group__stdlib_1ga518b2677fda26df5c9c9eb31b2edee67" kindref="member">mbtowc()</ref> function is not thread-safe. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="156" column="1" bodyfile="src/lib/libc/stdlib/mbtowc.c" bodystart="179" bodyend="204"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1ga618b2e4bc5184f2de3c58eb3adc840ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void qsort</definition>
+        <argsstring>(void *, size_t, size_t, int(*)(const void *, const void *))</argsstring>
+        <name>qsort</name>
+        <param>
+          <type>void *</type>
+          <defname>base</defname>
+        </param>
+        <param>
+          <type><ref refid="decl_8h_1a028b7cbca0d37bbc9bc219370525227f" kindref="member">size_t</ref></type>
+          <defname>nmemb</defname>
+        </param>
+        <param>
+          <type><ref refid="decl_8h_1a028b7cbca0d37bbc9bc219370525227f" kindref="member">size_t</ref></type>
+          <defname>size</defname>
+        </param>
+        <param>
+          <type>int(*)(const void *, const void *)</type>
+          <defname>cmp</defname>
+        </param>
+        <briefdescription>
+<para>Sorts a table of data. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array to sort. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nmemb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of elements in the array. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of each element. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cmp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Comparison function. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="157" column="1" bodyfile="src/lib/libc/stdlib/qsort.c" bodystart="176" bodyend="180"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1gae23144bcbb8e3742b00eb687c36654d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int rand</definition>
+        <argsstring>(void)</argsstring>
+        <name>rand</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Generates a pseudo-random number. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A pseudo-random integer. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="159" column="1" bodyfile="src/lib/libc/stdlib/rand.c" bodystart="66" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1gafa148085b6fa9594b4c35e100d94a183" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* realloc</definition>
+        <argsstring>(void *, size_t)</argsstring>
+        <name>realloc</name>
+        <param>
+          <type>void *</type>
+          <defname>ptr</defname>
+        </param>
+        <param>
+          <type><ref refid="decl_8h_1a028b7cbca0d37bbc9bc219370525227f" kindref="member">size_t</ref></type>
+          <defname>size</defname>
+        </param>
+        <briefdescription>
+<para>Reallocates a memory chunk. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ptr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to old object. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of new object.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Upon successful completion, <ref refid="group__stdlib_1gafa148085b6fa9594b4c35e100d94a183" kindref="member">realloc()</ref> returns a pointer to the allocated space. Upon failure, a null pointer is returned instead.</para></simplesect>
+<xrefsect id="todo_1_todo000005"><xreftitle>Todo</xreftitle><xrefdescription><para>Check if we can simply expand. </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="160" column="1" bodyfile="src/lib/libc/stdlib/malloc.c" bodystart="207" bodyend="225"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1gaa7cb61cef6d19542fccc5cabf47f96eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void srand</definition>
+        <argsstring>(unsigned)</argsstring>
+        <name>srand</name>
+        <param>
+          <type>unsigned</type>
+          <defname>seed</defname>
+        </param>
+        <briefdescription>
+<para>Sets seed value for pseudo-random number generator. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>seed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pseudo-random number sequence&apos;s seed value. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="161" column="1" bodyfile="src/lib/libc/stdlib/srand.c" bodystart="38" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1gac102953e1ec969337c2d582187ef07e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double strtod</definition>
+        <argsstring>(const char *restrict, char **restrict)</argsstring>
+        <name>strtod</name>
+        <param>
+          <type>const char *</type>
+          <declname>restrict</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>restrict</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="162" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1ga3e1083408e0b6388f704d62dc069c610" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float strtof</definition>
+        <argsstring>(const char *restrict, char **restrict)</argsstring>
+        <name>strtof</name>
+        <param>
+          <type>const char *</type>
+          <declname>restrict</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>restrict</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="163" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1ga9bc81db43ac86489fd4f63158d980824" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long strtol</definition>
+        <argsstring>(const char *restrict, char **restrict, int)</argsstring>
+        <name>strtol</name>
+        <param>
+          <type>const char *</type>
+          <declname>restrict</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>restrict</declname>
+        </param>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="164" column="1" bodyfile="src/lib/libc/stdlib/strtol.c" bodystart="64" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1ga339e1394ba4c3667b97e99e74f12e500" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long double</type>
+        <definition>long double strtold</definition>
+        <argsstring>(const char *restrict, char **restrict)</argsstring>
+        <name>strtold</name>
+        <param>
+          <type>const char *</type>
+          <declname>restrict</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>restrict</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="165" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1gab244d29d4085d656a6b53979a0011f49" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long long</type>
+        <definition>long long strtoll</definition>
+        <argsstring>(const char *restrict, char **restrict, int)</argsstring>
+        <name>strtoll</name>
+        <param>
+          <type>const char *</type>
+          <declname>restrict</declname>
+          <defname>nptr</defname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>restrict</declname>
+          <defname>endptr</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>base</defname>
+        </param>
+        <briefdescription>
+<para>Converts a string to a long long integer. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>nptr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Start of string </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>endptr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>End of string. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Base</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The converted value </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="166" column="1" bodyfile="src/lib/libc/stdlib/strtoll.c" bodystart="71" bodyend="184"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1gae938461579a7c8e38d1c02319b8e9e3e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned long</type>
+        <definition>unsigned long strtoul</definition>
+        <argsstring>(const char *restrict, char **restrict, int)</argsstring>
+        <name>strtoul</name>
+        <param>
+          <type>const char *</type>
+          <declname>restrict</declname>
+          <defname>str</defname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>restrict</declname>
+          <defname>endptr</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>base</defname>
+        </param>
+        <briefdescription>
+<para>Converts a string to an unsigned long. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Start of string. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>endptr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>End of string. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Base.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The converted value. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="167" column="1" bodyfile="src/lib/libc/stdlib/strtoul.c" bodystart="67" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1ga0ff125753c962cfc9f053ba56eaf7e73" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned long long</type>
+        <definition>unsigned long long strtoull</definition>
+        <argsstring>(const char *restrict, char **restrict, int)</argsstring>
+        <name>strtoull</name>
+        <param>
+          <type>const char *</type>
+          <declname>restrict</declname>
+          <defname>str</defname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>restrict</declname>
+          <defname>endptr</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>base</defname>
+        </param>
+        <briefdescription>
+<para>Converts a string to an unsigned long long. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Start of string. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>endptr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>End of string. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Base.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The converted value. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="168" column="1" bodyfile="src/lib/libc/stdlib/strtoull.c" bodystart="75" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1gacc83831a3c113aad520e966b931821b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int system</definition>
+        <argsstring>(const char *)</argsstring>
+        <name>system</name>
+        <param>
+          <type>const char *</type>
+          <defname>command</defname>
+        </param>
+        <briefdescription>
+<para>Issues a command. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>command</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Command to issue.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>If <computeroutput>command</computeroutput> is a null pointer, non-zero value is returned to indicate that a command processor is available, and zero otherwise.</para></simplesect>
+If <computeroutput>command</computeroutput> is not a null pointer, the termination status of the command language is returned. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="169" column="1" bodyfile="src/lib/libc/stdlib/system.c" bodystart="44" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1ga4ba2dbe4531f620c4a913e15d97a6d78" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="decl_8h_1a028b7cbca0d37bbc9bc219370525227f" kindref="member">size_t</ref></type>
+        <definition>size_t wcstombs</definition>
+        <argsstring>(char *restrict, const wchar_t *restrict, size_t)</argsstring>
+        <name>wcstombs</name>
+        <param>
+          <type>char *</type>
+          <declname>restrict</declname>
+        </param>
+        <param>
+          <type>const <ref refid="decl_8h_1a2e9a8173645cde5c5e7ae1eaa41d27ce" kindref="member">wchar_t</ref> *</type>
+          <declname>restrict</declname>
+        </param>
+        <param>
+          <type><ref refid="decl_8h_1a028b7cbca0d37bbc9bc219370525227f" kindref="member">size_t</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="170" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1ga0eb3389011d8b4ed673f8d1676418f12" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wctomb</definition>
+        <argsstring>(char *, wchar_t)</argsstring>
+        <name>wctomb</name>
+        <param>
+          <type>char *</type>
+          <defname>s</defname>
+        </param>
+        <param>
+          <type><ref refid="decl_8h_1a2e9a8173645cde5c5e7ae1eaa41d27ce" kindref="member">wchar_t</ref></type>
+          <defname>wchar</defname>
+        </param>
+        <briefdescription>
+<para>Cconverts a wide-character code to a character. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Store location. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>wchar</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Wide-character to convert.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>If <computeroutput>s</computeroutput> is a null pointer,a non-zero or 0 value is returns, if character encodings, respectively, do or do not have state-dependent encodings. If <computeroutput>s</computeroutput> is not a null pointer, -1 is returned if the value of <computeroutput>wchar</computeroutput> does not correspond to a valid character, or return the number of bytes that constitute the character corresponding to the value of <computeroutput>wchar</computeroutput>. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="171" column="1" bodyfile="src/lib/libc/stdlib/wctomb.c" bodystart="62" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1gaa32a5138e3954193c9d94c04b64f8aa8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int getsubopt</definition>
+        <argsstring>(char **, char *const *, char **)</argsstring>
+        <name>getsubopt</name>
+        <param>
+          <type>char **</type>
+          <defname>optionp</defname>
+        </param>
+        <param>
+          <type>char *const *</type>
+          <defname>keylistp</defname>
+        </param>
+        <param>
+          <type>char **</type>
+          <defname>valuep</defname>
+        </param>
+        <briefdescription>
+<para>Parses suboption arguments from a string. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>keylistp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List of strings to parse. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>valuep</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Address of a value string.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The index of the matched token string, or -1 if no token strings were matched. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="176" column="1" bodyfile="src/lib/libc/stdlib/getsubopt.c" bodystart="58" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1gabb3eced7b06b90081d273ce3ed0890cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* mkdtemp</definition>
+        <argsstring>(char *)</argsstring>
+        <name>mkdtemp</name>
+        <param>
+          <type>char *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="177" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1ga567fc2c0116424fbecf9238ecf7c5fe4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int mkstemp</definition>
+        <argsstring>(char *)</argsstring>
+        <name>mkstemp</name>
+        <param>
+          <type>char *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="178" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1ga16835a2f0889fd0fece3f7a779ae53a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int posix_memalign</definition>
+        <argsstring>(void **, size_t, size_t)</argsstring>
+        <name>posix_memalign</name>
+        <param>
+          <type>void **</type>
+        </param>
+        <param>
+          <type><ref refid="decl_8h_1a028b7cbca0d37bbc9bc219370525227f" kindref="member">size_t</ref></type>
+        </param>
+        <param>
+          <type><ref refid="decl_8h_1a028b7cbca0d37bbc9bc219370525227f" kindref="member">size_t</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="179" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1ga1e1d87736ecb144de4859f00bdb6f8c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int rand_r</definition>
+        <argsstring>(unsigned *)</argsstring>
+        <name>rand_r</name>
+        <param>
+          <type>unsigned *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="180" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1ga4f163149d0e7590ff98d7c8bbd17583d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int setenv</definition>
+        <argsstring>(const char *, const char *, int)</argsstring>
+        <name>setenv</name>
+        <param>
+          <type>const char *</type>
+          <defname>envname</defname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <defname>envval</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>overwrite</defname>
+        </param>
+        <briefdescription>
+<para>Adds or change environment variable. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>envname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Environment variable name. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>envval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Environment variable value. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>overwrite</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Overwrite environment variable?</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Upon successful completion, zero is returned. Otherwise, -1 is returned, errno set to indicate the error, and the environment is unchanged.</para></simplesect>
+<xrefsect id="todo_1_todo000006"><xreftitle>Todo</xreftitle><xrefdescription><para>The <ref refid="group__stdlib_1ga4f163149d0e7590ff98d7c8bbd17583d" kindref="member">setenv()</ref> function shall fail if the envname argument points to an empty string or points to a string containing an &apos;=&apos; character. </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="181" column="1" bodyfile="src/lib/libc/stdlib/setenv.c" bodystart="74" bodyend="151"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1ga4f1e5944541aa8d1b18932a54158eb70" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int unsetenv</definition>
+        <argsstring>(const char *)</argsstring>
+        <name>unsetenv</name>
+        <param>
+          <type>const char *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="182" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1ga4f3f099a09a8b63257b3ef4e9954e848" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long a64l</definition>
+        <argsstring>(const char *)</argsstring>
+        <name>a64l</name>
+        <param>
+          <type>const char *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="189" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1gaf9329f9acef07ca14ea2256191c3ce74" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double drand48</definition>
+        <argsstring>(void)</argsstring>
+        <name>drand48</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="190" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1ga5f99074b4b01332a7b5d09478ea7e3dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double erand48</definition>
+        <argsstring>(unsigned short [3])</argsstring>
+        <name>erand48</name>
+        <param>
+          <type>unsigned</type>
+          <declname>short</declname>
+          <array>[3]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="191" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1gae09b28c5490741231182c52028a23165" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int grantpt</definition>
+        <argsstring>(int)</argsstring>
+        <name>grantpt</name>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="192" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1ga558757ae2721914acef051b48ef85e1c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* initstate</definition>
+        <argsstring>(unsigned, char *, size_t)</argsstring>
+        <name>initstate</name>
+        <param>
+          <type>unsigned</type>
+        </param>
+        <param>
+          <type>char *</type>
+        </param>
+        <param>
+          <type><ref refid="decl_8h_1a028b7cbca0d37bbc9bc219370525227f" kindref="member">size_t</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="193" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1gaf077eab66701bac403c7f8240229fd5e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long jrand48</definition>
+        <argsstring>(unsigned short [3])</argsstring>
+        <name>jrand48</name>
+        <param>
+          <type>unsigned</type>
+          <declname>short</declname>
+          <array>[3]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="194" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1ga63da730951c715309c5df7b821d49c5b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* l64a</definition>
+        <argsstring>(long)</argsstring>
+        <name>l64a</name>
+        <param>
+          <type>long</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="195" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1ga6814c98a1f46037d2b5686255ded3567" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void lcong48</definition>
+        <argsstring>(unsigned short [7])</argsstring>
+        <name>lcong48</name>
+        <param>
+          <type>unsigned</type>
+          <declname>short</declname>
+          <array>[7]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="196" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1gaf728ead9279a6966bb00e16bb9844971" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long lrand48</definition>
+        <argsstring>(void)</argsstring>
+        <name>lrand48</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="197" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1ga9c450a7a3d4437e3d5f8def180f68103" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long mrand48</definition>
+        <argsstring>(void)</argsstring>
+        <name>mrand48</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="198" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1ga4d57c4b555943f6ab50ebccc71737744" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long nrand48</definition>
+        <argsstring>(unsigned short [3])</argsstring>
+        <name>nrand48</name>
+        <param>
+          <type>unsigned</type>
+          <declname>short</declname>
+          <array>[3]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="199" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1gad0def01a79709ac43eb62ad48f4cf409" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int posix_openpt</definition>
+        <argsstring>(int)</argsstring>
+        <name>posix_openpt</name>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="200" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1ga7eaf7a36ed5eff48d83827444d860cf4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* ptsname</definition>
+        <argsstring>(int)</argsstring>
+        <name>ptsname</name>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="201" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1ga5dd0c329b734eeefd1909d15385f8b95" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int putenv</definition>
+        <argsstring>(char *)</argsstring>
+        <name>putenv</name>
+        <param>
+          <type>char *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="202" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1ga114aeb1751119382aaf3340355b22cfd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long random</definition>
+        <argsstring>(void)</argsstring>
+        <name>random</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="203" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1gaa2e947ddd3b3def026b2fe85509db1eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* realpath</definition>
+        <argsstring>(const char *restrict, char *restrict)</argsstring>
+        <name>realpath</name>
+        <param>
+          <type>const char *</type>
+          <declname>restrict</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>restrict</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="204" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1ga4b14b99a37f33dc22ed7ba9375bb357a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned short *</type>
+        <definition>unsigned short* seed48</definition>
+        <argsstring>(unsigned short [3])</argsstring>
+        <name>seed48</name>
+        <param>
+          <type>unsigned</type>
+          <declname>short</declname>
+          <array>[3]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="205" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1gae25be82cf3e215cbb7493afee84d8e7f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void setkey</definition>
+        <argsstring>(const char *)</argsstring>
+        <name>setkey</name>
+        <param>
+          <type>const char *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="206" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1ga906bfa1c5e19ac1c32949196e92e39e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* setstate</definition>
+        <argsstring>(char *)</argsstring>
+        <name>setstate</name>
+        <param>
+          <type>char *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="207" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1ga00f00795b1045ba8a8eba4cb8ac25366" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void srand48</definition>
+        <argsstring>(long)</argsstring>
+        <name>srand48</name>
+        <param>
+          <type>long</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="208" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1ga1b5213526e729a67240badfd8408a447" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void srandom</definition>
+        <argsstring>(unsigned)</argsstring>
+        <name>srandom</name>
+        <param>
+          <type>unsigned</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="209" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stdlib_1ga47e0e6d6e941f2fb6508395ae84bc2bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int unlockpt</definition>
+        <argsstring>(int)</argsstring>
+        <name>unlockpt</name>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="210" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Standard library definitions. </para>    </briefdescription>
+    <detaileddescription>
+<para><xrefsect id="todo_1_todo000001"><xreftitle>Todo</xreftitle><xrefdescription><para><ref refid="group__stdlib_1ga8dec7c95227ff149687066cf04029191" kindref="member">abort()</ref> </para><para>atof() </para><para>mbstowcs() </para><para>strtod() </para><para>strtold() </para><para>strtof() </para><para>strtold() </para><para>wcstombs() </para><para>mkdtemp() </para><para>mkstemp() </para><para>posix_memalign() </para><para>rand_r() </para><para>a64l() </para><para>drand48() </para><para>erand48() </para><para>grantpt() </para><para>initstate() </para><para>jrand48() </para><para>l64a() </para><para>lcong48() </para><para>lrand48() </para><para>mrand48() </para><para>nrand48() </para><para>posix_openpt() </para><para>ptsname() </para><para>putenv() </para><para>random() </para><para>realpath() </para><para>seed48() </para><para>setkey() </para><para>setstate() </para><para>srand48() </para><para>srandom() </para><para>unlockpt() </para></xrefdescription></xrefsect></para>    </detaileddescription>
+  </compounddef>
+</doxygen>

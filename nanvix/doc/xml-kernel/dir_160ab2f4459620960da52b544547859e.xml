@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_160ab2f4459620960da52b544547859e" kind="dir">
+    <compoundname>src/lib/libc/unistd</compoundname>
+    <innerfile refid="lib_2libc_2unistd_2__exit_8c">_exit.c</innerfile>
+    <innerfile refid="lib_2libc_2unistd_2alarm_8c">alarm.c</innerfile>
+    <innerfile refid="lib_2libc_2unistd_2brk_8c">brk.c</innerfile>
+    <innerfile refid="lib_2libc_2unistd_2chdir_8c">chdir.c</innerfile>
+    <innerfile refid="lib_2libc_2unistd_2chmod_8c">chmod.c</innerfile>
+    <innerfile refid="lib_2libc_2unistd_2chown_8c">chown.c</innerfile>
+    <innerfile refid="lib_2libc_2unistd_2close_8c">close.c</innerfile>
+    <innerfile refid="dup2_8c">dup2.c</innerfile>
+    <innerfile refid="environ_8c">environ.c</innerfile>
+    <innerfile refid="lib_2libc_2unistd_2execve_8c">execve.c</innerfile>
+    <innerfile refid="lib_2libc_2unistd_2fork_8c">fork.c</innerfile>
+    <innerfile refid="getcwd_8c">getcwd.c</innerfile>
+    <innerfile refid="lib_2libc_2unistd_2getpid_8c">getpid.c</innerfile>
+    <innerfile refid="lib_2libc_2unistd_2getuid_8c">getuid.c</innerfile>
+    <innerfile refid="lib_2libc_2unistd_2gticks_8c">gticks.c</innerfile>
+    <innerfile refid="isatty_8c">isatty.c</innerfile>
+    <innerfile refid="lib_2libc_2unistd_2link_8c">link.c</innerfile>
+    <innerfile refid="lib_2libc_2unistd_2lseek_8c">lseek.c</innerfile>
+    <innerfile refid="lib_2libc_2unistd_2nice_8c">nice.c</innerfile>
+    <innerfile refid="lib_2libc_2unistd_2pause_8c">pause.c</innerfile>
+    <innerfile refid="lib_2libc_2unistd_2pipe_8c">pipe.c</innerfile>
+    <innerfile refid="lib_2libc_2unistd_2ps_8c">ps.c</innerfile>
+    <innerfile refid="lib_2libc_2unistd_2read_8c">read.c</innerfile>
+    <innerfile refid="sbrk_8c">sbrk.c</innerfile>
+    <innerfile refid="lib_2libc_2unistd_2setgid_8c">setgid.c</innerfile>
+    <innerfile refid="lib_2libc_2unistd_2setpgrp_8c">setpgrp.c</innerfile>
+    <innerfile refid="lib_2libc_2unistd_2setuid_8c">setuid.c</innerfile>
+    <innerfile refid="lib_2libc_2unistd_2shutdown_8c">shutdown.c</innerfile>
+    <innerfile refid="lib_2libc_2unistd_2sleep_8c">sleep.c</innerfile>
+    <innerfile refid="lib_2libc_2unistd_2sync_8c">sync.c</innerfile>
+    <innerfile refid="lib_2libc_2unistd_2unlink_8c">unlink.c</innerfile>
+    <innerfile refid="lib_2libc_2unistd_2write_8c">write.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/lib/libc/unistd/"/>
+  </compounddef>
+</doxygen>

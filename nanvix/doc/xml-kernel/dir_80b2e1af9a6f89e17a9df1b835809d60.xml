@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_80b2e1af9a6f89e17a9df1b835809d60" kind="dir">
+    <compoundname>src/ubin/chmod</compoundname>
+    <innerfile refid="ubin_2chmod_2chmod_8c">chmod.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/ubin/chmod/"/>
+  </compounddef>
+</doxygen>

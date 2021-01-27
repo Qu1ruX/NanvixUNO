@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_92e8125e54c8e2960f09873d3abc3910" kind="dir">
+    <compoundname>include/dev</compoundname>
+    <innerfile refid="ata_8h">ata.h</innerfile>
+    <innerfile refid="klog_8h">klog.h</innerfile>
+    <innerfile refid="ramdisk_8h">ramdisk.h</innerfile>
+    <innerfile refid="include_2dev_2tty_8h">tty.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/dev/"/>
+  </compounddef>
+</doxygen>

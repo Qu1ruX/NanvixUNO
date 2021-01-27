@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_4db6d27a51da02308ee3b6e0fd51865b" kind="dir">
+    <compoundname>src/ubin/sync</compoundname>
+    <innerfile refid="ubin_2sync_2sync_8c">sync.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/ubin/sync/"/>
+  </compounddef>
+</doxygen>

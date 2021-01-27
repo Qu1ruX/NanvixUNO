@@ -1,0 +1,311 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="utilities_8S" kind="file" language="C++">
+    <compoundname>utilities.S</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">/*</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>Copyright(C)<sp/>2011-2016<sp/>Pedro<sp/>H.<sp/>Penna<sp/><sp/><sp/>&lt;pedrohenriquepenna@gmail.com&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2015-2016<sp/>Davidson<sp/>Francis<sp/>&lt;davidsondfgl@gmail.com&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>Nanvix.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>Nanvix<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>Nanvix<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>along<sp/>with<sp/>Nanvix.<sp/>If<sp/>not,<sp/>see<sp/>&lt;http://www.gnu.org/licenses/&gt;.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*/</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/*<sp/>Must<sp/>come<sp/>first.<sp/>*/</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>_ASM_FILE_</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;i386/i386.h&gt;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;i386/int.h&gt;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;nanvix/mm.h&gt;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;nanvix/pm.h&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/*<sp/>Exported<sp/>symbols.<sp/>*/</highlight></codeline>
+<codeline><highlight class="normal">.globl<sp/>gdt_flush</highlight></codeline>
+<codeline><highlight class="normal">.globl<sp/>idt_flush</highlight></codeline>
+<codeline><highlight class="normal">.globl<sp/>tss_flush</highlight></codeline>
+<codeline><highlight class="normal">.globl<sp/>tlb_flush</highlight></codeline>
+<codeline><highlight class="normal">.globl<sp/>enable_interrupts</highlight></codeline>
+<codeline><highlight class="normal">.globl<sp/>disable_interrupts</highlight></codeline>
+<codeline><highlight class="normal">.globl<sp/>halt</highlight></codeline>
+<codeline><highlight class="normal">.globl<sp/>physcpy</highlight></codeline>
+<codeline><highlight class="normal">.globl<sp/>switch_to</highlight></codeline>
+<codeline><highlight class="normal">.globl<sp/>user_mode</highlight></codeline>
+<codeline><highlight class="normal">.globl<sp/>fpu_init</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/*<sp/>Imported<sp/>symbols.<sp/>*/</highlight></codeline>
+<codeline><highlight class="normal">.globl<sp/>processor_reload</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/*----------------------------------------------------------------------------*</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gdt_flush<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*----------------------------------------------------------------------------*/</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/*</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>Flushes<sp/>the<sp/>GDT.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal">gdt_flush:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>/*<sp/>Load<sp/>GDT.<sp/>*/</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mov<sp/>4(%esp),<sp/>%eax</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>lgdt<sp/>(%eax)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>/*<sp/>Reload<sp/>code<sp/>segment.<sp/>*/</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>ljmp<sp/>$KERNEL_CS,<sp/>$reload_cs</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>reload_cs<sp/>:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>/*<sp/>Realod<sp/>data<sp/>segment.<sp/>*/</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>movw<sp/>$KERNEL_DS,<sp/>%ax</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>movw<sp/>%ax,<sp/>%ds</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>ret</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/*----------------------------------------------------------------------------*</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tss_flush<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*----------------------------------------------------------------------------*/</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/*</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>Flushes<sp/>the<sp/>TSS.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal">tss_flush:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>/*<sp/>Load<sp/>TSS.*/</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>movl<sp/>$TSS,<sp/>%eax</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>ltr<sp/>%ax</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>ret</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/*----------------------------------------------------------------------------*</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>idt_flush<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*----------------------------------------------------------------------------*/</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/*</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>Flushes<sp/>the<sp/>IDT.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal">idt_flush:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>/*<sp/>Load<sp/>iDT.<sp/>*/</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mov<sp/>4(%esp),<sp/>%eax</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>lidt<sp/>(%eax)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>ret</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/*----------------------------------------------------------------------------*</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tlb_flush<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*----------------------------------------------------------------------------*/</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/*</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>Flushes<sp/>the<sp/>TLB.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal">tlb_flush:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>movl<sp/>%cr3,<sp/>%eax</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>movl<sp/>%eax,<sp/>%cr3</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>ret</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/*----------------------------------------------------------------------------*</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>enable_interrupts()<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*----------------------------------------------------------------------------*/</highlight></codeline>
+<codeline><highlight class="normal"><sp/></highlight></codeline>
+<codeline><highlight class="normal">/*</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>Enables<sp/>all<sp/>hardware<sp/>interrupts.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal">enable_interrupts:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>sti</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>ret</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/*----------------------------------------------------------------------------*</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>disable_interrupts()<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*----------------------------------------------------------------------------*/</highlight></codeline>
+<codeline><highlight class="normal"><sp/></highlight></codeline>
+<codeline><highlight class="normal">/*</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>Disables<sp/>all<sp/>hardware<sp/>interrupts.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal">disable_interrupts:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>cli</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>ret</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/*----------------------------------------------------------------------------*</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>halt()<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*----------------------------------------------------------------------------*/</highlight></codeline>
+<codeline><highlight class="normal"><sp/></highlight></codeline>
+<codeline><highlight class="normal">/*</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>Halts<sp/>the<sp/>processor.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal">halt:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>nop</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>ret</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/*----------------------------------------------------------------------------*</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>physcpy()<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*----------------------------------------------------------------------------*/</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/*</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>Physical<sp/>memory<sp/>copy.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal">physcpy:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>pushl<sp/>%esi</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>pushl<sp/>%edi</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>/*<sp/>Get<sp/>parameters.<sp/>*/</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>movl<sp/>12(%esp),<sp/>%edi</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>movl<sp/>16(%esp),<sp/>%esi</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>movl<sp/>20(%esp),<sp/>%ecx</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>/*<sp/>Jump<sp/>to<sp/>lower-half<sp/>kernel*/</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>cli</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>movl<sp/>$lower_kernel,<sp/>%eax</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>subl<sp/>$KBASE_VIRT,<sp/>%eax</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>jmp<sp/>*%eax</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>lower_kernel:</highlight></codeline>
+<codeline><highlight class="normal"><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>/*<sp/>Disable<sp/>paging.<sp/>*/</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>movl<sp/>%cr0,<sp/>%eax</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>andl<sp/>$0x80000000<sp/>-<sp/>1,<sp/>%eax</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>movl<sp/>%eax,<sp/>%cr0</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/*</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>Copy<sp/>memory<sp/>from<sp/>a<sp/>page<sp/>to<sp/>another.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>We<sp/>cannot<sp/>use<sp/>nice<sp/>instructions<sp/>such<sp/>as</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>movsb<sp/>because<sp/>we<sp/>would<sp/>use<sp/>segment<sp/>registers</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>and<sp/>therefore<sp/>the<sp/>GDT,<sp/>which<sp/>is<sp/>only<sp/>accessible</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>when<sp/>paging<sp/>is<sp/>enabled.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal">physcpy.loop:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>movl<sp/>(%esi),<sp/>%eax</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>movl<sp/>%eax,<sp/>(%edi)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>addl<sp/>$4,<sp/>%esi</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>addl<sp/>$4,<sp/>%edi</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>subl<sp/>$4,<sp/>%ecx</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>jnz<sp/>physcpy.loop<sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>/*<sp/>Re-enable<sp/>paging.<sp/>*/</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>movl<sp/>%cr0,<sp/>%eax</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>orl<sp/>$0x80000000,<sp/>%eax</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>movl<sp/>%eax,<sp/>%cr0</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>/*<sp/>Come<sp/>back<sp/>to<sp/>higher-half<sp/>kernel.<sp/>*/</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>movl<sp/>$higher_kernel,<sp/>%eax</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>jmp<sp/>*%eax</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>higher_kernel:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>sti</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>popl<sp/>%edi</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>popl<sp/>%esi</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>ret</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/*----------------------------------------------------------------------------*</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>switch_to()<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*----------------------------------------------------------------------------*/</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/*</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>Switches<sp/>execution<sp/>to<sp/>other<sp/>process.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal">switch_to:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>movl<sp/>4(%esp),<sp/>%ecx</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>/*<sp/>Save<sp/>process<sp/>context.<sp/>*/</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>movl<sp/>curr_proc,<sp/>%eax</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>pushfl</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>pushl<sp/>%ebx</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>pushl<sp/>%esi</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>pushl<sp/>%edi</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>pushl<sp/>%ebp</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>pushl<sp/>PROC_KESP(%eax)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>movl<sp/>%esp,<sp/>PROC_KESP(%eax)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>fnsave<sp/>PROC_FSS(%eax)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>/*<sp/>Switch<sp/>processes.<sp/>*/</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>movl<sp/>%ecx,<sp/>curr_proc</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>/*<sp/>Load<sp/>process<sp/>address<sp/>space.<sp/>*/</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>movl<sp/>PROC_CR3(%ecx),<sp/>%eax</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>movl<sp/>%eax,<sp/>%cr3</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>movl<sp/>PROC_KSTACK(%ecx),<sp/>%eax</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>addl<sp/>$PAGE_SIZE<sp/>-<sp/>DWORD_SIZE,<sp/>%eax</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>movl<sp/>%eax,<sp/>TSS_ESP0<sp/>+<sp/>tss</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>/*<sp/>Load<sp/>process<sp/>context.<sp/>*/</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>movl<sp/>PROC_KESP(%ecx),<sp/>%esp</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>frstor<sp/>PROC_FSS(%ecx)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>pushl<sp/>%ecx</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>call<sp/>processor_reload</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>popl<sp/>%ecx</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>btrl<sp/>$PROC_NEW,<sp/>PROC_FLAGS(%ecx)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>jc<sp/>fork_return</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>popl<sp/>PROC_KESP(%ecx)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>popl<sp/>%ebp</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>popl<sp/>%edi</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>popl<sp/>%esi</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>popl<sp/>%ebx</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>popfl</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>ret</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/*</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>Returns<sp/>from<sp/>fork.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal">fork_return:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>movl<sp/>$0,<sp/>EAX(%esp)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>jmp<sp/>leave</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/*----------------------------------------------------------------------------*</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>user_mode()<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*----------------------------------------------------------------------------*/</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/*</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>Switches<sp/>to<sp/>user<sp/>mode.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal">user_mode:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>movl<sp/>4(%esp),<sp/>%ecx</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>movl<sp/>8(%esp),<sp/>%edx</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>/*<sp/>Enter<sp/>critical<sp/>region.<sp/>*/</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>cli</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>/*<sp/>Set<sp/>interrupt<sp/>level<sp/>to<sp/>&quot;user<sp/>level&quot;.<sp/>*/</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>movl<sp/>curr_proc,<sp/>%ebx</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>movl<sp/>$0,<sp/>PROC_INTLVL(%ebx)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>/*<sp/>Load<sp/>data<sp/>segment<sp/>selector.<sp/>*/</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>movw<sp/>$USER_DS,<sp/>%ax</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>movw<sp/>%ax,<sp/>%ds</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>/*<sp/>Build<sp/>fake<sp/>interrupt<sp/>stack.<sp/>*/</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>pushl<sp/>$USER_DS</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>pushl<sp/>%edx</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>pushfl</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>orl<sp/>$0x200,<sp/>(%esp)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>pushl<sp/>$USER_CS</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>pushl<sp/>%ecx</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>iret</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/*----------------------------------------------------------------------------*</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fpu_init()<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*----------------------------------------------------------------------------*/</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/*</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>Initializes<sp/>the<sp/>FPU.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal">fpu_init:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>fninit</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>movl<sp/>curr_proc,<sp/>%eax</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>fnsave<sp/><sp/>PROC_FSS(%eax)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>ret</highlight></codeline>
+    </programlisting>
+    <location file="src/kernel/arch/x86/utilities.S"/>
+  </compounddef>
+</doxygen>

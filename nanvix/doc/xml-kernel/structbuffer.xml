@@ -1,0 +1,230 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structbuffer" kind="struct" language="C++" prot="public">
+    <compoundname>buffer</compoundname>
+    <includes local="no">fs.h</includes>
+      <sectiondef kind="user-defined">
+      <header>General information</header>
+      <memberdef kind="variable" id="structbuffer_1a8910285a0352a5c710e65ec9ecbe32a1" prot="public" static="no" mutable="no">
+        <type>dev_t</type>
+        <definition>dev_t dev</definition>
+        <argsstring></argsstring>
+        <name>dev</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Device. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/fs.h" line="63" column="1" bodyfile="src/kernel/fs/fs.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structbuffer_1ad3767083f0a4e08adaf36474085e94d5" prot="public" static="no" mutable="no">
+        <type><ref refid="include_2fs_2minix_8h_1a77ecea3fce28a16f79db79aa58256855" kindref="member">block_t</ref></type>
+        <definition>block_t num</definition>
+        <argsstring></argsstring>
+        <name>num</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Block number. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/fs.h" line="64" column="1" bodyfile="src/kernel/fs/fs.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structbuffer_1a735984d41155bc1032e09bece8f8d66d" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Underlying data. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/fs.h" line="65" column="1" bodyfile="src/kernel/fs/fs.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structbuffer_1a6a9e89d63eb610dfe238b0a840979421" prot="public" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned count</definition>
+        <argsstring></argsstring>
+        <name>count</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Reference count. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/fs.h" line="66" column="1" bodyfile="src/kernel/fs/fs.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Status information</header>
+      <memberdef kind="variable" id="structbuffer_1a8ceea6ca386afaa3ad7fb4e26227b0a0" prot="public" static="no" mutable="no">
+        <type>enum <ref refid="group__Buffer_1gaa7ac4063de8512ef7cd6c511f3d68c0b" kindref="member">buffer_flags</ref></type>
+        <definition>enum buffer_flags flags</definition>
+        <argsstring></argsstring>
+        <name>flags</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Flags. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/fs.h" line="66" column="1" bodyfile="src/kernel/fs/fs.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structbuffer_1a6e44a17eef6d95b2e6832c26e469d505" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structprocess" kindref="compound">process</ref> *</type>
+        <definition>struct process* chain</definition>
+        <argsstring></argsstring>
+        <name>chain</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sleeping chain. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/fs.h" line="74" column="1" bodyfile="src/kernel/fs/fs.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Cache information.</header>
+      <memberdef kind="variable" id="structbuffer_1ad4814ea38abb922fc3c687c8ac6f994d" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structbuffer" kindref="compound">buffer</ref> *</type>
+        <definition>struct buffer* free_next</definition>
+        <argsstring></argsstring>
+        <name>free_next</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Next buffer in the free list. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/fs.h" line="81" column="1" bodyfile="src/kernel/fs/fs.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structbuffer_1a44bf6f6276b4b59d3b3436ec92de41e7" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structbuffer" kindref="compound">buffer</ref> *</type>
+        <definition>struct buffer* free_prev</definition>
+        <argsstring></argsstring>
+        <name>free_prev</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Previous buffer in the free list. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/fs.h" line="82" column="1" bodyfile="src/kernel/fs/fs.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structbuffer_1a9d04509081195835556c0fc67769ff45" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structbuffer" kindref="compound">buffer</ref> *</type>
+        <definition>struct buffer* hash_next</definition>
+        <argsstring></argsstring>
+        <name>hash_next</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Next buffer in the hash table. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/fs.h" line="83" column="1" bodyfile="src/kernel/fs/fs.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structbuffer_1a93e41d737912f860bb62b4f3c59e883c" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structbuffer" kindref="compound">buffer</ref> *</type>
+        <definition>struct buffer* hash_prev</definition>
+        <argsstring></argsstring>
+        <name>hash_prev</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Previous buffer in the hash table. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/fs.h" line="84" column="1" bodyfile="src/kernel/fs/fs.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Block buffer. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="24">
+        <label>inode</label>
+        <link refid="structinode"/>
+        <childnode refid="24" relation="usage">
+          <edgelabel>free_next</edgelabel>
+          <edgelabel>hash_prev</edgelabel>
+          <edgelabel>hash_next</edgelabel>
+        </childnode>
+        <childnode refid="23" relation="usage">
+          <edgelabel>chain</edgelabel>
+        </childnode>
+        <childnode refid="25" relation="usage">
+          <edgelabel>sb</edgelabel>
+        </childnode>
+      </node>
+      <node id="23">
+        <label>process</label>
+        <link refid="structprocess"/>
+        <childnode refid="24" relation="usage">
+          <edgelabel>root</edgelabel>
+          <edgelabel>pwd</edgelabel>
+        </childnode>
+        <childnode refid="26" relation="usage">
+          <edgelabel>fss</edgelabel>
+        </childnode>
+        <childnode refid="23" relation="usage">
+          <edgelabel>next</edgelabel>
+          <edgelabel>pgrp</edgelabel>
+          <edgelabel>chain</edgelabel>
+          <edgelabel>father</edgelabel>
+        </childnode>
+      </node>
+      <node id="26">
+        <label>fpu</label>
+        <link refid="structfpu"/>
+      </node>
+      <node id="22">
+        <label>buffer</label>
+        <link refid="structbuffer"/>
+        <childnode refid="23" relation="usage">
+          <edgelabel>chain</edgelabel>
+        </childnode>
+        <childnode refid="22" relation="usage">
+          <edgelabel>free_next</edgelabel>
+          <edgelabel>hash_prev</edgelabel>
+          <edgelabel>free_prev</edgelabel>
+          <edgelabel>hash_next</edgelabel>
+        </childnode>
+      </node>
+      <node id="25">
+        <label>superblock</label>
+        <link refid="structsuperblock"/>
+        <childnode refid="24" relation="usage">
+          <edgelabel>root</edgelabel>
+          <edgelabel>mp</edgelabel>
+        </childnode>
+        <childnode refid="23" relation="usage">
+          <edgelabel>chain</edgelabel>
+        </childnode>
+        <childnode refid="22" relation="usage">
+          <edgelabel>zmap</edgelabel>
+          <edgelabel>imap</edgelabel>
+          <edgelabel>buf</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/kernel/fs/fs.h" line="58" column="1" bodyfile="src/kernel/fs/fs.h" bodystart="57" bodyend="86"/>
+    <listofallmembers>
+      <member refid="structbuffer_1a6e44a17eef6d95b2e6832c26e469d505" prot="public" virt="non-virtual"><scope>buffer</scope><name>chain</name></member>
+      <member refid="structbuffer_1a6a9e89d63eb610dfe238b0a840979421" prot="public" virt="non-virtual"><scope>buffer</scope><name>count</name></member>
+      <member refid="structbuffer_1a735984d41155bc1032e09bece8f8d66d" prot="public" virt="non-virtual"><scope>buffer</scope><name>data</name></member>
+      <member refid="structbuffer_1a8910285a0352a5c710e65ec9ecbe32a1" prot="public" virt="non-virtual"><scope>buffer</scope><name>dev</name></member>
+      <member refid="structbuffer_1a8ceea6ca386afaa3ad7fb4e26227b0a0" prot="public" virt="non-virtual"><scope>buffer</scope><name>flags</name></member>
+      <member refid="structbuffer_1ad4814ea38abb922fc3c687c8ac6f994d" prot="public" virt="non-virtual"><scope>buffer</scope><name>free_next</name></member>
+      <member refid="structbuffer_1a44bf6f6276b4b59d3b3436ec92de41e7" prot="public" virt="non-virtual"><scope>buffer</scope><name>free_prev</name></member>
+      <member refid="structbuffer_1a9d04509081195835556c0fc67769ff45" prot="public" virt="non-virtual"><scope>buffer</scope><name>hash_next</name></member>
+      <member refid="structbuffer_1a93e41d737912f860bb62b4f3c59e883c" prot="public" virt="non-virtual"><scope>buffer</scope><name>hash_prev</name></member>
+      <member refid="structbuffer_1ad3767083f0a4e08adaf36474085e94d5" prot="public" virt="non-virtual"><scope>buffer</scope><name>num</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

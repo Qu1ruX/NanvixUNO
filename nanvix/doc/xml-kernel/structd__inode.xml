@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structd__inode" kind="struct" language="C++" prot="public">
+    <compoundname>d_inode</compoundname>
+    <includes local="no">minix.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structd__inode_1a9eee4a25778387fbad93e9124af9e5bd" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t i_mode</definition>
+        <argsstring></argsstring>
+        <name>i_mode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Access permissions. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/fs/minix.h" line="139" column="1" bodyfile="include/fs/minix.h" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structd__inode_1aff08dfb7dbc7206c82ff538e601203a0" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t i_uid</definition>
+        <argsstring></argsstring>
+        <name>i_uid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>User id of the file&apos;s owner </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/fs/minix.h" line="140" column="1" bodyfile="include/fs/minix.h" bodystart="140" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structd__inode_1a4a7737b2dcb0a6a6e1c6cd969b2d1f0c" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t i_size</definition>
+        <argsstring></argsstring>
+        <name>i_size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>File size (in bytes). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/fs/minix.h" line="141" column="1" bodyfile="include/fs/minix.h" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structd__inode_1aa407fcf811c1cb6b2c6a336c3ea274c3" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t i_time</definition>
+        <argsstring></argsstring>
+        <name>i_time</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Time when the file was last accessed. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/fs/minix.h" line="142" column="1" bodyfile="include/fs/minix.h" bodystart="142" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structd__inode_1a448bd1a4b2e6f2bc53187708c03e2021" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t i_gid</definition>
+        <argsstring></argsstring>
+        <name>i_gid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Group number of owner user. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/fs/minix.h" line="143" column="1" bodyfile="include/fs/minix.h" bodystart="143" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structd__inode_1a94a41350f69f5ccedc2ff3e7fa9ecbe8" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t i_nlinks</definition>
+        <argsstring></argsstring>
+        <name>i_nlinks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of links to the file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/fs/minix.h" line="144" column="1" bodyfile="include/fs/minix.h" bodystart="144" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structd__inode_1af5170a32e5fa6f65dd00853e15447104" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t i_zones[NR_ZONES]</definition>
+        <argsstring>[NR_ZONES]</argsstring>
+        <name>i_zones</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Zone numbers. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/fs/minix.h" line="145" column="1" bodyfile="include/fs/minix.h" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Disk inode. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/fs/minix.h" line="138" column="1" bodyfile="include/fs/minix.h" bodystart="137" bodyend="146"/>
+    <listofallmembers>
+      <member refid="structd__inode_1a448bd1a4b2e6f2bc53187708c03e2021" prot="public" virt="non-virtual"><scope>d_inode</scope><name>i_gid</name></member>
+      <member refid="structd__inode_1a9eee4a25778387fbad93e9124af9e5bd" prot="public" virt="non-virtual"><scope>d_inode</scope><name>i_mode</name></member>
+      <member refid="structd__inode_1a94a41350f69f5ccedc2ff3e7fa9ecbe8" prot="public" virt="non-virtual"><scope>d_inode</scope><name>i_nlinks</name></member>
+      <member refid="structd__inode_1a4a7737b2dcb0a6a6e1c6cd969b2d1f0c" prot="public" virt="non-virtual"><scope>d_inode</scope><name>i_size</name></member>
+      <member refid="structd__inode_1aa407fcf811c1cb6b2c6a336c3ea274c3" prot="public" virt="non-virtual"><scope>d_inode</scope><name>i_time</name></member>
+      <member refid="structd__inode_1aff08dfb7dbc7206c82ff538e601203a0" prot="public" virt="non-virtual"><scope>d_inode</scope><name>i_uid</name></member>
+      <member refid="structd__inode_1af5170a32e5fa6f65dd00853e15447104" prot="public" virt="non-virtual"><scope>d_inode</scope><name>i_zones</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

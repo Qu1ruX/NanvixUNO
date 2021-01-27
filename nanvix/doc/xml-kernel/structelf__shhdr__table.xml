@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structelf__shhdr__table" kind="struct" language="C++" prot="public">
+    <compoundname>elf_shhdr_table</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structelf__shhdr__table_1a7beea8f6745c478347f244cadef771c2" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t num</definition>
+        <argsstring></argsstring>
+        <name>num</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/mboot.h" line="89" column="1" bodyfile="include/nanvix/mboot.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structelf__shhdr__table_1ab2c6b258f02add8fdf4cfc7c371dd772" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t size</definition>
+        <argsstring></argsstring>
+        <name>size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/mboot.h" line="90" column="1" bodyfile="include/nanvix/mboot.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structelf__shhdr__table_1ab439e3a90339e2e8ca8f82d4557a34e5" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t addr</definition>
+        <argsstring></argsstring>
+        <name>addr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/mboot.h" line="91" column="1" bodyfile="include/nanvix/mboot.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structelf__shhdr__table_1a01bb40ddec7cedbda1f759e4340ebfd7" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t shndx</definition>
+        <argsstring></argsstring>
+        <name>shndx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/mboot.h" line="92" column="1" bodyfile="include/nanvix/mboot.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/nanvix/mboot.h" line="88" column="1" bodyfile="include/nanvix/mboot.h" bodystart="87" bodyend="93"/>
+    <listofallmembers>
+      <member refid="structelf__shhdr__table_1ab439e3a90339e2e8ca8f82d4557a34e5" prot="public" virt="non-virtual"><scope>elf_shhdr_table</scope><name>addr</name></member>
+      <member refid="structelf__shhdr__table_1a7beea8f6745c478347f244cadef771c2" prot="public" virt="non-virtual"><scope>elf_shhdr_table</scope><name>num</name></member>
+      <member refid="structelf__shhdr__table_1a01bb40ddec7cedbda1f759e4340ebfd7" prot="public" virt="non-virtual"><scope>elf_shhdr_table</scope><name>shndx</name></member>
+      <member refid="structelf__shhdr__table_1ab2c6b258f02add8fdf4cfc7c371dd772" prot="public" virt="non-virtual"><scope>elf_shhdr_table</scope><name>size</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

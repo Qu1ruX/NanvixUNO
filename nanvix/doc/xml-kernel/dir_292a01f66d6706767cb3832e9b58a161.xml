@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_292a01f66d6706767cb3832e9b58a161" kind="dir">
+    <compoundname>include/nanvix</compoundname>
+    <innerfile refid="accounts_8h">accounts.h</innerfile>
+    <innerfile refid="clock_8h">clock.h</innerfile>
+    <innerfile refid="config_8h">config.h</innerfile>
+    <innerfile refid="const_8h">const.h</innerfile>
+    <innerfile refid="dev_8h">dev.h</innerfile>
+    <innerfile refid="include_2nanvix_2fs_8h">fs.h</innerfile>
+    <innerfile refid="hal_8h">hal.h</innerfile>
+    <innerfile refid="klib_8h">klib.h</innerfile>
+    <innerfile refid="mboot_8h">mboot.h</innerfile>
+    <innerfile refid="include_2nanvix_2mm_8h">mm.h</innerfile>
+    <innerfile refid="pm_8h">pm.h</innerfile>
+    <innerfile refid="region_8h">region.h</innerfile>
+    <innerfile refid="syscall_8h">syscall.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/nanvix/"/>
+  </compounddef>
+</doxygen>

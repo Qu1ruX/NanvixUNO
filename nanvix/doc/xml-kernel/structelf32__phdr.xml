@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structelf32__phdr" kind="struct" language="C++" prot="public">
+    <compoundname>elf32_phdr</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structelf32__phdr_1a07d1897956d718722084ddacc3cf6643" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t p_type</definition>
+        <argsstring></argsstring>
+        <name>p_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/elf.h" line="118" column="1" bodyfile="include/elf.h" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structelf32__phdr_1a75423c518d324e18746d8587dfe53ce1" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t p_offset</definition>
+        <argsstring></argsstring>
+        <name>p_offset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/elf.h" line="119" column="1" bodyfile="include/elf.h" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structelf32__phdr_1acb073fa243e2f3f32b54cbc483fc2fb4" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t p_vaddr</definition>
+        <argsstring></argsstring>
+        <name>p_vaddr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/elf.h" line="120" column="1" bodyfile="include/elf.h" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structelf32__phdr_1a20d24a0fd27263456514a52314446c89" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t p_paddr</definition>
+        <argsstring></argsstring>
+        <name>p_paddr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/elf.h" line="121" column="1" bodyfile="include/elf.h" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structelf32__phdr_1a446f53dedd03e735a310e89601b0d846" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t p_filesz</definition>
+        <argsstring></argsstring>
+        <name>p_filesz</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/elf.h" line="122" column="1" bodyfile="include/elf.h" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structelf32__phdr_1a27bca776a14c5ebc3423dd14bcf704e2" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t p_memsz</definition>
+        <argsstring></argsstring>
+        <name>p_memsz</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/elf.h" line="123" column="1" bodyfile="include/elf.h" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structelf32__phdr_1a359e394ad64984dc91c70253f5eba577" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t p_flags</definition>
+        <argsstring></argsstring>
+        <name>p_flags</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/elf.h" line="124" column="1" bodyfile="include/elf.h" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structelf32__phdr_1ae127fb4ebb5f50065f4a548b1be0d419" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t p_align</definition>
+        <argsstring></argsstring>
+        <name>p_align</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/elf.h" line="125" column="1" bodyfile="include/elf.h" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/elf.h" line="117" column="1" bodyfile="include/elf.h" bodystart="116" bodyend="126"/>
+    <listofallmembers>
+      <member refid="structelf32__phdr_1ae127fb4ebb5f50065f4a548b1be0d419" prot="public" virt="non-virtual"><scope>elf32_phdr</scope><name>p_align</name></member>
+      <member refid="structelf32__phdr_1a446f53dedd03e735a310e89601b0d846" prot="public" virt="non-virtual"><scope>elf32_phdr</scope><name>p_filesz</name></member>
+      <member refid="structelf32__phdr_1a359e394ad64984dc91c70253f5eba577" prot="public" virt="non-virtual"><scope>elf32_phdr</scope><name>p_flags</name></member>
+      <member refid="structelf32__phdr_1a27bca776a14c5ebc3423dd14bcf704e2" prot="public" virt="non-virtual"><scope>elf32_phdr</scope><name>p_memsz</name></member>
+      <member refid="structelf32__phdr_1a75423c518d324e18746d8587dfe53ce1" prot="public" virt="non-virtual"><scope>elf32_phdr</scope><name>p_offset</name></member>
+      <member refid="structelf32__phdr_1a20d24a0fd27263456514a52314446c89" prot="public" virt="non-virtual"><scope>elf32_phdr</scope><name>p_paddr</name></member>
+      <member refid="structelf32__phdr_1a07d1897956d718722084ddacc3cf6643" prot="public" virt="non-virtual"><scope>elf32_phdr</scope><name>p_type</name></member>
+      <member refid="structelf32__phdr_1acb073fa243e2f3f32b54cbc483fc2fb4" prot="public" virt="non-virtual"><scope>elf32_phdr</scope><name>p_vaddr</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

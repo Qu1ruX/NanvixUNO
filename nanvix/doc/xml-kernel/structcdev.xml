@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structcdev" kind="struct" language="C++" prot="public">
+    <compoundname>cdev</compoundname>
+    <includes local="no">dev.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structcdev_1a7aa506dde37d75f0117003486ae8ff44" prot="public" static="no" mutable="no">
+        <type>int(*</type>
+        <definition>int(* open) (unsigned)</definition>
+        <argsstring>)(unsigned)</argsstring>
+        <name>open</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/dev.h" line="81" column="1" bodyfile="include/nanvix/dev.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcdev_1a15490fc97ec14b74a4ad29eb3ab6162f" prot="public" static="no" mutable="no">
+        <type>ssize_t(*</type>
+        <definition>ssize_t(* read) (unsigned, char *, size_t)</definition>
+        <argsstring>)(unsigned, char *, size_t)</argsstring>
+        <name>read</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/dev.h" line="82" column="1" bodyfile="include/nanvix/dev.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcdev_1ad290d2890fc3ff175682915b8b1cf1bb" prot="public" static="no" mutable="no">
+        <type>ssize_t(*</type>
+        <definition>ssize_t(* write) (unsigned, const char *, size_t)</definition>
+        <argsstring>)(unsigned, const char *, size_t)</argsstring>
+        <name>write</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/dev.h" line="83" column="1" bodyfile="include/nanvix/dev.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcdev_1a13e693b1f1d3a046e5cc5d98fc6fc673" prot="public" static="no" mutable="no">
+        <type>int(*</type>
+        <definition>int(* ioctl) (unsigned, unsigned, unsigned)</definition>
+        <argsstring>)(unsigned, unsigned, unsigned)</argsstring>
+        <name>ioctl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/dev.h" line="84" column="1" bodyfile="include/nanvix/dev.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcdev_1a48947d5e7a03f9858d5baf2e59415be2" prot="public" static="no" mutable="no">
+        <type>int(*</type>
+        <definition>int(* close) (dev_t)</definition>
+        <argsstring>)(dev_t)</argsstring>
+        <name>close</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/dev.h" line="85" column="1" bodyfile="include/nanvix/dev.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Character device. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/nanvix/dev.h" line="80" column="1" bodyfile="include/nanvix/dev.h" bodystart="79" bodyend="86"/>
+    <listofallmembers>
+      <member refid="structcdev_1a48947d5e7a03f9858d5baf2e59415be2" prot="public" virt="non-virtual"><scope>cdev</scope><name>close</name></member>
+      <member refid="structcdev_1a13e693b1f1d3a046e5cc5d98fc6fc673" prot="public" virt="non-virtual"><scope>cdev</scope><name>ioctl</name></member>
+      <member refid="structcdev_1a7aa506dde37d75f0117003486ae8ff44" prot="public" virt="non-virtual"><scope>cdev</scope><name>open</name></member>
+      <member refid="structcdev_1a15490fc97ec14b74a4ad29eb3ab6162f" prot="public" virt="non-virtual"><scope>cdev</scope><name>read</name></member>
+      <member refid="structcdev_1ad290d2890fc3ff175682915b8b1cf1bb" prot="public" virt="non-virtual"><scope>cdev</scope><name>write</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,183 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structmboot__header" kind="struct" language="C++" prot="public">
+    <compoundname>mboot_header</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structmboot__header_1a57f54349f4fd1cbbb52058812e146af2" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t magic</definition>
+        <argsstring></argsstring>
+        <name>magic</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/mboot.h" line="59" column="1" bodyfile="include/nanvix/mboot.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmboot__header_1a773b39d480759f67926cb18ae2219281" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t flags</definition>
+        <argsstring></argsstring>
+        <name>flags</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/mboot.h" line="60" column="1" bodyfile="include/nanvix/mboot.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmboot__header_1aa482bc33779a87f57ab8efc2c1680c48" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t checksum</definition>
+        <argsstring></argsstring>
+        <name>checksum</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/mboot.h" line="61" column="1" bodyfile="include/nanvix/mboot.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmboot__header_1ac919a9231f7783194757a679da405e42" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t header_addr</definition>
+        <argsstring></argsstring>
+        <name>header_addr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/mboot.h" line="64" column="1" bodyfile="include/nanvix/mboot.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmboot__header_1afc59fbbacc369127273fb182f54854a9" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t load_addr</definition>
+        <argsstring></argsstring>
+        <name>load_addr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/mboot.h" line="65" column="1" bodyfile="include/nanvix/mboot.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmboot__header_1a84905222b4740f67e8373797fd0abbb6" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t load_end_addr</definition>
+        <argsstring></argsstring>
+        <name>load_end_addr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/mboot.h" line="66" column="1" bodyfile="include/nanvix/mboot.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmboot__header_1a6075909cf7769a6495f7c2e8cbd4924c" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t bss_end_addr</definition>
+        <argsstring></argsstring>
+        <name>bss_end_addr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/mboot.h" line="67" column="1" bodyfile="include/nanvix/mboot.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmboot__header_1a299e4b2432fcc04a8119f85520641f69" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t entry_addr</definition>
+        <argsstring></argsstring>
+        <name>entry_addr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/mboot.h" line="68" column="1" bodyfile="include/nanvix/mboot.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmboot__header_1a48108de61edabf4a86fd12f2cc881fac" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t mode_type</definition>
+        <argsstring></argsstring>
+        <name>mode_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/mboot.h" line="71" column="1" bodyfile="include/nanvix/mboot.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmboot__header_1a325272ddd9a962f05deb905101d25cbd" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t width</definition>
+        <argsstring></argsstring>
+        <name>width</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/mboot.h" line="72" column="1" bodyfile="include/nanvix/mboot.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmboot__header_1a6ad4f820ce4e75cda0686fcaad5168be" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t height</definition>
+        <argsstring></argsstring>
+        <name>height</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/mboot.h" line="73" column="1" bodyfile="include/nanvix/mboot.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmboot__header_1af43b771026fceb9a0b28256afc08f69b" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t depth</definition>
+        <argsstring></argsstring>
+        <name>depth</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/mboot.h" line="74" column="1" bodyfile="include/nanvix/mboot.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/nanvix/mboot.h" line="58" column="1" bodyfile="include/nanvix/mboot.h" bodystart="57" bodyend="75"/>
+    <listofallmembers>
+      <member refid="structmboot__header_1a6075909cf7769a6495f7c2e8cbd4924c" prot="public" virt="non-virtual"><scope>mboot_header</scope><name>bss_end_addr</name></member>
+      <member refid="structmboot__header_1aa482bc33779a87f57ab8efc2c1680c48" prot="public" virt="non-virtual"><scope>mboot_header</scope><name>checksum</name></member>
+      <member refid="structmboot__header_1af43b771026fceb9a0b28256afc08f69b" prot="public" virt="non-virtual"><scope>mboot_header</scope><name>depth</name></member>
+      <member refid="structmboot__header_1a299e4b2432fcc04a8119f85520641f69" prot="public" virt="non-virtual"><scope>mboot_header</scope><name>entry_addr</name></member>
+      <member refid="structmboot__header_1a773b39d480759f67926cb18ae2219281" prot="public" virt="non-virtual"><scope>mboot_header</scope><name>flags</name></member>
+      <member refid="structmboot__header_1ac919a9231f7783194757a679da405e42" prot="public" virt="non-virtual"><scope>mboot_header</scope><name>header_addr</name></member>
+      <member refid="structmboot__header_1a6ad4f820ce4e75cda0686fcaad5168be" prot="public" virt="non-virtual"><scope>mboot_header</scope><name>height</name></member>
+      <member refid="structmboot__header_1afc59fbbacc369127273fb182f54854a9" prot="public" virt="non-virtual"><scope>mboot_header</scope><name>load_addr</name></member>
+      <member refid="structmboot__header_1a84905222b4740f67e8373797fd0abbb6" prot="public" virt="non-virtual"><scope>mboot_header</scope><name>load_end_addr</name></member>
+      <member refid="structmboot__header_1a57f54349f4fd1cbbb52058812e146af2" prot="public" virt="non-virtual"><scope>mboot_header</scope><name>magic</name></member>
+      <member refid="structmboot__header_1a48108de61edabf4a86fd12f2cc881fac" prot="public" virt="non-virtual"><scope>mboot_header</scope><name>mode_type</name></member>
+      <member refid="structmboot__header_1a325272ddd9a962f05deb905101d25cbd" prot="public" virt="non-virtual"><scope>mboot_header</scope><name>width</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

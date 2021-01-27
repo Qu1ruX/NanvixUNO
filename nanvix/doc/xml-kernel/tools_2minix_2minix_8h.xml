@@ -1,0 +1,579 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="tools_2minix_2minix_8h" kind="file" language="C++">
+    <compoundname>minix.h</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="tools_2minix_2minix_8h_1afea16c0870c318666367f1478c3374b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void minix_inode_write</definition>
+        <argsstring>(uint16_t, struct d_inode *)</argsstring>
+        <name>minix_inode_write</name>
+        <param>
+          <type>uint16_t</type>
+          <defname>num</defname>
+        </param>
+        <param>
+          <type>struct <ref refid="structd__inode" kindref="compound">d_inode</ref> *</type>
+          <defname>ip</defname>
+        </param>
+        <briefdescription>
+<para>Writes an inode to the currently mounted Minix file system. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of the inode that shall be written. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ip</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Inode that shall be written.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>The Minix file system must be mounted. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tools/minix/minix.h" line="27" column="1" bodyfile="tools/minix/minix.c" bodystart="176" bodyend="200"/>
+      </memberdef>
+      <memberdef kind="function" id="tools_2minix_2minix_8h_1ad9c642623ee6169fde7ab4dd731fd8b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16_t</type>
+        <definition>uint16_t dir_search</definition>
+        <argsstring>(struct d_inode *, const char *)</argsstring>
+        <name>dir_search</name>
+        <param>
+          <type>struct <ref refid="structd__inode" kindref="compound">d_inode</ref> *</type>
+          <defname>dip</defname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <defname>filename</defname>
+        </param>
+        <briefdescription>
+<para>Searches for a file in a directory. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dip</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Directory where the file shall be searched. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File that shal be searched.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The inode number of the requested file, or #INODE_NULL, if such files does not exist.</para></simplesect>
+<simplesect kind="note"><para><computeroutput>dip</computeroutput> must point to a valid inode. </para></simplesect>
+<simplesect kind="note"><para><computeroutput>filename</computeroutput> must point to a valid file name. </para></simplesect>
+<simplesect kind="note"><para>The Minix file system must be mounted. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tools/minix/minix.h" line="28" column="1" bodyfile="tools/minix/minix.c" bodystart="460" bodyend="478"/>
+      </memberdef>
+      <memberdef kind="function" id="tools_2minix_2minix_8h_1a63e86bf9cbc507882c32d755883d340e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void minix_mount</definition>
+        <argsstring>(const char *)</argsstring>
+        <name>minix_mount</name>
+        <param>
+          <type>const char *</type>
+          <defname>filename</defname>
+        </param>
+        <briefdescription>
+<para>Mounts a Minix file system. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File where the Minix file system resides. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tools/minix/minix.h" line="29" column="1" bodyfile="tools/minix/minix.c" bodystart="113" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="tools_2minix_2minix_8h_1a3d79bfbdee21ef59e18e1a041fa0dc86" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void minix_umount</definition>
+        <argsstring>(void)</argsstring>
+        <name>minix_umount</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Unmounts the currently mounted Minix file system. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>The Minix file system must be mounted. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tools/minix/minix.h" line="30" column="1" bodyfile="tools/minix/minix.c" bodystart="124" bodyend="128"/>
+      </memberdef>
+      <memberdef kind="function" id="tools_2minix_2minix_8h_1acefa9a226bf8116a60d8b535f7347d2f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct <ref refid="structd__inode" kindref="compound">d_inode</ref> *</type>
+        <definition>struct d_inode* minix_inode_read</definition>
+        <argsstring>(uint16_t)</argsstring>
+        <name>minix_inode_read</name>
+        <param>
+          <type>uint16_t</type>
+          <defname>num</defname>
+        </param>
+        <briefdescription>
+<para>Reads an inode from the currently mounted Minix file system. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of the inode that shall be read.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A pointer to the requested inode.</para></simplesect>
+<simplesect kind="note"><para>The Minix file system must be mounted. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tools/minix/minix.h" line="31" column="1" bodyfile="tools/minix/minix.c" bodystart="139" bodyend="166"/>
+      </memberdef>
+      <memberdef kind="function" id="tools_2minix_2minix_8h_1a32474befc4b930af1eaaa235d56d6202" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16_t</type>
+        <definition>uint16_t minix_mkdir</definition>
+        <argsstring>(struct d_inode *, uint16_t, const char *, uint16_t, uint16_t)</argsstring>
+        <name>minix_mkdir</name>
+        <param>
+          <type>struct <ref refid="structd__inode" kindref="compound">d_inode</ref> *</type>
+          <defname>dip</defname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <defname>dnum</defname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <defname>filename</defname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <defname>uid</defname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <defname>gid</defname>
+        </param>
+        <briefdescription>
+<para>Creates a directory. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dip</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Directory where the new directory shall be created. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dnum</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Inode number of <computeroutput>dip</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the new directory. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>uid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>User ID. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>gid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>User group ID.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The inode number of the newly created directory.</para></simplesect>
+<simplesect kind="note"><para><computeroutput>dip</computeroutput> must point to a valid inode. </para></simplesect>
+<simplesect kind="note"><para><computeroutput>filename</computeroutput> must point to a valid file name. </para></simplesect>
+<simplesect kind="note"><para>The Minix file system must be mounted. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tools/minix/minix.h" line="32" column="1" bodyfile="tools/minix/minix.c" bodystart="575" bodyend="600"/>
+      </memberdef>
+      <memberdef kind="function" id="tools_2minix_2minix_8h_1a5d17e71c67b88b1471c761ab6f249058" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void minix_mknod</definition>
+        <argsstring>(struct d_inode *, const char *, uint16_t, uint16_t, uint16_t, uint16_t)</argsstring>
+        <name>minix_mknod</name>
+        <param>
+          <type>struct <ref refid="structd__inode" kindref="compound">d_inode</ref> *</type>
+          <defname>dip</defname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <defname>filename</defname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <defname>mode</defname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <defname>dev</defname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <defname>uid</defname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <defname>gid</defname>
+        </param>
+        <briefdescription>
+<para>Creates a special file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dip</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Directory where the new special file shall be created. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the new special file. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Access mode to new special file. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Device which the new special file refers to. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>uid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>User ID. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>gid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>User group ID.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para><computeroutput>dip</computeroutput> must point to a valid inode. </para></simplesect>
+<simplesect kind="note"><para><computeroutput>filename</computeroutput> must point to a valid file name. </para></simplesect>
+<simplesect kind="note"><para>The Minix file system must be mounted. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tools/minix/minix.h" line="33" column="1" bodyfile="tools/minix/minix.c" bodystart="617" bodyend="636"/>
+      </memberdef>
+      <memberdef kind="function" id="tools_2minix_2minix_8h_1ae7cff892244082921f66d0ce86e73004" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16_t</type>
+        <definition>uint16_t minix_inode_dname</definition>
+        <argsstring>(const char *, char *)</argsstring>
+        <name>minix_inode_dname</name>
+        <param>
+          <type>const char *</type>
+          <defname>pathname</defname>
+        </param>
+        <param>
+          <type>char *</type>
+          <defname>filename</defname>
+        </param>
+        <briefdescription>
+<para>Gets inode number of the bottom-most directory of a path. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pathname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path name that shall be converted. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Place to save last component of path.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The inode number of the bottom-most directory of the path.</para></simplesect>
+<simplesect kind="note"><para><computeroutput>pathname</computeroutput> must point to a valid path name. </para></simplesect>
+<simplesect kind="note"><para>The Minix file system must be mounted. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tools/minix/minix.h" line="34" column="1" bodyfile="tools/minix/minix.c" bodystart="527" bodyend="557"/>
+      </memberdef>
+      <memberdef kind="function" id="tools_2minix_2minix_8h_1a5b6a72cd0ce3d6b5718286461dacca41" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16_t</type>
+        <definition>uint16_t minix_create</definition>
+        <argsstring>(const char *, uint16_t, uint16_t, uint16_t)</argsstring>
+        <name>minix_create</name>
+        <param>
+          <type>const char *</type>
+          <defname>pathname</defname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <defname>mode</defname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <defname>uid</defname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <defname>gid</defname>
+        </param>
+        <briefdescription>
+<para>Creates a file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pathname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the file that shall be created. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File access mode. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>uid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>User ID. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>gid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>User group ID.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The inode number of newly created file.</para></simplesect>
+<simplesect kind="note"><para><computeroutput>pathname</computeroutput> must refer to a valid path name. </para></simplesect>
+<simplesect kind="note"><para><computeroutput>num</computeroutput> must refer to a valid inode. </para></simplesect>
+<simplesect kind="note"><para>The Minix file system must be mounted. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tools/minix/minix.h" line="35" column="1" bodyfile="tools/minix/minix.c" bodystart="653" bodyend="669"/>
+      </memberdef>
+      <memberdef kind="function" id="tools_2minix_2minix_8h_1abb61aab26e873ae9f2d0c56d768961a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void minix_write</definition>
+        <argsstring>(uint16_t, const void *, size_t)</argsstring>
+        <name>minix_write</name>
+        <param>
+          <type>uint16_t</type>
+          <defname>num</defname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <defname>buf</defname>
+        </param>
+        <param>
+          <type><ref refid="decl_8h_1a028b7cbca0d37bbc9bc219370525227f" kindref="member">size_t</ref></type>
+          <defname>n</defname>
+        </param>
+        <briefdescription>
+<para>Writes data to a file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Inode number of the file. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>buf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer to be written. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of bytes to be written.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>num must refer to a valid inode. </para></simplesect>
+<simplesect kind="note"><para>buf must point to a valid buffer. </para></simplesect>
+<simplesect kind="note"><para>The Minix file system must be mounted. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tools/minix/minix.h" line="36" column="1" bodyfile="tools/minix/minix.c" bodystart="682" bodyend="716"/>
+      </memberdef>
+      <memberdef kind="function" id="tools_2minix_2minix_8h_1a5e1dcd2c334ba4c7d9267bd0745e0692" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void minix_mkfs</definition>
+        <argsstring>(const char *, uint16_t, uint16_t, uint16_t, uint16_t)</argsstring>
+        <name>minix_mkfs</name>
+        <param>
+          <type>const char *</type>
+          <defname>diskfile</defname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <defname>ninodes</defname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <defname>nblocks</defname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <defname>uid</defname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <defname>gid</defname>
+        </param>
+        <briefdescription>
+<para>Creates a Minix file system. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>diskfile</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File where the minix file system shall be created. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ninodes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of inodes. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nblocks</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of blocks. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>uid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>User ID. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>gid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>User group ID.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para><computeroutput>diskfile</computeroutput> must refer to a valid file. </para></simplesect>
+<simplesect kind="note"><para><computeroutput>ninodes</computeroutput> must be valid. </para></simplesect>
+<simplesect kind="note"><para><computeroutput>nblocks</computeroutput> must be valid. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tools/minix/minix.h" line="37" column="1" bodyfile="tools/minix/minix.c" bodystart="732" bodyend="796"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright(C)<sp/>2011-2016<sp/>Pedro<sp/>H.<sp/>Penna<sp/>&lt;pedrohenriquepenna@gmail.com&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>Nanvix.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>Nanvix<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>Nanvix<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>Nanvix.<sp/>If<sp/>not,<sp/>see<sp/>&lt;http://www.gnu.org/licenses/&gt;.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_MINIX_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_MINIX_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&lt;sys/types.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&lt;minix.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Forward<sp/>definitions.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>minix_inode_write(uint16_t,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structd__inode" kindref="compound">d_inode</ref><sp/>*);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>uint16_t<sp/><ref refid="include_2nanvix_2fs_8h_1a7234db19331e6107d879d0dc08ecb976" kindref="member">dir_search</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structd__inode" kindref="compound">d_inode</ref><sp/>*,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>minix_mount(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>minix_umount(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structd__inode" kindref="compound">d_inode</ref><sp/>*minix_inode_read(uint16_t);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>uint16_t<sp/>minix_mkdir(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structd__inode" kindref="compound">d_inode</ref><sp/>*,<sp/>uint16_t,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/>uint16_t,<sp/>uint16_t);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>minix_mknod(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structd__inode" kindref="compound">d_inode</ref><sp/>*,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/>uint16_t,<sp/>uint16_t,<sp/>uint16_t,<sp/>uint16_t);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>uint16_t<sp/>minix_inode_dname(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>uint16_t<sp/>minix_create(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/>uint16_t,<sp/>uint16_t,<sp/>uint16_t);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>minix_write(uint16_t,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>minix_mkfs(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/>uint16_t,<sp/>uint16_t,<sp/>uint16_t,<sp/>uint16_t);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>_MINIX_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="tools/minix/minix.h"/>
+  </compounddef>
+</doxygen>

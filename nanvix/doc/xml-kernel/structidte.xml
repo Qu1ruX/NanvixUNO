@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structidte" kind="struct" language="C++" prot="public">
+    <compoundname>idte</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structidte_1a1b972a9714079e30a34be9b9049964e5" prot="public" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned handler_low</definition>
+        <argsstring></argsstring>
+        <name>handler_low</name>
+        <bitfield> 16</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/i386/idt.h" line="46" column="1" bodyfile="include/i386/idt.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structidte_1abeeb2c20e4d216ed3211606850c923cf" prot="public" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned selector</definition>
+        <argsstring></argsstring>
+        <name>selector</name>
+        <bitfield> 16</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/i386/idt.h" line="47" column="1" bodyfile="include/i386/idt.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structidte_1adf71f3d8410c1f1dbbc96680a92c49af" prot="public" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned __pad0__</definition>
+        <argsstring></argsstring>
+        <name>__pad0__</name>
+        <bitfield> 8</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/i386/idt.h" line="48" column="1" bodyfile="include/i386/idt.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structidte_1afa65f328561a1fb0d243d9be5d7f37dd" prot="public" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <bitfield> 4</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/i386/idt.h" line="49" column="1" bodyfile="include/i386/idt.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structidte_1a8b08a4d2ec878257d64c55f64a62242c" prot="public" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned flags</definition>
+        <argsstring></argsstring>
+        <name>flags</name>
+        <bitfield> 4</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/i386/idt.h" line="50" column="1" bodyfile="include/i386/idt.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structidte_1ae26c0934fb236efa8c644f1c101123b7" prot="public" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned handler_high</definition>
+        <argsstring></argsstring>
+        <name>handler_high</name>
+        <bitfield> 16</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/i386/idt.h" line="51" column="1" bodyfile="include/i386/idt.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/i386/idt.h" line="45" column="1" bodyfile="include/i386/idt.h" bodystart="44" bodyend="52"/>
+    <listofallmembers>
+      <member refid="structidte_1adf71f3d8410c1f1dbbc96680a92c49af" prot="public" virt="non-virtual"><scope>idte</scope><name>__pad0__</name></member>
+      <member refid="structidte_1a8b08a4d2ec878257d64c55f64a62242c" prot="public" virt="non-virtual"><scope>idte</scope><name>flags</name></member>
+      <member refid="structidte_1ae26c0934fb236efa8c644f1c101123b7" prot="public" virt="non-virtual"><scope>idte</scope><name>handler_high</name></member>
+      <member refid="structidte_1a1b972a9714079e30a34be9b9049964e5" prot="public" virt="non-virtual"><scope>idte</scope><name>handler_low</name></member>
+      <member refid="structidte_1abeeb2c20e4d216ed3211606850c923cf" prot="public" virt="non-virtual"><scope>idte</scope><name>selector</name></member>
+      <member refid="structidte_1afa65f328561a1fb0d243d9be5d7f37dd" prot="public" virt="non-virtual"><scope>idte</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

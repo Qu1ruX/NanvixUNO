@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_fa9cc89ca0ef10fd565e8c4b7edd11f3" kind="dir">
+    <compoundname>src/ubin/ps</compoundname>
+    <innerfile refid="ubin_2ps_2ps_8c">ps.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/ubin/ps/"/>
+  </compounddef>
+</doxygen>

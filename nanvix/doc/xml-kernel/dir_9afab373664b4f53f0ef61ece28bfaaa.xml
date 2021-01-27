@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_9afab373664b4f53f0ef61ece28bfaaa" kind="dir">
+    <compoundname>src/lib/libc/stdlib</compoundname>
+    <innerfile refid="__Exit_8c">_Exit.c</innerfile>
+    <innerfile refid="abort_8c">abort.c</innerfile>
+    <innerfile refid="abs_8c">abs.c</innerfile>
+    <innerfile refid="atexit_8c">atexit.c</innerfile>
+    <innerfile refid="atexit_8h">atexit.h</innerfile>
+    <innerfile refid="atoi_8c">atoi.c</innerfile>
+    <innerfile refid="atol_8c">atol.c</innerfile>
+    <innerfile refid="atoll_8c">atoll.c</innerfile>
+    <innerfile refid="bsearch_8c">bsearch.c</innerfile>
+    <innerfile refid="calloc_8c">calloc.c</innerfile>
+    <innerfile refid="div_8c">div.c</innerfile>
+    <innerfile refid="exit_8c">exit.c</innerfile>
+    <innerfile refid="findenv_8h">findenv.h</innerfile>
+    <innerfile refid="getenv_8c">getenv.c</innerfile>
+    <innerfile refid="getsubopt_8c">getsubopt.c</innerfile>
+    <innerfile refid="labs_8c">labs.c</innerfile>
+    <innerfile refid="ldiv_8c">ldiv.c</innerfile>
+    <innerfile refid="llabs_8c">llabs.c</innerfile>
+    <innerfile refid="lldiv_8c">lldiv.c</innerfile>
+    <innerfile refid="malloc_8c">malloc.c</innerfile>
+    <innerfile refid="mblen_8c">mblen.c</innerfile>
+    <innerfile refid="mbtowc_8c">mbtowc.c</innerfile>
+    <innerfile refid="qsort_8c">qsort.c</innerfile>
+    <innerfile refid="rand_8c">rand.c</innerfile>
+    <innerfile refid="rand_8h">rand.h</innerfile>
+    <innerfile refid="setenv_8c">setenv.c</innerfile>
+    <innerfile refid="srand_8c">srand.c</innerfile>
+    <innerfile refid="strtol_8c">strtol.c</innerfile>
+    <innerfile refid="strtoll_8c">strtoll.c</innerfile>
+    <innerfile refid="strtoul_8c">strtoul.c</innerfile>
+    <innerfile refid="strtoull_8c">strtoull.c</innerfile>
+    <innerfile refid="system_8c">system.c</innerfile>
+    <innerfile refid="unsetenv_8c">unsetenv.c</innerfile>
+    <innerfile refid="wctomb_8c">wctomb.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/lib/libc/stdlib/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structldiv__t" kind="struct" language="C++" prot="public">
+    <compoundname>ldiv_t</compoundname>
+    <includes local="no">stdlib.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structldiv__t_1a2065955c249938f83ebf6bc6c07b4200" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int quot</definition>
+        <argsstring></argsstring>
+        <name>quot</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Quotient. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="115" column="1" bodyfile="include/stdlib.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structldiv__t_1a1ba4c6426d29538ceed6a0db9b4e1df6" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int rem</definition>
+        <argsstring></argsstring>
+        <name>rem</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Remainder. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="116" column="1" bodyfile="include/stdlib.h" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Structure type returned by the <ref refid="group__stdlib_1ga9961db60c90864f8b8497073dd749d83" kindref="member">ldiv()</ref> function. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/stdlib.h" line="114" column="1" bodyfile="include/stdlib.h" bodystart="113" bodyend="117"/>
+    <listofallmembers>
+      <member refid="structldiv__t_1a2065955c249938f83ebf6bc6c07b4200" prot="public" virt="non-virtual"><scope>ldiv_t</scope><name>quot</name></member>
+      <member refid="structldiv__t_1a1ba4c6426d29538ceed6a0db9b4e1df6" prot="public" virt="non-virtual"><scope>ldiv_t</scope><name>rem</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

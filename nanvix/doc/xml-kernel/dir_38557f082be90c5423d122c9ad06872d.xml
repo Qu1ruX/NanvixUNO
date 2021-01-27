@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_38557f082be90c5423d122c9ad06872d" kind="dir">
+    <compoundname>src/lib/libc</compoundname>
+    <innerdir refid="dir_951346bdc431ee282685f0883dde7065">src/lib/libc/assert</innerdir>
+    <innerdir refid="dir_9373891ab8a05efa05f7a690b7c73bc8">src/lib/libc/ctype</innerdir>
+    <innerdir refid="dir_3d8b4bb2cac3be2189c93907248c7854">src/lib/libc/dirent</innerdir>
+    <innerdir refid="dir_bbbdc7b0a7a847ad61fa787e1cee295c">src/lib/libc/errno</innerdir>
+    <innerdir refid="dir_e7d0c9645e15195aba9a368e98d097c6">src/lib/libc/fcntl</innerdir>
+    <innerdir refid="dir_ba1170166f7a12b6f4580d442fef8172">src/lib/libc/signal</innerdir>
+    <innerdir refid="dir_e08066ec624bb199e087a112c3da4daa">src/lib/libc/stdio</innerdir>
+    <innerdir refid="dir_9afab373664b4f53f0ef61ece28bfaaa">src/lib/libc/stdlib</innerdir>
+    <innerdir refid="dir_984a0c4d0e701496863fe3d1c92f40f7">src/lib/libc/string</innerdir>
+    <innerdir refid="dir_8d970912a87e7e23c7dc0442677962b4">src/lib/libc/stropts</innerdir>
+    <innerdir refid="dir_fb35cedb56addceb1cfd722c80d43abd">src/lib/libc/sys</innerdir>
+    <innerdir refid="dir_b35ea11026adcae4f71c2647a2579329">src/lib/libc/termios</innerdir>
+    <innerdir refid="dir_160ab2f4459620960da52b544547859e">src/lib/libc/unistd</innerdir>
+    <innerdir refid="dir_1df751295f02e1489cbc0a0e4ed3ce93">src/lib/libc/utime</innerdir>
+    <innerfile refid="crt0_8c">crt0.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/lib/libc/"/>
+  </compounddef>
+</doxygen>

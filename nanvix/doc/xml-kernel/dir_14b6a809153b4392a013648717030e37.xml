@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_14b6a809153b4392a013648717030e37" kind="dir">
+    <compoundname>src/ubin/touch</compoundname>
+    <innerfile refid="touch_8c">touch.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/ubin/touch/"/>
+  </compounddef>
+</doxygen>

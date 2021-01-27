@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_ac7fb4c5aa0f312236f244298662a8ca" kind="dir">
+    <compoundname>src/lib/libc/sys/utsname</compoundname>
+    <innerfile refid="lib_2libc_2sys_2utsname_2uname_8c">uname.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/lib/libc/sys/utsname/"/>
+  </compounddef>
+</doxygen>

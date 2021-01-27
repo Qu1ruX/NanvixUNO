@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structd__superblock" kind="struct" language="C++" prot="public">
+    <compoundname>d_superblock</compoundname>
+    <includes local="no">minix.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structd__superblock_1aee8af3dce980e540626f6c017361d2d6" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t s_ninodes</definition>
+        <argsstring></argsstring>
+        <name>s_ninodes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of inodes. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/fs/minix.h" line="69" column="1" bodyfile="include/fs/minix.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structd__superblock_1a0c295a1b137af3985471e37e58e7cda3" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t s_nblocks</definition>
+        <argsstring></argsstring>
+        <name>s_nblocks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of blocks. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/fs/minix.h" line="70" column="1" bodyfile="include/fs/minix.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structd__superblock_1a8c2d1d3051e94e4ae7854640ed5c5cc1" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t s_imap_nblocks</definition>
+        <argsstring></argsstring>
+        <name>s_imap_nblocks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of inode map blocks. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/fs/minix.h" line="71" column="1" bodyfile="include/fs/minix.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structd__superblock_1a002923c6630117824fe08cb717cfda62" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t s_bmap_nblocks</definition>
+        <argsstring></argsstring>
+        <name>s_bmap_nblocks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of block map blocks. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/fs/minix.h" line="72" column="1" bodyfile="include/fs/minix.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structd__superblock_1a4cf84c0911631c9f5063a53e33b09877" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t s_first_data_block</definition>
+        <argsstring></argsstring>
+        <name>s_first_data_block</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Unused. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/fs/minix.h" line="73" column="1" bodyfile="include/fs/minix.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structd__superblock_1a96f31f9e805bcb543f76ad3fad752798" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t unused1</definition>
+        <argsstring></argsstring>
+        <name>unused1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Unused. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/fs/minix.h" line="74" column="1" bodyfile="include/fs/minix.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structd__superblock_1af87c2fcc88e238c09e6de4807346508e" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t s_max_size</definition>
+        <argsstring></argsstring>
+        <name>s_max_size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Maximum file size. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/fs/minix.h" line="75" column="1" bodyfile="include/fs/minix.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structd__superblock_1a3e415727e4367b02c2621266a66f0b48" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t s_magic</definition>
+        <argsstring></argsstring>
+        <name>s_magic</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Magic number. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/fs/minix.h" line="76" column="1" bodyfile="include/fs/minix.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>In-disk superblock. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/fs/minix.h" line="68" column="1" bodyfile="include/fs/minix.h" bodystart="67" bodyend="77"/>
+    <listofallmembers>
+      <member refid="structd__superblock_1a002923c6630117824fe08cb717cfda62" prot="public" virt="non-virtual"><scope>d_superblock</scope><name>s_bmap_nblocks</name></member>
+      <member refid="structd__superblock_1a4cf84c0911631c9f5063a53e33b09877" prot="public" virt="non-virtual"><scope>d_superblock</scope><name>s_first_data_block</name></member>
+      <member refid="structd__superblock_1a8c2d1d3051e94e4ae7854640ed5c5cc1" prot="public" virt="non-virtual"><scope>d_superblock</scope><name>s_imap_nblocks</name></member>
+      <member refid="structd__superblock_1a3e415727e4367b02c2621266a66f0b48" prot="public" virt="non-virtual"><scope>d_superblock</scope><name>s_magic</name></member>
+      <member refid="structd__superblock_1af87c2fcc88e238c09e6de4807346508e" prot="public" virt="non-virtual"><scope>d_superblock</scope><name>s_max_size</name></member>
+      <member refid="structd__superblock_1a0c295a1b137af3985471e37e58e7cda3" prot="public" virt="non-virtual"><scope>d_superblock</scope><name>s_nblocks</name></member>
+      <member refid="structd__superblock_1aee8af3dce980e540626f6c017361d2d6" prot="public" virt="non-virtual"><scope>d_superblock</scope><name>s_ninodes</name></member>
+      <member refid="structd__superblock_1a96f31f9e805bcb543f76ad3fad752798" prot="public" virt="non-virtual"><scope>d_superblock</scope><name>unused1</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

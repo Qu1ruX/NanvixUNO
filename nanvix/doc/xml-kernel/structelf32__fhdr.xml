@@ -1,0 +1,211 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structelf32__fhdr" kind="struct" language="C++" prot="public">
+    <compoundname>elf32_fhdr</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structelf32__fhdr_1a473c0788d341bbd65886b559f28f6941" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t e_ident[EI_NIDENT]</definition>
+        <argsstring>[EI_NIDENT]</argsstring>
+        <name>e_ident</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/elf.h" line="88" column="1" bodyfile="include/elf.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structelf32__fhdr_1a4160b480f72e4477cab7a0375f8535ea" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t e_type</definition>
+        <argsstring></argsstring>
+        <name>e_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/elf.h" line="98" column="1" bodyfile="include/elf.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structelf32__fhdr_1a2309339880d17e277892a8850e819d55" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t e_machine</definition>
+        <argsstring></argsstring>
+        <name>e_machine</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/elf.h" line="99" column="1" bodyfile="include/elf.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structelf32__fhdr_1ab5ece8e1aa0f68bcf4a3476200dc29dc" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t e_version</definition>
+        <argsstring></argsstring>
+        <name>e_version</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/elf.h" line="100" column="1" bodyfile="include/elf.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structelf32__fhdr_1a1871c61f97ea65c97ef21b3cf1976af0" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t e_entry</definition>
+        <argsstring></argsstring>
+        <name>e_entry</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/elf.h" line="101" column="1" bodyfile="include/elf.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structelf32__fhdr_1ae83b9d8fd4b65e456f9c3c0915b77774" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t e_phoff</definition>
+        <argsstring></argsstring>
+        <name>e_phoff</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/elf.h" line="102" column="1" bodyfile="include/elf.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structelf32__fhdr_1af3e021c867a2a7281f92b4c48b8e724e" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t e_shoff</definition>
+        <argsstring></argsstring>
+        <name>e_shoff</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/elf.h" line="103" column="1" bodyfile="include/elf.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structelf32__fhdr_1a14b1d2d4ebd963309c8aa025169b5790" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t e_flags</definition>
+        <argsstring></argsstring>
+        <name>e_flags</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/elf.h" line="104" column="1" bodyfile="include/elf.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structelf32__fhdr_1ac9334a1f99c34762e8c3bd4a7e875a19" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t e_ehsize</definition>
+        <argsstring></argsstring>
+        <name>e_ehsize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/elf.h" line="105" column="1" bodyfile="include/elf.h" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structelf32__fhdr_1a933d8cd819963cc344906b0149bdf631" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t e_phentsize</definition>
+        <argsstring></argsstring>
+        <name>e_phentsize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/elf.h" line="106" column="1" bodyfile="include/elf.h" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structelf32__fhdr_1a130805188ee029aae4a1270e2c4e3fc2" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t e_phnum</definition>
+        <argsstring></argsstring>
+        <name>e_phnum</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/elf.h" line="107" column="1" bodyfile="include/elf.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structelf32__fhdr_1a203b7bc026daac83125cd8012254c1fc" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t e_shentsize</definition>
+        <argsstring></argsstring>
+        <name>e_shentsize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/elf.h" line="108" column="1" bodyfile="include/elf.h" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structelf32__fhdr_1a7c015ea3035dda6d791f5584321b8964" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t e_shnum</definition>
+        <argsstring></argsstring>
+        <name>e_shnum</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/elf.h" line="109" column="1" bodyfile="include/elf.h" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structelf32__fhdr_1a275548df00a1056b7b40d1ff83d14884" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t e_shstrndx</definition>
+        <argsstring></argsstring>
+        <name>e_shstrndx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/elf.h" line="110" column="1" bodyfile="include/elf.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/elf.h" line="87" column="1" bodyfile="include/elf.h" bodystart="86" bodyend="111"/>
+    <listofallmembers>
+      <member refid="structelf32__fhdr_1ac9334a1f99c34762e8c3bd4a7e875a19" prot="public" virt="non-virtual"><scope>elf32_fhdr</scope><name>e_ehsize</name></member>
+      <member refid="structelf32__fhdr_1a1871c61f97ea65c97ef21b3cf1976af0" prot="public" virt="non-virtual"><scope>elf32_fhdr</scope><name>e_entry</name></member>
+      <member refid="structelf32__fhdr_1a14b1d2d4ebd963309c8aa025169b5790" prot="public" virt="non-virtual"><scope>elf32_fhdr</scope><name>e_flags</name></member>
+      <member refid="structelf32__fhdr_1a473c0788d341bbd65886b559f28f6941" prot="public" virt="non-virtual"><scope>elf32_fhdr</scope><name>e_ident</name></member>
+      <member refid="structelf32__fhdr_1a2309339880d17e277892a8850e819d55" prot="public" virt="non-virtual"><scope>elf32_fhdr</scope><name>e_machine</name></member>
+      <member refid="structelf32__fhdr_1a933d8cd819963cc344906b0149bdf631" prot="public" virt="non-virtual"><scope>elf32_fhdr</scope><name>e_phentsize</name></member>
+      <member refid="structelf32__fhdr_1a130805188ee029aae4a1270e2c4e3fc2" prot="public" virt="non-virtual"><scope>elf32_fhdr</scope><name>e_phnum</name></member>
+      <member refid="structelf32__fhdr_1ae83b9d8fd4b65e456f9c3c0915b77774" prot="public" virt="non-virtual"><scope>elf32_fhdr</scope><name>e_phoff</name></member>
+      <member refid="structelf32__fhdr_1a203b7bc026daac83125cd8012254c1fc" prot="public" virt="non-virtual"><scope>elf32_fhdr</scope><name>e_shentsize</name></member>
+      <member refid="structelf32__fhdr_1a7c015ea3035dda6d791f5584321b8964" prot="public" virt="non-virtual"><scope>elf32_fhdr</scope><name>e_shnum</name></member>
+      <member refid="structelf32__fhdr_1af3e021c867a2a7281f92b4c48b8e724e" prot="public" virt="non-virtual"><scope>elf32_fhdr</scope><name>e_shoff</name></member>
+      <member refid="structelf32__fhdr_1a275548df00a1056b7b40d1ff83d14884" prot="public" virt="non-virtual"><scope>elf32_fhdr</scope><name>e_shstrndx</name></member>
+      <member refid="structelf32__fhdr_1a4160b480f72e4477cab7a0375f8535ea" prot="public" virt="non-virtual"><scope>elf32_fhdr</scope><name>e_type</name></member>
+      <member refid="structelf32__fhdr_1ab5ece8e1aa0f68bcf4a3476200dc29dc" prot="public" virt="non-virtual"><scope>elf32_fhdr</scope><name>e_version</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structfile" kind="struct" language="C++" prot="public">
+    <compoundname>file</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structfile_1ae48c37db113eec555c7f4ce2e48e90de" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int oflag</definition>
+        <argsstring></argsstring>
+        <name>oflag</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="181" column="1" bodyfile="include/nanvix/fs.h" bodystart="181" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfile_1ad43c3812e6d13e0518d9f8b8f463ffcf" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int count</definition>
+        <argsstring></argsstring>
+        <name>count</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="182" column="1" bodyfile="include/nanvix/fs.h" bodystart="182" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfile_1a320b91e58d067b5097a431e6da94f247" prot="public" static="no" mutable="no">
+        <type>off_t</type>
+        <definition>off_t pos</definition>
+        <argsstring></argsstring>
+        <name>pos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="183" column="1" bodyfile="include/nanvix/fs.h" bodystart="183" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfile_1a27166b000fcd0f632eb04072360bee52" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structinode" kindref="compound">inode</ref> *</type>
+        <definition>struct inode* inode</definition>
+        <argsstring></argsstring>
+        <name>inode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="184" column="1" bodyfile="include/nanvix/fs.h" bodystart="184" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="49">
+        <label>inode</label>
+        <link refid="structinode"/>
+        <childnode refid="49" relation="usage">
+          <edgelabel>free_next</edgelabel>
+          <edgelabel>hash_prev</edgelabel>
+          <edgelabel>hash_next</edgelabel>
+        </childnode>
+        <childnode refid="50" relation="usage">
+          <edgelabel>chain</edgelabel>
+        </childnode>
+        <childnode refid="52" relation="usage">
+          <edgelabel>sb</edgelabel>
+        </childnode>
+      </node>
+      <node id="48">
+        <label>file</label>
+        <childnode refid="49" relation="usage">
+          <edgelabel>inode</edgelabel>
+        </childnode>
+      </node>
+      <node id="50">
+        <label>process</label>
+        <link refid="structprocess"/>
+        <childnode refid="49" relation="usage">
+          <edgelabel>root</edgelabel>
+          <edgelabel>pwd</edgelabel>
+        </childnode>
+        <childnode refid="51" relation="usage">
+          <edgelabel>fss</edgelabel>
+        </childnode>
+        <childnode refid="50" relation="usage">
+          <edgelabel>next</edgelabel>
+          <edgelabel>pgrp</edgelabel>
+          <edgelabel>chain</edgelabel>
+          <edgelabel>father</edgelabel>
+        </childnode>
+      </node>
+      <node id="51">
+        <label>fpu</label>
+        <link refid="structfpu"/>
+      </node>
+      <node id="53">
+        <label>buffer</label>
+        <link refid="structbuffer"/>
+        <childnode refid="50" relation="usage">
+          <edgelabel>chain</edgelabel>
+        </childnode>
+        <childnode refid="53" relation="usage">
+          <edgelabel>free_next</edgelabel>
+          <edgelabel>hash_prev</edgelabel>
+          <edgelabel>free_prev</edgelabel>
+          <edgelabel>hash_next</edgelabel>
+        </childnode>
+      </node>
+      <node id="52">
+        <label>superblock</label>
+        <link refid="structsuperblock"/>
+        <childnode refid="49" relation="usage">
+          <edgelabel>root</edgelabel>
+          <edgelabel>mp</edgelabel>
+        </childnode>
+        <childnode refid="50" relation="usage">
+          <edgelabel>chain</edgelabel>
+        </childnode>
+        <childnode refid="53" relation="usage">
+          <edgelabel>zmap</edgelabel>
+          <edgelabel>imap</edgelabel>
+          <edgelabel>buf</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/nanvix/fs.h" line="180" column="1" bodyfile="include/nanvix/fs.h" bodystart="179" bodyend="185"/>
+    <listofallmembers>
+      <member refid="structfile_1ad43c3812e6d13e0518d9f8b8f463ffcf" prot="public" virt="non-virtual"><scope>file</scope><name>count</name></member>
+      <member refid="structfile_1a27166b000fcd0f632eb04072360bee52" prot="public" virt="non-virtual"><scope>file</scope><name>inode</name></member>
+      <member refid="structfile_1ae48c37db113eec555c7f4ce2e48e90de" prot="public" virt="non-virtual"><scope>file</scope><name>oflag</name></member>
+      <member refid="structfile_1a320b91e58d067b5097a431e6da94f247" prot="public" virt="non-virtual"><scope>file</scope><name>pos</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

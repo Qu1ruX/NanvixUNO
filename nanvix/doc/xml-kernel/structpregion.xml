@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structpregion" kind="struct" language="C++" prot="public">
+    <compoundname>pregion</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structpregion_1a9a9f420bcf7904c9697b22c8dab99685" prot="public" static="no" mutable="no">
+        <type>addr_t</type>
+        <definition>addr_t start</definition>
+        <argsstring></argsstring>
+        <name>start</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/region.h" line="75" column="1" bodyfile="include/nanvix/region.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpregion_1a316a6ada53df494ca9e54ce75eda61b5" prot="public" static="no" mutable="no">
+        <type>struct region *</type>
+        <definition>struct region* reg</definition>
+        <argsstring></argsstring>
+        <name>reg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/region.h" line="76" column="1" bodyfile="include/nanvix/region.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/nanvix/region.h" line="74" column="1" bodyfile="include/nanvix/region.h" bodystart="73" bodyend="77"/>
+    <listofallmembers>
+      <member refid="structpregion_1a316a6ada53df494ca9e54ce75eda61b5" prot="public" virt="non-virtual"><scope>pregion</scope><name>reg</name></member>
+      <member refid="structpregion_1a9a9f420bcf7904c9697b22c8dab99685" prot="public" virt="non-virtual"><scope>pregion</scope><name>start</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

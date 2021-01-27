@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structDIR" kind="struct" language="C++" prot="public">
+    <compoundname>DIR</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structDIR_1a6f8059414f0228f0256115e024eeed4b" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int fd</definition>
+        <argsstring></argsstring>
+        <name>fd</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/dirent.h" line="47" column="1" bodyfile="include/dirent.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structDIR_1ac8bf36fe0577cba66bccda3a6f7e80a4" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int flags</definition>
+        <argsstring></argsstring>
+        <name>flags</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/dirent.h" line="48" column="1" bodyfile="include/dirent.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structDIR_1ad43c3812e6d13e0518d9f8b8f463ffcf" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int count</definition>
+        <argsstring></argsstring>
+        <name>count</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/dirent.h" line="49" column="1" bodyfile="include/dirent.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structDIR_1a8c5649f479990884d7bdb54cf9d15312" prot="public" static="no" mutable="no">
+        <type>struct dirent *</type>
+        <definition>struct dirent* ptr</definition>
+        <argsstring></argsstring>
+        <name>ptr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/dirent.h" line="50" column="1" bodyfile="include/dirent.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structDIR_1a026bb81e79f980f51a46914c6c2a3203" prot="public" static="no" mutable="no">
+        <type>struct dirent *</type>
+        <definition>struct dirent* buf</definition>
+        <argsstring></argsstring>
+        <name>buf</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/dirent.h" line="51" column="1" bodyfile="include/dirent.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/dirent.h" line="46" column="1" bodyfile="include/dirent.h" bodystart="45" bodyend="52"/>
+    <listofallmembers>
+      <member refid="structDIR_1a026bb81e79f980f51a46914c6c2a3203" prot="public" virt="non-virtual"><scope>DIR</scope><name>buf</name></member>
+      <member refid="structDIR_1ad43c3812e6d13e0518d9f8b8f463ffcf" prot="public" virt="non-virtual"><scope>DIR</scope><name>count</name></member>
+      <member refid="structDIR_1a6f8059414f0228f0256115e024eeed4b" prot="public" virt="non-virtual"><scope>DIR</scope><name>fd</name></member>
+      <member refid="structDIR_1ac8bf36fe0577cba66bccda3a6f7e80a4" prot="public" virt="non-virtual"><scope>DIR</scope><name>flags</name></member>
+      <member refid="structDIR_1a8c5649f479990884d7bdb54cf9d15312" prot="public" virt="non-virtual"><scope>DIR</scope><name>ptr</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

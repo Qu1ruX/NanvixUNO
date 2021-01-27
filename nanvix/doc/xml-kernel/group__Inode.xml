@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="group__Inode" kind="group">
+    <compoundname>Inode</compoundname>
+    <title>Inode Module</title>
+    <innerclass refid="structinode" prot="public">inode</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__Inode_1gab4246414e685d03bec8337675be83358" prot="public" static="no">
+        <name>inode_flags</name>
+        <enumvalue id="group__Inode_1ggab4246414e685d03bec8337675be83358a328495688a8ce4a237f41fb5de6cb5dd" prot="public">
+          <name>INODE_LOCKED</name>
+          <initializer>= (1 &lt;&lt; 0)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Locked? </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__Inode_1ggab4246414e685d03bec8337675be83358ad6a80ff19140aea8d1d6bfeee63d9cf8" prot="public">
+          <name>INODE_DIRTY</name>
+          <initializer>= (1 &lt;&lt; 1)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Dirty? </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__Inode_1ggab4246414e685d03bec8337675be83358a2e5100181ea108e80913e0d7a485c845" prot="public">
+          <name>INODE_MOUNT</name>
+          <initializer>= (1 &lt;&lt; 2)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Mount point? </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__Inode_1ggab4246414e685d03bec8337675be83358af5a98fef4b30a15a7a5f19b116b75cdf" prot="public">
+          <name>INODE_VALID</name>
+          <initializer>= (1 &lt;&lt; 3)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Valid inode? </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__Inode_1ggab4246414e685d03bec8337675be83358ae6294bb0bb395134806c93027cd62eee" prot="public">
+          <name>INODE_PIPE</name>
+          <initializer>= (1 &lt;&lt; 4)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Pipe inode? </para>          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Inode flags. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="94" column="1" bodyfile="include/nanvix/fs.h" bodystart="93" bodyend="100"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

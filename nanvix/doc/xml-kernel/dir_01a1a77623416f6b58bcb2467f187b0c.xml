@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_01a1a77623416f6b58bcb2467f187b0c" kind="dir">
+    <compoundname>src/sbin/foobar</compoundname>
+    <innerfile refid="sbin_2foobar_2main_8c">main.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/sbin/foobar/"/>
+  </compounddef>
+</doxygen>

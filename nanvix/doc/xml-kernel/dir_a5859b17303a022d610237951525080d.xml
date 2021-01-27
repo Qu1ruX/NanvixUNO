@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_a5859b17303a022d610237951525080d" kind="dir">
+    <compoundname>src/ubin/stat</compoundname>
+    <innerfile refid="ubin_2stat_2stat_8c">stat.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/ubin/stat/"/>
+  </compounddef>
+</doxygen>

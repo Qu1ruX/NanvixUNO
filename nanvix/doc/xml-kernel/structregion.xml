@@ -1,0 +1,287 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structregion" kind="struct" language="C++" prot="public">
+    <compoundname>region</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structregion_1ac8bf36fe0577cba66bccda3a6f7e80a4" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int flags</definition>
+        <argsstring></argsstring>
+        <name>flags</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/region.h" line="47" column="1" bodyfile="include/nanvix/region.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structregion_1ad43c3812e6d13e0518d9f8b8f463ffcf" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int count</definition>
+        <argsstring></argsstring>
+        <name>count</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/region.h" line="48" column="1" bodyfile="include/nanvix/region.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structregion_1a854352f53b148adc24983a58a1866d66" prot="public" static="no" mutable="no">
+        <type><ref refid="decl_8h_1a028b7cbca0d37bbc9bc219370525227f" kindref="member">size_t</ref></type>
+        <definition>size_t size</definition>
+        <argsstring></argsstring>
+        <name>size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/region.h" line="49" column="1" bodyfile="include/nanvix/region.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structregion_1a4b32f3d83ee783b731ef3034daa06fe2" prot="public" static="no" mutable="no">
+        <type>struct pte *</type>
+        <definition>struct pte* pgtab[REGION_PGTABS]</definition>
+        <argsstring>[REGION_PGTABS]</argsstring>
+        <name>pgtab</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/region.h" line="50" column="1" bodyfile="include/nanvix/region.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structregion_1a6e44a17eef6d95b2e6832c26e469d505" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structprocess" kindref="compound">process</ref> *</type>
+        <definition>struct process* chain</definition>
+        <argsstring></argsstring>
+        <name>chain</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/region.h" line="51" column="1" bodyfile="include/nanvix/region.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structregion_1a569f9dbc07dd86fffeb072aabdeff666" prot="public" static="no" mutable="no">
+        <type>struct pregion *</type>
+        <definition>struct pregion* preg</definition>
+        <argsstring></argsstring>
+        <name>preg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/region.h" line="52" column="1" bodyfile="include/nanvix/region.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structregion_1a27166b000fcd0f632eb04072360bee52" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structinode" kindref="compound">inode</ref> *</type>
+        <definition>struct inode* inode</definition>
+        <argsstring></argsstring>
+        <name>inode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/region.h" line="57" column="1" bodyfile="include/nanvix/region.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structregion_1ae55cdc1a5c5d6998036cdc48050636a9" prot="public" static="no" mutable="no">
+        <type>off_t</type>
+        <definition>off_t off</definition>
+        <argsstring></argsstring>
+        <name>off</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/region.h" line="58" column="1" bodyfile="include/nanvix/region.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structregion_1a658b7b61475ec2fcbff1bf29703d39c2" prot="public" static="no" mutable="no">
+        <type>struct region::@1</type>
+        <definition>struct region::@1  file</definition>
+        <argsstring></argsstring>
+        <name>file</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/region.h" line="60" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structregion_1adc8d3cf511ceb277aea0cfa1cd027c59" prot="public" static="no" mutable="no">
+        <type>mode_t</type>
+        <definition>mode_t mode</definition>
+        <argsstring></argsstring>
+        <name>mode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/region.h" line="63" column="1" bodyfile="include/nanvix/region.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structregion_1ac1f54bfdb7d1a330f882baa75ff0e0f4" prot="public" static="no" mutable="no">
+        <type>uid_t</type>
+        <definition>uid_t cuid</definition>
+        <argsstring></argsstring>
+        <name>cuid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/region.h" line="64" column="1" bodyfile="include/nanvix/region.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structregion_1a31dc278b23fe9e501089400895186f3c" prot="public" static="no" mutable="no">
+        <type>gid_t</type>
+        <definition>gid_t cgid</definition>
+        <argsstring></argsstring>
+        <name>cgid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/region.h" line="65" column="1" bodyfile="include/nanvix/region.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structregion_1a1163f413982fef86f5c8313564d8589c" prot="public" static="no" mutable="no">
+        <type>uid_t</type>
+        <definition>uid_t uid</definition>
+        <argsstring></argsstring>
+        <name>uid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/region.h" line="66" column="1" bodyfile="include/nanvix/region.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structregion_1accbf90b0b518578acff258d328c5575d" prot="public" static="no" mutable="no">
+        <type>gid_t</type>
+        <definition>gid_t gid</definition>
+        <argsstring></argsstring>
+        <name>gid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/region.h" line="67" column="1" bodyfile="include/nanvix/region.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="106">
+        <label>region</label>
+        <childnode refid="107" relation="usage">
+          <edgelabel>inode</edgelabel>
+        </childnode>
+        <childnode refid="108" relation="usage">
+          <edgelabel>chain</edgelabel>
+        </childnode>
+      </node>
+      <node id="107">
+        <label>inode</label>
+        <link refid="structinode"/>
+        <childnode refid="107" relation="usage">
+          <edgelabel>free_next</edgelabel>
+          <edgelabel>hash_prev</edgelabel>
+          <edgelabel>hash_next</edgelabel>
+        </childnode>
+        <childnode refid="108" relation="usage">
+          <edgelabel>chain</edgelabel>
+        </childnode>
+        <childnode refid="110" relation="usage">
+          <edgelabel>sb</edgelabel>
+        </childnode>
+      </node>
+      <node id="108">
+        <label>process</label>
+        <link refid="structprocess"/>
+        <childnode refid="107" relation="usage">
+          <edgelabel>root</edgelabel>
+          <edgelabel>pwd</edgelabel>
+        </childnode>
+        <childnode refid="109" relation="usage">
+          <edgelabel>fss</edgelabel>
+        </childnode>
+        <childnode refid="108" relation="usage">
+          <edgelabel>next</edgelabel>
+          <edgelabel>pgrp</edgelabel>
+          <edgelabel>chain</edgelabel>
+          <edgelabel>father</edgelabel>
+        </childnode>
+      </node>
+      <node id="109">
+        <label>fpu</label>
+        <link refid="structfpu"/>
+      </node>
+      <node id="111">
+        <label>buffer</label>
+        <link refid="structbuffer"/>
+        <childnode refid="108" relation="usage">
+          <edgelabel>chain</edgelabel>
+        </childnode>
+        <childnode refid="111" relation="usage">
+          <edgelabel>free_next</edgelabel>
+          <edgelabel>hash_prev</edgelabel>
+          <edgelabel>free_prev</edgelabel>
+          <edgelabel>hash_next</edgelabel>
+        </childnode>
+      </node>
+      <node id="110">
+        <label>superblock</label>
+        <link refid="structsuperblock"/>
+        <childnode refid="107" relation="usage">
+          <edgelabel>root</edgelabel>
+          <edgelabel>mp</edgelabel>
+        </childnode>
+        <childnode refid="108" relation="usage">
+          <edgelabel>chain</edgelabel>
+        </childnode>
+        <childnode refid="111" relation="usage">
+          <edgelabel>zmap</edgelabel>
+          <edgelabel>imap</edgelabel>
+          <edgelabel>buf</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/nanvix/region.h" line="45" column="1" bodyfile="include/nanvix/region.h" bodystart="44" bodyend="68"/>
+    <listofallmembers>
+      <member refid="structregion_1a31dc278b23fe9e501089400895186f3c" prot="public" virt="non-virtual"><scope>region</scope><name>cgid</name></member>
+      <member refid="structregion_1a6e44a17eef6d95b2e6832c26e469d505" prot="public" virt="non-virtual"><scope>region</scope><name>chain</name></member>
+      <member refid="structregion_1ad43c3812e6d13e0518d9f8b8f463ffcf" prot="public" virt="non-virtual"><scope>region</scope><name>count</name></member>
+      <member refid="structregion_1ac1f54bfdb7d1a330f882baa75ff0e0f4" prot="public" virt="non-virtual"><scope>region</scope><name>cuid</name></member>
+      <member refid="structregion_1a658b7b61475ec2fcbff1bf29703d39c2" prot="public" virt="non-virtual"><scope>region</scope><name>file</name></member>
+      <member refid="structregion_1ac8bf36fe0577cba66bccda3a6f7e80a4" prot="public" virt="non-virtual"><scope>region</scope><name>flags</name></member>
+      <member refid="structregion_1accbf90b0b518578acff258d328c5575d" prot="public" virt="non-virtual"><scope>region</scope><name>gid</name></member>
+      <member refid="structregion_1a27166b000fcd0f632eb04072360bee52" prot="public" virt="non-virtual"><scope>region</scope><name>inode</name></member>
+      <member refid="structregion_1adc8d3cf511ceb277aea0cfa1cd027c59" prot="public" virt="non-virtual"><scope>region</scope><name>mode</name></member>
+      <member refid="structregion_1ae55cdc1a5c5d6998036cdc48050636a9" prot="public" virt="non-virtual"><scope>region</scope><name>off</name></member>
+      <member refid="structregion_1a4b32f3d83ee783b731ef3034daa06fe2" prot="public" virt="non-virtual"><scope>region</scope><name>pgtab</name></member>
+      <member refid="structregion_1a569f9dbc07dd86fffeb072aabdeff666" prot="public" virt="non-virtual"><scope>region</scope><name>preg</name></member>
+      <member refid="structregion_1a854352f53b148adc24983a58a1866d66" prot="public" virt="non-virtual"><scope>region</scope><name>size</name></member>
+      <member refid="structregion_1a1163f413982fef86f5c8313564d8589c" prot="public" virt="non-virtual"><scope>region</scope><name>uid</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

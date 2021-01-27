@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_a8270f97531bca4e83339aa4584f6be3" kind="dir">
+    <compoundname>include/i386</compoundname>
+    <innerfile refid="8259_8h">8259.h</innerfile>
+    <innerfile refid="fpu_8h">fpu.h</innerfile>
+    <innerfile refid="gdt_8h">gdt.h</innerfile>
+    <innerfile refid="i386_8h">i386.h</innerfile>
+    <innerfile refid="idt_8h">idt.h</innerfile>
+    <innerfile refid="int_8h">int.h</innerfile>
+    <innerfile refid="paging_8h">paging.h</innerfile>
+    <innerfile refid="pit_8h">pit.h</innerfile>
+    <innerfile refid="tss_8h">tss.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/i386/"/>
+  </compounddef>
+</doxygen>

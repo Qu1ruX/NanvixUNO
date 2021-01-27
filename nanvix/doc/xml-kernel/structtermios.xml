@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structtermios" kind="struct" language="C++" prot="public">
+    <compoundname>termios</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structtermios_1a3e416181096da14aacc3a5aaa3138d3e" prot="public" static="no" mutable="no">
+        <type>tcflag_t</type>
+        <definition>tcflag_t c_iflag</definition>
+        <argsstring></argsstring>
+        <name>c_iflag</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/termios.h" line="96" column="1" bodyfile="include/termios.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtermios_1a615efcbde1bbfd1f2c28b3a62bd05add" prot="public" static="no" mutable="no">
+        <type>tcflag_t</type>
+        <definition>tcflag_t c_oflag</definition>
+        <argsstring></argsstring>
+        <name>c_oflag</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/termios.h" line="97" column="1" bodyfile="include/termios.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtermios_1ac6409888277d696c033f0068b33d5acc" prot="public" static="no" mutable="no">
+        <type>tcflag_t</type>
+        <definition>tcflag_t c_cflag</definition>
+        <argsstring></argsstring>
+        <name>c_cflag</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/termios.h" line="98" column="1" bodyfile="include/termios.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtermios_1ad03044b6d30bc840e24751ea465651af" prot="public" static="no" mutable="no">
+        <type>tcflag_t</type>
+        <definition>tcflag_t c_lflag</definition>
+        <argsstring></argsstring>
+        <name>c_lflag</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/termios.h" line="99" column="1" bodyfile="include/termios.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtermios_1a8ebeeead391f455321d5cb4851afdcff" prot="public" static="no" mutable="no">
+        <type>tcflag_t</type>
+        <definition>tcflag_t c_cc[NCCS]</definition>
+        <argsstring>[NCCS]</argsstring>
+        <name>c_cc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/termios.h" line="100" column="1" bodyfile="include/termios.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/termios.h" line="95" column="1" bodyfile="include/termios.h" bodystart="94" bodyend="101"/>
+    <listofallmembers>
+      <member refid="structtermios_1a8ebeeead391f455321d5cb4851afdcff" prot="public" virt="non-virtual"><scope>termios</scope><name>c_cc</name></member>
+      <member refid="structtermios_1ac6409888277d696c033f0068b33d5acc" prot="public" virt="non-virtual"><scope>termios</scope><name>c_cflag</name></member>
+      <member refid="structtermios_1a3e416181096da14aacc3a5aaa3138d3e" prot="public" virt="non-virtual"><scope>termios</scope><name>c_iflag</name></member>
+      <member refid="structtermios_1ad03044b6d30bc840e24751ea465651af" prot="public" virt="non-virtual"><scope>termios</scope><name>c_lflag</name></member>
+      <member refid="structtermios_1a615efcbde1bbfd1f2c28b3a62bd05add" prot="public" virt="non-virtual"><scope>termios</scope><name>c_oflag</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

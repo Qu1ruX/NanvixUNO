@@ -1,0 +1,1430 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="include_2nanvix_2fs_8h" kind="file" language="C++">
+    <compoundname>fs.h</compoundname>
+    <innerclass refid="structinode" prot="public">inode</innerclass>
+    <innerclass refid="structfile" prot="public">file</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__Inode_1gab4246414e685d03bec8337675be83358" prot="public" static="no">
+        <name>inode_flags</name>
+        <enumvalue id="group__Inode_1ggab4246414e685d03bec8337675be83358a328495688a8ce4a237f41fb5de6cb5dd" prot="public">
+          <name>INODE_LOCKED</name>
+          <initializer>= (1 &lt;&lt; 0)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Locked? </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__Inode_1ggab4246414e685d03bec8337675be83358ad6a80ff19140aea8d1d6bfeee63d9cf8" prot="public">
+          <name>INODE_DIRTY</name>
+          <initializer>= (1 &lt;&lt; 1)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Dirty? </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__Inode_1ggab4246414e685d03bec8337675be83358a2e5100181ea108e80913e0d7a485c845" prot="public">
+          <name>INODE_MOUNT</name>
+          <initializer>= (1 &lt;&lt; 2)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Mount point? </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__Inode_1ggab4246414e685d03bec8337675be83358af5a98fef4b30a15a7a5f19b116b75cdf" prot="public">
+          <name>INODE_VALID</name>
+          <initializer>= (1 &lt;&lt; 3)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Valid inode? </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__Inode_1ggab4246414e685d03bec8337675be83358ae6294bb0bb395134806c93027cd62eee" prot="public">
+          <name>INODE_PIPE</name>
+          <initializer>= (1 &lt;&lt; 4)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Pipe inode? </para>          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Inode flags. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="94" column="1" bodyfile="include/nanvix/fs.h" bodystart="93" bodyend="100"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__Buffer_1ga7c7e4c5feaa3d1b717fbdc33c8dd7715" prot="public" static="no">
+        <type>struct <ref refid="structbuffer" kindref="compound">buffer</ref> *</type>
+        <definition>typedef struct buffer* buffer_t</definition>
+        <argsstring></argsstring>
+        <name>buffer_t</name>
+        <briefdescription>
+<para>Opaque pointer to a block buffer. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="59" column="1" bodyfile="include/nanvix/fs.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__Buffer_1ga45a654e2d1994709ac5b6c89a2210e84" prot="public" static="no">
+        <type>const struct <ref refid="structbuffer" kindref="compound">buffer</ref> *</type>
+        <definition>typedef const struct buffer* const_buffer_t</definition>
+        <argsstring></argsstring>
+        <name>const_buffer_t</name>
+        <briefdescription>
+<para>Opaque pointer to a constant buffer. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="64" column="1" bodyfile="include/nanvix/fs.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__Superblock_1ga68925a0aaf35be42a7202bafa481438a" prot="public" static="no">
+        <type>struct <ref refid="structsuperblock" kindref="compound">superblock</ref> *</type>
+        <definition>typedef struct superblock* superblock_t</definition>
+        <argsstring></argsstring>
+        <name>superblock_t</name>
+        <briefdescription>
+<para>Opaque pointer to a in-core superblock. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="155" column="1" bodyfile="include/nanvix/fs.h" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="include_2nanvix_2fs_8h_1aff84161a54295d71328ecf6004868004" prot="public" static="no" mutable="no">
+        <type>EXTERN struct file</type>
+        <definition>EXTERN struct file filetab[NR_FILES]</definition>
+        <argsstring>[NR_FILES]</argsstring>
+        <name>filetab</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="190" column="1" bodyfile="include/nanvix/fs.h" bodystart="190" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="include_2nanvix_2fs_8h_1a5dfb8256e90f097f3e9426244cf06dfb" prot="public" static="no" mutable="no">
+        <type>EXTERN struct <ref refid="structsuperblock" kindref="compound">superblock</ref> *</type>
+        <definition>EXTERN struct superblock* rootdev</definition>
+        <argsstring></argsstring>
+        <name>rootdev</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="266" column="1" bodyfile="include/nanvix/fs.h" bodystart="266" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="include_2nanvix_2fs_8h_1a90224c261ee8d0a6e001f23b844eacf2" prot="public" static="no" mutable="no">
+        <type>EXTERN struct <ref refid="structinode" kindref="compound">inode</ref> *</type>
+        <definition>EXTERN struct inode* root</definition>
+        <argsstring></argsstring>
+        <name>root</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="271" column="1" bodyfile="include/nanvix/fs.h" bodystart="271" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__Buffer_1ga8b1e8b87d95e8dc0729640bc0876af7f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN void</type>
+        <definition>EXTERN void bsync</definition>
+        <argsstring>(void)</argsstring>
+        <name>bsync</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Synchronizes the block buffer cache. </para>        </briefdescription>
+        <detaileddescription>
+<para>Flushes all valid block buffers onto underlying devices. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="67" column="1" bodyfile="src/kernel/fs/buffer.c" bodystart="360" bodyend="392"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Buffer_1gaf186e2f6bebc404209c7946a82720490" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN void</type>
+        <definition>EXTERN void blklock</definition>
+        <argsstring>(buffer_t)</argsstring>
+        <name>blklock</name>
+        <param>
+          <type><ref refid="group__Buffer_1ga7c7e4c5feaa3d1b717fbdc33c8dd7715" kindref="member">buffer_t</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="68" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Buffer_1gaf5da577d3faa98303820930730e66a5a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN void</type>
+        <definition>EXTERN void blkunlock</definition>
+        <argsstring>(buffer_t)</argsstring>
+        <name>blkunlock</name>
+        <param>
+          <type><ref refid="group__Buffer_1ga7c7e4c5feaa3d1b717fbdc33c8dd7715" kindref="member">buffer_t</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="69" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Buffer_1ga2b567ccf6dc409304b569553c43e0128" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN void</type>
+        <definition>EXTERN void brelse</definition>
+        <argsstring>(buffer_t)</argsstring>
+        <name>brelse</name>
+        <param>
+          <type><ref refid="group__Buffer_1ga7c7e4c5feaa3d1b717fbdc33c8dd7715" kindref="member">buffer_t</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="70" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Buffer_1ga29b2bc5da947fe8b2363ad2879447d93" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN <ref refid="group__Buffer_1ga7c7e4c5feaa3d1b717fbdc33c8dd7715" kindref="member">buffer_t</ref></type>
+        <definition>EXTERN buffer_t bread</definition>
+        <argsstring>(dev_t, block_t)</argsstring>
+        <name>bread</name>
+        <param>
+          <type>dev_t</type>
+          <defname>dev</defname>
+        </param>
+        <param>
+          <type><ref refid="include_2fs_2minix_8h_1a77ecea3fce28a16f79db79aa58256855" kindref="member">block_t</ref></type>
+          <defname>num</defname>
+        </param>
+        <briefdescription>
+<para>Reads a block from a device. </para>        </briefdescription>
+        <detaileddescription>
+<para>Reads the block numbered num synchronously from the device numbered dev.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Device number. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Block number.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Upon successful completion, a pointer to a buffer holding the requested block is returned. In this case, the block buffer is ensured to be locked. Upon failure, a NULL pointer is returned instead.</para></simplesect>
+<simplesect kind="note"><para>The device number should be valid. </para></simplesect>
+<simplesect kind="note"><para>The block number should be valid. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="71" column="1" bodyfile="src/kernel/fs/buffer.c" bodystart="306" bodyend="323"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Buffer_1ga4413176bb1d2adaa907a1a2ea8759ec1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN void</type>
+        <definition>EXTERN void bwrite</definition>
+        <argsstring>(buffer_t)</argsstring>
+        <name>bwrite</name>
+        <param>
+          <type><ref refid="group__Buffer_1ga7c7e4c5feaa3d1b717fbdc33c8dd7715" kindref="member">buffer_t</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="72" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Buffer_1ga52a77b024f0a2c25f3769b8df441c160" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN void</type>
+        <definition>EXTERN void buffer_dirty</definition>
+        <argsstring>(buffer_t, int)</argsstring>
+        <name>buffer_dirty</name>
+        <param>
+          <type><ref refid="group__Buffer_1ga7c7e4c5feaa3d1b717fbdc33c8dd7715" kindref="member">buffer_t</ref></type>
+        </param>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="73" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Buffer_1ga3d233154fd94ab2ae5cd2455c6a86eb3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN void *</type>
+        <definition>EXTERN void* buffer_data</definition>
+        <argsstring>(const_buffer_t)</argsstring>
+        <name>buffer_data</name>
+        <param>
+          <type><ref refid="group__Buffer_1ga45a654e2d1994709ac5b6c89a2210e84" kindref="member">const_buffer_t</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="74" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Buffer_1gab4212458394458c43aef7eddad343813" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN dev_t</type>
+        <definition>EXTERN dev_t buffer_dev</definition>
+        <argsstring>(const_buffer_t)</argsstring>
+        <name>buffer_dev</name>
+        <param>
+          <type><ref refid="group__Buffer_1ga45a654e2d1994709ac5b6c89a2210e84" kindref="member">const_buffer_t</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="75" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Buffer_1gabf90226e1f3ddd050895f5b6a49323db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN <ref refid="include_2fs_2minix_8h_1a77ecea3fce28a16f79db79aa58256855" kindref="member">block_t</ref></type>
+        <definition>EXTERN block_t buffer_num</definition>
+        <argsstring>(const_buffer_t)</argsstring>
+        <name>buffer_num</name>
+        <param>
+          <type><ref refid="group__Buffer_1ga45a654e2d1994709ac5b6c89a2210e84" kindref="member">const_buffer_t</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="76" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Buffer_1ga449ec2c78f0cbef7a2ba10e55d4259af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN int</type>
+        <definition>EXTERN int buffer_is_sync</definition>
+        <argsstring>(const_buffer_t)</argsstring>
+        <name>buffer_is_sync</name>
+        <param>
+          <type><ref refid="group__Buffer_1ga45a654e2d1994709ac5b6c89a2210e84" kindref="member">const_buffer_t</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="77" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="include_2nanvix_2fs_8h_1ae57279683b7b213f41bae9f3f0cd291d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>EXTERN void</type>
+        <definition>EXTERN void inode_touch</definition>
+        <argsstring>(struct inode *i)</argsstring>
+        <name>inode_touch</name>
+        <param>
+          <type>struct <ref refid="structinode" kindref="compound">inode</ref> *</type>
+          <declname>i</declname>
+          <defname>ip</defname>
+        </param>
+        <briefdescription>
+<para>Updates the time stamp of an inode. </para>        </briefdescription>
+        <detaileddescription>
+<para>Updates the time stamp of the inode pointed to by <computeroutput>ip</computeroutput> to current time.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ip</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Inode to be touched.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>The inode must be locked. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="131" column="1" bodyfile="src/kernel/fs/inode.c" bodystart="582" bodyend="586"/>
+      </memberdef>
+      <memberdef kind="function" id="include_2nanvix_2fs_8h_1a257e56ccbcd141252c798624976f9cce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN void</type>
+        <definition>EXTERN void inode_lock</definition>
+        <argsstring>(struct inode *i)</argsstring>
+        <name>inode_lock</name>
+        <param>
+          <type>struct <ref refid="structinode" kindref="compound">inode</ref> *</type>
+          <declname>i</declname>
+          <defname>ip</defname>
+        </param>
+        <briefdescription>
+<para>Locks an inode. </para>        </briefdescription>
+        <detaileddescription>
+<para>Locks the inode pointed to by <computeroutput>ip</computeroutput>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="132" column="1" bodyfile="src/kernel/fs/inode.c" bodystart="297" bodyend="302"/>
+      </memberdef>
+      <memberdef kind="function" id="include_2nanvix_2fs_8h_1ae383e5c0830849a0aa4e686fa34aec21" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN void</type>
+        <definition>EXTERN void inode_unlock</definition>
+        <argsstring>(struct inode *i)</argsstring>
+        <name>inode_unlock</name>
+        <param>
+          <type>struct <ref refid="structinode" kindref="compound">inode</ref> *</type>
+          <declname>i</declname>
+          <defname>ip</defname>
+        </param>
+        <briefdescription>
+<para>Unlocks an inode. </para>        </briefdescription>
+        <detaileddescription>
+<para>Unlocks the inode pointed to by <computeroutput>ip</computeroutput>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ip</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Inode to be unlocked.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>The inode must be locked. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="133" column="1" bodyfile="src/kernel/fs/inode.c" bodystart="313" bodyend="317"/>
+      </memberdef>
+      <memberdef kind="function" id="include_2nanvix_2fs_8h_1a883694c45eb0bae8943570082cf48128" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN void</type>
+        <definition>EXTERN void inode_sync</definition>
+        <argsstring>(void)</argsstring>
+        <name>inode_sync</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Synchronizes the in-core inode table. </para>        </briefdescription>
+        <detaileddescription>
+<para>Synchronizes the in-core inode table by flushing all valid inodes onto underlying devices. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="134" column="1" bodyfile="src/kernel/fs/inode.c" bodystart="325" bodyend="341"/>
+      </memberdef>
+      <memberdef kind="function" id="include_2nanvix_2fs_8h_1a04fdd6d0e4ae6e91101f69f65846a2d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN void</type>
+        <definition>EXTERN void inode_truncate</definition>
+        <argsstring>(struct inode *i)</argsstring>
+        <name>inode_truncate</name>
+        <param>
+          <type>struct <ref refid="structinode" kindref="compound">inode</ref> *</type>
+          <declname>i</declname>
+          <defname>ip</defname>
+        </param>
+        <briefdescription>
+<para>Truncates an inode. </para>        </briefdescription>
+        <detaileddescription>
+<para>Truncates the inode pointed to by <computeroutput>ip</computeroutput> by freeing all underling blocks.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ip</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Inode that shall be truncated.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>The inode must be locked. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="135" column="1" bodyfile="src/kernel/fs/inode.c" bodystart="353" bodyend="384"/>
+      </memberdef>
+      <memberdef kind="function" id="include_2nanvix_2fs_8h_1a92d367de494f68107fe970454a66f3a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN struct <ref refid="structinode" kindref="compound">inode</ref> *</type>
+        <definition>EXTERN struct inode* inode_alloc</definition>
+        <argsstring>(struct superblock *sb)</argsstring>
+        <name>inode_alloc</name>
+        <param>
+          <type>struct <ref refid="structsuperblock" kindref="compound">superblock</ref> *</type>
+          <declname>sb</declname>
+        </param>
+        <briefdescription>
+<para>Allocates an inode. </para>        </briefdescription>
+        <detaileddescription>
+<para>Allocates an inode in the file system that is associated to the superblock pointed to by <computeroutput>sb</computeroutput>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Superblock where the inode shall be allocated.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Upon successful completion, a pointed to the inode is returned. In this case, the inode is ensured to be locked. Upon failure, a #NULL pointer is returned instead.</para></simplesect>
+<simplesect kind="note"><para>The superblock must not be locked.</para></simplesect>
+<xrefsect id="todo_1_todo000003"><xreftitle>Todo</xreftitle><xrefdescription><para>Use isearch. </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="136" column="1" bodyfile="src/kernel/fs/inode.c" bodystart="402" bodyend="469"/>
+      </memberdef>
+      <memberdef kind="function" id="include_2nanvix_2fs_8h_1ac029e976f30363fe9d0f5d35bff69fa1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN struct <ref refid="structinode" kindref="compound">inode</ref> *</type>
+        <definition>EXTERN struct inode* inode_get</definition>
+        <argsstring>(dev_t dev, ino_t num)</argsstring>
+        <name>inode_get</name>
+        <param>
+          <type>dev_t</type>
+          <declname>dev</declname>
+        </param>
+        <param>
+          <type>ino_t</type>
+          <declname>num</declname>
+        </param>
+        <briefdescription>
+<para>Gets an inode. </para>        </briefdescription>
+        <detaileddescription>
+<para>Gets the inode with number <computeroutput>num</computeroutput> from the device <computeroutput>dev</computeroutput>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Device where the inode is located. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of the inode.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Upon successful completion, a pointer to the inode is returned. In this case, the inode is ensured to be locked. Upon failure, a #NULL pointer is returned instead.</para></simplesect>
+<simplesect kind="note"><para>The device number must be valid. </para></simplesect>
+<simplesect kind="note"><para>The inode number must be valid. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="137" column="1" bodyfile="src/kernel/fs/inode.c" bodystart="486" bodyend="527"/>
+      </memberdef>
+      <memberdef kind="function" id="include_2nanvix_2fs_8h_1af51a3079413d5aa71c6396d3086988f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN void</type>
+        <definition>EXTERN void inode_put</definition>
+        <argsstring>(struct inode *i)</argsstring>
+        <name>inode_put</name>
+        <param>
+          <type>struct <ref refid="structinode" kindref="compound">inode</ref> *</type>
+          <declname>i</declname>
+          <defname>ip</defname>
+        </param>
+        <briefdescription>
+<para>Releases a in-core inode. </para>        </briefdescription>
+        <detaileddescription>
+<para>Releases the inc-core inode pointed to by <computeroutput>ip</computeroutput>. If its reference count drops to zero, all underlying resources are freed and then the inode is marked as invalid.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ip</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Inode that shall be released.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>The inode must be valid </para></simplesect>
+<simplesect kind="note"><para>The inode must be locked. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="138" column="1" bodyfile="src/kernel/fs/inode.c" bodystart="600" bodyend="635"/>
+      </memberdef>
+      <memberdef kind="function" id="include_2nanvix_2fs_8h_1a1121b6fbea0d398e5880ba9d44de93b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN struct <ref refid="structinode" kindref="compound">inode</ref> *</type>
+        <definition>EXTERN struct inode* inode_dname</definition>
+        <argsstring>(const char *path, const char **name)</argsstring>
+        <name>inode_dname</name>
+        <param>
+          <type>const char *</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>const char **</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="139" column="1" bodyfile="src/kernel/fs/inode.c" bodystart="682" bodyend="803"/>
+      </memberdef>
+      <memberdef kind="function" id="include_2nanvix_2fs_8h_1a2836f0e6c22a4f8a74fc3914eae26443" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN struct <ref refid="structinode" kindref="compound">inode</ref> *</type>
+        <definition>EXTERN struct inode* inode_name</definition>
+        <argsstring>(const char *pathname)</argsstring>
+        <name>inode_name</name>
+        <param>
+          <type>const char *</type>
+          <declname>pathname</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="140" column="1" bodyfile="src/kernel/fs/inode.c" bodystart="808" bodyend="839"/>
+      </memberdef>
+      <memberdef kind="function" id="include_2nanvix_2fs_8h_1a941ca905b0e1eb966f97665c5a469b75" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN struct <ref refid="structinode" kindref="compound">inode</ref> *</type>
+        <definition>EXTERN struct inode* inode_pipe</definition>
+        <argsstring>(void)</argsstring>
+        <name>inode_pipe</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="141" column="1" bodyfile="src/kernel/fs/inode.c" bodystart="532" bodyend="570"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Superblock_1ga226f283e88ec0b9f2d85a60ae83a4fb9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN void</type>
+        <definition>EXTERN void superblock_init</definition>
+        <argsstring>(void)</argsstring>
+        <name>superblock_init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Initializes the superblock table. </para>        </briefdescription>
+        <detaileddescription>
+<para>Initializes the superblock table by setting all superblocks in it the table to be invalid and unlocked.</para><para><simplesect kind="note"><para>This function shall be called just once. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="160" column="1" bodyfile="src/kernel/fs/super.c" bodystart="406" bodyend="417"/>
+      </memberdef>
+      <memberdef kind="function" id="include_2nanvix_2fs_8h_1a06a3d80b2028b2a8c75bc388167438a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN void</type>
+        <definition>EXTERN void superblock_lock</definition>
+        <argsstring>(superblock_t)</argsstring>
+        <name>superblock_lock</name>
+        <param>
+          <type><ref refid="group__Superblock_1ga68925a0aaf35be42a7202bafa481438a" kindref="member">superblock_t</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="161" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="include_2nanvix_2fs_8h_1acd30ffe7c97d02e3edda2cdd8e50f8e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN void</type>
+        <definition>EXTERN void superblock_unlock</definition>
+        <argsstring>(superblock_t)</argsstring>
+        <name>superblock_unlock</name>
+        <param>
+          <type><ref refid="group__Superblock_1ga68925a0aaf35be42a7202bafa481438a" kindref="member">superblock_t</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="162" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Superblock_1ga92964453ed18c8ceeaaf5d3f2d560bca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN <ref refid="group__Superblock_1ga68925a0aaf35be42a7202bafa481438a" kindref="member">superblock_t</ref></type>
+        <definition>EXTERN superblock_t superblock_get</definition>
+        <argsstring>(dev_t)</argsstring>
+        <name>superblock_get</name>
+        <param>
+          <type>dev_t</type>
+          <defname>dev</defname>
+        </param>
+        <briefdescription>
+<para>Gets a superblock that matches a device number. </para>        </briefdescription>
+        <detaileddescription>
+<para>Searches for a valid superblock in the superblock table which the device number equals the informed one.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Device number.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>If the requested superblock exists in the superblock table, a pointer to it is returned. In this case, the superblock is ensured to be locked. However, if no such superblock exists, a NULL pointer is returned instead.</para></simplesect>
+<simplesect kind="note"><para>The device number should be valid. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="163" column="1" bodyfile="src/kernel/fs/super.c" bodystart="140" bodyend="173"/>
+      </memberdef>
+      <memberdef kind="function" id="include_2nanvix_2fs_8h_1a0f572802e698ec2ef34e9c155ecf6465" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN void</type>
+        <definition>EXTERN void superblock_put</definition>
+        <argsstring>(superblock_t)</argsstring>
+        <name>superblock_put</name>
+        <param>
+          <type><ref refid="group__Superblock_1ga68925a0aaf35be42a7202bafa481438a" kindref="member">superblock_t</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="164" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Superblock_1gaf3241b4775bb4293a26a72010487c3e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN <ref refid="group__Superblock_1ga68925a0aaf35be42a7202bafa481438a" kindref="member">superblock_t</ref></type>
+        <definition>EXTERN superblock_t superblock_read</definition>
+        <argsstring>(dev_t)</argsstring>
+        <name>superblock_read</name>
+        <param>
+          <type>dev_t</type>
+          <defname>dev</defname>
+        </param>
+        <briefdescription>
+<para>Reads a superblock from a device. </para>        </briefdescription>
+        <detaileddescription>
+<para>Reads a superblock from the first block of a device. Once the read has completed, the magic number of the block is asserted and in-core fields are filled.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Device number.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Upon successful completion, a pointer to the in-core superblock is returned. The superblock is ensured to be locked in this case. Upon failure, a NULL pointer is returned instead.</para></simplesect>
+<simplesect kind="note"><para>The device number should be valid.</para></simplesect>
+<xrefsect id="todo_1_todo000004"><xreftitle>Todo</xreftitle><xrefdescription><para>Check for read error on <ref refid="group__Buffer_1ga29b2bc5da947fe8b2363ad2879447d93" kindref="member">bread()</ref>. </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="165" column="1" bodyfile="src/kernel/fs/super.c" bodystart="268" bodyend="328"/>
+      </memberdef>
+      <memberdef kind="function" id="include_2nanvix_2fs_8h_1ac041c70e1e10622f314397f6522a35d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN void</type>
+        <definition>EXTERN void superblock_stat</definition>
+        <argsstring>(superblock_t, struct ustat *)</argsstring>
+        <name>superblock_stat</name>
+        <param>
+          <type><ref refid="group__Superblock_1ga68925a0aaf35be42a7202bafa481438a" kindref="member">superblock_t</ref></type>
+        </param>
+        <param>
+          <type>struct ustat *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="166" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Superblock_1ga11746988cc13e340fe34981d65fe6078" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN void</type>
+        <definition>EXTERN void superblock_sync</definition>
+        <argsstring>(void)</argsstring>
+        <name>superblock_sync</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Synchronizes the superblock table. </para>        </briefdescription>
+        <detaileddescription>
+<para>Synchronizes the superblock table by flushing all valid super blocks onto underlying devices. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="167" column="1" bodyfile="src/kernel/fs/super.c" bodystart="336" bodyend="351"/>
+      </memberdef>
+      <memberdef kind="function" id="include_2nanvix_2fs_8h_1a3ab296b393e6fcb362f92b9791660fb6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN <ref refid="include_2fs_2minix_8h_1a77ecea3fce28a16f79db79aa58256855" kindref="member">block_t</ref></type>
+        <definition>EXTERN block_t block_map</definition>
+        <argsstring>(struct inode *, off_t, int)</argsstring>
+        <name>block_map</name>
+        <param>
+          <type>struct <ref refid="structinode" kindref="compound">inode</ref> *</type>
+          <defname>ip</defname>
+        </param>
+        <param>
+          <type>off_t</type>
+          <defname>off</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>create</defname>
+        </param>
+        <briefdescription>
+<para>Maps a file byte offset in a disk block number. </para>        </briefdescription>
+        <detaileddescription>
+<para>Maps the offset <computeroutput>off</computeroutput> in the file pointed to by <computeroutput>ip</computeroutput> in a disk block number. If <computeroutput>create</computeroutput> is not zero and such file by offset is invalid, the file is expanded accordingly to make it valid.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ip</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File to use </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>off</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File byte offset. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>create</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Create offset?</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Upon successful completion, the disk block number that is associated with the file byte offset is returned. Upon failure, #BLOCK_NULL is returned instead.</para></simplesect>
+<simplesect kind="note"><para><computeroutput>ip</computeroutput> must be locked. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="168" column="1" bodyfile="src/kernel/fs/block.c" bodystart="252" bodyend="345"/>
+      </memberdef>
+      <memberdef kind="function" id="include_2nanvix_2fs_8h_1a1bdc7f72083592051ec5d51d52c5f46b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN void</type>
+        <definition>EXTERN void block_free</definition>
+        <argsstring>(struct superblock *, block_t, int)</argsstring>
+        <name>block_free</name>
+        <param>
+          <type>struct <ref refid="structsuperblock" kindref="compound">superblock</ref> *</type>
+          <defname>sb</defname>
+        </param>
+        <param>
+          <type><ref refid="include_2fs_2minix_8h_1a77ecea3fce28a16f79db79aa58256855" kindref="member">block_t</ref></type>
+          <defname>num</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>lvl</defname>
+        </param>
+        <briefdescription>
+<para>Frees a disk block. </para>        </briefdescription>
+        <detaileddescription>
+<para>Frees a disk block by freeing all underlying disk blocks.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Superblock in which the disk block should be freed. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of the disk block that shall be freed. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lvl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Level of indirection to be parsed: zero for direct blocks, one for single indirect blocks, and two for doubly indirect blocks.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>The superblock must be locked. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="169" column="1" bodyfile="src/kernel/fs/block.c" bodystart="209" bodyend="233"/>
+      </memberdef>
+      <memberdef kind="function" id="include_2nanvix_2fs_8h_1aa0c9e2296e0a80e9470da55dba98d188" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN void</type>
+        <definition>EXTERN void fs_init</definition>
+        <argsstring>(void)</argsstring>
+        <name>fs_init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="195" column="1" bodyfile="src/kernel/fs/fs.c" bodystart="191" bodyend="222"/>
+      </memberdef>
+      <memberdef kind="function" id="include_2nanvix_2fs_8h_1aaf89ed147d14bd426c7c802f6fb6f9fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN int</type>
+        <definition>EXTERN int permission</definition>
+        <argsstring>(mode_t mode, uid_t uid, gid_t gid, struct process *proc, mode_t mask, int oreal)</argsstring>
+        <name>permission</name>
+        <param>
+          <type>mode_t</type>
+          <declname>mode</declname>
+        </param>
+        <param>
+          <type>uid_t</type>
+          <declname>uid</declname>
+        </param>
+        <param>
+          <type>gid_t</type>
+          <declname>gid</declname>
+        </param>
+        <param>
+          <type>struct <ref refid="structprocess" kindref="compound">process</ref> *</type>
+          <declname>proc</declname>
+        </param>
+        <param>
+          <type>mode_t</type>
+          <declname>mask</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>oreal</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="200" column="1" bodyfile="src/kernel/fs/fs.c" bodystart="112" bodyend="133"/>
+      </memberdef>
+      <memberdef kind="function" id="include_2nanvix_2fs_8h_1a285a11e7dac401e3ec295f1d8d33d813" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN char *</type>
+        <definition>EXTERN char* getname</definition>
+        <argsstring>(const char *name)</argsstring>
+        <name>getname</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="205" column="1" bodyfile="src/kernel/fs/fs.c" bodystart="138" bodyend="178"/>
+      </memberdef>
+      <memberdef kind="function" id="include_2nanvix_2fs_8h_1a87ef78c8bbb4f052dd49298a6b52f7b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN void</type>
+        <definition>EXTERN void putname</definition>
+        <argsstring>(char *name)</argsstring>
+        <name>putname</name>
+        <param>
+          <type>char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="210" column="1" bodyfile="src/kernel/fs/fs.c" bodystart="183" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="function" id="include_2nanvix_2fs_8h_1a1e2c48a8c6baedd1edfe20a69c18a692" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN int</type>
+        <definition>EXTERN int getfildes</definition>
+        <argsstring>(void)</argsstring>
+        <name>getfildes</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="215" column="1" bodyfile="src/kernel/fs/fs.c" bodystart="51" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="include_2nanvix_2fs_8h_1ade14f4ce09471f38640b9c752d293a0c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN struct file *</type>
+        <definition>EXTERN struct file* getfile</definition>
+        <argsstring>(void)</argsstring>
+        <name>getfile</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="220" column="1" bodyfile="src/kernel/fs/fs.c" bodystart="69" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="include_2nanvix_2fs_8h_1a267e17433bcd246e1b18213d58ae7687" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN void</type>
+        <definition>EXTERN void do_close</definition>
+        <argsstring>(int fd)</argsstring>
+        <name>do_close</name>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="225" column="1" bodyfile="src/kernel/fs/fs.c" bodystart="88" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="include_2nanvix_2fs_8h_1a578064c12e1ac3f9bb927a12aa8276dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN int</type>
+        <definition>EXTERN int dir_add</definition>
+        <argsstring>(struct inode *dinode, struct inode *inode, const char *name)</argsstring>
+        <name>dir_add</name>
+        <param>
+          <type>struct <ref refid="structinode" kindref="compound">inode</ref> *</type>
+          <declname>dinode</declname>
+        </param>
+        <param>
+          <type>struct <ref refid="structinode" kindref="compound">inode</ref> *</type>
+          <declname>inode</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="230" column="1" bodyfile="src/kernel/fs/file.c" bodystart="261" bodyend="278"/>
+      </memberdef>
+      <memberdef kind="function" id="include_2nanvix_2fs_8h_1a7234db19331e6107d879d0dc08ecb976" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN ino_t</type>
+        <definition>EXTERN ino_t dir_search</definition>
+        <argsstring>(struct inode *i, const char *filename)</argsstring>
+        <name>dir_search</name>
+        <param>
+          <type>struct <ref refid="structinode" kindref="compound">inode</ref> *</type>
+          <declname>i</declname>
+          <defname>ip</defname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+<para>Searches for a file in a directory. </para>        </briefdescription>
+        <detaileddescription>
+<para>Searches for a file named <computeroutput>filename</computeroutput> in the directory poitned to by <computeroutput>dinode</computeroutput>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ip</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Inode where the file that shall be searched. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the file that shall be searched.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>If the requested file exists in the directory, than its inode number is returned. However, if the file does not exist #INODE_NULL is is returns instead.</para></simplesect>
+<simplesect kind="note"><para><computeroutput>ip</computeroutput> must be locked. </para></simplesect>
+<simplesect kind="note"><para><computeroutput>filename</computeroutput> must point to a valid location. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="236" column="1" bodyfile="src/kernel/fs/file.c" bodystart="180" bodyend="193"/>
+      </memberdef>
+      <memberdef kind="function" id="include_2nanvix_2fs_8h_1a16576578093294376db5f4ebaf192eb0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN int</type>
+        <definition>EXTERN int dir_remove</definition>
+        <argsstring>(struct inode *dinode, const char *filename)</argsstring>
+        <name>dir_remove</name>
+        <param>
+          <type>struct <ref refid="structinode" kindref="compound">inode</ref> *</type>
+          <declname>dinode</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="241" column="1" bodyfile="src/kernel/fs/file.c" bodystart="198" bodyend="256"/>
+      </memberdef>
+      <memberdef kind="function" id="include_2nanvix_2fs_8h_1a669ff47519a64f51034ee6547a49a68d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN ssize_t</type>
+        <definition>EXTERN ssize_t file_read</definition>
+        <argsstring>(struct inode *i, void *buf, size_t n, off_t off)</argsstring>
+        <name>file_read</name>
+        <param>
+          <type>struct <ref refid="structinode" kindref="compound">inode</ref> *</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>buf</declname>
+        </param>
+        <param>
+          <type><ref refid="decl_8h_1a028b7cbca0d37bbc9bc219370525227f" kindref="member">size_t</ref></type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>off_t</type>
+          <declname>off</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="246" column="1" bodyfile="src/kernel/fs/file.c" bodystart="283" bodyend="332"/>
+      </memberdef>
+      <memberdef kind="function" id="include_2nanvix_2fs_8h_1a37ec9ff3b03f0920add5b06c9adbf235" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN ssize_t</type>
+        <definition>EXTERN ssize_t file_write</definition>
+        <argsstring>(struct inode *i, const void *buf, size_t n, off_t off)</argsstring>
+        <name>file_write</name>
+        <param>
+          <type>struct <ref refid="structinode" kindref="compound">inode</ref> *</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>buf</declname>
+        </param>
+        <param>
+          <type><ref refid="decl_8h_1a028b7cbca0d37bbc9bc219370525227f" kindref="member">size_t</ref></type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>off_t</type>
+          <declname>off</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="251" column="1" bodyfile="src/kernel/fs/file.c" bodystart="337" bodyend="385"/>
+      </memberdef>
+      <memberdef kind="function" id="include_2nanvix_2fs_8h_1a36fc79fd3a741104cacf462b2cf96085" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN ssize_t</type>
+        <definition>EXTERN ssize_t pipe_read</definition>
+        <argsstring>(struct inode *inode, char *buf, size_t n)</argsstring>
+        <name>pipe_read</name>
+        <param>
+          <type>struct <ref refid="structinode" kindref="compound">inode</ref> *</type>
+          <declname>inode</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>buf</declname>
+        </param>
+        <param>
+          <type><ref refid="decl_8h_1a028b7cbca0d37bbc9bc219370525227f" kindref="member">size_t</ref></type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="256" column="1" bodyfile="src/kernel/fs/pipe.c" bodystart="28" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="include_2nanvix_2fs_8h_1af9cfa5b61dd20f22261026e28f91ba96" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXTERN ssize_t</type>
+        <definition>EXTERN ssize_t pipe_write</definition>
+        <argsstring>(struct inode *inode, const char *buf, size_t n)</argsstring>
+        <name>pipe_write</name>
+        <param>
+          <type>struct <ref refid="structinode" kindref="compound">inode</ref> *</type>
+          <declname>inode</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>buf</declname>
+        </param>
+        <param>
+          <type><ref refid="decl_8h_1a028b7cbca0d37bbc9bc219370525227f" kindref="member">size_t</ref></type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="261" column="1" bodyfile="src/kernel/fs/pipe.c" bodystart="73" bodyend="120"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Public file system interface. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright(C)<sp/>2011-2016<sp/>Pedro<sp/>H.<sp/>Penna<sp/>&lt;pedrohenriquepenna@gmail.com&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>Nanvix.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>Nanvix<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>Nanvix<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>Nanvix.<sp/>If<sp/>not,<sp/>see<sp/>&lt;http://www.gnu.org/licenses/&gt;.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="preprocessor">#ifndef<sp/>NANVIX_FS_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NANVIX_FS_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>General<sp/>file<sp/>permissions.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>MAY_READ<sp/><sp/>(S_IRUSR<sp/>|<sp/>S_IRGRP<sp/>|<sp/>S_IROTH)<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>May<sp/>read.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>MAY_WRITE<sp/>(S_IWUSR<sp/>|<sp/>S_IWGRP<sp/>|<sp/>S_IWOTH)<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>May<sp/>write.<sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>MAY_EXEC<sp/><sp/>(S_IXUSR<sp/>|<sp/>S_IXGRP<sp/>|<sp/>S_IXOTH)<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>May<sp/>exec/search.<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>MAY_ALL<sp/><sp/><sp/>(MAY_READ<sp/>|<sp/>MAY_WRITE<sp/>|<sp/>MAY_EXEC)<sp/></highlight><highlight class="comment">/*<sp/>May<sp/>anything.<sp/><sp/><sp/><sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_ASM_FILE_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&lt;<ref refid="include_2fs_2minix_8h" kindref="compound">fs/minix.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&lt;nanvix/config.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&lt;<ref refid="const_8h" kindref="compound">nanvix/const.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&lt;<ref refid="pm_8h" kindref="compound">nanvix/pm.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&lt;sys/stat.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&lt;sys/types.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&lt;ustat.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="comment">/*============================================================================*</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Block<sp/>Buffer<sp/>Library<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*============================================================================*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structbuffer" kindref="compound">buffer</ref><sp/>*<sp/><ref refid="group__Buffer_1ga7c7e4c5feaa3d1b717fbdc33c8dd7715" kindref="member">buffer_t</ref>;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structbuffer" kindref="compound">buffer</ref><sp/>*<sp/><ref refid="group__Buffer_1ga45a654e2d1994709ac5b6c89a2210e84" kindref="member">const_buffer_t</ref>;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Forward<sp/>definitions.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__Buffer_1ga8b1e8b87d95e8dc0729640bc0876af7f" kindref="member">bsync</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>blklock(buffer_t);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>blkunlock(buffer_t);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>brelse(buffer_t);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/>buffer_t<sp/><ref refid="group__Buffer_1ga29b2bc5da947fe8b2363ad2879447d93" kindref="member">bread</ref>(dev_t,<sp/><ref refid="include_2fs_2minix_8h_1a77ecea3fce28a16f79db79aa58256855" kindref="member">block_t</ref>);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>bwrite(buffer_t);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>buffer_dirty(buffer_t,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*buffer_data(const_buffer_t);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/>dev_t<sp/>buffer_dev(const_buffer_t);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/><ref refid="include_2fs_2minix_8h_1a77ecea3fce28a16f79db79aa58256855" kindref="member">block_t</ref><sp/>buffer_num(const_buffer_t);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>buffer_is_sync(const_buffer_t);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="81"><highlight class="comment">/*============================================================================*</highlight></codeline>
+<codeline lineno="82"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Inode<sp/>Library<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="83"><highlight class="comment"><sp/>*============================================================================*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="group__Inode_1gab4246414e685d03bec8337675be83358" kindref="member">inode_flags</ref></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__Inode_1ggab4246414e685d03bec8337675be83358a328495688a8ce4a237f41fb5de6cb5dd" kindref="member">INODE_LOCKED</ref><sp/>=<sp/>(1<sp/>&lt;&lt;<sp/>0),<sp/></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__Inode_1ggab4246414e685d03bec8337675be83358ad6a80ff19140aea8d1d6bfeee63d9cf8" kindref="member">INODE_DIRTY</ref><sp/><sp/>=<sp/>(1<sp/>&lt;&lt;<sp/>1),<sp/></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__Inode_1ggab4246414e685d03bec8337675be83358a2e5100181ea108e80913e0d7a485c845" kindref="member">INODE_MOUNT</ref><sp/><sp/>=<sp/>(1<sp/>&lt;&lt;<sp/>2),<sp/></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__Inode_1ggab4246414e685d03bec8337675be83358af5a98fef4b30a15a7a5f19b116b75cdf" kindref="member">INODE_VALID</ref><sp/><sp/>=<sp/>(1<sp/>&lt;&lt;<sp/>3),<sp/></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__Inode_1ggab4246414e685d03bec8337675be83358ae6294bb0bb395134806c93027cd62eee" kindref="member">INODE_PIPE</ref><sp/><sp/><sp/>=<sp/>(1<sp/>&lt;&lt;<sp/>4)<sp/><sp/></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="105" refid="structinode" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structinode" kindref="compound">inode</ref><sp/></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mode_t<sp/><ref refid="structinode_1adc8d3cf511ceb277aea0cfa1cd027c59" kindref="member">mode</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nlink_t<sp/><ref refid="structinode_1a69d0273ae6c733dad4776b909dd7e02f" kindref="member">nlinks</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uid_t<sp/><ref refid="structinode_1a1163f413982fef86f5c8313564d8589c" kindref="member">uid</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gid_t<sp/><ref refid="structinode_1accbf90b0b518578acff258d328c5575d" kindref="member">gid</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>off_t<sp/><ref refid="structinode_1a65d5c96f1fdbf3564bad2718c601486b" kindref="member">size</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>time_t<sp/><ref refid="structinode_1ab842bdb7d02be824fb48613032b4ff36" kindref="member">time</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="include_2fs_2minix_8h_1a77ecea3fce28a16f79db79aa58256855" kindref="member">block_t</ref><sp/><ref refid="structinode_1ae5c3ea3e32f0923d8efe751c0a2570ed" kindref="member">blocks</ref>[NR_ZONES];<sp/></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dev_t<sp/><ref refid="structinode_1a8910285a0352a5c710e65ec9ecbe32a1" kindref="member">dev</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ino_t<sp/><ref refid="structinode_1ad1d7499ae8796d8bf180f17286f763e6" kindref="member">num</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structsuperblock" kindref="compound">superblock</ref><sp/>*<ref refid="structinode_1a5817239a4592432fa9915f9db1b1fbcf" kindref="member">sb</ref>;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="structinode_1a6a9e89d63eb610dfe238b0a840979421" kindref="member">count</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="group__Inode_1gab4246414e685d03bec8337675be83358" kindref="member">inode_flags</ref><sp/><ref refid="structinode_1a719244f3b9b6ec8bbb92c325d93bb0ad" kindref="member">flags</ref>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="structinode_1abfc96d914fa717d2d7929e19b459aaff" kindref="member">pipe</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>off_t<sp/><ref refid="structinode_1a1a857f7e78ca73df4a4d56283fe69686" kindref="member">head</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>off_t<sp/><ref refid="structinode_1aa334dce97989b011fbc8f6b7dd13f646" kindref="member">tail</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structinode" kindref="compound">inode</ref><sp/>*<ref refid="structinode_1a9776b1dad74677d378945b1123eb4b86" kindref="member">free_next</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structinode" kindref="compound">inode</ref><sp/>*<ref refid="structinode_1ad5b1058d6f322202f54656cc8a121dc5" kindref="member">hash_next</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structinode" kindref="compound">inode</ref><sp/>*<ref refid="structinode_1a3cc3f0ca8f8c6058f9fd798719096f4a" kindref="member">hash_prev</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structprocess" kindref="compound">process</ref><sp/>*<ref refid="structinode_1a6e44a17eef6d95b2e6832c26e469d505" kindref="member">chain</ref>;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Forward<sp/>definitions.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="include_2nanvix_2fs_8h_1ae57279683b7b213f41bae9f3f0cd291d" kindref="member">inode_touch</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structinode" kindref="compound">inode</ref><sp/>*i);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="include_2nanvix_2fs_8h_1a257e56ccbcd141252c798624976f9cce" kindref="member">inode_lock</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structinode" kindref="compound">inode</ref><sp/>*i);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="include_2nanvix_2fs_8h_1ae383e5c0830849a0aa4e686fa34aec21" kindref="member">inode_unlock</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structinode" kindref="compound">inode</ref><sp/>*i);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="include_2nanvix_2fs_8h_1a883694c45eb0bae8943570082cf48128" kindref="member">inode_sync</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="include_2nanvix_2fs_8h_1a04fdd6d0e4ae6e91101f69f65846a2d0" kindref="member">inode_truncate</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structinode" kindref="compound">inode</ref><sp/>*i);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structinode" kindref="compound">inode</ref><sp/>*<ref refid="include_2nanvix_2fs_8h_1a92d367de494f68107fe970454a66f3a2" kindref="member">inode_alloc</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structsuperblock" kindref="compound">superblock</ref><sp/>*<ref refid="structinode_1a5817239a4592432fa9915f9db1b1fbcf" kindref="member">sb</ref>);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structinode" kindref="compound">inode</ref><sp/>*<ref refid="include_2nanvix_2fs_8h_1ac029e976f30363fe9d0f5d35bff69fa1" kindref="member">inode_get</ref>(dev_t<sp/><ref refid="structinode_1a8910285a0352a5c710e65ec9ecbe32a1" kindref="member">dev</ref>,<sp/>ino_t<sp/><ref refid="structinode_1ad1d7499ae8796d8bf180f17286f763e6" kindref="member">num</ref>);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="include_2nanvix_2fs_8h_1af51a3079413d5aa71c6396d3086988f5" kindref="member">inode_put</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structinode" kindref="compound">inode</ref><sp/>*i);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structinode" kindref="compound">inode</ref><sp/>*inode_dname(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*path,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**name);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structinode" kindref="compound">inode</ref><sp/>*inode_name(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*pathname);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structinode" kindref="compound">inode</ref><sp/>*inode_pipe(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight><highlight class="comment">/*============================================================================*</highlight></codeline>
+<codeline lineno="144"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Super<sp/>Block<sp/>Library<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="145"><highlight class="comment"><sp/>*============================================================================*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structsuperblock" kindref="compound">superblock</ref><sp/>*<sp/><ref refid="group__Superblock_1ga68925a0aaf35be42a7202bafa481438a" kindref="member">superblock_t</ref>;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Forward<sp/>definitions.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__Superblock_1ga226f283e88ec0b9f2d85a60ae83a4fb9" kindref="member">superblock_init</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__Superblock_1ga4ef02b583308d00506b5000837010523" kindref="member">superblock_lock</ref>(superblock_t);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__Superblock_1gaa1e437c51f1035512ba17835840934e5" kindref="member">superblock_unlock</ref>(superblock_t);</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/>superblock_t<sp/><ref refid="group__Superblock_1ga92964453ed18c8ceeaaf5d3f2d560bca" kindref="member">superblock_get</ref>(dev_t);</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__Superblock_1ga60c77faf6a4d5c316eed12ba021bf837" kindref="member">superblock_put</ref>(superblock_t);</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/>superblock_t<sp/><ref refid="group__Superblock_1gaf3241b4775bb4293a26a72010487c3e7" kindref="member">superblock_read</ref>(dev_t);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__Superblock_1gaad74db1f397342f785ea20b10c745b2e" kindref="member">superblock_stat</ref>(superblock_t,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>ustat<sp/>*);</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__Superblock_1ga11746988cc13e340fe34981d65fe6078" kindref="member">superblock_sync</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/><ref refid="include_2fs_2minix_8h_1a77ecea3fce28a16f79db79aa58256855" kindref="member">block_t</ref><sp/><ref refid="include_2nanvix_2fs_8h_1a3ab296b393e6fcb362f92b9791660fb6" kindref="member">block_map</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structinode" kindref="compound">inode</ref><sp/>*,<sp/>off_t,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="include_2nanvix_2fs_8h_1a1bdc7f72083592051ec5d51d52c5f46b" kindref="member">block_free</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structsuperblock" kindref="compound">superblock</ref><sp/>*,<sp/><ref refid="include_2fs_2minix_8h_1a77ecea3fce28a16f79db79aa58256855" kindref="member">block_t</ref>,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight><highlight class="comment">/*============================================================================*</highlight></codeline>
+<codeline lineno="173"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>File<sp/>System<sp/>Manager<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="174"><highlight class="comment"><sp/>*============================================================================*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="177"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>File.</highlight></codeline>
+<codeline lineno="178"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">file</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>oflag;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Open<sp/>flags.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structinode_1a6a9e89d63eb610dfe238b0a840979421" kindref="member">count</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Reference<sp/>count.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>off_t<sp/>pos;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Read/write<sp/>cursor&apos;s<sp/>position.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structinode" kindref="compound">inode</ref><sp/>*<ref refid="structinode" kindref="compound">inode</ref>;<sp/></highlight><highlight class="comment">/*<sp/>Underlying<sp/>inode.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="188"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>File<sp/>table.</highlight></codeline>
+<codeline lineno="189"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">file<sp/>filetab[NR_FILES];</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="193"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Initializes<sp/>the<sp/>file<sp/>system<sp/>manager.</highlight></codeline>
+<codeline lineno="194"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>fs_init(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="198"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Checks<sp/>permissions<sp/>on<sp/>a<sp/>file</highlight></codeline>
+<codeline lineno="199"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>permission(mode_t<sp/><ref refid="structinode_1adc8d3cf511ceb277aea0cfa1cd027c59" kindref="member">mode</ref>,<sp/>uid_t<sp/><ref refid="structinode_1a1163f413982fef86f5c8313564d8589c" kindref="member">uid</ref>,<sp/>gid_t<sp/><ref refid="structinode_1accbf90b0b518578acff258d328c5575d" kindref="member">gid</ref>,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structprocess" kindref="compound">process</ref><sp/>*proc,<sp/>mode_t<sp/>mask,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>oreal);</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="203"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Gets<sp/>a<sp/>user<sp/>file<sp/>name</highlight></codeline>
+<codeline lineno="204"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*getname(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name);</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="208"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Puts<sp/>back<sp/>a<sp/>user<sp/>file<sp/>name.</highlight></codeline>
+<codeline lineno="209"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>putname(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name);</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="213"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Gets<sp/>an<sp/>empty<sp/>file<sp/>descriptor<sp/>table<sp/>entry.</highlight></codeline>
+<codeline lineno="214"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>getfildes(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="218"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Gets<sp/>an<sp/>empty<sp/>file<sp/>table<sp/>entry.</highlight></codeline>
+<codeline lineno="219"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">file<sp/>*getfile(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="223"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Closes<sp/>a<sp/>file.</highlight></codeline>
+<codeline lineno="224"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>do_close(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd);</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="228"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Adds<sp/>an<sp/>entry<sp/>to<sp/>a<sp/>directory.</highlight></codeline>
+<codeline lineno="229"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dir_add</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structinode" kindref="compound">inode</ref><sp/>*dinode,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structinode" kindref="compound">inode</ref><sp/>*<ref refid="structinode" kindref="compound">inode</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name);</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="234"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Searchs<sp/>for<sp/>a<sp/>file<sp/>in<sp/>a<sp/>directory.</highlight></codeline>
+<codeline lineno="235"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/>ino_t<sp/><ref refid="include_2nanvix_2fs_8h_1a7234db19331e6107d879d0dc08ecb976" kindref="member">dir_search</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>inode<sp/>*i,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*filename);</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="239"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Removes<sp/>an<sp/>entry<sp/>from<sp/>a<sp/>directory.</highlight></codeline>
+<codeline lineno="240"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dir_remove(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>inode<sp/>*dinode,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*filename);</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="244"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Reads<sp/>from<sp/>a<sp/>regular<sp/>file.</highlight></codeline>
+<codeline lineno="245"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/>ssize_t<sp/>file_read(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>inode<sp/>*i,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*buf,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>n,<sp/>off_t<sp/>off);</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="249"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Writes<sp/>to<sp/>a<sp/>regular<sp/>file.</highlight></codeline>
+<codeline lineno="250"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/>ssize_t<sp/>file_write(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>inode<sp/>*i,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*buf,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>n,<sp/>off_t<sp/>off);</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="254"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Reads<sp/>data<sp/>from<sp/>a<sp/>pipe.</highlight></codeline>
+<codeline lineno="255"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/>ssize_t<sp/>pipe_read(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>inode<sp/>*inode,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*buf,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>n);</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="259"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Writes<sp/>data<sp/>to<sp/>a<sp/>pipe.</highlight></codeline>
+<codeline lineno="260"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/>ssize_t<sp/>pipe_write(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>inode<sp/>*inode,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*buf,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>n);</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="264"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Root<sp/>device.</highlight></codeline>
+<codeline lineno="265"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structsuperblock" kindref="compound">superblock</ref><sp/>*rootdev;</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="269"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Root<sp/>directory.</highlight></codeline>
+<codeline lineno="270"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/>EXTERN<sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">inode<sp/>*root;</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>_ASM_FILE<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="274"><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>NANVIX_FS_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="include/nanvix/fs.h"/>
+  </compounddef>
+</doxygen>

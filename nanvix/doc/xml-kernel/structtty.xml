@@ -1,0 +1,186 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structtty" kind="struct" language="C++" prot="public">
+    <compoundname>tty</compoundname>
+    <includes local="no">tty.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structtty_1ab7e4cc601e4126d26ad24e0554d6f7c9" prot="public" static="no" mutable="no">
+        <type>enum tty_flags</type>
+        <definition>enum tty_flags flags</definition>
+        <argsstring></argsstring>
+        <name>flags</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Flags. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/dev/tty/tty.h" line="88" column="1" bodyfile="src/kernel/dev/tty/tty.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtty_1a0a96a7fecf1aeddf6219c3ca92bd67a3" prot="public" static="no" mutable="no">
+        <type>struct termios</type>
+        <definition>struct termios term</definition>
+        <argsstring></argsstring>
+        <name>term</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Terminal I/O. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/dev/tty/tty.h" line="88" column="1" bodyfile="src/kernel/dev/tty/tty.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtty_1aba5eb3f2f4938eaf735a165f4914e8a1" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structprocess" kindref="compound">process</ref> *</type>
+        <definition>struct process* pgrp</definition>
+        <argsstring></argsstring>
+        <name>pgrp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Process group. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/dev/tty/tty.h" line="61" column="1" bodyfile="src/kernel/dev/tty/tty.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtty_1ac6aa9021b21a328865598582521dc271" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structkbuffer" kindref="compound">kbuffer</ref></type>
+        <definition>struct kbuffer output</definition>
+        <argsstring></argsstring>
+        <name>output</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Output buffer. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/dev/tty/tty.h" line="61" column="1" bodyfile="src/kernel/dev/tty/tty.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtty_1a2c741a5a613c69f6f471b0c6e226dc3a" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structkbuffer" kindref="compound">kbuffer</ref></type>
+        <definition>struct kbuffer rinput</definition>
+        <argsstring></argsstring>
+        <name>rinput</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Cooked input buffer. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/dev/tty/tty.h" line="61" column="1" bodyfile="src/kernel/dev/tty/tty.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtty_1ad9ad69c0b43bada50e47430ed1ad1109" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structkbuffer" kindref="compound">kbuffer</ref></type>
+        <definition>struct kbuffer cinput</definition>
+        <argsstring></argsstring>
+        <name>cinput</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Raw input buffer. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/dev/tty/tty.h" line="61" column="1" bodyfile="src/kernel/dev/tty/tty.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>TTY device. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="137">
+        <label>inode</label>
+        <link refid="structinode"/>
+        <childnode refid="137" relation="usage">
+          <edgelabel>free_next</edgelabel>
+          <edgelabel>hash_prev</edgelabel>
+          <edgelabel>hash_next</edgelabel>
+        </childnode>
+        <childnode refid="136" relation="usage">
+          <edgelabel>chain</edgelabel>
+        </childnode>
+        <childnode refid="138" relation="usage">
+          <edgelabel>sb</edgelabel>
+        </childnode>
+      </node>
+      <node id="134">
+        <label>tty</label>
+        <link refid="structtty"/>
+        <childnode refid="135" relation="usage">
+          <edgelabel>output</edgelabel>
+          <edgelabel>cinput</edgelabel>
+          <edgelabel>rinput</edgelabel>
+        </childnode>
+        <childnode refid="136" relation="usage">
+          <edgelabel>pgrp</edgelabel>
+        </childnode>
+      </node>
+      <node id="136">
+        <label>process</label>
+        <link refid="structprocess"/>
+        <childnode refid="137" relation="usage">
+          <edgelabel>root</edgelabel>
+          <edgelabel>pwd</edgelabel>
+        </childnode>
+        <childnode refid="140" relation="usage">
+          <edgelabel>fss</edgelabel>
+        </childnode>
+        <childnode refid="136" relation="usage">
+          <edgelabel>next</edgelabel>
+          <edgelabel>pgrp</edgelabel>
+          <edgelabel>chain</edgelabel>
+          <edgelabel>father</edgelabel>
+        </childnode>
+      </node>
+      <node id="140">
+        <label>fpu</label>
+        <link refid="structfpu"/>
+      </node>
+      <node id="139">
+        <label>buffer</label>
+        <link refid="structbuffer"/>
+        <childnode refid="136" relation="usage">
+          <edgelabel>chain</edgelabel>
+        </childnode>
+        <childnode refid="139" relation="usage">
+          <edgelabel>free_next</edgelabel>
+          <edgelabel>hash_prev</edgelabel>
+          <edgelabel>free_prev</edgelabel>
+          <edgelabel>hash_next</edgelabel>
+        </childnode>
+      </node>
+      <node id="138">
+        <label>superblock</label>
+        <link refid="structsuperblock"/>
+        <childnode refid="137" relation="usage">
+          <edgelabel>root</edgelabel>
+          <edgelabel>mp</edgelabel>
+        </childnode>
+        <childnode refid="136" relation="usage">
+          <edgelabel>chain</edgelabel>
+        </childnode>
+        <childnode refid="139" relation="usage">
+          <edgelabel>zmap</edgelabel>
+          <edgelabel>imap</edgelabel>
+          <edgelabel>buf</edgelabel>
+        </childnode>
+      </node>
+      <node id="135">
+        <label>kbuffer</label>
+        <link refid="structkbuffer"/>
+        <childnode refid="136" relation="usage">
+          <edgelabel>chain</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/kernel/dev/tty/tty.h" line="58" column="1" bodyfile="src/kernel/dev/tty/tty.h" bodystart="57" bodyend="65"/>
+    <listofallmembers>
+      <member refid="structtty_1ad9ad69c0b43bada50e47430ed1ad1109" prot="public" virt="non-virtual"><scope>tty</scope><name>cinput</name></member>
+      <member refid="structtty_1ab7e4cc601e4126d26ad24e0554d6f7c9" prot="public" virt="non-virtual"><scope>tty</scope><name>flags</name></member>
+      <member refid="structtty_1ac6aa9021b21a328865598582521dc271" prot="public" virt="non-virtual"><scope>tty</scope><name>output</name></member>
+      <member refid="structtty_1aba5eb3f2f4938eaf735a165f4914e8a1" prot="public" virt="non-virtual"><scope>tty</scope><name>pgrp</name></member>
+      <member refid="structtty_1a2c741a5a613c69f6f471b0c6e226dc3a" prot="public" virt="non-virtual"><scope>tty</scope><name>rinput</name></member>
+      <member refid="structtty_1a0a96a7fecf1aeddf6219c3ca92bd67a3" prot="public" virt="non-virtual"><scope>tty</scope><name>term</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_203f267fac8cf3dfe9f5770a10d988c8" kind="dir">
+    <compoundname>include/fs</compoundname>
+    <innerfile refid="include_2fs_2minix_8h">minix.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/fs/"/>
+  </compounddef>
+</doxygen>

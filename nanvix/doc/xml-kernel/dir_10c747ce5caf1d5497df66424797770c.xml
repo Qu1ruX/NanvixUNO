@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_10c747ce5caf1d5497df66424797770c" kind="dir">
+    <compoundname>src/sbin/shutdown</compoundname>
+    <innerfile refid="sbin_2shutdown_2shutdown_8c">shutdown.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/sbin/shutdown/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,150 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structpde" kind="struct" language="C++" prot="public">
+    <compoundname>pde</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structpde_1a1757a397a0a1cfa35e369f323d994301" prot="public" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned present</definition>
+        <argsstring></argsstring>
+        <name>present</name>
+        <bitfield> 1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/i386/paging.h" line="42" column="1" bodyfile="include/i386/paging.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpde_1ad20375b26cc5cbd208fb374cc6f3227c" prot="public" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned writable</definition>
+        <argsstring></argsstring>
+        <name>writable</name>
+        <bitfield> 1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/i386/paging.h" line="43" column="1" bodyfile="include/i386/paging.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpde_1a73995e14d3e12e47664c730d847314e9" prot="public" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned user</definition>
+        <argsstring></argsstring>
+        <name>user</name>
+        <bitfield> 1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/i386/paging.h" line="44" column="1" bodyfile="include/i386/paging.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpde_1adf71f3d8410c1f1dbbc96680a92c49af" prot="public" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned __pad0__</definition>
+        <argsstring></argsstring>
+        <name>__pad0__</name>
+        <bitfield> 2</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/i386/paging.h" line="45" column="1" bodyfile="include/i386/paging.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpde_1a6c4e2caf1ab160c52817fbe0a7d3c05a" prot="public" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned accessed</definition>
+        <argsstring></argsstring>
+        <name>accessed</name>
+        <bitfield> 1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/i386/paging.h" line="46" column="1" bodyfile="include/i386/paging.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpde_1a78d7b2a9b1b53028b2986181e7f49e86" prot="public" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned dirty</definition>
+        <argsstring></argsstring>
+        <name>dirty</name>
+        <bitfield> 1</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/i386/paging.h" line="47" column="1" bodyfile="include/i386/paging.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpde_1acaf2d0924a107ec6e8d2e31febaf66f9" prot="public" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned __pad1__</definition>
+        <argsstring></argsstring>
+        <name>__pad1__</name>
+        <bitfield> 2</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/i386/paging.h" line="48" column="1" bodyfile="include/i386/paging.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpde_1a4d97cc5f7d51d22fc2bf3eab35c9cb7f" prot="public" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned __pad2__</definition>
+        <argsstring></argsstring>
+        <name>__pad2__</name>
+        <bitfield> 3</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/i386/paging.h" line="49" column="1" bodyfile="include/i386/paging.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpde_1a07a50a007780078098fe0ab15b88d20d" prot="public" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned frame</definition>
+        <argsstring></argsstring>
+        <name>frame</name>
+        <bitfield> 20</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/i386/paging.h" line="50" column="1" bodyfile="include/i386/paging.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/i386/paging.h" line="41" column="1" bodyfile="include/i386/paging.h" bodystart="40" bodyend="51"/>
+    <listofallmembers>
+      <member refid="structpde_1adf71f3d8410c1f1dbbc96680a92c49af" prot="public" virt="non-virtual"><scope>pde</scope><name>__pad0__</name></member>
+      <member refid="structpde_1acaf2d0924a107ec6e8d2e31febaf66f9" prot="public" virt="non-virtual"><scope>pde</scope><name>__pad1__</name></member>
+      <member refid="structpde_1a4d97cc5f7d51d22fc2bf3eab35c9cb7f" prot="public" virt="non-virtual"><scope>pde</scope><name>__pad2__</name></member>
+      <member refid="structpde_1a6c4e2caf1ab160c52817fbe0a7d3c05a" prot="public" virt="non-virtual"><scope>pde</scope><name>accessed</name></member>
+      <member refid="structpde_1a78d7b2a9b1b53028b2986181e7f49e86" prot="public" virt="non-virtual"><scope>pde</scope><name>dirty</name></member>
+      <member refid="structpde_1a07a50a007780078098fe0ab15b88d20d" prot="public" virt="non-virtual"><scope>pde</scope><name>frame</name></member>
+      <member refid="structpde_1a1757a397a0a1cfa35e369f323d994301" prot="public" virt="non-virtual"><scope>pde</scope><name>present</name></member>
+      <member refid="structpde_1a73995e14d3e12e47664c730d847314e9" prot="public" virt="non-virtual"><scope>pde</scope><name>user</name></member>
+      <member refid="structpde_1ad20375b26cc5cbd208fb374cc6f3227c" prot="public" virt="non-virtual"><scope>pde</scope><name>writable</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

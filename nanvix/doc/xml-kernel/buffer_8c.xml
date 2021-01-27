@@ -1,0 +1,782 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="buffer_8c" kind="file" language="C++">
+    <compoundname>buffer.c</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="buffer_8c_1ac0b785e1a9d1fc0d0d4ef32982906cdc" prot="public" static="no" mutable="no">
+        <type>PRIVATE struct <ref refid="structbuffer" kindref="compound">buffer</ref></type>
+        <definition>PRIVATE struct buffer buffers[NR_BUFFERS]</definition>
+        <argsstring>[NR_BUFFERS]</argsstring>
+        <name>buffers</name>
+        <briefdescription>
+<para>Block buffers. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/buffer.c" line="58" column="1" bodyfile="src/kernel/fs/buffer.c" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="buffer_8c_1a2d69cb16a2a684be4f9af0fb2f129f7a" prot="public" static="no" mutable="no">
+        <type>PRIVATE struct <ref refid="structbuffer" kindref="compound">buffer</ref></type>
+        <definition>PRIVATE struct buffer free_buffers</definition>
+        <argsstring></argsstring>
+        <name>free_buffers</name>
+        <briefdescription>
+<para>List of free block buffers. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/buffer.c" line="63" column="1" bodyfile="src/kernel/fs/buffer.c" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="buffer_8c_1a1d770ed104d343e3250d905868056003" prot="public" static="no" mutable="no">
+        <type>PRIVATE struct <ref refid="structprocess" kindref="compound">process</ref> *</type>
+        <definition>PRIVATE struct process* chain</definition>
+        <argsstring></argsstring>
+        <name>chain</name>
+        <briefdescription>
+<para>Processes waiting for any block. </para>        </briefdescription>
+        <detaileddescription>
+<para>Chain of processes that are sleeping, waiting for any block to become free. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/buffer.c" line="71" column="1" bodyfile="src/kernel/fs/buffer.c" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="buffer_8c_1a5b95953a9bfeb77f6d884c2a7480a7e8" prot="public" static="no" mutable="no">
+        <type>PRIVATE struct <ref refid="structbuffer" kindref="compound">buffer</ref></type>
+        <definition>PRIVATE struct buffer hashtab[BUFFERS_HASHTAB_SIZE]</definition>
+        <argsstring>[BUFFERS_HASHTAB_SIZE]</argsstring>
+        <name>hashtab</name>
+        <briefdescription>
+<para>block buffer hash table. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/buffer.c" line="76" column="1" bodyfile="src/kernel/fs/buffer.c" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="buffer_8c_1a4c631581a4520426f662b13c650794ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PRIVATE struct <ref refid="structbuffer" kindref="compound">buffer</ref> *</type>
+        <definition>PRIVATE struct buffer* getblk</definition>
+        <argsstring>(dev_t dev, block_t num)</argsstring>
+        <name>getblk</name>
+        <param>
+          <type>dev_t</type>
+          <declname>dev</declname>
+        </param>
+        <param>
+          <type><ref refid="include_2fs_2minix_8h_1a77ecea3fce28a16f79db79aa58256855" kindref="member">block_t</ref></type>
+          <declname>num</declname>
+        </param>
+        <briefdescription>
+<para>Gets a block buffer from the block buffer cache. </para>        </briefdescription>
+        <detaileddescription>
+<para>Searches the block buffer cache for a block buffer that matches a device number and block number.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Device number. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Block number.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Upon successful completion, a pointer to a buffer holding the requested block is returned. In this case, the block buffer is ensured to be locked, and may be, or may be not, valid. Upon failure, a null pointer NULL is returned instead. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/buffer.c" line="102" column="1" bodyfile="src/kernel/fs/buffer.c" bodystart="102" bodyend="195"/>
+      </memberdef>
+      <memberdef kind="function" id="buffer_8c_1a62bde4ac1566516d02a1a89621dcdbc5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PUBLIC void</type>
+        <definition>PUBLIC void blklock</definition>
+        <argsstring>(struct buffer *buf)</argsstring>
+        <name>blklock</name>
+        <param>
+          <type>struct <ref refid="structbuffer" kindref="compound">buffer</ref> *</type>
+          <declname>buf</declname>
+        </param>
+        <briefdescription>
+<para>Locks a block buffer. </para>        </briefdescription>
+        <detaileddescription>
+<para>Locks the block buffer pointed to by buf by marking it as locked. The calling process may block here some time, waiting its turn to acquire the lock.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>buf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Block buffer to be locked. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/buffer.c" line="206" column="1" bodyfile="src/kernel/fs/buffer.c" bodystart="206" bodyend="217"/>
+      </memberdef>
+      <memberdef kind="function" id="buffer_8c_1af9aa6562537e068d640284c76eb75306" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PUBLIC void</type>
+        <definition>PUBLIC void blkunlock</definition>
+        <argsstring>(struct buffer *buf)</argsstring>
+        <name>blkunlock</name>
+        <param>
+          <type>struct <ref refid="structbuffer" kindref="compound">buffer</ref> *</type>
+          <declname>buf</declname>
+        </param>
+        <briefdescription>
+<para>Unlocks a block buffer. </para>        </briefdescription>
+        <detaileddescription>
+<para>Unlocks the block buffer pointed to by buf by marking it as not locked and waking up all processes that were waiting for it.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>buf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Block buffer to be unlocked.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>The block buffer must be locked. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/buffer.c" line="229" column="1" bodyfile="src/kernel/fs/buffer.c" bodystart="229" bodyend="237"/>
+      </memberdef>
+      <memberdef kind="function" id="buffer_8c_1adf9aa4f6a3d8eb9c7f6cac243d05cbfa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PUBLIC void</type>
+        <definition>PUBLIC void brelse</definition>
+        <argsstring>(struct buffer *buf)</argsstring>
+        <name>brelse</name>
+        <param>
+          <type>struct <ref refid="structbuffer" kindref="compound">buffer</ref> *</type>
+          <declname>buf</declname>
+        </param>
+        <briefdescription>
+<para>Puts back a block buffer in the block buffer cache. </para>        </briefdescription>
+        <detaileddescription>
+<para>Releases the block buffer pointed to by buf. If its reference count drops to zero, the block buffer is put into the block buffer cache.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>buf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer to be released.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>The block buffer must be locked. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/buffer.c" line="249" column="1" bodyfile="src/kernel/fs/buffer.c" bodystart="249" bodyend="287"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Buffer_1ga29b2bc5da947fe8b2363ad2879447d93" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PUBLIC struct <ref refid="structbuffer" kindref="compound">buffer</ref> *</type>
+        <definition>PUBLIC struct buffer* bread</definition>
+        <argsstring>(dev_t dev, block_t num)</argsstring>
+        <name>bread</name>
+        <param>
+          <type>dev_t</type>
+          <declname>dev</declname>
+        </param>
+        <param>
+          <type><ref refid="include_2fs_2minix_8h_1a77ecea3fce28a16f79db79aa58256855" kindref="member">block_t</ref></type>
+          <declname>num</declname>
+        </param>
+        <briefdescription>
+<para>Reads a block from a device. </para>        </briefdescription>
+        <detaileddescription>
+<para>Reads the block numbered num synchronously from the device numbered dev.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Device number. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Block number.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Upon successful completion, a pointer to a buffer holding the requested block is returned. In this case, the block buffer is ensured to be locked. Upon failure, a NULL pointer is returned instead.</para></simplesect>
+<simplesect kind="note"><para>The device number should be valid. </para></simplesect>
+<simplesect kind="note"><para>The block number should be valid. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/buffer.c" line="306" column="1" bodyfile="src/kernel/fs/buffer.c" bodystart="306" bodyend="323"/>
+      </memberdef>
+      <memberdef kind="function" id="buffer_8c_1a0306154781fd778205d432e944c99f84" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PUBLIC void</type>
+        <definition>PUBLIC void bwrite</definition>
+        <argsstring>(struct buffer *buf)</argsstring>
+        <name>bwrite</name>
+        <param>
+          <type>struct <ref refid="structbuffer" kindref="compound">buffer</ref> *</type>
+          <declname>buf</declname>
+        </param>
+        <briefdescription>
+<para>Writes a block buffer to the underlying device. </para>        </briefdescription>
+        <detaileddescription>
+<para>Writes the block buffer pointed to by buf asynchronously to the underlying device. After that the operation has completed, the buffer is released.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>buf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Block buffer to be written back.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>The block buffer must be locked. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/buffer.c" line="336" column="1" bodyfile="src/kernel/fs/buffer.c" bodystart="336" bodyend="353"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Buffer_1ga8b1e8b87d95e8dc0729640bc0876af7f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PUBLIC void</type>
+        <definition>PUBLIC void bsync</definition>
+        <argsstring>(void)</argsstring>
+        <name>bsync</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Synchronizes the block buffer cache. </para>        </briefdescription>
+        <detaileddescription>
+<para>Flushes all valid block buffers onto underlying devices. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/buffer.c" line="360" column="1" bodyfile="src/kernel/fs/buffer.c" bodystart="360" bodyend="392"/>
+      </memberdef>
+      <memberdef kind="function" id="buffer_8c_1a6707feaa105669774e57830723557241" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>PUBLIC void</type>
+        <definition>PUBLIC void buffer_dirty</definition>
+        <argsstring>(struct buffer *buf, int set)</argsstring>
+        <name>buffer_dirty</name>
+        <param>
+          <type>struct <ref refid="structbuffer" kindref="compound">buffer</ref> *</type>
+          <declname>buf</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>set</declname>
+        </param>
+        <briefdescription>
+<para>Sets/clears buffer&apos;s dirty flag. </para>        </briefdescription>
+        <detaileddescription>
+<para>If set equals to non-zero, then the dirty flag of the buffer pointed to by buf is set, otherwise the flag is cleared.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>buf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer in which the dirty flag shall be set/cleared. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>set</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Set dirty flag?</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>The buffer must be locked. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/buffer.c" line="405" column="1" bodyfile="src/kernel/fs/buffer.c" bodystart="405" bodyend="408"/>
+      </memberdef>
+      <memberdef kind="function" id="buffer_8c_1a99f6af8b730638f0d17e06dde861cd01" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>PUBLIC void *</type>
+        <definition>PUBLIC void* buffer_data</definition>
+        <argsstring>(const struct buffer *buf)</argsstring>
+        <name>buffer_data</name>
+        <param>
+          <type>const struct <ref refid="structbuffer" kindref="compound">buffer</ref> *</type>
+          <declname>buf</declname>
+        </param>
+        <briefdescription>
+<para>Returns a pointer to the data in a buffer. </para>        </briefdescription>
+        <detaileddescription>
+<para>Returns a pointer to the data in the buffer pointed to by buf.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>buf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer to be considered.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A pointer to the data in the buffer.</para></simplesect>
+<simplesect kind="note"><para>The buffer must be locked. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/buffer.c" line="421" column="1" bodyfile="src/kernel/fs/buffer.c" bodystart="421" bodyend="424"/>
+      </memberdef>
+      <memberdef kind="function" id="buffer_8c_1ab854a266b21d793cdd670123a82c25a2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>PUBLIC dev_t</type>
+        <definition>PUBLIC dev_t buffer_dev</definition>
+        <argsstring>(const struct buffer *buf)</argsstring>
+        <name>buffer_dev</name>
+        <param>
+          <type>const struct <ref refid="structbuffer" kindref="compound">buffer</ref> *</type>
+          <declname>buf</declname>
+        </param>
+        <briefdescription>
+<para>Returns the device number of a buffer. </para>        </briefdescription>
+        <detaileddescription>
+<para>Returns the device number of the buffer pointed to by buf.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>buf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer to be considered.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The device number of the buffer.</para></simplesect>
+<simplesect kind="note"><para>The buffer must be locked. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/buffer.c" line="437" column="1" bodyfile="src/kernel/fs/buffer.c" bodystart="437" bodyend="440"/>
+      </memberdef>
+      <memberdef kind="function" id="buffer_8c_1a917f5bfda8d6c6a0bb65ddf8c6cd8ead" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>PUBLIC <ref refid="include_2fs_2minix_8h_1a77ecea3fce28a16f79db79aa58256855" kindref="member">block_t</ref></type>
+        <definition>PUBLIC block_t buffer_num</definition>
+        <argsstring>(const struct buffer *buf)</argsstring>
+        <name>buffer_num</name>
+        <param>
+          <type>const struct <ref refid="structbuffer" kindref="compound">buffer</ref> *</type>
+          <declname>buf</declname>
+        </param>
+        <briefdescription>
+<para>Returns the block number of a buffer. </para>        </briefdescription>
+        <detaileddescription>
+<para>Returns the block number of the buffer pointed to by buf.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>buf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer to be considered.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The block number of the buffer.</para></simplesect>
+<simplesect kind="note"><para>The buffer must be locked. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/buffer.c" line="453" column="1" bodyfile="src/kernel/fs/buffer.c" bodystart="453" bodyend="456"/>
+      </memberdef>
+      <memberdef kind="function" id="buffer_8c_1a231942dba5c23886df51fbfb6992e168" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>PUBLIC int</type>
+        <definition>PUBLIC int buffer_is_sync</definition>
+        <argsstring>(const struct buffer *buf)</argsstring>
+        <name>buffer_is_sync</name>
+        <param>
+          <type>const struct <ref refid="structbuffer" kindref="compound">buffer</ref> *</type>
+          <declname>buf</declname>
+        </param>
+        <briefdescription>
+<para>Asserts if a block buffer is marked as synchronous write. </para>        </briefdescription>
+        <detaileddescription>
+<para>Asserts if the block buffer pointed to by buf is marked as synchronous write.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>buf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer to be asserted.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Non-zero if the buffer is marked as synchronous write, and zero otherwise.</para></simplesect>
+<simplesect kind="note"><para>The buffer must be locked. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/buffer.c" line="471" column="1" bodyfile="src/kernel/fs/buffer.c" bodystart="471" bodyend="474"/>
+      </memberdef>
+      <memberdef kind="function" id="buffer_8c_1a40f0c1cc8bd584b225a1429bbea49e5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PUBLIC void</type>
+        <definition>PUBLIC void binit</definition>
+        <argsstring>(void)</argsstring>
+        <name>binit</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Initializes the bock buffer cache. </para>        </briefdescription>
+        <detaileddescription>
+<para>Initializes the block buffer cache by putting all buffers in the free list and cleaning the block buffer hash table.</para><para><simplesect kind="note"><para>This function shall be called just once. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/buffer.c" line="484" column="1" bodyfile="src/kernel/fs/buffer.c" bodystart="484" bodyend="521"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright(C)<sp/>2011-2016<sp/>Pedro<sp/>H.<sp/>Penna<sp/>&lt;pedrohenriquepenna@gmail.com&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>Nanvix.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>Nanvix<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>Nanvix<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>Nanvix.<sp/>If<sp/>not,<sp/>see<sp/>&lt;http://www.gnu.org/licenses/&gt;.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="const_8h" kindref="compound">nanvix/const.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;nanvix/dev.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="include_2nanvix_2fs_8h" kindref="compound">nanvix/fs.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="hal_8h" kindref="compound">nanvix/hal.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="klib_8h" kindref="compound">nanvix/klib.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;nanvix/mm.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="pm_8h" kindref="compound">nanvix/pm.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;fs.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>Too<sp/>many<sp/>buffers.<sp/>The<sp/>maximum<sp/>value<sp/>depends<sp/>on</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*<sp/>the<sp/>amount<sp/>of<sp/>memory<sp/>that<sp/>is<sp/>reserved<sp/>to<sp/>buffer</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/>*<sp/>data.<sp/>If<sp/>you<sp/>wanna<sp/>change<sp/>this,<sp/>you<sp/>shall<sp/>take</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/>a<sp/>look<sp/>on<sp/>&lt;nanvix/mm.h&gt;</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(NR_BUFFERS<sp/>&gt;<sp/>512)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#error<sp/>&quot;too<sp/>many<sp/>buffers&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*<sp/>Number<sp/>of<sp/>buffers<sp/>should<sp/>be<sp/>great<sp/>enough<sp/>so<sp/>that</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*<sp/>the<sp/>superblock,<sp/>the<sp/>inode<sp/>map<sp/>and<sp/>the<sp/>free<sp/>blocks</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>*<sp/>map<sp/>do<sp/>not<sp/>waste<sp/>more<sp/>than<sp/>1/16<sp/>of<sp/>buffers.<sp/>If<sp/>we</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/>*<sp/>allowed<sp/>that<sp/>situation,<sp/>we<sp/>might<sp/>observe<sp/>a<sp/>poor</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/>*<sp/>performance.</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(IMAP_SIZE<sp/>+<sp/>ZMAP_SIZE<sp/>&gt;<sp/>NR_BUFFERS/16)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#error<sp/>&quot;hard<sp/>disk<sp/>too<sp/>small&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="preprocessor">#define<sp/>BUFFERS_HASHTAB_SIZE<sp/>53</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal">PRIVATE<sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structbuffer" kindref="compound">buffer</ref><sp/>buffers[NR_BUFFERS];</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal">PRIVATE<sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structbuffer" kindref="compound">buffer</ref><sp/>free_buffers;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal">PRIVATE<sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structprocess" kindref="compound">process</ref><sp/>*<ref refid="structprocess_1a8be7501e295b3a5673b13c5abd399b55" kindref="member">chain</ref><sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal">PRIVATE<sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structbuffer" kindref="compound">buffer</ref><sp/>hashtab[BUFFERS_HASHTAB_SIZE];</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="preprocessor">#define<sp/>HASH(dev,<sp/>block)<sp/>\</highlight></codeline>
+<codeline lineno="86"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>(((dev)^(block))%BUFFERS_HASHTAB_SIZE)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal">PRIVATE<sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structbuffer" kindref="compound">buffer</ref><sp/>*getblk(dev_t<sp/><ref refid="structbuffer_1a8910285a0352a5c710e65ec9ecbe32a1" kindref="member">dev</ref>,<sp/><ref refid="include_2fs_2minix_8h_1a77ecea3fce28a16f79db79aa58256855" kindref="member">block_t</ref><sp/><ref refid="structbuffer_1ad3767083f0a4e08adaf36474085e94d5" kindref="member">num</ref>)</highlight></codeline>
+<codeline lineno="103"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>i;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Hash<sp/>table<sp/>index.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structbuffer" kindref="compound">buffer</ref><sp/>*buf;<sp/></highlight><highlight class="comment">/*<sp/>Buffer.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Should<sp/>not<sp/>happen.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((dev<sp/>==<sp/>0)<sp/>&amp;&amp;<sp/>(num<sp/>==<sp/>0))</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="klib_8h_1a04d9437f531c5286968b3fd38bb990cd" kindref="member">kpanic</ref>(</highlight><highlight class="stringliteral">&quot;getblk(0,<sp/>0)&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal">repeat:</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>i<sp/>=<sp/>HASH(dev,<sp/>num);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>disable_interrupts();</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Search<sp/>in<sp/>hash<sp/>table.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(buf<sp/>=<sp/>hashtab[i].<ref refid="structbuffer_1a9d04509081195835556c0fc67769ff45" kindref="member">hash_next</ref>;<sp/>buf<sp/>!=<sp/>&amp;hashtab[i];<sp/>buf<sp/>=<sp/>buf-&gt;<ref refid="structbuffer_1a9d04509081195835556c0fc67769ff45" kindref="member">hash_next</ref>)</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Not<sp/>found.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((buf-&gt;<ref refid="structbuffer_1a8910285a0352a5c710e65ec9ecbe32a1" kindref="member">dev</ref><sp/>!=<sp/>dev)<sp/>||<sp/>(buf-&gt;<ref refid="structbuffer_1ad3767083f0a4e08adaf36474085e94d5" kindref="member">num</ref><sp/>!=<sp/>num))</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="125"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Buffer<sp/>is<sp/>locked<sp/>so<sp/>we<sp/>wait<sp/>for</highlight></codeline>
+<codeline lineno="126"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>it<sp/>to<sp/>become<sp/>free.</highlight></codeline>
+<codeline lineno="127"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(buf-&gt;<ref refid="structbuffer_1a8ceea6ca386afaa3ad7fb4e26227b0a0" kindref="member">flags</ref><sp/>&amp;<sp/><ref refid="group__Buffer_1ggaa7ac4063de8512ef7cd6c511f3d68c0ba68246cb49ecf5d0650e962a6cf879138" kindref="member">BUFFER_LOCKED</ref>)</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="pm_8h_1a8c4dedf40a191460646b9c8485630586" kindref="member">sleep</ref>(&amp;buf-&gt;<ref refid="structbuffer_1a6e44a17eef6d95b2e6832c26e469d505" kindref="member">chain</ref>,<sp/>PRIO_BUFFER);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>repeat;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Remove<sp/>buffer<sp/>from<sp/>the<sp/>free<sp/>list.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(buf-&gt;<ref refid="structbuffer_1a6a9e89d63eb610dfe238b0a840979421" kindref="member">count</ref>++<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>buf-&gt;<ref refid="structbuffer_1a44bf6f6276b4b59d3b3436ec92de41e7" kindref="member">free_prev</ref>-&gt;<ref refid="structbuffer_1ad4814ea38abb922fc3c687c8ac6f994d" kindref="member">free_next</ref><sp/>=<sp/>buf-&gt;<ref refid="structbuffer_1ad4814ea38abb922fc3c687c8ac6f994d" kindref="member">free_next</ref>;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>buf-&gt;<ref refid="structbuffer_1ad4814ea38abb922fc3c687c8ac6f994d" kindref="member">free_next</ref>-&gt;<ref refid="structbuffer_1a44bf6f6276b4b59d3b3436ec92de41e7" kindref="member">free_prev</ref><sp/>=<sp/>buf-&gt;<ref refid="structbuffer_1a44bf6f6276b4b59d3b3436ec92de41e7" kindref="member">free_prev</ref>;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>blklock(buf);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>enable_interrupts();</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(buf);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="148"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>There<sp/>are<sp/>no<sp/>free<sp/>buffers<sp/>so<sp/>we<sp/>need<sp/>to</highlight></codeline>
+<codeline lineno="149"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>wait<sp/>for<sp/>one<sp/>to<sp/>become<sp/>free.</highlight></codeline>
+<codeline lineno="150"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(&amp;free_buffers<sp/>==<sp/>free_buffers.<ref refid="structbuffer_1ad4814ea38abb922fc3c687c8ac6f994d" kindref="member">free_next</ref>)</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="klib_8h_1aaa663a13f0d3c7289b139360848772c0" kindref="member">kprintf</ref>(</highlight><highlight class="stringliteral">&quot;fs:<sp/>no<sp/>free<sp/>buffers&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="pm_8h_1a8c4dedf40a191460646b9c8485630586" kindref="member">sleep</ref>(&amp;chain,<sp/>PRIO_BUFFER);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>repeat;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Remove<sp/>buffer<sp/>from<sp/>the<sp/>free<sp/>list.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>buf<sp/>=<sp/>free_buffers.<ref refid="structbuffer_1ad4814ea38abb922fc3c687c8ac6f994d" kindref="member">free_next</ref>;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>buf-&gt;<ref refid="structbuffer_1a44bf6f6276b4b59d3b3436ec92de41e7" kindref="member">free_prev</ref>-&gt;<ref refid="structbuffer_1ad4814ea38abb922fc3c687c8ac6f994d" kindref="member">free_next</ref><sp/>=<sp/>buf-&gt;<ref refid="structbuffer_1ad4814ea38abb922fc3c687c8ac6f994d" kindref="member">free_next</ref>;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>buf-&gt;<ref refid="structbuffer_1ad4814ea38abb922fc3c687c8ac6f994d" kindref="member">free_next</ref>-&gt;<ref refid="structbuffer_1a44bf6f6276b4b59d3b3436ec92de41e7" kindref="member">free_prev</ref><sp/>=<sp/>buf-&gt;<ref refid="structbuffer_1a44bf6f6276b4b59d3b3436ec92de41e7" kindref="member">free_prev</ref>;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>buf-&gt;<ref refid="structbuffer_1a6a9e89d63eb610dfe238b0a840979421" kindref="member">count</ref>++;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/></highlight></codeline>
+<codeline lineno="165"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Buffer<sp/>is<sp/>dirty,<sp/>so<sp/>write<sp/>it<sp/>asynchronously<sp/></highlight></codeline>
+<codeline lineno="166"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>to<sp/>the<sp/>disk<sp/>and<sp/>go<sp/>find<sp/>another<sp/>buffer.</highlight></codeline>
+<codeline lineno="167"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(buf-&gt;<ref refid="structbuffer_1a8ceea6ca386afaa3ad7fb4e26227b0a0" kindref="member">flags</ref><sp/>&amp;<sp/><ref refid="group__Buffer_1ggaa7ac4063de8512ef7cd6c511f3d68c0ba9ea0749530e7b16baf92b2a83dd9e2b5" kindref="member">BUFFER_DIRTY</ref>)</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>blklock(buf);</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>enable_interrupts();</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bwrite(buf);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>repeat;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Remove<sp/>buffer<sp/>from<sp/>hash<sp/>queue.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/>buf-&gt;<ref refid="structbuffer_1a93e41d737912f860bb62b4f3c59e883c" kindref="member">hash_prev</ref>-&gt;<ref refid="structbuffer_1a9d04509081195835556c0fc67769ff45" kindref="member">hash_next</ref><sp/>=<sp/>buf-&gt;<ref refid="structbuffer_1a9d04509081195835556c0fc67769ff45" kindref="member">hash_next</ref>;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>buf-&gt;<ref refid="structbuffer_1a9d04509081195835556c0fc67769ff45" kindref="member">hash_next</ref>-&gt;<ref refid="structbuffer_1a93e41d737912f860bb62b4f3c59e883c" kindref="member">hash_prev</ref><sp/>=<sp/>buf-&gt;<ref refid="structbuffer_1a93e41d737912f860bb62b4f3c59e883c" kindref="member">hash_prev</ref>;</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Reassign<sp/>device<sp/>and<sp/>block<sp/>number.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>buf-&gt;<ref refid="structbuffer_1a8910285a0352a5c710e65ec9ecbe32a1" kindref="member">dev</ref><sp/>=<sp/><ref refid="structbuffer_1a8910285a0352a5c710e65ec9ecbe32a1" kindref="member">dev</ref>;</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/>buf-&gt;<ref refid="structbuffer_1ad3767083f0a4e08adaf36474085e94d5" kindref="member">num</ref><sp/>=<sp/><ref refid="structbuffer_1ad3767083f0a4e08adaf36474085e94d5" kindref="member">num</ref>;</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/>buf-&gt;<ref refid="structbuffer_1a8ceea6ca386afaa3ad7fb4e26227b0a0" kindref="member">flags</ref><sp/>&amp;=<sp/>~<ref refid="group__Buffer_1ggaa7ac4063de8512ef7cd6c511f3d68c0bab7b18409664caf35549856188e7d9373" kindref="member">BUFFER_VALID</ref>;</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Place<sp/>buffer<sp/>in<sp/>a<sp/>new<sp/>hash<sp/>queue.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/>hashtab[i].<ref refid="structbuffer_1a9d04509081195835556c0fc67769ff45" kindref="member">hash_next</ref>-&gt;<ref refid="structbuffer_1a93e41d737912f860bb62b4f3c59e883c" kindref="member">hash_prev</ref><sp/>=<sp/>buf;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/>buf-&gt;<ref refid="structbuffer_1a93e41d737912f860bb62b4f3c59e883c" kindref="member">hash_prev</ref><sp/>=<sp/>&amp;hashtab[i];</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/>buf-&gt;<ref refid="structbuffer_1a9d04509081195835556c0fc67769ff45" kindref="member">hash_next</ref><sp/>=<sp/>hashtab[i].<ref refid="structbuffer_1a9d04509081195835556c0fc67769ff45" kindref="member">hash_next</ref>;</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/>hashtab[i].<ref refid="structbuffer_1a9d04509081195835556c0fc67769ff45" kindref="member">hash_next</ref><sp/>=<sp/>buf;</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/>blklock(buf);</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/>enable_interrupts();</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(buf);</highlight></codeline>
+<codeline lineno="195"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal">PUBLIC<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>blklock(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structbuffer" kindref="compound">buffer</ref><sp/>*buf)</highlight></codeline>
+<codeline lineno="207"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/>disable_interrupts();</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Wait<sp/>for<sp/>block<sp/>buffer<sp/>to<sp/>become<sp/>unlocked.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(buf-&gt;<ref refid="structbuffer_1a8ceea6ca386afaa3ad7fb4e26227b0a0" kindref="member">flags</ref><sp/>&amp;<sp/><ref refid="group__Buffer_1ggaa7ac4063de8512ef7cd6c511f3d68c0ba68246cb49ecf5d0650e962a6cf879138" kindref="member">BUFFER_LOCKED</ref>)</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="pm_8h_1a8c4dedf40a191460646b9c8485630586" kindref="member">sleep</ref>(&amp;buf-&gt;<ref refid="structbuffer_1a6e44a17eef6d95b2e6832c26e469d505" kindref="member">chain</ref>,<sp/>PRIO_BUFFER);</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/>buf-&gt;<ref refid="structbuffer_1a8ceea6ca386afaa3ad7fb4e26227b0a0" kindref="member">flags</ref><sp/>|=<sp/><ref refid="group__Buffer_1ggaa7ac4063de8512ef7cd6c511f3d68c0ba68246cb49ecf5d0650e962a6cf879138" kindref="member">BUFFER_LOCKED</ref>;</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/>enable_interrupts();</highlight></codeline>
+<codeline lineno="217"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal">PUBLIC<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>blkunlock(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structbuffer" kindref="compound">buffer</ref><sp/>*buf)</highlight></codeline>
+<codeline lineno="230"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/>disable_interrupts();</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/>buf-&gt;<ref refid="structbuffer_1a8ceea6ca386afaa3ad7fb4e26227b0a0" kindref="member">flags</ref><sp/>&amp;=<sp/>~<ref refid="group__Buffer_1ggaa7ac4063de8512ef7cd6c511f3d68c0ba68246cb49ecf5d0650e962a6cf879138" kindref="member">BUFFER_LOCKED</ref>;</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="pm_8h_1a17553686b616b68f1b306ae7cb5261ec" kindref="member">wakeup</ref>(&amp;buf-&gt;<ref refid="structbuffer_1a6e44a17eef6d95b2e6832c26e469d505" kindref="member">chain</ref>);</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/>enable_interrupts();</highlight></codeline>
+<codeline lineno="237"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="normal">PUBLIC<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>brelse(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structbuffer" kindref="compound">buffer</ref><sp/>*buf)</highlight></codeline>
+<codeline lineno="250"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/>disable_interrupts();</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Double<sp/>free.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(buf-&gt;<ref refid="structbuffer_1a6a9e89d63eb610dfe238b0a840979421" kindref="member">count</ref><sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="klib_8h_1a04d9437f531c5286968b3fd38bb990cd" kindref="member">kpanic</ref>(</highlight><highlight class="stringliteral">&quot;freeing<sp/>buffer<sp/>twice&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>No<sp/>more<sp/>references.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(--buf-&gt;<ref refid="structbuffer_1a6a9e89d63eb610dfe238b0a840979421" kindref="member">count</ref><sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="261"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Wakeup<sp/>processes<sp/>that<sp/>were<sp/>waiting</highlight></codeline>
+<codeline lineno="262"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>for<sp/>any<sp/>block<sp/>to<sp/>become<sp/>free.</highlight></codeline>
+<codeline lineno="263"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="pm_8h_1a17553686b616b68f1b306ae7cb5261ec" kindref="member">wakeup</ref>(&amp;chain);</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Frequently<sp/>used<sp/>buffer<sp/>(insert<sp/>in<sp/>the<sp/>end).<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((buf-&gt;<ref refid="structbuffer_1a8ceea6ca386afaa3ad7fb4e26227b0a0" kindref="member">flags</ref><sp/>&amp;<sp/><ref refid="group__Buffer_1ggaa7ac4063de8512ef7cd6c511f3d68c0bab7b18409664caf35549856188e7d9373" kindref="member">BUFFER_VALID</ref>)<sp/>&amp;&amp;<sp/>(buf-&gt;<ref refid="structbuffer_1a8ceea6ca386afaa3ad7fb4e26227b0a0" kindref="member">flags</ref><sp/>&amp;<sp/><ref refid="group__Buffer_1ggaa7ac4063de8512ef7cd6c511f3d68c0ba9ea0749530e7b16baf92b2a83dd9e2b5" kindref="member">BUFFER_DIRTY</ref>))</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free_buffers.<ref refid="structbuffer_1a44bf6f6276b4b59d3b3436ec92de41e7" kindref="member">free_prev</ref>-&gt;<ref refid="structbuffer_1ad4814ea38abb922fc3c687c8ac6f994d" kindref="member">free_next</ref><sp/>=<sp/>buf;</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>buf-&gt;<ref refid="structbuffer_1a44bf6f6276b4b59d3b3436ec92de41e7" kindref="member">free_prev</ref><sp/>=<sp/>free_buffers.<ref refid="structbuffer_1a44bf6f6276b4b59d3b3436ec92de41e7" kindref="member">free_prev</ref>;</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free_buffers.<ref refid="structbuffer_1a44bf6f6276b4b59d3b3436ec92de41e7" kindref="member">free_prev</ref><sp/>=<sp/>buf;</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>buf-&gt;<ref refid="structbuffer_1ad4814ea38abb922fc3c687c8ac6f994d" kindref="member">free_next</ref><sp/>=<sp/>&amp;free_buffers;</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Not<sp/>frequently<sp/>used<sp/>buffer<sp/>(insert<sp/>in<sp/>the<sp/>begin).<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free_buffers.<ref refid="structbuffer_1ad4814ea38abb922fc3c687c8ac6f994d" kindref="member">free_next</ref>-&gt;<ref refid="structbuffer_1a44bf6f6276b4b59d3b3436ec92de41e7" kindref="member">free_prev</ref><sp/>=<sp/>buf;</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>buf-&gt;<ref refid="structbuffer_1a44bf6f6276b4b59d3b3436ec92de41e7" kindref="member">free_prev</ref><sp/>=<sp/>&amp;free_buffers;</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>buf-&gt;<ref refid="structbuffer_1ad4814ea38abb922fc3c687c8ac6f994d" kindref="member">free_next</ref><sp/>=<sp/>free_buffers.<ref refid="structbuffer_1ad4814ea38abb922fc3c687c8ac6f994d" kindref="member">free_next</ref>;</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free_buffers.<ref refid="structbuffer_1ad4814ea38abb922fc3c687c8ac6f994d" kindref="member">free_next</ref><sp/>=<sp/>buf;</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"></highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/>blkunlock(buf);</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/>enable_interrupts();</highlight></codeline>
+<codeline lineno="287"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"></highlight></codeline>
+<codeline lineno="306"><highlight class="normal">PUBLIC<sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structbuffer" kindref="compound">buffer</ref><sp/>*<ref refid="group__Buffer_1ga29b2bc5da947fe8b2363ad2879447d93" kindref="member">bread</ref>(dev_t<sp/>dev,<sp/><ref refid="include_2fs_2minix_8h_1a77ecea3fce28a16f79db79aa58256855" kindref="member">block_t</ref><sp/>num)</highlight></codeline>
+<codeline lineno="307"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structbuffer" kindref="compound">buffer</ref><sp/>*buf;</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/>buf<sp/>=<sp/>getblk(dev,<sp/>num);</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Valid<sp/>buffer?<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(buf-&gt;<ref refid="structbuffer_1a8ceea6ca386afaa3ad7fb4e26227b0a0" kindref="member">flags</ref><sp/>&amp;<sp/><ref refid="group__Buffer_1ggaa7ac4063de8512ef7cd6c511f3d68c0bab7b18409664caf35549856188e7d9373" kindref="member">BUFFER_VALID</ref>)</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(buf);</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"></highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/>bdev_readblk(buf);</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Update<sp/>buffer<sp/>flags.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/>buf-&gt;<ref refid="structbuffer_1a8ceea6ca386afaa3ad7fb4e26227b0a0" kindref="member">flags</ref><sp/>|=<sp/><ref refid="group__Buffer_1ggaa7ac4063de8512ef7cd6c511f3d68c0bab7b18409664caf35549856188e7d9373" kindref="member">BUFFER_VALID</ref>;</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/>buf-&gt;<ref refid="structbuffer_1a8ceea6ca386afaa3ad7fb4e26227b0a0" kindref="member">flags</ref><sp/>&amp;=<sp/>~<ref refid="group__Buffer_1ggaa7ac4063de8512ef7cd6c511f3d68c0ba9ea0749530e7b16baf92b2a83dd9e2b5" kindref="member">BUFFER_DIRTY</ref>;</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(buf);</highlight></codeline>
+<codeline lineno="323"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"></highlight></codeline>
+<codeline lineno="336"><highlight class="normal">PUBLIC<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>bwrite(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structbuffer" kindref="compound">buffer</ref><sp/>*buf)</highlight></codeline>
+<codeline lineno="337"><highlight class="normal">{<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="339"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>We<sp/>don&apos;t<sp/>have<sp/>to<sp/>write<sp/>back<sp/>the<sp/>buffer</highlight></codeline>
+<codeline lineno="340"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>to<sp/>disk,<sp/>so<sp/>we<sp/>just<sp/>release<sp/>it<sp/>and<sp/>we<sp/>are<sp/>done.</highlight></codeline>
+<codeline lineno="341"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(buf-&gt;<ref refid="structbuffer_1a8ceea6ca386afaa3ad7fb4e26227b0a0" kindref="member">flags</ref><sp/>&amp;<sp/><ref refid="group__Buffer_1ggaa7ac4063de8512ef7cd6c511f3d68c0ba9ea0749530e7b16baf92b2a83dd9e2b5" kindref="member">BUFFER_DIRTY</ref>))</highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>brelse(buf);</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="349"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>The<sp/>low-level<sp/>I/O<sp/>function<sp/>shall<sp/>clean</highlight></codeline>
+<codeline lineno="350"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>the<sp/>BUFFER_DIRTY<sp/>flag<sp/>and<sp/>release<sp/>the<sp/>buffer.</highlight></codeline>
+<codeline lineno="351"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/>bdev_writeblk(buf);</highlight></codeline>
+<codeline lineno="353"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="354"><highlight class="normal"></highlight></codeline>
+<codeline lineno="360"><highlight class="normal">PUBLIC<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__Buffer_1ga8b1e8b87d95e8dc0729640bc0876af7f" kindref="member">bsync</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="361"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="362"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Synchronize<sp/>buffers.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structbuffer" kindref="compound">buffer</ref><sp/>*buf<sp/>=<sp/>&amp;buffers[0];<sp/>buf<sp/>&lt;<sp/>&amp;buffers[NR_BUFFERS];<sp/>buf++)</highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="365"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>blklock(buf);</highlight></codeline>
+<codeline lineno="366"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="367"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Skip<sp/>invalid<sp/>buffers.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="368"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(buf-&gt;<ref refid="structbuffer_1a8ceea6ca386afaa3ad7fb4e26227b0a0" kindref="member">flags</ref><sp/>&amp;<sp/><ref refid="group__Buffer_1ggaa7ac4063de8512ef7cd6c511f3d68c0bab7b18409664caf35549856188e7d9373" kindref="member">BUFFER_VALID</ref>))</highlight></codeline>
+<codeline lineno="369"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="370"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>blkunlock(buf);</highlight></codeline>
+<codeline lineno="371"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="372"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="373"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="374"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="375"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>Prevent<sp/>double<sp/>free,<sp/>since<sp/>a<sp/>call</highlight></codeline>
+<codeline lineno="376"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>to<sp/>brelse()<sp/>will<sp/>follow.</highlight></codeline>
+<codeline lineno="377"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="378"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>disable_interrupts();</highlight></codeline>
+<codeline lineno="379"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(buf-&gt;<ref refid="structbuffer_1a6a9e89d63eb610dfe238b0a840979421" kindref="member">count</ref>++<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="380"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="381"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>buf-&gt;<ref refid="structbuffer_1a44bf6f6276b4b59d3b3436ec92de41e7" kindref="member">free_prev</ref>-&gt;<ref refid="structbuffer_1ad4814ea38abb922fc3c687c8ac6f994d" kindref="member">free_next</ref><sp/>=<sp/>buf-&gt;<ref refid="structbuffer_1ad4814ea38abb922fc3c687c8ac6f994d" kindref="member">free_next</ref>;</highlight></codeline>
+<codeline lineno="382"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>buf-&gt;<ref refid="structbuffer_1ad4814ea38abb922fc3c687c8ac6f994d" kindref="member">free_next</ref>-&gt;<ref refid="structbuffer_1a44bf6f6276b4b59d3b3436ec92de41e7" kindref="member">free_prev</ref><sp/>=<sp/>buf-&gt;<ref refid="structbuffer_1a44bf6f6276b4b59d3b3436ec92de41e7" kindref="member">free_prev</ref>;</highlight></codeline>
+<codeline lineno="383"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="384"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>enable_interrupts();</highlight></codeline>
+<codeline lineno="385"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="386"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="387"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>This<sp/>will<sp/>cause<sp/>the<sp/>buffer<sp/>to<sp/>be</highlight></codeline>
+<codeline lineno="388"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>written<sp/>back<sp/>to<sp/>disk<sp/>and<sp/>then<sp/>released.</highlight></codeline>
+<codeline lineno="389"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="390"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bwrite(buf);</highlight></codeline>
+<codeline lineno="391"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="392"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="393"><highlight class="normal"></highlight></codeline>
+<codeline lineno="405"><highlight class="normal">PUBLIC<sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>buffer_dirty(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structbuffer" kindref="compound">buffer</ref><sp/>*buf,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">set</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="406"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="407"><highlight class="normal"><sp/><sp/><sp/><sp/>buf-&gt;<ref refid="structbuffer_1a8ceea6ca386afaa3ad7fb4e26227b0a0" kindref="member">flags</ref><sp/>=<sp/>(</highlight><highlight class="keyword">set</highlight><highlight class="normal">)<sp/>?<sp/>buf-&gt;<ref refid="structbuffer_1a8ceea6ca386afaa3ad7fb4e26227b0a0" kindref="member">flags</ref><sp/>|<sp/><ref refid="group__Buffer_1ggaa7ac4063de8512ef7cd6c511f3d68c0ba9ea0749530e7b16baf92b2a83dd9e2b5" kindref="member">BUFFER_DIRTY</ref><sp/>:<sp/>buf-&gt;<ref refid="structbuffer_1a8ceea6ca386afaa3ad7fb4e26227b0a0" kindref="member">flags</ref><sp/>&amp;<sp/>~<ref refid="group__Buffer_1ggaa7ac4063de8512ef7cd6c511f3d68c0ba9ea0749530e7b16baf92b2a83dd9e2b5" kindref="member">BUFFER_DIRTY</ref>;</highlight></codeline>
+<codeline lineno="408"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="409"><highlight class="normal"></highlight></codeline>
+<codeline lineno="421"><highlight class="normal">PUBLIC<sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*buffer_data(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structbuffer" kindref="compound">buffer</ref><sp/>*buf)</highlight></codeline>
+<codeline lineno="422"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="423"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(buf-&gt;<ref refid="structbuffer_1a735984d41155bc1032e09bece8f8d66d" kindref="member">data</ref>);<sp/></highlight></codeline>
+<codeline lineno="424"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="425"><highlight class="normal"></highlight></codeline>
+<codeline lineno="437"><highlight class="normal">PUBLIC<sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>dev_t<sp/>buffer_dev(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structbuffer" kindref="compound">buffer</ref><sp/>*buf)</highlight></codeline>
+<codeline lineno="438"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="439"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(buf-&gt;<ref refid="structbuffer_1a8910285a0352a5c710e65ec9ecbe32a1" kindref="member">dev</ref>);</highlight></codeline>
+<codeline lineno="440"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="441"><highlight class="normal"></highlight></codeline>
+<codeline lineno="453"><highlight class="normal">PUBLIC<sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="include_2fs_2minix_8h_1a77ecea3fce28a16f79db79aa58256855" kindref="member">block_t</ref><sp/>buffer_num(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structbuffer" kindref="compound">buffer</ref><sp/>*buf)</highlight></codeline>
+<codeline lineno="454"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="455"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(buf-&gt;<ref refid="structbuffer_1ad3767083f0a4e08adaf36474085e94d5" kindref="member">num</ref>);</highlight></codeline>
+<codeline lineno="456"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="457"><highlight class="normal"></highlight></codeline>
+<codeline lineno="471"><highlight class="normal">PUBLIC<sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>buffer_is_sync(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structbuffer" kindref="compound">buffer</ref><sp/>*buf)</highlight></codeline>
+<codeline lineno="472"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="473"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(buf-&gt;<ref refid="structbuffer_1a8ceea6ca386afaa3ad7fb4e26227b0a0" kindref="member">flags</ref><sp/>&amp;<sp/><ref refid="group__Buffer_1ggaa7ac4063de8512ef7cd6c511f3d68c0ba9ca00e7bffc6925e96464de34778f34c" kindref="member">BUFFER_SYNC</ref>);</highlight></codeline>
+<codeline lineno="474"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="475"><highlight class="normal"></highlight></codeline>
+<codeline lineno="484"><highlight class="normal">PUBLIC<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="src_2kernel_2fs_2fs_8h_1a9480f9f51bbcfda2c2431b8cf4760b25" kindref="member">binit</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="485"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="486"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*ptr;</highlight></codeline>
+<codeline lineno="487"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="488"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="klib_8h_1aaa663a13f0d3c7289b139360848772c0" kindref="member">kprintf</ref>(</highlight><highlight class="stringliteral">&quot;fs:<sp/>initializing<sp/>the<sp/>block<sp/>buffer<sp/>cache&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="489"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="490"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Initialize<sp/>block<sp/>buffers.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="491"><highlight class="normal"><sp/><sp/><sp/><sp/>ptr<sp/>=<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)BUFFERS_VIRT;</highlight></codeline>
+<codeline lineno="492"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>NR_BUFFERS;<sp/>i++)</highlight></codeline>
+<codeline lineno="493"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="494"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>buffers[i].dev<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="495"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>buffers[i].num<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="496"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>buffers[i].data<sp/>=<sp/>ptr;</highlight></codeline>
+<codeline lineno="497"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>buffers[i].count<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="498"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>buffers[i].flags<sp/>=<sp/></highlight></codeline>
+<codeline lineno="499"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>~(<ref refid="group__Buffer_1ggaa7ac4063de8512ef7cd6c511f3d68c0bab7b18409664caf35549856188e7d9373" kindref="member">BUFFER_VALID</ref><sp/>|<sp/><ref refid="group__Buffer_1ggaa7ac4063de8512ef7cd6c511f3d68c0ba68246cb49ecf5d0650e962a6cf879138" kindref="member">BUFFER_LOCKED</ref><sp/>|<sp/><ref refid="group__Buffer_1ggaa7ac4063de8512ef7cd6c511f3d68c0ba9ea0749530e7b16baf92b2a83dd9e2b5" kindref="member">BUFFER_DIRTY</ref><sp/>|<sp/><ref refid="group__Buffer_1ggaa7ac4063de8512ef7cd6c511f3d68c0ba9ca00e7bffc6925e96464de34778f34c" kindref="member">BUFFER_SYNC</ref>);</highlight></codeline>
+<codeline lineno="500"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>buffers[i].chain<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="501"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>buffers[i].free_next<sp/>=<sp/></highlight></codeline>
+<codeline lineno="502"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(i<sp/>+<sp/>1<sp/>==<sp/>NR_BUFFERS)<sp/>?<sp/>&amp;free_buffers<sp/>:<sp/>&amp;buffers[i<sp/>+<sp/>1];</highlight></codeline>
+<codeline lineno="503"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>buffers[i].free_prev<sp/>=<sp/></highlight></codeline>
+<codeline lineno="504"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(i<sp/>==<sp/>0)<sp/>?<sp/>&amp;free_buffers<sp/>:<sp/>&amp;buffers[i<sp/>-<sp/>1];</highlight></codeline>
+<codeline lineno="505"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>buffers[i].hash_next<sp/>=<sp/>&amp;buffers[i];</highlight></codeline>
+<codeline lineno="506"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>buffers[i].hash_prev<sp/>=<sp/>&amp;buffers[i];</highlight></codeline>
+<codeline lineno="507"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="508"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ptr<sp/>+=<sp/>BLOCK_SIZE;</highlight></codeline>
+<codeline lineno="509"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="510"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="511"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Initialize<sp/>the<sp/>buffer<sp/>cache.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="512"><highlight class="normal"><sp/><sp/><sp/><sp/>free_buffers.<ref refid="structbuffer_1ad4814ea38abb922fc3c687c8ac6f994d" kindref="member">free_next</ref><sp/>=<sp/>&amp;buffers[0];</highlight></codeline>
+<codeline lineno="513"><highlight class="normal"><sp/><sp/><sp/><sp/>free_buffers.<ref refid="structbuffer_1a44bf6f6276b4b59d3b3436ec92de41e7" kindref="member">free_prev</ref><sp/>=<sp/>&amp;buffers[NR_BUFFERS<sp/>-<sp/>1];</highlight></codeline>
+<codeline lineno="514"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>BUFFERS_HASHTAB_SIZE;<sp/>i++)</highlight></codeline>
+<codeline lineno="515"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="516"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hashtab[i].<ref refid="structbuffer_1a93e41d737912f860bb62b4f3c59e883c" kindref="member">hash_prev</ref><sp/>=<sp/>&amp;hashtab[i];</highlight></codeline>
+<codeline lineno="517"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hashtab[i].<ref refid="structbuffer_1a9d04509081195835556c0fc67769ff45" kindref="member">hash_next</ref><sp/>=<sp/>&amp;hashtab[i];</highlight></codeline>
+<codeline lineno="518"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="519"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="520"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="klib_8h_1aaa663a13f0d3c7289b139360848772c0" kindref="member">kprintf</ref>(</highlight><highlight class="stringliteral">&quot;fs:<sp/>%d<sp/>slots<sp/>in<sp/>the<sp/>block<sp/>buffer<sp/>cache&quot;</highlight><highlight class="normal">,<sp/>NR_BUFFERS);</highlight></codeline>
+<codeline lineno="521"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/kernel/fs/buffer.c"/>
+  </compounddef>
+</doxygen>

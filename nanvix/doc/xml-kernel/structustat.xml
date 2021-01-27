@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structustat" kind="struct" language="C++" prot="public">
+    <compoundname>ustat</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structustat_1ab17f859dd22e372c406392bac2e6bd5d" prot="public" static="no" mutable="no">
+        <type>daddr_t</type>
+        <definition>daddr_t f_tfree</definition>
+        <argsstring></argsstring>
+        <name>f_tfree</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ustat.h" line="31" column="1" bodyfile="include/ustat.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structustat_1aed105173a6f5250a2be42fe0b9a87c42" prot="public" static="no" mutable="no">
+        <type>ino_t</type>
+        <definition>ino_t f_tinode</definition>
+        <argsstring></argsstring>
+        <name>f_tinode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ustat.h" line="32" column="1" bodyfile="include/ustat.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structustat_1a56c6202af1fba3200d1700e3e7e096aa" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char f_fname[6]</definition>
+        <argsstring>[6]</argsstring>
+        <name>f_fname</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ustat.h" line="33" column="1" bodyfile="include/ustat.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structustat_1a733e2f139ba7ee93c0653519b33393ac" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char f_fpack[6]</definition>
+        <argsstring>[6]</argsstring>
+        <name>f_fpack</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ustat.h" line="34" column="1" bodyfile="include/ustat.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/ustat.h" line="30" column="1" bodyfile="include/ustat.h" bodystart="29" bodyend="35"/>
+    <listofallmembers>
+      <member refid="structustat_1a56c6202af1fba3200d1700e3e7e096aa" prot="public" virt="non-virtual"><scope>ustat</scope><name>f_fname</name></member>
+      <member refid="structustat_1a733e2f139ba7ee93c0653519b33393ac" prot="public" virt="non-virtual"><scope>ustat</scope><name>f_fpack</name></member>
+      <member refid="structustat_1ab17f859dd22e372c406392bac2e6bd5d" prot="public" virt="non-virtual"><scope>ustat</scope><name>f_tfree</name></member>
+      <member refid="structustat_1aed105173a6f5250a2be42fe0b9a87c42" prot="public" virt="non-virtual"><scope>ustat</scope><name>f_tinode</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

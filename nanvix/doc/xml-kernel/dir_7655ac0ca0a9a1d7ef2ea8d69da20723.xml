@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_7655ac0ca0a9a1d7ef2ea8d69da20723" kind="dir">
+    <compoundname>src/ubin/echo</compoundname>
+    <innerfile refid="echo_8c">echo.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/ubin/echo/"/>
+  </compounddef>
+</doxygen>

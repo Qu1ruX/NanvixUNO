@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_ded79e13d094e2e28e320a578653e8ca" kind="dir">
+    <compoundname>src/kernel/dev</compoundname>
+    <innerdir refid="dir_933c6ec584d8a4b4880dab08157115db">src/kernel/dev/ata</innerdir>
+    <innerdir refid="dir_44a99e689bba9bd3c7c6c10c239b61f1">src/kernel/dev/klog</innerdir>
+    <innerdir refid="dir_7922e2c060455874f0d5564ee0b471d6">src/kernel/dev/ramdisk</innerdir>
+    <innerdir refid="dir_5c63fb89354f80b0202842f68a808e30">src/kernel/dev/tty</innerdir>
+    <innerfile refid="dev_8c">dev.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/kernel/dev/"/>
+  </compounddef>
+</doxygen>

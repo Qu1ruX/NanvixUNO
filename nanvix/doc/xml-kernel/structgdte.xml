@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structgdte" kind="struct" language="C++" prot="public">
+    <compoundname>gdte</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structgdte_1a477378428bf9026ec71b4551a147a5b0" prot="public" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned limit_low</definition>
+        <argsstring></argsstring>
+        <name>limit_low</name>
+        <bitfield> 16</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/i386/gdt.h" line="54" column="1" bodyfile="include/i386/gdt.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structgdte_1a9c9ad131a68cd51144ac3f44ba533bb1" prot="public" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned base_low</definition>
+        <argsstring></argsstring>
+        <name>base_low</name>
+        <bitfield> 24</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/i386/gdt.h" line="55" column="1" bodyfile="include/i386/gdt.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structgdte_1a838383fef8f6a0206ca7176b52b53bee" prot="public" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned access</definition>
+        <argsstring></argsstring>
+        <name>access</name>
+        <bitfield> 8</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/i386/gdt.h" line="56" column="1" bodyfile="include/i386/gdt.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structgdte_1addcc9f3eca2d5ab7dd905f8d5b36db24" prot="public" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned limit_high</definition>
+        <argsstring></argsstring>
+        <name>limit_high</name>
+        <bitfield> 4</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/i386/gdt.h" line="57" column="1" bodyfile="include/i386/gdt.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structgdte_1a8c249356d090aa20bab2e9bbce814a0f" prot="public" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned granularity</definition>
+        <argsstring></argsstring>
+        <name>granularity</name>
+        <bitfield> 4</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/i386/gdt.h" line="58" column="1" bodyfile="include/i386/gdt.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structgdte_1a51a056c1cdb6acfd8ba6782ee185de87" prot="public" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned base_high</definition>
+        <argsstring></argsstring>
+        <name>base_high</name>
+        <bitfield> 8</bitfield>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/i386/gdt.h" line="59" column="1" bodyfile="include/i386/gdt.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/i386/gdt.h" line="53" column="1" bodyfile="include/i386/gdt.h" bodystart="52" bodyend="60"/>
+    <listofallmembers>
+      <member refid="structgdte_1a838383fef8f6a0206ca7176b52b53bee" prot="public" virt="non-virtual"><scope>gdte</scope><name>access</name></member>
+      <member refid="structgdte_1a51a056c1cdb6acfd8ba6782ee185de87" prot="public" virt="non-virtual"><scope>gdte</scope><name>base_high</name></member>
+      <member refid="structgdte_1a9c9ad131a68cd51144ac3f44ba533bb1" prot="public" virt="non-virtual"><scope>gdte</scope><name>base_low</name></member>
+      <member refid="structgdte_1a8c249356d090aa20bab2e9bbce814a0f" prot="public" virt="non-virtual"><scope>gdte</scope><name>granularity</name></member>
+      <member refid="structgdte_1addcc9f3eca2d5ab7dd905f8d5b36db24" prot="public" virt="non-virtual"><scope>gdte</scope><name>limit_high</name></member>
+      <member refid="structgdte_1a477378428bf9026ec71b4551a147a5b0" prot="public" virt="non-virtual"><scope>gdte</scope><name>limit_low</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

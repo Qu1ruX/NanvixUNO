@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structaout__symb__table" kind="struct" language="C++" prot="public">
+    <compoundname>aout_symb_table</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structaout__symb__table_1a7fbf25476b49864a21d47cad2a176ce8" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t tabsize</definition>
+        <argsstring></argsstring>
+        <name>tabsize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/mboot.h" line="80" column="1" bodyfile="include/nanvix/mboot.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structaout__symb__table_1abdecb227ff1381e3a9a9a36cb780d241" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t strsize</definition>
+        <argsstring></argsstring>
+        <name>strsize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/mboot.h" line="81" column="1" bodyfile="include/nanvix/mboot.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structaout__symb__table_1ab439e3a90339e2e8ca8f82d4557a34e5" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t addr</definition>
+        <argsstring></argsstring>
+        <name>addr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/mboot.h" line="82" column="1" bodyfile="include/nanvix/mboot.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structaout__symb__table_1aa43c4c21b173ada1b6b7568956f0d650" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t reserved</definition>
+        <argsstring></argsstring>
+        <name>reserved</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/mboot.h" line="83" column="1" bodyfile="include/nanvix/mboot.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/nanvix/mboot.h" line="79" column="1" bodyfile="include/nanvix/mboot.h" bodystart="78" bodyend="84"/>
+    <listofallmembers>
+      <member refid="structaout__symb__table_1ab439e3a90339e2e8ca8f82d4557a34e5" prot="public" virt="non-virtual"><scope>aout_symb_table</scope><name>addr</name></member>
+      <member refid="structaout__symb__table_1aa43c4c21b173ada1b6b7568956f0d650" prot="public" virt="non-virtual"><scope>aout_symb_table</scope><name>reserved</name></member>
+      <member refid="structaout__symb__table_1abdecb227ff1381e3a9a9a36cb780d241" prot="public" virt="non-virtual"><scope>aout_symb_table</scope><name>strsize</name></member>
+      <member refid="structaout__symb__table_1a7fbf25476b49864a21d47cad2a176ce8" prot="public" virt="non-virtual"><scope>aout_symb_table</scope><name>tabsize</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

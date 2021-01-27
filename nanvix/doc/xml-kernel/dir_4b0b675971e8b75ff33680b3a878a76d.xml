@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_4b0b675971e8b75ff33680b3a878a76d" kind="dir">
+    <compoundname>src/kernel/sys</compoundname>
+    <innerfile refid="kernel_2sys_2__exit_8c">_exit.c</innerfile>
+    <innerfile refid="access_8c">access.c</innerfile>
+    <innerfile refid="kernel_2sys_2alarm_8c">alarm.c</innerfile>
+    <innerfile refid="kernel_2sys_2brk_8c">brk.c</innerfile>
+    <innerfile refid="kernel_2sys_2chdir_8c">chdir.c</innerfile>
+    <innerfile refid="kernel_2sys_2chmod_8c">chmod.c</innerfile>
+    <innerfile refid="kernel_2sys_2chown_8c">chown.c</innerfile>
+    <innerfile refid="chroot_8c">chroot.c</innerfile>
+    <innerfile refid="kernel_2sys_2close_8c">close.c</innerfile>
+    <innerfile refid="kernel_2sys_2execve_8c">execve.c</innerfile>
+    <innerfile refid="kernel_2sys_2fcntl_8c">fcntl.c</innerfile>
+    <innerfile refid="kernel_2sys_2fork_8c">fork.c</innerfile>
+    <innerfile refid="getegid_8c">getegid.c</innerfile>
+    <innerfile refid="geteuid_8c">geteuid.c</innerfile>
+    <innerfile refid="getgid_8c">getgid.c</innerfile>
+    <innerfile refid="getpgrp_8c">getpgrp.c</innerfile>
+    <innerfile refid="kernel_2sys_2getpid_8c">getpid.c</innerfile>
+    <innerfile refid="getppid_8c">getppid.c</innerfile>
+    <innerfile refid="kernel_2sys_2getuid_8c">getuid.c</innerfile>
+    <innerfile refid="kernel_2sys_2gticks_8c">gticks.c</innerfile>
+    <innerfile refid="kernel_2sys_2ioctl_8c">ioctl.c</innerfile>
+    <innerfile refid="kernel_2sys_2kill_8c">kill.c</innerfile>
+    <innerfile refid="kernel_2sys_2link_8c">link.c</innerfile>
+    <innerfile refid="kernel_2sys_2lseek_8c">lseek.c</innerfile>
+    <innerfile refid="kernel_2sys_2nice_8c">nice.c</innerfile>
+    <innerfile refid="kernel_2sys_2open_8c">open.c</innerfile>
+    <innerfile refid="kernel_2sys_2pause_8c">pause.c</innerfile>
+    <innerfile refid="kernel_2sys_2pipe_8c">pipe.c</innerfile>
+    <innerfile refid="kernel_2sys_2ps_8c">ps.c</innerfile>
+    <innerfile refid="kernel_2sys_2read_8c">read.c</innerfile>
+    <innerfile refid="setegid_8c">setegid.c</innerfile>
+    <innerfile refid="seteuid_8c">seteuid.c</innerfile>
+    <innerfile refid="kernel_2sys_2setgid_8c">setgid.c</innerfile>
+    <innerfile refid="kernel_2sys_2setpgrp_8c">setpgrp.c</innerfile>
+    <innerfile refid="kernel_2sys_2setuid_8c">setuid.c</innerfile>
+    <innerfile refid="kernel_2sys_2shutdown_8c">shutdown.c</innerfile>
+    <innerfile refid="kernel_2sys_2signal_8c">signal.c</innerfile>
+    <innerfile refid="kernel_2sys_2stat_8c">stat.c</innerfile>
+    <innerfile refid="kernel_2sys_2sync_8c">sync.c</innerfile>
+    <innerfile refid="syscalls_8c">syscalls.c</innerfile>
+    <innerfile refid="kernel_2sys_2times_8c">times.c</innerfile>
+    <innerfile refid="umask_8c">umask.c</innerfile>
+    <innerfile refid="kernel_2sys_2uname_8c">uname.c</innerfile>
+    <innerfile refid="kernel_2sys_2unlink_8c">unlink.c</innerfile>
+    <innerfile refid="ustat_8c">ustat.c</innerfile>
+    <innerfile refid="kernel_2sys_2utime_8c">utime.c</innerfile>
+    <innerfile refid="kernel_2sys_2wait_8c">wait.c</innerfile>
+    <innerfile refid="kernel_2sys_2write_8c">write.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/kernel/sys/"/>
+  </compounddef>
+</doxygen>

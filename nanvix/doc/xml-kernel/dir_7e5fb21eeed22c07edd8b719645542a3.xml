@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_7e5fb21eeed22c07edd8b719645542a3" kind="dir">
+    <compoundname>src/ubin/nice</compoundname>
+    <innerfile refid="ubin_2nice_2nice_8c">nice.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/ubin/nice/"/>
+  </compounddef>
+</doxygen>

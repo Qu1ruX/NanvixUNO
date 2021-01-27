@@ -1,0 +1,414 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="setup_8c" kind="file" language="C++">
+    <compoundname>setup.c</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="setup_8c_1a38f773382ecc55a1930915d3693bb77c" prot="public" static="no" mutable="no">
+        <type>PRIVATE struct gdte</type>
+        <definition>PRIVATE struct gdte gdt[GDT_SIZE]</definition>
+        <argsstring>[GDT_SIZE]</argsstring>
+        <name>gdt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/arch/x86/setup.c" line="29" column="1" bodyfile="src/kernel/arch/x86/setup.c" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="setup_8c_1a1e9a1d96660f5fb240a4fdbbcf4562a9" prot="public" static="no" mutable="no">
+        <type>PRIVATE struct idte</type>
+        <definition>PRIVATE struct idte idt[IDT_SIZE]</definition>
+        <argsstring>[IDT_SIZE]</argsstring>
+        <name>idt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/arch/x86/setup.c" line="30" column="1" bodyfile="src/kernel/arch/x86/setup.c" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="setup_8c_1a666f3529f93cc3821a74fae0e1a18e46" prot="public" static="no" mutable="no">
+        <type>PRIVATE struct gdtptr</type>
+        <definition>PRIVATE struct gdtptr gdtptr</definition>
+        <argsstring></argsstring>
+        <name>gdtptr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/arch/x86/setup.c" line="33" column="1" bodyfile="src/kernel/arch/x86/setup.c" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="setup_8c_1a6aa85b6e5f9aeb33dbf010e3c6f4ad93" prot="public" static="no" mutable="no">
+        <type>PRIVATE struct idtptr</type>
+        <definition>PRIVATE struct idtptr idtptr</definition>
+        <argsstring></argsstring>
+        <name>idtptr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/arch/x86/setup.c" line="34" column="1" bodyfile="src/kernel/arch/x86/setup.c" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="setup_8c_1a8dc1c64c42354754892ab3fde72e7b21" prot="public" static="no" mutable="no">
+        <type>PUBLIC struct tss</type>
+        <definition>PUBLIC struct tss tss</definition>
+        <argsstring></argsstring>
+        <name>tss</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/arch/x86/setup.c" line="37" column="1" bodyfile="src/kernel/arch/x86/setup.c" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="setup_8c_1a8824724d7d6321f0d07ad8e7f79c21fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PRIVATE void</type>
+        <definition>PRIVATE void set_gdte</definition>
+        <argsstring>(int n, unsigned base, unsigned limit, unsigned granularity, unsigned access)</argsstring>
+        <name>set_gdte</name>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>base</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>limit</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>granularity</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>access</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/arch/x86/setup.c" line="42" column="1" bodyfile="src/kernel/arch/x86/setup.c" bodystart="43" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="setup_8c_1ae4ac3be6e9f2e4b526cd03393d31b80b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PRIVATE void</type>
+        <definition>PRIVATE void tss_setup</definition>
+        <argsstring>()</argsstring>
+        <name>tss_setup</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/arch/x86/setup.c" line="61" column="1" bodyfile="src/kernel/arch/x86/setup.c" bodystart="61" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="setup_8c_1a600deadda866bad5222805033a2bd2bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PRIVATE void</type>
+        <definition>PRIVATE void gdt_setup</definition>
+        <argsstring>(void)</argsstring>
+        <name>gdt_setup</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/arch/x86/setup.c" line="82" column="1" bodyfile="src/kernel/arch/x86/setup.c" bodystart="82" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="setup_8c_1a27a492bd77dc687b98630c4374220caa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PRIVATE void</type>
+        <definition>PRIVATE void set_idte</definition>
+        <argsstring>(int n, unsigned handler, unsigned selector, unsigned flags, unsigned type)</argsstring>
+        <name>set_idte</name>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>handler</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>selector</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>flags</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/arch/x86/setup.c" line="111" column="1" bodyfile="src/kernel/arch/x86/setup.c" bodystart="112" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="setup_8c_1af4209a448bad305252eea369520f8937" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PRIVATE void</type>
+        <definition>PRIVATE void idt_setup</definition>
+        <argsstring>(void)</argsstring>
+        <name>idt_setup</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/arch/x86/setup.c" line="129" column="1" bodyfile="src/kernel/arch/x86/setup.c" bodystart="129" bodyend="192"/>
+      </memberdef>
+      <memberdef kind="function" id="setup_8c_1aee8dfb8eb70d17dc1a358c6415519539" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PUBLIC void</type>
+        <definition>PUBLIC void setup</definition>
+        <argsstring>(void)</argsstring>
+        <name>setup</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/arch/x86/setup.c" line="197" column="1" bodyfile="src/kernel/arch/x86/setup.c" bodystart="197" bodyend="205"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright(C)<sp/>2011-2016<sp/>Pedro<sp/>H.<sp/>Penna<sp/>&lt;pedrohenriquepenna@gmail.com&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>Nanvix.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>Nanvix<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>Nanvix<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>Nanvix.<sp/>If<sp/>not,<sp/>see<sp/>&lt;http://www.gnu.org/licenses/&gt;.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;i386/i386.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;i386/int.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;nanvix/config.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="const_8h" kindref="compound">nanvix/const.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="hal_8h" kindref="compound">nanvix/hal.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="klib_8h" kindref="compound">nanvix/klib.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;nanvix/mm.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Descriptor<sp/>tables.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal">PRIVATE<sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">gdte<sp/>gdt[GDT_SIZE];<sp/></highlight><highlight class="comment">/*<sp/>Global<sp/>descriptor<sp/>table.<sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal">PRIVATE<sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">idte<sp/>idt[IDT_SIZE];<sp/></highlight><highlight class="comment">/*<sp/>Interrupt<sp/>descriptor<sp/>table.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Descriptor<sp/>tables<sp/>pointers.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal">PRIVATE<sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">gdtptr<sp/>gdtptr;<sp/></highlight><highlight class="comment">/*<sp/>Global<sp/>descriptor<sp/>table<sp/>pointer.<sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal">PRIVATE<sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">idtptr<sp/>idtptr;<sp/></highlight><highlight class="comment">/*<sp/>Interrupt<sp/>descriptor<sp/>table<sp/>pointer.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Task<sp/>state<sp/>segment.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal">PUBLIC<sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">tss<sp/>tss;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*<sp/>Sets<sp/>a<sp/>GDT<sp/>entry.</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal">PRIVATE<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>set_gdte</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>base,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>limit,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>granularity,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>access)</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Set<sp/>segment<sp/>base<sp/>address.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>gdt[n].base_low<sp/>=<sp/>(base<sp/>&amp;<sp/>0xffffff);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>gdt[n].base_high<sp/>=<sp/>(base<sp/>&gt;&gt;<sp/>24)<sp/>&amp;<sp/>0xff;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Set<sp/>segment<sp/>limit.<sp/>*/</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>gdt[n].limit_low<sp/>=<sp/>(limit<sp/>&amp;<sp/>0xffff);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>gdt[n].limit_high<sp/>=<sp/>(limit<sp/>&gt;&gt;<sp/>16)<sp/>&amp;<sp/>0xf;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Set<sp/>granularity<sp/>and<sp/>access.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>gdt[n].granularity<sp/>=<sp/>granularity;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>gdt[n].access<sp/>=<sp/>access;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/>*<sp/>Sets<sp/>up<sp/>TSS.</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal">PRIVATE<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tss_setup()</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Size-error<sp/>checking.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>CHKSIZE(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>tss),<sp/>TSS_SIZE);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Blank<sp/>TSS.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="klib_8h_1ae6bf8618de6d4d1db0616bff40622859" kindref="member">kmemset</ref>(&amp;tss,<sp/>0,<sp/>TSS_SIZE);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Fill<sp/>up<sp/>TSS.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>tss.ss0<sp/>=<sp/>KERNEL_DS;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>tss.iomap<sp/>=<sp/>(TSS_SIZE<sp/>-<sp/>1)<sp/>&lt;&lt;<sp/>16;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Flush<sp/>TSS.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>tss_flush();</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="klib_8h_1aaa663a13f0d3c7289b139360848772c0" kindref="member">kprintf</ref>(</highlight><highlight class="stringliteral">&quot;kernel:<sp/>tss<sp/>at<sp/>%x&quot;</highlight><highlight class="normal">,<sp/>&amp;tss);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="80"><highlight class="comment"><sp/>*<sp/>Sets<sp/>up<sp/>GDT.</highlight></codeline>
+<codeline lineno="81"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal">PRIVATE<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>gdt_setup(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="83"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Size-error<sp/>checking.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>CHKSIZE(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>gdte),<sp/>GDTE_SIZE);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>CHKSIZE(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>gdtptr),<sp/>GDTPTR_SIZE);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Blank<sp/>GDT<sp/>and<sp/>GDT<sp/>pointer.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="klib_8h_1ae6bf8618de6d4d1db0616bff40622859" kindref="member">kmemset</ref>(gdt,<sp/>0,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(gdt));</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="klib_8h_1ae6bf8618de6d4d1db0616bff40622859" kindref="member">kmemset</ref>(&amp;gdtptr,<sp/>0,<sp/>GDTPTR_SIZE);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Set<sp/>GDT<sp/>entries.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>set_gdte(GDT_NULL,<sp/>0,<sp/>0x00000,<sp/>0x0,<sp/>0x00);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>set_gdte(GDT_CODE_DPL0,<sp/>0,<sp/>0xfffff,<sp/>0xc,<sp/>0x9a);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>set_gdte(GDT_DATA_DPL0,<sp/>0,<sp/>0xfffff,<sp/>0xc,<sp/>0x92);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>set_gdte(GDT_CODE_DPL3,<sp/>0,<sp/>0xfffff,<sp/>0xc,<sp/>0xfa);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>set_gdte(GDT_DATA_DPL3,<sp/>0,<sp/>0xfffff,<sp/>0xc,<sp/>0xf2);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>set_gdte(GDT_TSS,<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">)<sp/>&amp;tss,<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">)&amp;tss<sp/>+<sp/>TSS_SIZE,<sp/>0x0,<sp/>0xe9);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Set<sp/>GDT<sp/>pointer.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>gdtptr.size<sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(gdt)<sp/>-<sp/>1;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>gdtptr.ptr<sp/>=<sp/>(unsigned)<sp/>gdt;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Flush<sp/>GDT.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>gdt_flush(&amp;gdtptr);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="109"><highlight class="comment"><sp/>*<sp/>Sets<sp/>a<sp/>IDT<sp/>entry.</highlight></codeline>
+<codeline lineno="110"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal">PRIVATE<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>set_idte</highlight></codeline>
+<codeline lineno="112"><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>handler,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>selector,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>flags,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>type)</highlight></codeline>
+<codeline lineno="113"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Set<sp/>handler.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>idt[n].handler_low<sp/>=<sp/>(handler<sp/>&amp;<sp/>0xffff);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>idt[n].handler_high<sp/>=<sp/>(handler<sp/>&gt;&gt;<sp/>16)<sp/>&amp;<sp/>0xffff;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Set<sp/>GDT<sp/>selector.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>idt[n].selector<sp/>=<sp/>selector;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Set<sp/>type<sp/>and<sp/>flags.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>idt[n].type<sp/>=<sp/>type;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>idt[n].flags<sp/>=<sp/>flags;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="127"><highlight class="comment"><sp/>*<sp/>Sets<sp/>up<sp/>IDT.</highlight></codeline>
+<codeline lineno="128"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal">PRIVATE<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>idt_setup(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="130"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Size-error<sp/>checking.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>CHKSIZE(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>idte),<sp/>IDTE_SIZE);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>CHKSIZE(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>idtptr),<sp/>IDTPTR_SIZE);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Blank<sp/>IDT<sp/>and<sp/>IDT<sp/>pointer.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="klib_8h_1ae6bf8618de6d4d1db0616bff40622859" kindref="member">kmemset</ref>(idt,<sp/>0,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(idt));</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="klib_8h_1ae6bf8618de6d4d1db0616bff40622859" kindref="member">kmemset</ref>(&amp;idtptr,<sp/>0,<sp/>IDTPTR_SIZE);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Re-initialize<sp/>PIC.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>pic_setup(0x20,<sp/>0x28);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Set<sp/>software<sp/>interrupts.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>set_idte(0,<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">)swint0,<sp/>KERNEL_CS,<sp/>0x8,<sp/>IDT_INT32);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>set_idte(1,<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">)swint1,<sp/>KERNEL_CS,<sp/>0x8,<sp/>IDT_INT32);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>set_idte(2,<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">)swint2,<sp/>KERNEL_CS,<sp/>0x8,<sp/>IDT_INT32);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>set_idte(3,<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">)swint3,<sp/>KERNEL_CS,<sp/>0x8,<sp/>IDT_INT32);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>set_idte(4,<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">)swint4,<sp/>KERNEL_CS,<sp/>0x8,<sp/>IDT_INT32);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>set_idte(5,<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">)swint5,<sp/>KERNEL_CS,<sp/>0x8,<sp/>IDT_INT32);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>set_idte(6,<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">)swint6,<sp/>KERNEL_CS,<sp/>0x8,<sp/>IDT_INT32);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>set_idte(7,<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">)swint7,<sp/>KERNEL_CS,<sp/>0x8,<sp/>IDT_INT32);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>set_idte(8,<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">)swint8,<sp/>KERNEL_CS,<sp/>0x8,<sp/>IDT_INT32);</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>set_idte(9,<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">)swint9,<sp/>KERNEL_CS,<sp/>0x8,<sp/>IDT_INT32);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>set_idte(10,<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">)swint10,<sp/>KERNEL_CS,<sp/>0x8,<sp/>IDT_INT32);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>set_idte(11,<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">)swint11,<sp/>KERNEL_CS,<sp/>0x8,<sp/>IDT_INT32);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>set_idte(12,<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">)swint12,<sp/>KERNEL_CS,<sp/>0x8,<sp/>IDT_INT32);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>set_idte(13,<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">)swint13,<sp/>KERNEL_CS,<sp/>0x8,<sp/>IDT_INT32);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>set_idte(14,<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">)swint14,<sp/>KERNEL_CS,<sp/>0x8,<sp/>IDT_INT32);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>set_idte(15,<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">)swint15,<sp/>KERNEL_CS,<sp/>0x8,<sp/>IDT_INT32);</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>set_idte(16,<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">)swint16,<sp/>KERNEL_CS,<sp/>0x8,<sp/>IDT_INT32);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i<sp/>=<sp/>17;<sp/>i<sp/>&lt;<sp/>32;<sp/>i++)</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>set_idte(i,<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">)swint17,<sp/>KERNEL_CS,<sp/>0x8,<sp/>IDT_INT32);</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Set<sp/>hardware<sp/>interrupts.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>set_idte(32,<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">)hwint0,<sp/>KERNEL_CS,<sp/>0x8,<sp/>IDT_INT32);</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>set_idte(33,<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">)hwint1,<sp/>KERNEL_CS,<sp/>0x8,<sp/>IDT_INT32);</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>set_idte(34,<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">)hwint2,<sp/>KERNEL_CS,<sp/>0x8,<sp/>IDT_INT32);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/>set_idte(35,<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">)hwint3,<sp/>KERNEL_CS,<sp/>0x8,<sp/>IDT_INT32);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>set_idte(36,<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">)hwint4,<sp/>KERNEL_CS,<sp/>0x8,<sp/>IDT_INT32);</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>set_idte(37,<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">)hwint5,<sp/>KERNEL_CS,<sp/>0x8,<sp/>IDT_INT32);</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>set_idte(38,<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">)hwint6,<sp/>KERNEL_CS,<sp/>0x8,<sp/>IDT_INT32);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>set_idte(39,<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">)hwint7,<sp/>KERNEL_CS,<sp/>0x8,<sp/>IDT_INT32);</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>set_idte(40,<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">)hwint8,<sp/>KERNEL_CS,<sp/>0x8,<sp/>IDT_INT32);</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>set_idte(41,<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">)hwint9,<sp/>KERNEL_CS,<sp/>0x8,<sp/>IDT_INT32);</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/>set_idte(42,<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">)hwint10,<sp/>KERNEL_CS,<sp/>0x8,<sp/>IDT_INT32);</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/>set_idte(43,<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">)hwint11,<sp/>KERNEL_CS,<sp/>0x8,<sp/>IDT_INT32);</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>set_idte(44,<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">)hwint12,<sp/>KERNEL_CS,<sp/>0x8,<sp/>IDT_INT32);</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/>set_idte(45,<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">)hwint13,<sp/>KERNEL_CS,<sp/>0x8,<sp/>IDT_INT32);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/>set_idte(46,<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">)hwint14,<sp/>KERNEL_CS,<sp/>0x8,<sp/>IDT_INT32);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>set_idte(47,<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">)hwint15,<sp/>KERNEL_CS,<sp/>0x8,<sp/>IDT_INT32);</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Set<sp/>system<sp/>call<sp/>interrupt.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>set_idte(128,<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">)syscall,<sp/>KERNEL_CS,<sp/>0xe,<sp/>IDT_INT32);</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Set<sp/>IDT<sp/>pointer.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/>idtptr.size<sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(idt)<sp/>-<sp/>1;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/>idtptr.ptr<sp/>=<sp/>(unsigned)&amp;idt;</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Flush<sp/>IDT.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/>idt_flush(&amp;idtptr);</highlight></codeline>
+<codeline lineno="192"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="195"><highlight class="comment"><sp/>*<sp/>Sets<sp/>up<sp/>machine.</highlight></codeline>
+<codeline lineno="196"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal">PUBLIC<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setup(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="198"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Setup<sp/>descriptor<sp/>tables.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/>gdt_setup();</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="klib_8h_1aaa663a13f0d3c7289b139360848772c0" kindref="member">kprintf</ref>(</highlight><highlight class="stringliteral">&quot;boot:<sp/>loading<sp/>global<sp/>descriptor<sp/>table&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/>tss_setup();</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="klib_8h_1aaa663a13f0d3c7289b139360848772c0" kindref="member">kprintf</ref>(</highlight><highlight class="stringliteral">&quot;boot:<sp/>loading<sp/>interrupt<sp/>descriptor<sp/>table&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/>idt_setup();</highlight></codeline>
+<codeline lineno="205"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/kernel/arch/x86/setup.c"/>
+  </compounddef>
+</doxygen>

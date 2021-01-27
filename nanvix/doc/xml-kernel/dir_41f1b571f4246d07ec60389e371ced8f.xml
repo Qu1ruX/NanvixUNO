@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_41f1b571f4246d07ec60389e371ced8f" kind="dir">
+    <compoundname>src/ubin/tsh</compoundname>
+    <innerfile refid="builtin_8c">builtin.c</innerfile>
+    <innerfile refid="builtin_8h">builtin.h</innerfile>
+    <innerfile refid="history_8c">history.c</innerfile>
+    <innerfile refid="history_8h">history.h</innerfile>
+    <innerfile refid="ubin_2tsh_2main_8c">main.c</innerfile>
+    <innerfile refid="tsh_8h">tsh.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/ubin/tsh/"/>
+  </compounddef>
+</doxygen>

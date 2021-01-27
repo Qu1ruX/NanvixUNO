@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structdiv__t" kind="struct" language="C++" prot="public">
+    <compoundname>div_t</compoundname>
+    <includes local="no">stdlib.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structdiv__t_1a2065955c249938f83ebf6bc6c07b4200" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int quot</definition>
+        <argsstring></argsstring>
+        <name>quot</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Quotient. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="106" column="1" bodyfile="include/stdlib.h" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdiv__t_1a1ba4c6426d29538ceed6a0db9b4e1df6" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int rem</definition>
+        <argsstring></argsstring>
+        <name>rem</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Remainder. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/stdlib.h" line="107" column="1" bodyfile="include/stdlib.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Structure type returned by the <ref refid="group__stdlib_1gad17e77a41f50034681a0c419c664e721" kindref="member">div()</ref> function. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/stdlib.h" line="105" column="1" bodyfile="include/stdlib.h" bodystart="104" bodyend="108"/>
+    <listofallmembers>
+      <member refid="structdiv__t_1a2065955c249938f83ebf6bc6c07b4200" prot="public" virt="non-virtual"><scope>div_t</scope><name>quot</name></member>
+      <member refid="structdiv__t_1a1ba4c6426d29538ceed6a0db9b4e1df6" prot="public" virt="non-virtual"><scope>div_t</scope><name>rem</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,374 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="include_2fs_2minix_8h" kind="file" language="C++">
+    <compoundname>minix.h</compoundname>
+    <innerclass refid="structd__superblock" prot="public">d_superblock</innerclass>
+    <innerclass refid="structd__inode" prot="public">d_inode</innerclass>
+    <innerclass refid="structd__dirent" prot="public">d_dirent</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="include_2fs_2minix_8h_1a77ecea3fce28a16f79db79aa58256855" prot="public" static="no">
+        <type>uint16_t</type>
+        <definition>typedef uint16_t block_t</definition>
+        <argsstring></argsstring>
+        <name>block_t</name>
+        <briefdescription>
+<para>User for block number. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/fs/minix.h" line="48" column="1" bodyfile="include/fs/minix.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="include_2fs_2minix_8h_1aee8af3dce980e540626f6c017361d2d6" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t s_ninodes</definition>
+        <argsstring></argsstring>
+        <name>s_ninodes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of inodes. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/fs/minix.h" line="49" column="1" bodyfile="include/fs/minix.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="include_2fs_2minix_8h_1a0c295a1b137af3985471e37e58e7cda3" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t s_nblocks</definition>
+        <argsstring></argsstring>
+        <name>s_nblocks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of blocks. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/fs/minix.h" line="50" column="1" bodyfile="include/fs/minix.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="include_2fs_2minix_8h_1a8c2d1d3051e94e4ae7854640ed5c5cc1" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t s_imap_nblocks</definition>
+        <argsstring></argsstring>
+        <name>s_imap_nblocks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of inode map blocks. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/fs/minix.h" line="51" column="1" bodyfile="include/fs/minix.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="include_2fs_2minix_8h_1a002923c6630117824fe08cb717cfda62" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t s_bmap_nblocks</definition>
+        <argsstring></argsstring>
+        <name>s_bmap_nblocks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of block map blocks. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/fs/minix.h" line="52" column="1" bodyfile="include/fs/minix.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="include_2fs_2minix_8h_1a4cf84c0911631c9f5063a53e33b09877" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t s_first_data_block</definition>
+        <argsstring></argsstring>
+        <name>s_first_data_block</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Unused. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/fs/minix.h" line="53" column="1" bodyfile="include/fs/minix.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="include_2fs_2minix_8h_1a96f31f9e805bcb543f76ad3fad752798" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t unused1</definition>
+        <argsstring></argsstring>
+        <name>unused1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Unused. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/fs/minix.h" line="54" column="1" bodyfile="include/fs/minix.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="include_2fs_2minix_8h_1af87c2fcc88e238c09e6de4807346508e" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t s_max_size</definition>
+        <argsstring></argsstring>
+        <name>s_max_size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Maximum file size. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/fs/minix.h" line="55" column="1" bodyfile="include/fs/minix.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="include_2fs_2minix_8h_1a3e415727e4367b02c2621266a66f0b48" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t s_magic</definition>
+        <argsstring></argsstring>
+        <name>s_magic</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Magic number. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/fs/minix.h" line="56" column="1" bodyfile="include/fs/minix.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="include_2fs_2minix_8h_1a9eee4a25778387fbad93e9124af9e5bd" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t i_mode</definition>
+        <argsstring></argsstring>
+        <name>i_mode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Access permissions. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/fs/minix.h" line="49" column="1" bodyfile="include/fs/minix.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="include_2fs_2minix_8h_1aff08dfb7dbc7206c82ff538e601203a0" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t i_uid</definition>
+        <argsstring></argsstring>
+        <name>i_uid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>User id of the file&apos;s owner </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/fs/minix.h" line="50" column="1" bodyfile="include/fs/minix.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="include_2fs_2minix_8h_1a4a7737b2dcb0a6a6e1c6cd969b2d1f0c" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t i_size</definition>
+        <argsstring></argsstring>
+        <name>i_size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>File size (in bytes). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/fs/minix.h" line="51" column="1" bodyfile="include/fs/minix.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="include_2fs_2minix_8h_1aa407fcf811c1cb6b2c6a336c3ea274c3" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t i_time</definition>
+        <argsstring></argsstring>
+        <name>i_time</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Time when the file was last accessed. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/fs/minix.h" line="52" column="1" bodyfile="include/fs/minix.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="include_2fs_2minix_8h_1a448bd1a4b2e6f2bc53187708c03e2021" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t i_gid</definition>
+        <argsstring></argsstring>
+        <name>i_gid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Group number of owner user. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/fs/minix.h" line="53" column="1" bodyfile="include/fs/minix.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="include_2fs_2minix_8h_1a94a41350f69f5ccedc2ff3e7fa9ecbe8" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t i_nlinks</definition>
+        <argsstring></argsstring>
+        <name>i_nlinks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of links to the file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/fs/minix.h" line="54" column="1" bodyfile="include/fs/minix.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="include_2fs_2minix_8h_1af5170a32e5fa6f65dd00853e15447104" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t i_zones[NR_ZONES]</definition>
+        <argsstring>[NR_ZONES]</argsstring>
+        <name>i_zones</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Zone numbers. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/fs/minix.h" line="55" column="1" bodyfile="include/fs/minix.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="include_2fs_2minix_8h_1a5e2d0fb4cc76afd8f8d42dce0349aebe" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t d_ino</definition>
+        <argsstring></argsstring>
+        <name>d_ino</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>File serial number. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/fs/minix.h" line="49" column="1" bodyfile="include/fs/minix.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="include_2fs_2minix_8h_1ac0626025dcd8407b225ac12c607ea920" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char d_name[MINIX_NAME_MAX]</definition>
+        <argsstring>[MINIX_NAME_MAX]</argsstring>
+        <name>d_name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Name of entry. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/fs/minix.h" line="50" column="1" bodyfile="include/fs/minix.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="include_2fs_2minix_8h_1a4b54051207e8abbc980a451128e95168" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct <ref refid="structd__superblock" kindref="compound">d_superblock</ref></type>
+        <definition>struct d_superblock __attribute__</definition>
+        <argsstring>((packed))</argsstring>
+        <name>__attribute__</name>
+        <param>
+          <type>(packed)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/fs/minix.h" line="48" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Minix file system specification. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright(C)<sp/>2011-2016<sp/>Pedro<sp/>H.<sp/>Penna<sp/>&lt;pedrohenriquepenna@gmail.com&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>Nanvix.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>Nanvix<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>Nanvix<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>Nanvix.<sp/>If<sp/>not,<sp/>see<sp/>&lt;http://www.gnu.org/licenses/&gt;.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="preprocessor">#ifndef<sp/>MINIX_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MINIX_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment">/*============================================================================*</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Block<sp/>Information<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*============================================================================*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="38"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>BLOCK_SIZE_LOG2<sp/>10</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="43"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>BLOCK_SIZE<sp/>(1<sp/>&lt;&lt;<sp/>BLOCK_SIZE_LOG2)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint16_t<sp/><ref refid="include_2fs_2minix_8h_1a77ecea3fce28a16f79db79aa58256855" kindref="member">block_t</ref>;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="53"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>BLOCK_NULL<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="comment">/*============================================================================*</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Superblock<sp/>Information<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/>*============================================================================*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>SUPER_MAGIC<sp/>0x137f</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="67" refid="structd__superblock" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structd__superblock" kindref="compound">d_superblock</ref></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/><ref refid="structd__superblock_1aee8af3dce980e540626f6c017361d2d6" kindref="member">s_ninodes</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/><ref refid="structd__superblock_1a0c295a1b137af3985471e37e58e7cda3" kindref="member">s_nblocks</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/><ref refid="structd__superblock_1a8c2d1d3051e94e4ae7854640ed5c5cc1" kindref="member">s_imap_nblocks</ref>;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/><ref refid="structd__superblock_1a002923c6630117824fe08cb717cfda62" kindref="member">s_bmap_nblocks</ref>;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/><ref refid="structd__superblock_1a4cf84c0911631c9f5063a53e33b09877" kindref="member">s_first_data_block</ref>;<sp/></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/><ref refid="structd__superblock_1a96f31f9e805bcb543f76ad3fad752798" kindref="member">unused1</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="structd__superblock_1af87c2fcc88e238c09e6de4807346508e" kindref="member">s_max_size</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/><ref refid="structd__superblock_1a3e415727e4367b02c2621266a66f0b48" kindref="member">s_magic</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/>__attribute__((packed));</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="comment">/*============================================================================*</highlight></codeline>
+<codeline lineno="80"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Inode<sp/>Information<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="81"><highlight class="comment"><sp/>*============================================================================*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>INODE_NULL<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="91"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>INODE_ROOT<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>NR_ZONES_DIRECT<sp/>7<sp/></highlight></codeline>
+<codeline lineno="100"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>NR_ZONES_SINGLE<sp/>1<sp/></highlight></codeline>
+<codeline lineno="101"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>NR_ZONES_DOUBLE<sp/>1<sp/></highlight></codeline>
+<codeline lineno="102"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>NR_ZONES<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>9<sp/></highlight></codeline>
+<codeline lineno="111"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>ZONE_DIRECT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/></highlight></codeline>
+<codeline lineno="112"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>ZONE_SINGLE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(NR_ZONES_DIRECT)<sp/></highlight></codeline>
+<codeline lineno="113"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>ZONE_DOUBLE<sp/>(ZONE_SINGLE<sp/>+<sp/>NR_ZONES_SINGLE)<sp/></highlight></codeline>
+<codeline lineno="124"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>NR_DIRECT<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>NR_SINGLE<sp/>(BLOCK_SIZE/sizeof(block_t))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="130"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>NR_DOUBLE<sp/>((BLOCK_SIZE/sizeof(block_t))*NR_SINGLE)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="137" refid="structd__inode" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structd__inode" kindref="compound">d_inode</ref><sp/></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/><ref refid="include_2fs_2minix_8h_1a9eee4a25778387fbad93e9124af9e5bd" kindref="member">i_mode</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/><ref refid="include_2fs_2minix_8h_1aff08dfb7dbc7206c82ff538e601203a0" kindref="member">i_uid</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="include_2fs_2minix_8h_1a4a7737b2dcb0a6a6e1c6cd969b2d1f0c" kindref="member">i_size</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="include_2fs_2minix_8h_1aa407fcf811c1cb6b2c6a336c3ea274c3" kindref="member">i_time</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="include_2fs_2minix_8h_1a448bd1a4b2e6f2bc53187708c03e2021" kindref="member">i_gid</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="include_2fs_2minix_8h_1a94a41350f69f5ccedc2ff3e7fa9ecbe8" kindref="member">i_nlinks</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/><ref refid="include_2fs_2minix_8h_1af5170a32e5fa6f65dd00853e15447104" kindref="member">i_zones</ref>[NR_ZONES];<sp/></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/>__attribute__((packed));</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight><highlight class="comment">/*============================================================================*</highlight></codeline>
+<codeline lineno="149"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Directory<sp/>Entry<sp/>Information<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="150"><highlight class="comment"><sp/>*============================================================================*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>MINIX_NAME_MAX<sp/>14</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="158"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Directory<sp/>entry.</highlight></codeline>
+<codeline lineno="159"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">d_dirent</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/><ref refid="include_2fs_2minix_8h_1a5e2d0fb4cc76afd8f8d42dce0349aebe" kindref="member">d_ino</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="include_2fs_2minix_8h_1ac0626025dcd8407b225ac12c607ea920" kindref="member">d_name</ref>[MINIX_NAME_MAX];<sp/></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/>__attribute__((packed));</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>MINIX_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="include/fs/minix.h"/>
+  </compounddef>
+</doxygen>

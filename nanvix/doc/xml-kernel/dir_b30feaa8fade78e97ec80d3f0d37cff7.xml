@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_b30feaa8fade78e97ec80d3f0d37cff7" kind="dir">
+    <compoundname>src/ubin/chgrp</compoundname>
+    <innerfile refid="chgrp_8c">chgrp.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/ubin/chgrp/"/>
+  </compounddef>
+</doxygen>

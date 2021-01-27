@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structata__info" kind="struct" language="C++" prot="public">
+    <compoundname>ata_info</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structata__info_1a8b08a4d2ec878257d64c55f64a62242c" prot="public" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned flags</definition>
+        <argsstring></argsstring>
+        <name>flags</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/dev/ata/ata.c" line="164" column="1" bodyfile="src/kernel/dev/ata/ata.c" bodystart="164" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structata__info_1a965a3ec4218de92562d8d9ff49f81fd3" prot="public" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned nsectors</definition>
+        <argsstring></argsstring>
+        <name>nsectors</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/dev/ata/ata.c" line="165" column="1" bodyfile="src/kernel/dev/ata/ata.c" bodystart="165" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structata__info_1afa65f328561a1fb0d243d9be5d7f37dd" prot="public" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/dev/ata/ata.c" line="166" column="1" bodyfile="src/kernel/dev/ata/ata.c" bodystart="166" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structata__info_1ad84985f9d004a769534ae46b79abb764" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t rawinfo[ATA_INFO_WORDS]</definition>
+        <argsstring>[ATA_INFO_WORDS]</argsstring>
+        <name>rawinfo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/dev/ata/ata.c" line="167" column="1" bodyfile="src/kernel/dev/ata/ata.c" bodystart="167" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/kernel/dev/ata/ata.c" line="163" column="1" bodyfile="src/kernel/dev/ata/ata.c" bodystart="162" bodyend="168"/>
+    <listofallmembers>
+      <member refid="structata__info_1a8b08a4d2ec878257d64c55f64a62242c" prot="public" virt="non-virtual"><scope>ata_info</scope><name>flags</name></member>
+      <member refid="structata__info_1a965a3ec4218de92562d8d9ff49f81fd3" prot="public" virt="non-virtual"><scope>ata_info</scope><name>nsectors</name></member>
+      <member refid="structata__info_1ad84985f9d004a769534ae46b79abb764" prot="public" virt="non-virtual"><scope>ata_info</scope><name>rawinfo</name></member>
+      <member refid="structata__info_1afa65f328561a1fb0d243d9be5d7f37dd" prot="public" virt="non-virtual"><scope>ata_info</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_9373891ab8a05efa05f7a690b7c73bc8" kind="dir">
+    <compoundname>src/lib/libc/ctype</compoundname>
+    <innerfile refid="ctype_8c">ctype.c</innerfile>
+    <innerfile refid="ctype___8c">ctype_.c</innerfile>
+    <innerfile refid="ctype__cp_8h">ctype_cp.h</innerfile>
+    <innerfile refid="ctype__iso_8h">ctype_iso.h</innerfile>
+    <innerfile refid="isalnum_8c">isalnum.c</innerfile>
+    <innerfile refid="isalpha_8c">isalpha.c</innerfile>
+    <innerfile refid="isblank_8c">isblank.c</innerfile>
+    <innerfile refid="iscntrl_8c">iscntrl.c</innerfile>
+    <innerfile refid="isdigit_8c">isdigit.c</innerfile>
+    <innerfile refid="isgraph_8c">isgraph.c</innerfile>
+    <innerfile refid="islower_8c">islower.c</innerfile>
+    <innerfile refid="isprint_8c">isprint.c</innerfile>
+    <innerfile refid="ispunct_8c">ispunct.c</innerfile>
+    <innerfile refid="isspace_8c">isspace.c</innerfile>
+    <innerfile refid="isupper_8c">isupper.c</innerfile>
+    <innerfile refid="isxdigit_8c">isxdigit.c</innerfile>
+    <innerfile refid="maplower_8c">maplower.c</innerfile>
+    <innerfile refid="mapupper_8c">mapupper.c</innerfile>
+    <innerfile refid="tolower_8c">tolower.c</innerfile>
+    <innerfile refid="toupper_8c">toupper.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/lib/libc/ctype/"/>
+  </compounddef>
+</doxygen>

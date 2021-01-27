@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_76e3dd4d2fa719e8d3b096e9aa563982" kind="dir">
+    <compoundname>src/kernel/arch</compoundname>
+    <innerdir refid="dir_b39494742a4b289002c932da1c6725ae">src/kernel/arch/x86</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/kernel/arch/"/>
+  </compounddef>
+</doxygen>

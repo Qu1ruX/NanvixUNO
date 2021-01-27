@@ -1,0 +1,338 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="group__Superblock" kind="group">
+    <compoundname>Superblock</compoundname>
+    <title>Superblock Module</title>
+    <innerclass refid="structsuperblock" prot="public">superblock</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__Superblock_1ga7bb5bede8fcda9ee9438bbc55cafc47b" prot="public" static="no">
+        <name>superblock_flags</name>
+        <enumvalue id="group__Superblock_1gga7bb5bede8fcda9ee9438bbc55cafc47ba4ae9160bb98725e2aee4238ffe530345" prot="public">
+          <name>SUPERBLOCK_RDONLY</name>
+          <initializer>= (1 &lt;&lt; 0)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Read only? </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__Superblock_1gga7bb5bede8fcda9ee9438bbc55cafc47bafbb91ce9ba0ed958e3a1f915e0e5f69c" prot="public">
+          <name>SUPERBLOCK_LOCKED</name>
+          <initializer>= (1 &lt;&lt; 1)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Locked? </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__Superblock_1gga7bb5bede8fcda9ee9438bbc55cafc47bac3e4f8bf48565fc230656ff10457a5fa" prot="public">
+          <name>SUPERBLOCK_DIRTY</name>
+          <initializer>= (1 &lt;&lt; 2)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Dirty? </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__Superblock_1gga7bb5bede8fcda9ee9438bbc55cafc47ba4448f5ef0de85517b294d75f2895c177" prot="public">
+          <name>SUPERBLOCK_VALID</name>
+          <initializer>= (1 &lt;&lt; 3)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Valid superblock? </para>          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Superblock flags. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/fs.h" line="123" column="1" bodyfile="src/kernel/fs/fs.h" bodystart="122" bodyend="128"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__Superblock_1ga68925a0aaf35be42a7202bafa481438a" prot="public" static="no">
+        <type>struct <ref refid="structsuperblock" kindref="compound">superblock</ref> *</type>
+        <definition>typedef struct superblock* superblock_t</definition>
+        <argsstring></argsstring>
+        <name>superblock_t</name>
+        <briefdescription>
+<para>Opaque pointer to a in-core superblock. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/nanvix/fs.h" line="155" column="1" bodyfile="include/nanvix/fs.h" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__Superblock_1ga281a6f5b736c060816b85ae3c3b1fa19" prot="public" static="no" mutable="no">
+        <type>PRIVATE struct <ref refid="structsuperblock" kindref="compound">superblock</ref></type>
+        <definition>PRIVATE struct superblock superblocks[NR_SUPERBLOCKS]</definition>
+        <argsstring>[NR_SUPERBLOCKS]</argsstring>
+        <name>superblocks</name>
+        <briefdescription>
+<para>Superblock table. </para>        </briefdescription>
+        <detaileddescription>
+<para>The superblock table holds all information about mounted file systems. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/super.c" line="43" column="1" bodyfile="src/kernel/fs/super.c" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__Superblock_1ga2dd71b0c3b5e554ef7741e78c43d9a7c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PRIVATE struct <ref refid="structsuperblock" kindref="compound">superblock</ref> *</type>
+        <definition>PRIVATE struct superblock* superblock_empty</definition>
+        <argsstring>(void)</argsstring>
+        <name>superblock_empty</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Gets a non-valid superblock from the superblock table. </para>        </briefdescription>
+        <detaileddescription>
+<para>Searches for a non-valid superblock entry in the superblock table.</para><para><simplesect kind="return"><para>If such superblock has been found, a pointer to it is returned. In this case, the superblock is ensured to be locked. However, if no such block has been found, a NULL pointer is returned instead. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/super.c" line="54" column="1" bodyfile="src/kernel/fs/super.c" bodystart="54" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Superblock_1gadb4f935903bd5f08132801b1a908b043" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PRIVATE void</type>
+        <definition>PRIVATE void superblock_write</definition>
+        <argsstring>(struct superblock *sb)</argsstring>
+        <name>superblock_write</name>
+        <param>
+          <type>struct <ref refid="structsuperblock" kindref="compound">superblock</ref> *</type>
+          <declname>sb</declname>
+        </param>
+        <briefdescription>
+<para>Writes superblock to underlying device. </para>        </briefdescription>
+        <detaileddescription>
+<para>If the superblock is dirty, writes it to the underlying device. The inode and block maps are also written back.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Superblock to be written back to disk.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>The superblock must be valid. </para></simplesect>
+<simplesect kind="note"><para>The superblock must be locked. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/super.c" line="98" column="1" bodyfile="src/kernel/fs/super.c" bodystart="98" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Superblock_1ga92964453ed18c8ceeaaf5d3f2d560bca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PUBLIC struct <ref refid="structsuperblock" kindref="compound">superblock</ref> *</type>
+        <definition>PUBLIC struct superblock* superblock_get</definition>
+        <argsstring>(dev_t dev)</argsstring>
+        <name>superblock_get</name>
+        <param>
+          <type>dev_t</type>
+          <declname>dev</declname>
+        </param>
+        <briefdescription>
+<para>Gets a superblock that matches a device number. </para>        </briefdescription>
+        <detaileddescription>
+<para>Searches for a valid superblock in the superblock table which the device number equals the informed one.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Device number.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>If the requested superblock exists in the superblock table, a pointer to it is returned. In this case, the superblock is ensured to be locked. However, if no such superblock exists, a NULL pointer is returned instead.</para></simplesect>
+<simplesect kind="note"><para>The device number should be valid. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/super.c" line="140" column="1" bodyfile="src/kernel/fs/super.c" bodystart="140" bodyend="173"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Superblock_1ga4ef02b583308d00506b5000837010523" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PUBLIC void</type>
+        <definition>PUBLIC void superblock_lock</definition>
+        <argsstring>(struct superblock *sb)</argsstring>
+        <name>superblock_lock</name>
+        <param>
+          <type>struct <ref refid="structsuperblock" kindref="compound">superblock</ref> *</type>
+          <declname>sb</declname>
+        </param>
+        <briefdescription>
+<para>Locks a superblock. </para>        </briefdescription>
+        <detaileddescription>
+<para>Locks a superblock by marking it as locked. The calling process may block here some time, waiting its turn to acquire the lock.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Superblock to be locked.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>The superblock must valid. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/super.c" line="185" column="1" bodyfile="src/kernel/fs/super.c" bodystart="185" bodyend="192"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Superblock_1gaa1e437c51f1035512ba17835840934e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PUBLIC void</type>
+        <definition>PUBLIC void superblock_unlock</definition>
+        <argsstring>(struct superblock *sb)</argsstring>
+        <name>superblock_unlock</name>
+        <param>
+          <type>struct <ref refid="structsuperblock" kindref="compound">superblock</ref> *</type>
+          <declname>sb</declname>
+        </param>
+        <briefdescription>
+<para>Unlocks a superblock. </para>        </briefdescription>
+        <detaileddescription>
+<para>Unlocks a superblock by marking it as not locked and waking up all processes that were waiting for it.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Superblock to be unlocked.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>The superblock must be valid. </para></simplesect>
+<simplesect kind="note"><para>The superblock must be locked. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/super.c" line="205" column="1" bodyfile="src/kernel/fs/super.c" bodystart="205" bodyend="209"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Superblock_1ga60c77faf6a4d5c316eed12ba021bf837" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PUBLIC void</type>
+        <definition>PUBLIC void superblock_put</definition>
+        <argsstring>(struct superblock *sb)</argsstring>
+        <name>superblock_put</name>
+        <param>
+          <type>struct <ref refid="structsuperblock" kindref="compound">superblock</ref> *</type>
+          <declname>sb</declname>
+        </param>
+        <briefdescription>
+<para>Releases a superblock. </para>        </briefdescription>
+        <detaileddescription>
+<para>Releases a superblock. If its reference count drops to zero, all underlying buffers are freed and then the superblock is marked as invalid.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Superblock to be released.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>The superblock must be valid. </para></simplesect>
+<simplesect kind="note"><para>The superblock must be locked. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/super.c" line="223" column="1" bodyfile="src/kernel/fs/super.c" bodystart="223" bodyend="249"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Superblock_1gaf3241b4775bb4293a26a72010487c3e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PUBLIC struct <ref refid="structsuperblock" kindref="compound">superblock</ref> *</type>
+        <definition>PUBLIC struct superblock* superblock_read</definition>
+        <argsstring>(dev_t dev)</argsstring>
+        <name>superblock_read</name>
+        <param>
+          <type>dev_t</type>
+          <declname>dev</declname>
+        </param>
+        <briefdescription>
+<para>Reads a superblock from a device. </para>        </briefdescription>
+        <detaileddescription>
+<para>Reads a superblock from the first block of a device. Once the read has completed, the magic number of the block is asserted and in-core fields are filled.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Device number.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Upon successful completion, a pointer to the in-core superblock is returned. The superblock is ensured to be locked in this case. Upon failure, a NULL pointer is returned instead.</para></simplesect>
+<simplesect kind="note"><para>The device number should be valid.</para></simplesect>
+<xrefsect id="todo_1_todo000004"><xreftitle>Todo</xreftitle><xrefdescription><para>Check for read error on <ref refid="group__Buffer_1ga29b2bc5da947fe8b2363ad2879447d93" kindref="member">bread()</ref>. </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/super.c" line="268" column="1" bodyfile="src/kernel/fs/super.c" bodystart="268" bodyend="328"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Superblock_1ga11746988cc13e340fe34981d65fe6078" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PUBLIC void</type>
+        <definition>PUBLIC void superblock_sync</definition>
+        <argsstring>(void)</argsstring>
+        <name>superblock_sync</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Synchronizes the superblock table. </para>        </briefdescription>
+        <detaileddescription>
+<para>Synchronizes the superblock table by flushing all valid super blocks onto underlying devices. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/super.c" line="336" column="1" bodyfile="src/kernel/fs/super.c" bodystart="336" bodyend="351"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Superblock_1gaad74db1f397342f785ea20b10c745b2e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PUBLIC void</type>
+        <definition>PUBLIC void superblock_stat</definition>
+        <argsstring>(struct superblock *sb, struct ustat *ubuf)</argsstring>
+        <name>superblock_stat</name>
+        <param>
+          <type>struct <ref refid="structsuperblock" kindref="compound">superblock</ref> *</type>
+          <declname>sb</declname>
+        </param>
+        <param>
+          <type>struct ustat *</type>
+          <declname>ubuf</declname>
+        </param>
+        <briefdescription>
+<para>Gets file system statistics. </para>        </briefdescription>
+        <detaileddescription>
+<para>Gets file system statics from the superblock of the file system pointed to by sb, and stores information in the buffer pointed to by ubuf.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Superblock of the file system to be inspected. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ubuf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Place where statics should be stored.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>The superblock must be valid. </para></simplesect>
+<simplesect kind="note"><para>The superblock must be locked. </para></simplesect>
+<simplesect kind="note"><para>The buffer must be valid. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/super.c" line="367" column="1" bodyfile="src/kernel/fs/super.c" bodystart="367" bodyend="396"/>
+      </memberdef>
+      <memberdef kind="function" id="group__Superblock_1ga226f283e88ec0b9f2d85a60ae83a4fb9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PUBLIC void</type>
+        <definition>PUBLIC void superblock_init</definition>
+        <argsstring>(void)</argsstring>
+        <name>superblock_init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Initializes the superblock table. </para>        </briefdescription>
+        <detaileddescription>
+<para>Initializes the superblock table by setting all superblocks in it the table to be invalid and unlocked.</para><para><simplesect kind="note"><para>This function shall be called just once. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/kernel/fs/super.c" line="406" column="1" bodyfile="src/kernel/fs/super.c" bodystart="406" bodyend="417"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

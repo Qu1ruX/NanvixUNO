@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['s_5fbmap_5fnblocks',['s_bmap_nblocks',['../structd__superblock.html#a002923c6630117824fe08cb717cfda62',1,'d_superblock::s_bmap_nblocks()'],['../include_2fs_2minix_8h.html#a002923c6630117824fe08cb717cfda62',1,'s_bmap_nblocks():&#160;minix.h']]],
+  ['s_5ffirst_5fdata_5fblock',['s_first_data_block',['../structd__superblock.html#a4cf84c0911631c9f5063a53e33b09877',1,'d_superblock::s_first_data_block()'],['../include_2fs_2minix_8h.html#a4cf84c0911631c9f5063a53e33b09877',1,'s_first_data_block():&#160;minix.h']]],
+  ['s_5fimap_5fnblocks',['s_imap_nblocks',['../structd__superblock.html#a8c2d1d3051e94e4ae7854640ed5c5cc1',1,'d_superblock::s_imap_nblocks()'],['../include_2fs_2minix_8h.html#a8c2d1d3051e94e4ae7854640ed5c5cc1',1,'s_imap_nblocks():&#160;minix.h']]],
+  ['s_5fmagic',['s_magic',['../structd__superblock.html#a3e415727e4367b02c2621266a66f0b48',1,'d_superblock::s_magic()'],['../include_2fs_2minix_8h.html#a3e415727e4367b02c2621266a66f0b48',1,'s_magic():&#160;minix.h']]],
+  ['s_5fmax_5fsize',['s_max_size',['../structd__superblock.html#af87c2fcc88e238c09e6de4807346508e',1,'d_superblock::s_max_size()'],['../include_2fs_2minix_8h.html#af87c2fcc88e238c09e6de4807346508e',1,'s_max_size():&#160;minix.h']]],
+  ['s_5fnblocks',['s_nblocks',['../structd__superblock.html#a0c295a1b137af3985471e37e58e7cda3',1,'d_superblock::s_nblocks()'],['../include_2fs_2minix_8h.html#a0c295a1b137af3985471e37e58e7cda3',1,'s_nblocks():&#160;minix.h']]],
+  ['s_5fninodes',['s_ninodes',['../structd__superblock.html#aee8af3dce980e540626f6c017361d2d6',1,'d_superblock::s_ninodes()'],['../include_2fs_2minix_8h.html#aee8af3dce980e540626f6c017361d2d6',1,'s_ninodes():&#160;minix.h']]],
+  ['sb',['sb',['../structinode.html#a5817239a4592432fa9915f9db1b1fbcf',1,'inode']]],
+  ['sgid',['sgid',['../structprocess.html#af48e76073a13f22eccaf7da41bbde3e5',1,'process']]],
+  ['size',['size',['../structinode.html#a65d5c96f1fdbf3564bad2718c601486b',1,'inode::size()'],['../structprocess.html#a854352f53b148adc24983a58a1866d66',1,'process::size()'],['../structhistory.html#a439227feff9d7f55384e8780cfc2eb82',1,'history::size()']]],
+  ['st0',['st0',['../structfpu.html#ae0a79c49e6f0d403dfc3faf0acd7de4d',1,'fpu']]],
+  ['st1',['st1',['../structfpu.html#ac0a3f3af82c0f52b2571db393512f7c5',1,'fpu']]],
+  ['st2',['st2',['../structfpu.html#af7c755260e2e98f55d231a835425944f',1,'fpu']]],
+  ['st3',['st3',['../structfpu.html#a384f279abf7287bc1ae9e955962d3e2f',1,'fpu']]],
+  ['st4',['st4',['../structfpu.html#aac577dfe2ded368b27b02d4efec28bb5',1,'fpu']]],
+  ['st5',['st5',['../structfpu.html#aa85c7255dea65387fd722065caa6bb7e',1,'fpu']]],
+  ['st6',['st6',['../structfpu.html#a48b709ec108bcb092fda981bedd3eb05',1,'fpu']]],
+  ['st7',['st7',['../structfpu.html#ae92e46fc8d2ca90f3a268524f3549f25',1,'fpu']]],
+  ['state',['state',['../structprocess.html#a2ae520db1099ff9c7da192764d4e4790',1,'process']]],
+  ['status',['status',['../structprocess.html#a6e27f49150e9a14580fb313cc2777e00',1,'process']]],
+  ['suid',['suid',['../structprocess.html#a4013b1078f89c6a61f5572b3691ce817',1,'process']]],
+  ['superblocks',['superblocks',['../group__Superblock.html#ga281a6f5b736c060816b85ae3c3b1fa19',1,'super.c']]],
+  ['sw',['sw',['../structfpu.html#a40aa640cd32fc53807a4dc72f8826d71',1,'fpu']]]
+];

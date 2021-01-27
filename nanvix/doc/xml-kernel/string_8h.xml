@@ -1,0 +1,1139 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="string_8h" kind="file" language="C++">
+    <compoundname>string.h</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__stringlib_1ga55f618822d3f3615984dcaa02706a314" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* memchr</definition>
+        <argsstring>(const void *, int, size_t)</argsstring>
+        <name>memchr</name>
+        <param>
+          <type>const void *</type>
+          <defname>s</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>c</defname>
+        </param>
+        <param>
+          <type><ref refid="decl_8h_1a028b7cbca0d37bbc9bc219370525227f" kindref="member">size_t</ref></type>
+          <defname>n</defname>
+        </param>
+        <briefdescription>
+<para>Finds a byte in memory. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Where to search from. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Byte to be located. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Maximum number of bytes to consider.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A pointer to the located byte, or a null pointer if the byte does not occur in the object.</para></simplesect>
+<simplesect kind="version"><para>IEEE Std 1003.1, 2013 Edition </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/string.h" line="50" column="1" bodyfile="src/lib/libc/string/memchr.c" bodystart="41" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stringlib_1ga0849c52baadd8269575bc57e2273d862" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int memcmp</definition>
+        <argsstring>(const void *, const void *, size_t)</argsstring>
+        <name>memcmp</name>
+        <param>
+          <type>const void *</type>
+          <defname>s1</defname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <defname>s2</defname>
+        </param>
+        <param>
+          <type><ref refid="decl_8h_1a028b7cbca0d37bbc9bc219370525227f" kindref="member">size_t</ref></type>
+          <defname>n</defname>
+        </param>
+        <briefdescription>
+<para>Compares bytes in memory. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to object 1. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>s2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to object 2. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of bytes to compare.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An integer greater than, equal to or less than 0, if the object pointed to by <computeroutput>s1</computeroutput> is greater than, equal to or less than the object pointed to by <computeroutput>s2</computeroutput> respectively.</para></simplesect>
+<simplesect kind="version"><para>IEEE Std 1003.1, 2013 Edition </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/string.h" line="51" column="1" bodyfile="src/lib/libc/string/memcmp.c" bodystart="41" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stringlib_1gad3d54fdca80cd16d5cfa0db19d4c1c81" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* memcpy</definition>
+        <argsstring>(void *restrict, const void *restrict, size_t)</argsstring>
+        <name>memcpy</name>
+        <param>
+          <type>void *</type>
+          <declname>restrict</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>restrict</declname>
+        </param>
+        <param>
+          <type><ref refid="decl_8h_1a028b7cbca0d37bbc9bc219370525227f" kindref="member">size_t</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/string.h" line="52" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stringlib_1ga04322b22ff8bcfdcdcbfe87690683545" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* memmove</definition>
+        <argsstring>(void *, const void *, size_t)</argsstring>
+        <name>memmove</name>
+        <param>
+          <type>void *</type>
+          <defname>s1</defname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <defname>s2</defname>
+        </param>
+        <param>
+          <type><ref refid="decl_8h_1a028b7cbca0d37bbc9bc219370525227f" kindref="member">size_t</ref></type>
+          <defname>n</defname>
+        </param>
+        <briefdescription>
+<para>Copies bytes in memory with overlapping areas. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to target object. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>s2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to source object. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of bytes to copy.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>s1</computeroutput> is returned.</para></simplesect>
+<simplesect kind="version"><para>IEEE Std 1003.1, 2013 Edition </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/string.h" line="53" column="1" bodyfile="src/lib/libc/string/memmove.c" bodystart="72" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stringlib_1ga68d2b40ef2213b9227a1ce3b81997ae5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* memset</definition>
+        <argsstring>(void *, int, size_t)</argsstring>
+        <name>memset</name>
+        <param>
+          <type>void *</type>
+          <defname>s</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>c</defname>
+        </param>
+        <param>
+          <type><ref refid="decl_8h_1a028b7cbca0d37bbc9bc219370525227f" kindref="member">size_t</ref></type>
+          <defname>n</defname>
+        </param>
+        <briefdescription>
+<para>Sets bytes in memory. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to target object. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Character to copy. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of bytes to set.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>s</computeroutput> is returned.</para></simplesect>
+<simplesect kind="version"><para>IEEE Std 1003.1, 2013 Edition </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/string.h" line="54" column="1" bodyfile="src/lib/libc/string/memset.c" bodystart="39" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stringlib_1ga82217f19be288bfd90b458834a6d37c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* strcat</definition>
+        <argsstring>(char *restrict, const char *restrict)</argsstring>
+        <name>strcat</name>
+        <param>
+          <type>char *</type>
+          <declname>restrict</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>restrict</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/string.h" line="55" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stringlib_1gadf46aa8f2e08cfb505868bbfc88b5fd4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* strchr</definition>
+        <argsstring>(const char *, int)</argsstring>
+        <name>strchr</name>
+        <param>
+          <type>const char *</type>
+          <defname>s</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>c</defname>
+        </param>
+        <briefdescription>
+<para>Finds a byte in string. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String to search. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Character to search.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A pointer to the byte, or a null pointer if the byte was not found.</para></simplesect>
+<simplesect kind="version"><para>IEEE Std 1003.1, 2013 Edition </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/string.h" line="56" column="1" bodyfile="src/lib/libc/string/strchr.c" bodystart="39" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stringlib_1ga21e4788b4a0ae39b11aa32e9a1079f98" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int strcmp</definition>
+        <argsstring>(const char *, const char *)</argsstring>
+        <name>strcmp</name>
+        <param>
+          <type>const char *</type>
+          <defname>s1</defname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <defname>s2</defname>
+        </param>
+        <briefdescription>
+<para>Compares two strings. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to first string. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>s2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to second string.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An integer greater than, equal to or less than 0, if the string pointed to by <computeroutput>s1</computeroutput> is greater than, equal to or less than the string pointed to by <computeroutput>s2</computeroutput> respectively.</para></simplesect>
+<simplesect kind="version"><para>IEEE Std 1003.1, 2013 Edition </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/string.h" line="57" column="1" bodyfile="src/lib/libc/string/strcmp.c" bodystart="38" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stringlib_1ga475622e0ad1d42f098afa1c08af954ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int strcoll</definition>
+        <argsstring>(const char *, const char *)</argsstring>
+        <name>strcoll</name>
+        <param>
+          <type>const char *</type>
+          <defname>s1</defname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <defname>s2</defname>
+        </param>
+        <briefdescription>
+<para>String comparison using collating information. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to first string. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>s2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to second string.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An integer greater than, equal to, or less than 0, according to whether the string pointed to by <computeroutput>s1</computeroutput> is greater than, equal to, or less than the string pointed to by <computeroutput>s2</computeroutput> when both are interpreted as appropriate to the current locale.</para></simplesect>
+<simplesect kind="note"><para>On error errno may be set, but no return value is reserved to indicate an error.</para></simplesect>
+<xrefsect id="todo_1_todo000008"><xreftitle>Todo</xreftitle><xrefdescription><para>Perform comparison using collating information.</para></xrefdescription></xrefsect></para><para><simplesect kind="version"><para>IEEE Std 1003.1, 2013 Edition </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/string.h" line="58" column="1" bodyfile="src/lib/libc/string/strcoll.c" bodystart="46" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stringlib_1gad0b77123106cce2e62a3995b358a5325" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* strcpy</definition>
+        <argsstring>(char *restrict, const char *restrict)</argsstring>
+        <name>strcpy</name>
+        <param>
+          <type>char *</type>
+          <declname>restrict</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>restrict</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/string.h" line="59" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stringlib_1ga4e8462eddc5a160451a246bc1bc22bb4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="decl_8h_1a028b7cbca0d37bbc9bc219370525227f" kindref="member">size_t</ref></type>
+        <definition>size_t strcspn</definition>
+        <argsstring>(const char *, const char *)</argsstring>
+        <name>strcspn</name>
+        <param>
+          <type>const char *</type>
+          <defname>s1</defname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <defname>s2</defname>
+        </param>
+        <briefdescription>
+<para>Gets the length of a complementary substring. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to string to search. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>s2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to string to be checked against.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The length of the computed segment of the string pointed to by <computeroutput>s1</computeroutput>.</para></simplesect>
+<simplesect kind="version"><para>IEEE Std 1003.1, 2013 Edition </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/string.h" line="60" column="1" bodyfile="src/lib/libc/string/strcspn.c" bodystart="72" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stringlib_1gaa464a810f15e69fe6d985c4edb2e626e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* strerror</definition>
+        <argsstring>(int)</argsstring>
+        <name>strerror</name>
+        <param>
+          <type>int</type>
+          <defname>errnum</defname>
+        </param>
+        <briefdescription>
+<para>Gets error message string. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A pointer to the generated message string.</para></simplesect>
+<xrefsect id="todo_1_todo000009"><xreftitle>Todo</xreftitle><xrefdescription><para>Use collating information.</para></xrefdescription></xrefsect></para><para><simplesect kind="version"><para>IEEE Std 1003.1, 2013 Edition </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/string.h" line="61" column="1" bodyfile="src/lib/libc/string/strerror.c" bodystart="70" bodyend="331"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stringlib_1ga219836f542ce53545052bed5353820ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="decl_8h_1a028b7cbca0d37bbc9bc219370525227f" kindref="member">size_t</ref></type>
+        <definition>size_t strlen</definition>
+        <argsstring>(const char *)</argsstring>
+        <name>strlen</name>
+        <param>
+          <type>const char *</type>
+          <defname>str</defname>
+        </param>
+        <briefdescription>
+<para>Gets string length. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Target string.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The length of <computeroutput>str</computeroutput>.</para></simplesect>
+<simplesect kind="version"><para>IEEE Std 1003.1, 2013 Edition </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/string.h" line="62" column="1" bodyfile="src/lib/libc/string/strlen.c" bodystart="37" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stringlib_1ga87084aa31d8fa05f783ca0f6a0d6a1e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* strncat</definition>
+        <argsstring>(char *restrict, const char *restrict, size_t)</argsstring>
+        <name>strncat</name>
+        <param>
+          <type>char *</type>
+          <declname>restrict</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>restrict</declname>
+        </param>
+        <param>
+          <type><ref refid="decl_8h_1a028b7cbca0d37bbc9bc219370525227f" kindref="member">size_t</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/string.h" line="63" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stringlib_1gad54622e4954786cdcc07b28cd5023995" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int strncmp</definition>
+        <argsstring>(const char *restrict, const char *restrict, size_t)</argsstring>
+        <name>strncmp</name>
+        <param>
+          <type>const char *</type>
+          <declname>restrict</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>restrict</declname>
+        </param>
+        <param>
+          <type><ref refid="decl_8h_1a028b7cbca0d37bbc9bc219370525227f" kindref="member">size_t</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/string.h" line="64" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stringlib_1ga912bd75a67a51920ffd77dc571fc1317" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* strncpy</definition>
+        <argsstring>(char *restrict, const char *restrict, size_t)</argsstring>
+        <name>strncpy</name>
+        <param>
+          <type>char *</type>
+          <declname>restrict</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>restrict</declname>
+        </param>
+        <param>
+          <type><ref refid="decl_8h_1a028b7cbca0d37bbc9bc219370525227f" kindref="member">size_t</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/string.h" line="65" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stringlib_1ga20d6321febae7448d32252b300b7300a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* strpbrk</definition>
+        <argsstring>(const char *, const char *)</argsstring>
+        <name>strpbrk</name>
+        <param>
+          <type>const char *</type>
+          <defname>s1</defname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <defname>s2</defname>
+        </param>
+        <briefdescription>
+<para>Scans a string for a byte. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to string to scan. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>s2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to string of bytes to scan for.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A pointer to the byte or a null pointer if no byte from <computeroutput>s2</computeroutput> occurs in <computeroutput>s1</computeroutput>.</para></simplesect>
+<simplesect kind="version"><para>IEEE Std 1003.1, 2013 Edition </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/string.h" line="66" column="1" bodyfile="src/lib/libc/string/strpbrk.c" bodystart="72" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stringlib_1ga5cbb8bbfc7174d9468b1853f1031efb3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* strrchr</definition>
+        <argsstring>(const char *, int)</argsstring>
+        <name>strrchr</name>
+        <param>
+          <type>const char *</type>
+          <defname>s</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>c</defname>
+        </param>
+        <briefdescription>
+<para>String scanning operation. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to string to search. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Character to search for.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A pointer to the byte, or a null pointer if <computeroutput>c</computeroutput> does not occur in the string.</para></simplesect>
+<simplesect kind="version"><para>IEEE Std 1003.1, 2013 Edition </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/string.h" line="67" column="1" bodyfile="src/lib/libc/string/strrchr.c" bodystart="72" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stringlib_1ga417885431ec6bd9c35f34ca1d10ca48b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="decl_8h_1a028b7cbca0d37bbc9bc219370525227f" kindref="member">size_t</ref></type>
+        <definition>size_t strspn</definition>
+        <argsstring>(const char *, const char *)</argsstring>
+        <name>strspn</name>
+        <param>
+          <type>const char *</type>
+          <defname>s1</defname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <defname>s2</defname>
+        </param>
+        <briefdescription>
+<para>Gets the length of a substring. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Pointer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>to string. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Pointer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>to substring.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The length of <computeroutput>s1</computeroutput> is returned. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/string.h" line="68" column="1" bodyfile="src/lib/libc/string/strspn.c" bodystart="70" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stringlib_1ga55c8e1e0e5f3578988a2feb0d417ad1c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* strstr</definition>
+        <argsstring>(const char *, const char *)</argsstring>
+        <name>strstr</name>
+        <param>
+          <type>const char *</type>
+          <defname>s1</defname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <defname>s2</defname>
+        </param>
+        <briefdescription>
+<para>Finds a substring. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to string to search. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>s2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to substring to search for.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A pointer to the located string or a null pointer if the string is not found. If <computeroutput>s2</computeroutput> points to a string with zero length, the function returns <computeroutput>s1</computeroutput>.</para></simplesect>
+<simplesect kind="version"><para>IEEE Std 1003.1, 2013 Edition </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/string.h" line="69" column="1" bodyfile="src/lib/libc/string/strstr.c" bodystart="73" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stringlib_1ga982a35856962b3ac6151cdc0b6e893f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* strtok</definition>
+        <argsstring>(char *, const char *)</argsstring>
+        <name>strtok</name>
+        <param>
+          <type>char *</type>
+          <defname>s1</defname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <defname>s2</defname>
+        </param>
+        <briefdescription>
+<para>Splits string into tokens. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to string to split. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>s2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to token string.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A pointer to the first byte of a token. Otherwise, if there is no token a null pointer is returned.</para></simplesect>
+<simplesect kind="version"><para>IEEE Std 1003.1, 2013 Edition </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/string.h" line="70" column="1" bodyfile="src/lib/libc/string/strtok.c" bodystart="77" bodyend="134"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stringlib_1ga021f7a6512296a494edd682ed2fde535" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="decl_8h_1a028b7cbca0d37bbc9bc219370525227f" kindref="member">size_t</ref></type>
+        <definition>size_t strxfrm</definition>
+        <argsstring>(char *, const char *, size_t)</argsstring>
+        <name>strxfrm</name>
+        <param>
+          <type>char *</type>
+          <defname>s1</defname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <defname>s2</defname>
+        </param>
+        <param>
+          <type><ref refid="decl_8h_1a028b7cbca0d37bbc9bc219370525227f" kindref="member">size_t</ref></type>
+          <defname>n</defname>
+        </param>
+        <briefdescription>
+<para>Transforms a string into another. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to target string. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>s2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to source string. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Maximum bytes to consider.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The length of the transformed string (not including the terminating null byte) is returned. If the value returned is <computeroutput>n</computeroutput> or more, the contents of the array pointed to by <computeroutput>s1</computeroutput> are indeterminate.</para></simplesect>
+<simplesect kind="version"><para>IEEE Std 1003.1, 2013 Edition </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/string.h" line="71" column="1" bodyfile="src/lib/libc/string/strxfrm.c" bodystart="74" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stringlib_1ga6dc5b53f6fa086d5743fae7a2e483fdb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* stpcpy</definition>
+        <argsstring>(char *restrict, const char *restrict)</argsstring>
+        <name>stpcpy</name>
+        <param>
+          <type>char *</type>
+          <declname>restrict</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>restrict</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/string.h" line="76" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stringlib_1gac2608a146dd53080a63f6aa1e51c1259" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* stpncpy</definition>
+        <argsstring>(char *restrict, const char *restrict, size_t)</argsstring>
+        <name>stpncpy</name>
+        <param>
+          <type>char *</type>
+          <declname>restrict</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>restrict</declname>
+        </param>
+        <param>
+          <type><ref refid="decl_8h_1a028b7cbca0d37bbc9bc219370525227f" kindref="member">size_t</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/string.h" line="77" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stringlib_1ga67c6b288e2186083f0e43a22e85229c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int strcoll_l</definition>
+        <argsstring>(const char *, const char *, locale_t)</argsstring>
+        <name>strcoll_l</name>
+        <param>
+          <type>const char *</type>
+        </param>
+        <param>
+          <type>const char *</type>
+        </param>
+        <param>
+          <type><ref refid="decl_8h_1abab62ce5da6a574b3a333b90f729b6b5" kindref="member">locale_t</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/string.h" line="78" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stringlib_1ga5b35572f751b50eef956a2d054ee48c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* strdup</definition>
+        <argsstring>(const char *)</argsstring>
+        <name>strdup</name>
+        <param>
+          <type>const char *</type>
+          <defname>s1</defname>
+        </param>
+        <briefdescription>
+<para>Duplicates a string. </para>        </briefdescription>
+        <detaileddescription>
+<para>Returns a pointer to a new string, which is a duplicate of the string pointed to by <computeroutput>s1</computeroutput>. The returned pointer can be passed to <ref refid="group__stdlib_1gaf07d89f5ceaea0c7c8252cc41fd75f37" kindref="member">free()</ref>. A null pointer is returned if the new string cannot be created.</para><para><simplesect kind="return"><para>A pointer to a new string on success. Otherwise it returns a null pointer and sets <ref refid="group__errnolib_1gad65a8842cc674e3ddf69355898c0ecbf" kindref="member">errno</ref> to indicate the error.</para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>#ENOMEM</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Storage space available is insufficient. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/string.h" line="79" column="1" bodyfile="src/lib/libc/string/strdup.c" bodystart="42" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stringlib_1gaa2e740747a6c78c7d20425b25cf4d0e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* strerror_l</definition>
+        <argsstring>(int, locale_t)</argsstring>
+        <name>strerror_l</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type><ref refid="decl_8h_1abab62ce5da6a574b3a333b90f729b6b5" kindref="member">locale_t</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/string.h" line="80" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stringlib_1ga3f575ba9f1252511bd5c6e73db1e3b99" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int strerror_r</definition>
+        <argsstring>(int, char *, size_t)</argsstring>
+        <name>strerror_r</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>char *</type>
+        </param>
+        <param>
+          <type><ref refid="decl_8h_1a028b7cbca0d37bbc9bc219370525227f" kindref="member">size_t</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/string.h" line="81" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stringlib_1gae4e05662435178faf462fce544f97e68" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* strndup</definition>
+        <argsstring>(const char *, size_t)</argsstring>
+        <name>strndup</name>
+        <param>
+          <type>const char *</type>
+        </param>
+        <param>
+          <type><ref refid="decl_8h_1a028b7cbca0d37bbc9bc219370525227f" kindref="member">size_t</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/string.h" line="82" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stringlib_1gaddfb5fb346ea0c5aac48c4f9dde6525b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="decl_8h_1a028b7cbca0d37bbc9bc219370525227f" kindref="member">size_t</ref></type>
+        <definition>size_t strnlen</definition>
+        <argsstring>(const char *, size_t)</argsstring>
+        <name>strnlen</name>
+        <param>
+          <type>const char *</type>
+          <defname>str</defname>
+        </param>
+        <param>
+          <type><ref refid="decl_8h_1a028b7cbca0d37bbc9bc219370525227f" kindref="member">size_t</ref></type>
+          <defname>maxlen</defname>
+        </param>
+        <briefdescription>
+<para>Gets the length of a fixed-size string. </para>        </briefdescription>
+        <detaileddescription>
+<para>Computes the smaller of the number of bytes in the array to which <computeroutput>str</computeroutput> points, not including the terminating null character, or the value of the <computeroutput>maxlen</computeroutput> argument.</para><para><simplesect kind="return"><para>An integer containing the smaller of either the length of the string pointed to by <computeroutput>str</computeroutput> or <computeroutput>maxlen</computeroutput>. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/string.h" line="83" column="1" bodyfile="src/lib/libc/string/strnlen.c" bodystart="38" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stringlib_1ga289f8a6bc3b846aae7d220b8bec648ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* strsignal</definition>
+        <argsstring>(int)</argsstring>
+        <name>strsignal</name>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/string.h" line="84" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stringlib_1gadcf1458dfbbfcdd25f119098708b1453" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* strtok_r</definition>
+        <argsstring>(char *restrict, const char *restrict, char **restrict)</argsstring>
+        <name>strtok_r</name>
+        <param>
+          <type>char *</type>
+          <declname>restrict</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>restrict</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>restrict</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/string.h" line="85" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stringlib_1ga64d8cd0fd17d2c3994defb72b3c4553f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="decl_8h_1a028b7cbca0d37bbc9bc219370525227f" kindref="member">size_t</ref></type>
+        <definition>size_t strxfrm_l</definition>
+        <argsstring>(char *restrict, const char *restrict, size_t, locale_t)</argsstring>
+        <name>strxfrm_l</name>
+        <param>
+          <type>char *</type>
+          <declname>restrict</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>restrict</declname>
+        </param>
+        <param>
+          <type><ref refid="decl_8h_1a028b7cbca0d37bbc9bc219370525227f" kindref="member">size_t</ref></type>
+        </param>
+        <param>
+          <type><ref refid="decl_8h_1abab62ce5da6a574b3a333b90f729b6b5" kindref="member">locale_t</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/string.h" line="86" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stringlib_1ga0738517511c92a0ee3c675dc0d674da9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* memccpy</definition>
+        <argsstring>(void *restrict, const void *restrict, int, size_t)</argsstring>
+        <name>memccpy</name>
+        <param>
+          <type>void *</type>
+          <declname>restrict</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>restrict</declname>
+        </param>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type><ref refid="decl_8h_1a028b7cbca0d37bbc9bc219370525227f" kindref="member">size_t</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/string.h" line="93" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>String library. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="version"><para>IEEE Std 1003.1, 2013 Edition </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright(C)<sp/>2011-2016<sp/>Pedro<sp/>H.<sp/>Penna<sp/>&lt;pedrohenriquepenna@gmail.com&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>Nanvix.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>Nanvix<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>Nanvix<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>Nanvix.<sp/>If<sp/>not,<sp/>see<sp/>&lt;http://www.gnu.org/licenses/&gt;.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="preprocessor">#ifndef<sp/>STRING_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>STRING_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>_NEED_NULL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>_NEED_SIZE_T</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(_POSIX_C_SOURCE)<sp/>||<sp/>defined(_XOPEN_SOURCE)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>_NEED_LOCALE_T</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&lt;<ref refid="stddef_8h" kindref="compound">stddef.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&lt;<ref refid="decl_8h" kindref="compound">decl.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="group__stringlib_1ga55f618822d3f3615984dcaa02706a314" kindref="member">memchr</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="group__stringlib_1ga0849c52baadd8269575bc57e2273d862" kindref="member">memcmp</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="memcpy_8c_1a605001e7376ee82567bcc0b769c29227" kindref="member">memcpy</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*restrict,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*restrict,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="group__stringlib_1ga04322b22ff8bcfdcdcbfe87690683545" kindref="member">memmove</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="group__stringlib_1ga68d2b40ef2213b9227a1ce3b81997ae5" kindref="member">memset</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="strcat_8c_1a67a5d0ffce1b1916bebfa4a6cf748c7c" kindref="member">strcat</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*restrict,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*restrict);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="group__stringlib_1gadf46aa8f2e08cfb505868bbfc88b5fd4" kindref="member">strchr</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="group__stringlib_1ga21e4788b4a0ae39b11aa32e9a1079f98" kindref="member">strcmp</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="group__stringlib_1ga475622e0ad1d42f098afa1c08af954ad" kindref="member">strcoll</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="strcpy_8c_1a44ca4ba45bfd15bfed6194d33a0adb58" kindref="member">strcpy</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*restrict,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*restrict);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="group__stringlib_1ga4e8462eddc5a160451a246bc1bc22bb4" kindref="member">strcspn</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="group__stringlib_1gaa464a810f15e69fe6d985c4edb2e626e" kindref="member">strerror</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="group__stringlib_1ga219836f542ce53545052bed5353820ca" kindref="member">strlen</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="strncat_8c_1acd468731a9497fc13df99118dc6bec97" kindref="member">strncat</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*restrict,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*restrict,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="strncmp_8c_1a4a9c8e7a8d0a58c69f3bf8d14cc2404b" kindref="member">strncmp</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*restrict,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*restrict,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="strncpy_8c_1a31c95a7c8039b460bbc5416df853a57d" kindref="member">strncpy</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*restrict,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*restrict,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="group__stringlib_1ga20d6321febae7448d32252b300b7300a" kindref="member">strpbrk</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="group__stringlib_1ga5cbb8bbfc7174d9468b1853f1031efb3" kindref="member">strrchr</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="group__stringlib_1ga417885431ec6bd9c35f34ca1d10ca48b" kindref="member">strspn</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="group__stringlib_1ga55c8e1e0e5f3578988a2feb0d417ad1c" kindref="member">strstr</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="group__stringlib_1ga982a35856962b3ac6151cdc0b6e893f6" kindref="member">strtok</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="group__stringlib_1ga021f7a6512296a494edd682ed2fde535" kindref="member">strxfrm</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(_POSIX_C_SOURCE)<sp/>||<sp/>defined(_XOPEN_SOURCE)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="preprocessor">#warning<sp/>&quot;POSIX<sp/>C<sp/>source<sp/>not<sp/>fully<sp/>implemented&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*stpcpy(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*restrict,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*restrict);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*stpncpy(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*restrict,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*restrict,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>strcoll_l(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/><ref refid="decl_8h_1abab62ce5da6a574b3a333b90f729b6b5" kindref="member">locale_t</ref>);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="group__stringlib_1ga5b35572f751b50eef956a2d054ee48c0" kindref="member">strdup</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*strerror_l(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/><ref refid="decl_8h_1abab62ce5da6a574b3a333b90f729b6b5" kindref="member">locale_t</ref>);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>strerror_r(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*strndup(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="group__stringlib_1gaddfb5fb346ea0c5aac48c4f9dde6525b" kindref="member">strnlen</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*strsignal(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*strtok_r(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*restrict,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*restrict,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**restrict);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>strxfrm_l(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*restrict,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*restrict,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">,<sp/><ref refid="decl_8h_1abab62ce5da6a574b3a333b90f729b6b5" kindref="member">locale_t</ref>);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(_XOPEN_SOURCE)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="preprocessor">#warning<sp/>&quot;XOPEN<sp/>source<sp/>not<sp/>fully<sp/>implemented&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="memccpy_8c_1abc1736f4a3455bc1d95fe0df89ff54e7" kindref="member">memccpy</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*restrict<sp/>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*restrict<sp/>,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="99"><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>STRING_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="include/string.h"/>
+  </compounddef>
+</doxygen>

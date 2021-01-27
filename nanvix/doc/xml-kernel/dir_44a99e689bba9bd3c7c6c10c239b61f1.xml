@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_44a99e689bba9bd3c7c6c10c239b61f1" kind="dir">
+    <compoundname>src/kernel/dev/klog</compoundname>
+    <innerfile refid="klog_8c">klog.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/kernel/dev/klog/"/>
+  </compounddef>
+</doxygen>

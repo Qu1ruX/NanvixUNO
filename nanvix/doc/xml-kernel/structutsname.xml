@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structutsname" kind="struct" language="C++" prot="public">
+    <compoundname>utsname</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structutsname_1ac6264cc7985ef8df87acc3ae069e5ac8" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char sysname[_UTSNAME_LENGTH]</definition>
+        <argsstring>[_UTSNAME_LENGTH]</argsstring>
+        <name>sysname</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/sys/utsname.h" line="32" column="1" bodyfile="include/sys/utsname.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structutsname_1a62b396dadbe63b8917cb7c4e0c513f24" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char nodename[_UTSNAME_LENGTH]</definition>
+        <argsstring>[_UTSNAME_LENGTH]</argsstring>
+        <name>nodename</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/sys/utsname.h" line="33" column="1" bodyfile="include/sys/utsname.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structutsname_1a1b43a257e526965e6bc9be9394af218c" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char release[_UTSNAME_LENGTH]</definition>
+        <argsstring>[_UTSNAME_LENGTH]</argsstring>
+        <name>release</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/sys/utsname.h" line="34" column="1" bodyfile="include/sys/utsname.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structutsname_1a5a6f5499ced8fa3d0f700ce269fcd8b5" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char version[_UTSNAME_LENGTH]</definition>
+        <argsstring>[_UTSNAME_LENGTH]</argsstring>
+        <name>version</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/sys/utsname.h" line="35" column="1" bodyfile="include/sys/utsname.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structutsname_1a3640e629cc3088c7410b41e432142115" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char machine[_UTSNAME_LENGTH]</definition>
+        <argsstring>[_UTSNAME_LENGTH]</argsstring>
+        <name>machine</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/sys/utsname.h" line="36" column="1" bodyfile="include/sys/utsname.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/sys/utsname.h" line="31" column="1" bodyfile="include/sys/utsname.h" bodystart="30" bodyend="37"/>
+    <listofallmembers>
+      <member refid="structutsname_1a3640e629cc3088c7410b41e432142115" prot="public" virt="non-virtual"><scope>utsname</scope><name>machine</name></member>
+      <member refid="structutsname_1a62b396dadbe63b8917cb7c4e0c513f24" prot="public" virt="non-virtual"><scope>utsname</scope><name>nodename</name></member>
+      <member refid="structutsname_1a1b43a257e526965e6bc9be9394af218c" prot="public" virt="non-virtual"><scope>utsname</scope><name>release</name></member>
+      <member refid="structutsname_1ac6264cc7985ef8df87acc3ae069e5ac8" prot="public" virt="non-virtual"><scope>utsname</scope><name>sysname</name></member>
+      <member refid="structutsname_1a5a6f5499ced8fa3d0f700ce269fcd8b5" prot="public" virt="non-virtual"><scope>utsname</scope><name>version</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

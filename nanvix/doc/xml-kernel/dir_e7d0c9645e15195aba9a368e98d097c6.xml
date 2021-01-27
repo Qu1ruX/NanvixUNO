@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_e7d0c9645e15195aba9a368e98d097c6" kind="dir">
+    <compoundname>src/lib/libc/fcntl</compoundname>
+    <innerfile refid="lib_2libc_2fcntl_2fcntl_8c">fcntl.c</innerfile>
+    <innerfile refid="lib_2libc_2fcntl_2open_8c">open.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/lib/libc/fcntl/"/>
+  </compounddef>
+</doxygen>

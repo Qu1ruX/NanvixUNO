@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_d44c64559bbebec7f509842c48db8b23" kind="dir">
+    <compoundname>include</compoundname>
+    <innerdir refid="dir_92e8125e54c8e2960f09873d3abc3910">include/dev</innerdir>
+    <innerdir refid="dir_203f267fac8cf3dfe9f5770a10d988c8">include/fs</innerdir>
+    <innerdir refid="dir_a8270f97531bca4e83339aa4584f6be3">include/i386</innerdir>
+    <innerdir refid="dir_292a01f66d6706767cb3832e9b58a161">include/nanvix</innerdir>
+    <innerdir refid="dir_317ea3797c15f4a1d9c156bc812661ca">include/sys</innerdir>
+    <innerfile refid="assert_8h">assert.h</innerfile>
+    <innerfile refid="ctype_8h">ctype.h</innerfile>
+    <innerfile refid="decl_8h">decl.h</innerfile>
+    <innerfile refid="include_2dirent_8h">dirent.h</innerfile>
+    <innerfile refid="elf_8h">elf.h</innerfile>
+    <innerfile refid="errno_8h">errno.h</innerfile>
+    <innerfile refid="fcntl_8h">fcntl.h</innerfile>
+    <innerfile refid="limits_8h">limits.h</innerfile>
+    <innerfile refid="locale_8h">locale.h</innerfile>
+    <innerfile refid="math_8h">math.h</innerfile>
+    <innerfile refid="signal_8h">signal.h</innerfile>
+    <innerfile refid="stdarg_8h">stdarg.h</innerfile>
+    <innerfile refid="stddef_8h">stddef.h</innerfile>
+    <innerfile refid="stdint_8h">stdint.h</innerfile>
+    <innerfile refid="include_2stdio_8h">stdio.h</innerfile>
+    <innerfile refid="stdlib_8h">stdlib.h</innerfile>
+    <innerfile refid="string_8h">string.h</innerfile>
+    <innerfile refid="stropts_8h">stropts.h</innerfile>
+    <innerfile refid="termios_8h">termios.h</innerfile>
+    <innerfile refid="unistd_8h">unistd.h</innerfile>
+    <innerfile refid="ustat_8h">ustat.h</innerfile>
+    <innerfile refid="utime_8h">utime.h</innerfile>
+    <innerfile refid="wchar_8h">wchar.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/"/>
+  </compounddef>
+</doxygen>

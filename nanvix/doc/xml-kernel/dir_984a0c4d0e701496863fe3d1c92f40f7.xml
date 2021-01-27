@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_984a0c4d0e701496863fe3d1c92f40f7" kind="dir">
+    <compoundname>src/lib/libc/string</compoundname>
+    <innerfile refid="memccpy_8c">memccpy.c</innerfile>
+    <innerfile refid="memchr_8c">memchr.c</innerfile>
+    <innerfile refid="memcmp_8c">memcmp.c</innerfile>
+    <innerfile refid="memcpy_8c">memcpy.c</innerfile>
+    <innerfile refid="memmove_8c">memmove.c</innerfile>
+    <innerfile refid="memset_8c">memset.c</innerfile>
+    <innerfile refid="strcat_8c">strcat.c</innerfile>
+    <innerfile refid="strchr_8c">strchr.c</innerfile>
+    <innerfile refid="strcmp_8c">strcmp.c</innerfile>
+    <innerfile refid="strcoll_8c">strcoll.c</innerfile>
+    <innerfile refid="strcpy_8c">strcpy.c</innerfile>
+    <innerfile refid="strcspn_8c">strcspn.c</innerfile>
+    <innerfile refid="strdup_8c">strdup.c</innerfile>
+    <innerfile refid="strerror_8c">strerror.c</innerfile>
+    <innerfile refid="strlen_8c">strlen.c</innerfile>
+    <innerfile refid="strncat_8c">strncat.c</innerfile>
+    <innerfile refid="strncmp_8c">strncmp.c</innerfile>
+    <innerfile refid="strncpy_8c">strncpy.c</innerfile>
+    <innerfile refid="strnlen_8c">strnlen.c</innerfile>
+    <innerfile refid="strpbrk_8c">strpbrk.c</innerfile>
+    <innerfile refid="strrchr_8c">strrchr.c</innerfile>
+    <innerfile refid="strspn_8c">strspn.c</innerfile>
+    <innerfile refid="strstr_8c">strstr.c</innerfile>
+    <innerfile refid="strtok_8c">strtok.c</innerfile>
+    <innerfile refid="strxfrm_8c">strxfrm.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/lib/libc/string/"/>
+  </compounddef>
+</doxygen>
