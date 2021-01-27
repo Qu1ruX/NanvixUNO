@@ -53,7 +53,7 @@ PUBLIC void stop(void)
  * @note The process must stopped to be resumed.
  */
 PUBLIC void resume(struct process *proc)
-{	
+{
 	/* Resume only if process has stopped. */
 	if (proc->state == PROC_STOPPED)
 		sched(proc);
@@ -64,7 +64,7 @@ PUBLIC void resume(struct process *proc)
  */
 PUBLIC void yield(void)
 {
-	struct process *p;    /* Working process.     */
+	struct process *p;	  /* Working process.     */
 	struct process *next; /* Next process to run. */
 
 	/* Re-schedule process for execution. */
@@ -80,26 +80,22 @@ PUBLIC void yield(void)
 		/* Skip invalid processes. */
 		if (!IS_VALID(p))
 			continue;
-		
+
 		/* Alarm has expired. */
 		if ((p->alarm) && (p->alarm < ticks))
 			p->alarm = 0, sndsig(p, SIGALRM);
 	}
 
-	struct process* queues[4][100];
-	int procPerQueue[4] = { 0, 0, 0, 0};
+	struct process *queues[4][100];
+	int procPerQueue[4];
+
+	for (int i = 0; i < 4; i++)
+	{
+		procPerQueue[i] = 0;
+	}
 
 	int niceMax = 40;
-
-	const int nbQueues = 4;
-	const int queueSize = 100;
-
-	/*
-	for (int i = 0; i < nbQueues; i++) {
-		for (int j = 0; j < queueSize; j++) {
-			queues[i][j] = NULL;
-		}
-	}*/
+	int nbQueues = 4;
 
 	/* Choosing the appropriate queue for each process */
 	for (p = FIRST_PROC; p <= LAST_PROC; p++)
@@ -107,43 +103,47 @@ PUBLIC void yield(void)
 		/* Skip non-ready process. */
 		if (p->state != PROC_READY)
 			continue;
-		
-		for (int i = 0; i < nbQueues; i++) {
-			if (p->nice <= i * (niceMax / nbQueues)) {
-				queues[i][procPerQueue[i]++] = p;
-				continue;
-			}
-		}
+
+		/* desired queue for p */
+
+		int q = (p->nice / (niceMax / nbQueues));
+		if (q >= nbQueues)
+			q = nbQueues - 1;
+
+		queues[q][procPerQueue[q]++] = p;
 	}
 
 	/* Choose a process to run next (Fixed priority preemptive scheduling) */
 	int isEmpty = 1;
 	next = IDLE;
-	for (int i = 0; i < nbQueues; i++) {
-		for (int j = 0; j < procPerQueue[i]; j++) {
+	for (int i = 0; i < nbQueues; i++)
+	{
+		for (int j = 0; j < procPerQueue[i]; j++)
+		{
 			isEmpty = 0;
-			struct process* p = queues[i][j];
+			struct process *p = queues[i][j];
 
 			/*
-			 * Process with higher
-			 * waiting time found.
-			 */
-			if (p->counter > next->counter) {
+			* Process with higher
+			* waiting time found.
+			*/
+			if (p->counter > next->counter)
+			{
 				next->counter++;
 				next = p;
 			}
 
 			/*
-			 * Increment waiting
-			 * time of process.
-			 */
+			* Increment waiting
+			* time of process.
+			*/
 			else
 				p->counter++;
 		}
 		if (!isEmpty)
 			break;
 	}
-	
+
 	/* Switch to next process. */
 	next->priority = PRIO_USER;
 	next->state = PROC_RUNNING;
