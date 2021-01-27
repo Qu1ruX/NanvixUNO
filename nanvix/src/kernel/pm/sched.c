@@ -86,30 +86,62 @@ PUBLIC void yield(void)
 			p->alarm = 0, sndsig(p, SIGALRM);
 	}
 
-	/* Choose a process to run next. */
-	next = IDLE;
+	struct process* queues[4][100];
+	int procPerQueue[4] = { 0, 0, 0, 0};
+
+	int niceMax = 40;
+
+	const int nbQueues = 4;
+	const int queueSize = 100;
+
+	/*
+	for (int i = 0; i < nbQueues; i++) {
+		for (int j = 0; j < queueSize; j++) {
+			queues[i][j] = NULL;
+		}
+	}*/
+
+	/* Choosing the appropriate queue for each process */
 	for (p = FIRST_PROC; p <= LAST_PROC; p++)
 	{
 		/* Skip non-ready process. */
 		if (p->state != PROC_READY)
 			continue;
 		
-		/*
-		 * Process with higher
-		 * waiting time found.
-		 */
-		if (p->counter > next->counter)
-		{
-			next->counter++;
-			next = p;
+		for (int i = 0; i < nbQueues; i++) {
+			if (p->nice <= i * (niceMax / nbQueues)) {
+				queues[i][procPerQueue[i]++] = p;
+				continue;
+			}
 		}
-			
-		/*
-		 * Increment waiting
-		 * time of process.
-		 */
-		else
-			p->counter++;
+	}
+
+	/* Choose a process to run next (Fixed priority preemptive scheduling) */
+	int isEmpty = 1;
+	next = IDLE;
+	for (int i = 0; i < nbQueues; i++) {
+		for (int j = 0; j < procPerQueue[i]; j++) {
+			isEmpty = 0;
+			struct process* p = queues[i][j];
+
+			/*
+			 * Process with higher
+			 * waiting time found.
+			 */
+			if (p->counter > next->counter) {
+				next->counter++;
+				next = p;
+			}
+
+			/*
+			 * Increment waiting
+			 * time of process.
+			 */
+			else
+				p->counter++;
+		}
+		if (!isEmpty)
+			break;
 	}
 	
 	/* Switch to next process. */
