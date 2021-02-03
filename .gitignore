@@ -7,8 +7,8 @@ nanvix-iso/
 
 # Nanvix files
 bochsout.txt
-initrd.img
 hdd.img
+initrd.img
 nanvix.iso
 
 # Object files
