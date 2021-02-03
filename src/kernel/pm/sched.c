@@ -122,10 +122,10 @@ PUBLIC void yield(void)
 		if (p->state != PROC_READY)
 			continue;
 
-		/* Put the process in the chosen queue */
+		/* Put the processes in a specific queue depending on their current kernel time */
 		for (int i = 0; i < QUEUES; i++)
 		{
-			if (i == QUEUES - 1 || p->utime <= (unsigned int) UNO_pow(2, i) * PROC_QUANTUM)
+			if (i == QUEUES - 1 || p->ktime <= (unsigned int) UNO_pow(2, i) * PROC_QUANTUM)
 			{
 				queues[i][procPerQueue[i]++] = p;
 				break;
@@ -172,6 +172,12 @@ PUBLIC void yield(void)
 		switch_to(next);
 }
 
+/**
+ * @brief Elevates x to the power of y
+ * 
+ * @param x Number to elevate.
+ * @param y Exponent.
+ */
 inline int UNO_pow(int x, int y)
 {
 	if (y == 0) return 1;	
