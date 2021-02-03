@@ -24,9 +24,11 @@
 #include <nanvix/pm.h>
 #include <signal.h>
 
-#define MAX_NICE 	40
-#define QUEUES 		4
-#define MAX_PPP 	100 /* Max number of processes per queue */
+#define MAX_NICE 40
+#define QUEUES 4
+#define MAX_PPP 100 /* Max number of processes per queue */
+
+int UNO_pow(int x, int y);
 
 /**
  * @brief Schedules a process to execution.
@@ -97,6 +99,22 @@ PUBLIC void yield(void)
 	for (int i = 0; i < QUEUES; i++)
 		procPerQueue[i] = 0;
 
+	// /* Choosing the appropriate queue for each process */
+	// for (p = FIRST_PROC; p <= LAST_PROC; p++)
+	// {
+	// 	/* Skip non-ready process. */
+	// 	if (p->state != PROC_READY)
+	// 		continue;
+
+	// 	/* Choose desired queue q for process p */
+	// 	int q = (p->nice / (MAX_NICE / QUEUES));
+	// 	if (q >= QUEUES)
+	// 		q = QUEUES - 1;
+
+	// 	/* Put the process in the chosen queue */
+	// 	queues[q][procPerQueue[q]++] = p;
+	// }
+
 	/* Choosing the appropriate queue for each process */
 	for (p = FIRST_PROC; p <= LAST_PROC; p++)
 	{
@@ -104,13 +122,15 @@ PUBLIC void yield(void)
 		if (p->state != PROC_READY)
 			continue;
 
-		/* Choose desired queue q for process p */
-		int q = (p->nice / (MAX_NICE / QUEUES));
-		if (q >= QUEUES)
-			q = QUEUES - 1;
-
 		/* Put the process in the chosen queue */
-		queues[q][procPerQueue[q]++] = p;
+		for (int i = 0; i < QUEUES; i++)
+		{
+			if (i == QUEUES - 1 || p->utime <= (unsigned int) UNO_pow(2, i) * PROC_QUANTUM)
+			{
+				queues[i][procPerQueue[i]++] = p;
+				break;
+			}
+		}
 	}
 
 	/* Choose a process to run next (Fixed priority preemptive scheduling) */
@@ -150,4 +170,10 @@ PUBLIC void yield(void)
 	next->counter = PROC_QUANTUM;
 	if (curr_proc != next)
 		switch_to(next);
+}
+
+inline int UNO_pow(int x, int y)
+{
+	if (y == 0) return 1;	
+	else return x * UNO_pow(x, y - 1);
 }
