@@ -8,7 +8,7 @@ modern and fully featured.
 
 ## What Is Nanvix UNO
 
-**Nanvix UNO** stands for **Nanvix Unofficial** and is entirely based on the **Nanvix project**. The purpose of this repository is to play around with Nanvix to better understand the different parts of an operating system. The official repository for the Nanvix project can be found here: https://github.com/nanvix/nanvix
+**Nanvix UNO** stands for **Nanvix Unofficial** and is entirely based on the **Nanvix project**. The purpose of this repository is to play around with Nanvix to better understand the different parts of an operating system. The official repository for the Nanvix project can be found [here](https://github.com/nanvix/nanvix).
 
 ## What Hardware Is Required?
 
@@ -112,13 +112,15 @@ Now, switch to the other terminal and launch `gdb`. In GDB, input the following 
 ```sh
 target remote :1234
 handle SIGSEGV nostop noprint nopass
-cont
 ```
 
-You may also load symbol files by inputting the following command before `cont`:
+You may load specific symbol tables by inputting the following command:
 ```sh
-symbol-file bin/kernel
+symbol-file [symbol_file_path]
 ```
+where `[symbol_file_path]` is the path to the symbol file you want to load. If you want to debug the entire system, the symbol file is **"bin/kernel"**.
+
+Finally, you may start debugging by typing `cont` in GDB.
 
 ## Exiting Nanvix
 
