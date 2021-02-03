@@ -24,6 +24,10 @@
 #include <nanvix/pm.h>
 #include <signal.h>
 
+#define MAX_NICE 	40
+#define QUEUES 		4
+#define MAX_PPP 	100 /* Max number of processes per queue */
+
 /**
  * @brief Schedules a process to execution.
  * 
@@ -86,16 +90,12 @@ PUBLIC void yield(void)
 			p->alarm = 0, sndsig(p, SIGALRM);
 	}
 
-	struct process *queues[4][100];
-	int procPerQueue[4];
+	struct process *queues[QUEUES][MAX_PPP];
+	int procPerQueue[QUEUES]; /* Number of processes per queue */
 
-	for (int i = 0; i < 4; i++)
-	{
+	/* Empty the queues */
+	for (int i = 0; i < QUEUES; i++)
 		procPerQueue[i] = 0;
-	}
-
-	int niceMax = 40;
-	int nbQueues = 4;
 
 	/* Choosing the appropriate queue for each process */
 	for (p = FIRST_PROC; p <= LAST_PROC; p++)
@@ -104,19 +104,19 @@ PUBLIC void yield(void)
 		if (p->state != PROC_READY)
 			continue;
 
-		/* desired queue for p */
+		/* Choose desired queue q for process p */
+		int q = (p->nice / (MAX_NICE / QUEUES));
+		if (q >= QUEUES)
+			q = QUEUES - 1;
 
-		int q = (p->nice / (niceMax / nbQueues));
-		if (q >= nbQueues)
-			q = nbQueues - 1;
-
+		/* Put the process in the chosen queue */
 		queues[q][procPerQueue[q]++] = p;
 	}
 
 	/* Choose a process to run next (Fixed priority preemptive scheduling) */
 	int isEmpty = 1;
 	next = IDLE;
-	for (int i = 0; i < nbQueues; i++)
+	for (int i = 0; i < QUEUES; i++)
 	{
 		for (int j = 0; j < procPerQueue[i]; j++)
 		{
