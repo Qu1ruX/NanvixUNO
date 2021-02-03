@@ -8,7 +8,7 @@ modern and fully featured.
 
 ## What Is Nanvix UNO
 
-**Nanvix UNO** stands for **Nanvix Unofficial** and is entirely based on the **Nanvix project**. The purpose of this repository is to play around with Nanvix to better understand the different parts of an operating system. The official repository for the Nanvix project can be found here: https://github.com/nanvix/nanvix
+**Nanvix UNO** stands for **Nanvix Unofficial** and is entirely based on the **Nanvix project**. The purpose of this repository is to play around with Nanvix to better understand the different parts of an operating system. The official repository for the Nanvix project can be found [here](https://github.com/nanvix/nanvix).
 
 ## What Hardware Is Required?
 
