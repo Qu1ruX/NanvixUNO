@@ -26,7 +26,7 @@
 
 #define MAX_NICE 40
 #define QUEUES 4
-#define MAX_PPP 100 /* Max number of processes per queue */
+#define MAX_PPQ 100 /* Max number of processes per queue */
 
 int UNO_pow(int x, int y);
 
@@ -92,7 +92,7 @@ PUBLIC void yield(void)
 			p->alarm = 0, sndsig(p, SIGALRM);
 	}
 
-	struct process *queues[QUEUES][MAX_PPP];
+	struct process *queues[QUEUES][MAX_PPQ];
 	int procPerQueue[QUEUES]; /* Number of processes per queue */
 
 	/* Empty the queues */
@@ -115,7 +115,7 @@ PUBLIC void yield(void)
 	// 	queues[q][procPerQueue[q]++] = p;
 	// }
 
-	/* Choosing the appropriate queue for each process */
+	/* Multiple-Level Queues (Aging method) */
 	for (p = FIRST_PROC; p <= LAST_PROC; p++)
 	{
 		/* Skip non-ready process. */
