@@ -6,7 +6,10 @@
  */
 PUBLIC int semctl(int semid, int cmd, int val)
 {
-    pSemaphore_t sema;
+    pSemaphore_t sema = getSemWithId(semid);
+
+    if (sema == NULL)
+        return -1;
 
     switch (cmd)
     {
@@ -19,6 +22,4 @@ PUBLIC int semctl(int semid, int cmd, int val)
         destroySema(sema);
         return 0;
     }
-
-    // NOT IMPLEMENTED
 }

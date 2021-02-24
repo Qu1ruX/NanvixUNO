@@ -22,15 +22,27 @@
 
 #include "include/nanvix/pm.h"
 
+#define SEMA_TABLE_SIZE 50
+
+static pSemaphore_t semaTab[SEMA_TABLE_SIZE];
+
 typedef struct semaphore
 {
+    unsigned key;
     int val;
     struct process *blocked;
 } semaphore_t, *pSemaphore_t;
 
-pSemaphore_t createSema(int val)
+pSemaphore_t createSema(unsigned key, int val)
 {
-    return (pSemaphore_t){val, NULL};
+    for (int i = 0; i < SEMA_TABLE_SIZE; i++) {
+        if (semaTab[i] == NULL) {
+            semaTab[i] = (pSemaphore_t){key, val, NULL};
+            return semaTab[i];
+        }
+    }
+
+    return NULL;
 }
 
 void acquireSema(pSemaphore_t sema)
@@ -72,6 +84,19 @@ void destroySema(pSemaphore_t sema)
         p->nextBlocked = NULL;
     }
     sema->val = -1;
+
+    int idx = semget(sema->key);
+
+    if (idx > -1)
+        semaTab[idx] = NULL;
+}
+
+pSemaphore_t getSemWithId(int semid)
+{
+    if (semid < 0 || semid >= SEMA_TABLE_SIZE)
+        return NULL;
+
+    return semaTab[semid];
 }
 
 /*
