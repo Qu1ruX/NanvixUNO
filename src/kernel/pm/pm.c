@@ -119,6 +119,7 @@ PUBLIC void pm_init(void)
 	IDLE->nice = NZERO;
 	IDLE->alarm = 0;
 	IDLE->next = NULL;
+	IDLE->nextBlocked = NULL;
 	IDLE->chain = NULL;
 	
 	nprocs++;

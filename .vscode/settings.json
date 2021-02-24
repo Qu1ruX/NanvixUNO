@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "pm.h": "c",
+        "const.h": "c",
+        "hal.h": "c",
+        "klib.h": "c"
+    }
+}
