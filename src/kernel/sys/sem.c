@@ -49,6 +49,7 @@ void acquireSema(pSemaphore_t sema)
 {
     if (sema->val <= 0)
     {
+        enable_interrupts();
         // PUT CURRENT PROCESS TO SLEEP
         sleep(curr_proc, curr_proc->nice);
         curr_proc->nextBlocked = sema->blocked;
