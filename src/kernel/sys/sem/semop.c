@@ -6,7 +6,7 @@
  */
 PUBLIC int semop(int semid, int op)
 {
-    pSemaphore_t sema;
+    pSemaphore_t sema=getSemWithId(semid);
 
     if(op<0){
         acquireSema(sema);
