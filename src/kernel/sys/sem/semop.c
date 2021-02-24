@@ -8,5 +8,13 @@ PUBLIC int semop(int semid, int op)
 {
     pSemaphore_t sema;
 
+    if(op<0){
+        acquireSema(sema);
+    }
+    else{
+        releaseSema(sema);
+    }
+    return 0;
+
     // NOT IMPLEMENTED
 }
