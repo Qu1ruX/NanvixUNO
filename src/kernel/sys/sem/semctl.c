@@ -1,7 +1,10 @@
 #include "src/kernel/sys/sem.c"
 #include "include/sys/sem.h"
 
-int semctl(int semid, int cmd, int val)
+/*
+ * Executes control-related operations on a semaphore
+ */
+PUBLIC int semctl(int semid, int cmd, int val)
 {
     pSemaphore_t sema;
 
@@ -16,4 +19,6 @@ int semctl(int semid, int cmd, int val)
         destroySema(sema);
         return 0;
     }
+
+    // NOT IMPLEMENTED
 }
