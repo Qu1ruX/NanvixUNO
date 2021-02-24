@@ -15,13 +15,13 @@ PUBLIC int semget(unsigned key)
                 return i;
         }
     }
-    if (semaIndex < SEMA_TABLE_SIZE)
-    {
-        int nextIndex = semaIndex;
 
-        pSemaphore_t sema = createSema(key, 1); //par défaut on met à 1 la valeur du sémaphore
-        return nextIndex;
+    for (int i = 0; i < SEMA_TABLE_SIZE; i++) {
+        if (semaTab[i] == NULL) {
+            semaTab[i] = (pSemaphore_t){key, 1, NULL}; //par défaut on met à 1 la valeur du sémaphore
+            return semaTab[i];
+        }
     }
-    else
-        return -1;
+
+    return -1;
 }
