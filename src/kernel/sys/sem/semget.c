@@ -6,22 +6,24 @@
  */
 PUBLIC int semget(unsigned key)
 {
+    int idx = -1;
+
     /*parcours du tableau afin de trouver la key*/
     for (int i = 0; i < SEMA_TABLE_SIZE; i++)
     {
-        if (semaTab[i] != NULL)
+        if (semaTab[i]->valid)
         {
             if (semaTab[i]->key == key)
                 return i;
         }
+        else
+            idx = i;
     }
 
-    for (int i = 0; i < SEMA_TABLE_SIZE; i++) {
-        if (semaTab[i] == NULL) {
-            semaTab[i] = (pSemaphore_t){key, 1, NULL}; //par défaut on met à 1 la valeur du sémaphore
-            return semaTab[i];
-        }
+    if (idx != -1) {
+        pSemaphore_t sema = createSema(1); //par défaut on met à 1 la valeur du sémaphore
+        semaTab[idx] = (pSemCell_t){key, sema, SV_TRUE};
     }
-
-    return -1;
+    
+    return idx;
 }

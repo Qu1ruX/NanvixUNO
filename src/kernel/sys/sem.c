@@ -24,25 +24,28 @@
 
 #define SEMA_TABLE_SIZE 50
 
-static pSemaphore_t semaTab[SEMA_TABLE_SIZE];
+#define SV_FALSE 0
+#define SV_TRUE  1
+
+// MAKE SURE TO INITIALIZE EACH CELL!!!!!
+static pSemCell_t semaTab[SEMA_TABLE_SIZE];
+
+typedef struct semCell
+{
+    int valid;
+    unsigned key;
+    pSemaphore_t sema;
+} semCell_t, *pSemCell_t;
 
 typedef struct semaphore
 {
-    unsigned key;
     int val;
     struct process *blocked;
 } semaphore_t, *pSemaphore_t;
 
-pSemaphore_t createSema(unsigned key, int val)
+pSemaphore_t createSema(int val)
 {
-    for (int i = 0; i < SEMA_TABLE_SIZE; i++) {
-        if (semaTab[i] == NULL) {
-            semaTab[i] = (pSemaphore_t){key, val, NULL};
-            return semaTab[i];
-        }
-    }
-
-    return NULL;
+    return (pSemaphore_t){val, NULL};
 }
 
 void acquireSema(pSemaphore_t sema)
@@ -62,7 +65,6 @@ void acquireSema(pSemaphore_t sema)
 
 inline void releaseSema(pSemaphore_t sema)
 {
-    pthread_mutex_lock();
     if (sema->val == 0 && sema->blocked != NULL)
     {
         // AWAKE OLDEST BLOCKED PROCESS
@@ -84,15 +86,9 @@ void destroySema(pSemaphore_t sema)
         sema->blocked = p->nextBlocked;
         p->nextBlocked = NULL;
     }
-    sema->val = -1;
-
-    int idx = semget(sema->key);
-
-    if (idx > -1)
-        semaTab[idx] = NULL;
 }
 
-pSemaphore_t getSemWithId(int semid)
+pSemCell_t getSemCell(int semid)
 {
     if (semid < 0 || semid >= SEMA_TABLE_SIZE)
         return NULL;

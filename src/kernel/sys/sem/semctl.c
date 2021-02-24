@@ -6,20 +6,21 @@
  */
 PUBLIC int semctl(int semid, int cmd, int val)
 {
-    pSemaphore_t sema = getSemWithId(semid);
+    pSemCell_t sc = getSemCell(semid);
 
-    if (sema == NULL)
+    if (sc == NULL || !sc->valid)
         return -1;
 
     switch (cmd)
     {
     case GETVAL:
-        return sema->val;
+        return sc->sema->val;
     case SETVAL:
-        sema->val = val;
+        sc->sema->val = val;
         return 0;
     case IPC_RMID:
-        destroySema(sema);
+        destroySema(sc->sema);
+        semaTab[semid]->valid = SV_FALSE;
         return 0;
     }
 }

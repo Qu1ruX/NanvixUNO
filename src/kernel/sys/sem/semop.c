@@ -6,16 +6,21 @@
  */
 PUBLIC int semop(int semid, int op)
 {
-    pSemaphore_t sema=getSemWithId(semid);
+    pSemCell_t sc = getSemCell(semid);
 
-    if(op<0){
+    if (sc == NULL || !sc->valid)
+        return -1;
+
+    if (op < 0)
+    {
         disable_interrupts();
-        acquireSema(sema);
+        acquireSema(sc->sema);
         enable_interrupts();
     }
-    else{
+    else
+    {
         disable_interrupts();
-        releaseSema(sema);
+        releaseSema(sc->sema);
         enable_interrupts();
     }
     return 0;
