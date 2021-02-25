@@ -25,8 +25,9 @@
 
 #define SEMA_TABLE_SIZE 50
 
-#define SV_FALSE 0
-#define SV_TRUE 1
+#define S_INVALID 0
+#define S_VALID 1
+#define S_CORRUPT 2
 
 typedef struct semaphore
 {
@@ -38,63 +39,62 @@ typedef struct semCell
 {
     int valid;
     unsigned key;
-    pSemaphore_t sema;
+    semaphore_t sema;
 } semCell_t, *pSemCell_t;
 
-// MAKE SURE TO INITIALIZE EACH CELL!!!!!
-static pSemCell_t semaTab[SEMA_TABLE_SIZE];
+static semCell_t semaTab[SEMA_TABLE_SIZE];
 
-pSemaphore_t createSema(int val)
+int valid(semCell_t sc)
 {
-    return &(semaphore_t){val, NULL};
+    return sc.valid == S_VALID;
 }
 
-void acquireSema(pSemaphore_t sema)
+semaphore_t createSema(int val)
 {
-    if (sema->val <= 0)
+    return (semaphore_t){val, NULL};
+}
+
+void acquireSema(semaphore_t sema)
+{
+    if (sema.val <= 0)
     {
         enable_interrupts();
         // PUT CURRENT PROCESS TO SLEEP
-        sleep(NULL, curr_proc->nice);
-        curr_proc->nextBlocked = sema->blocked;
-        sema->blocked = curr_proc;
+        sleep(sema.blocked, curr_proc->nice);
         return;
     }
 
-    sema->val--;
+    sema.val--;
 }
 
-void releaseSema(pSemaphore_t sema)
+void releaseSema(semaphore_t sema)
 {
-    if (sema->val == 0 && sema->blocked != NULL)
+    if (sema.val == 0 && sema.blocked != NULL)
     {
         // AWAKE OLDEST BLOCKED PROCESS
-        struct process *awakenProc = sema->blocked;
-        sema->blocked = awakenProc->nextBlocked;
-        awakenProc->nextBlocked = NULL;
-        wakeup(NULL);
+        wakeup(sema.blocked);
         return;
     }
 
-    sema->val++;
+    sema.val++;
 }
 
-void destroySema(pSemaphore_t sema)
+void destroySema(semaphore_t sema)
 {
-    while (sema->blocked != NULL)
+    while (sema.blocked != NULL)
     {
-        struct process *p = sema->blocked;
-        sema->blocked = p->nextBlocked;
-        p->nextBlocked = NULL;
+        struct process *p = *(sema.blocked);
+        *(sema.blocked) = p->next;
+        p->next = NULL;
     }
 }
 
-pSemCell_t getSemCell(int semid)
+semCell_t getSemCell(int semid)
 {
     if (semid < 0 || semid >= SEMA_TABLE_SIZE)
-        return NULL;
+        return (semCell_t){S_CORRUPT, -1, {-1, NULL}};
 
-    return semaTab[semid];
+    return (semaTab[semid]);
 }
 
 /*
@@ -107,14 +107,9 @@ PUBLIC int sys_semget(unsigned key)
     /*parcours du tableau afin de trouver la key*/
     for (int i = 0; i < SEMA_TABLE_SIZE; i++)
     {
-        if (semaTab[i] == NULL)
+        if (semaTab[i].valid == S_VALID)
         {
-            semaTab[i] = &((semCell_t){SV_FALSE, -1, NULL});
-        }
-
-        if (semaTab[i]->valid)
-        {
-            if (semaTab[i]->key == key)
+            if (semaTab[i].key == key)
                 return i;
         }
         else
@@ -123,8 +118,8 @@ PUBLIC int sys_semget(unsigned key)
 
     if (idx != -1)
     {
-        pSemaphore_t sema = createSema(1); //par défaut on met à 1 la valeur du sémaphore
-        semaTab[idx] = &((semCell_t){SV_TRUE, key, sema});
+        semaphore_t sema = createSema(1); //par défaut on met à 1 la valeur du sémaphore
+        semaTab[idx] = (semCell_t){S_VALID, key, sema};
     }
 
     return idx;
@@ -135,21 +130,21 @@ PUBLIC int sys_semget(unsigned key)
  */
 PUBLIC int sys_semctl(int semid, int cmd, int val)
 {
-    pSemCell_t sc = getSemCell(semid);
+    semCell_t sc = getSemCell(semid);
 
-    if (sc == NULL || !sc->valid)
+    if (!valid(sc))
         return -1;
 
     switch (cmd)
     {
     case GETVAL:
-        return sc->sema->val;
+        return sc.sema.val;
     case SETVAL:
-        sc->sema->val = val;
+        sc.sema.val = val;
         return 0;
     case IPC_RMID:
-        destroySema(sc->sema);
-        semaTab[semid]->valid = SV_FALSE;
+        destroySema(sc.sema);
+        semaTab[semid].valid = S_INVALID;
         return 0;
     default:
         return -1;
@@ -161,21 +156,21 @@ PUBLIC int sys_semctl(int semid, int cmd, int val)
  */
 PUBLIC int sys_semop(int semid, int op)
 {
-    pSemCell_t sc = getSemCell(semid);
+    semCell_t sc = getSemCell(semid);
 
-    if (sc == NULL || !sc->valid)
+    if (!valid(sc))
         return -1;
 
     if (op < 0)
     {
         disable_interrupts();
-        acquireSema(sc->sema);
+        acquireSema(sc.sema);
         enable_interrupts();
     }
     else
     {
         disable_interrupts();
-        releaseSema(sc->sema);
+        releaseSema(sc.sema);
         enable_interrupts();
     }
     return 0;
