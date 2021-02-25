@@ -20,12 +20,13 @@
 
 /* Nanvix UNO */
 
+#include <sys/sem.h>
 #include <nanvix/pm.h>
 
 #define SEMA_TABLE_SIZE 50
 
 #define SV_FALSE 0
-#define SV_TRUE  1
+#define SV_TRUE 1
 
 typedef struct semaphore
 {
@@ -63,7 +64,7 @@ void acquireSema(pSemaphore_t sema)
     sema->val--;
 }
 
-inline void releaseSema(pSemaphore_t sema)
+void releaseSema(pSemaphore_t sema)
 {
     if (sema->val == 0 && sema->blocked != NULL)
     {
@@ -97,7 +98,80 @@ pSemCell_t getSemCell(int semid)
 }
 
 /*
-valid
-key
-semaphoreStruct
-*/
+ * Get the semaphore matching the key or create a new one
+ */
+PUBLIC int sys_semget(unsigned key)
+{
+    int idx = -1;
+
+    /*parcours du tableau afin de trouver la key*/
+    for (int i = 0; i < SEMA_TABLE_SIZE; i++)
+    {
+        if (semaTab[i]->valid)
+        {
+            if (semaTab[i]->key == key)
+                return i;
+        }
+        else
+            idx = i;
+    }
+
+    if (idx != -1)
+    {
+        pSemaphore_t sema = createSema(1); //par défaut on met à 1 la valeur du sémaphore
+        semaTab[idx] = &((semCell_t){SV_TRUE, key, sema});
+    }
+
+    return idx;
+}
+
+/*
+ * Executes control-related operations on a semaphore
+ */
+PUBLIC int sys_semctl(int semid, int cmd, int val)
+{
+    pSemCell_t sc = getSemCell(semid);
+
+    if (sc == NULL || !sc->valid)
+        return -1;
+
+    switch (cmd)
+    {
+    case GETVAL:
+        return sc->sema->val;
+    case SETVAL:
+        sc->sema->val = val;
+        return 0;
+    case IPC_RMID:
+        destroySema(sc->sema);
+        semaTab[semid]->valid = SV_FALSE;
+        return 0;
+    default:
+        return -1;
+    }
+}
+
+/*
+ * Executes atomic operations on a semaphore
+ */
+PUBLIC int sys_semop(int semid, int op)
+{
+    pSemCell_t sc = getSemCell(semid);
+
+    if (sc == NULL || !sc->valid)
+        return -1;
+
+    if (op < 0)
+    {
+        disable_interrupts();
+        acquireSema(sc->sema);
+        enable_interrupts();
+    }
+    else
+    {
+        disable_interrupts();
+        releaseSema(sc->sema);
+        enable_interrupts();
+    }
+    return 0;
+}

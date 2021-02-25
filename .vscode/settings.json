@@ -7,6 +7,11 @@
         "signal.h": "c",
         "syscall.h": "c",
         "ustat.h": "c",
-        "stat.h": "c"
+        "stat.h": "c",
+        "types.h": "c",
+        "utsname.h": "c",
+        "sem.h": "c",
+        "times.h": "c",
+        "utime.h": "c"
     }
 }

@@ -26,10 +26,10 @@
 	#include <sys/times.h>
 	#include <sys/types.h>
 	#include <sys/utsname.h>
-	#include <sys/sem.h>
 	#include <signal.h>
 	#include <ustat.h>
 	#include <utime.h>
+	#include <sys/sem.h>
 	
 	/* Number of system calls. */
 	#define NR_SYSCALLS 51
