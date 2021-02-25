@@ -4,7 +4,7 @@
 /*
  * Get the semaphore matching the key or create a new one
  */
-PUBLIC int semget(unsigned key)
+PUBLIC int sys_semget(unsigned key)
 {
     int idx = -1;
 
@@ -22,7 +22,7 @@ PUBLIC int semget(unsigned key)
 
     if (idx != -1) {
         pSemaphore_t sema = createSema(1); //par défaut on met à 1 la valeur du sémaphore
-        semaTab[idx] = (pSemCell_t){key, sema, SV_TRUE};
+        semaTab[idx] = &((semCell_t){key, sema, SV_TRUE});
     }
     
     return idx;

@@ -26,6 +26,7 @@
 	#include <sys/times.h>
 	#include <sys/types.h>
 	#include <sys/utsname.h>
+	#include <sys/sem.h>
 	#include <signal.h>
 	#include <ustat.h>
 	#include <utime.h>
@@ -267,17 +268,17 @@
 	/*
 	 * Get the semaphore matching the key or create a new one
 	 */
-	EXTERN int semget(unsigned key);
+	EXTERN int sys_semget(unsigned key);
 
 	/*
 	 * Executes control-related operations on a semaphore
 	 */
-	EXTERN int semctl(int semid, int cmd, int val);
+	EXTERN int sys_semctl(int semid, int cmd, int val);
 
 	/*
 	 * Executes atomic operations on a semaphore
 	 */
-	EXTERN int semop(int semid, int op);
+	EXTERN int sys_semop(int semid, int op);
 
 #endif /* _ASM_FILE_ */
 

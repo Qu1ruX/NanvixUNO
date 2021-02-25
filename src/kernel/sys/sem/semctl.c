@@ -4,7 +4,7 @@
 /*
  * Executes control-related operations on a semaphore
  */
-PUBLIC int semctl(int semid, int cmd, int val)
+PUBLIC int sys_semctl(int semid, int cmd, int val)
 {
     pSemCell_t sc = getSemCell(semid);
 

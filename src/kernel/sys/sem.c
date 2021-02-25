@@ -20,15 +20,18 @@
 
 /* Nanvix UNO */
 
-#include "include/nanvix/pm.h"
+#include <nanvix/pm.h>
 
 #define SEMA_TABLE_SIZE 50
 
 #define SV_FALSE 0
 #define SV_TRUE  1
 
-// MAKE SURE TO INITIALIZE EACH CELL!!!!!
-static pSemCell_t semaTab[SEMA_TABLE_SIZE];
+typedef struct semaphore
+{
+    int val;
+    struct process *blocked;
+} semaphore_t, *pSemaphore_t;
 
 typedef struct semCell
 {
@@ -37,15 +40,12 @@ typedef struct semCell
     pSemaphore_t sema;
 } semCell_t, *pSemCell_t;
 
-typedef struct semaphore
-{
-    int val;
-    struct process *blocked;
-} semaphore_t, *pSemaphore_t;
+// MAKE SURE TO INITIALIZE EACH CELL!!!!!
+static pSemCell_t semaTab[SEMA_TABLE_SIZE];
 
 pSemaphore_t createSema(int val)
 {
-    return (pSemaphore_t){val, NULL};
+    return &(semaphore_t){val, NULL};
 }
 
 void acquireSema(pSemaphore_t sema)
@@ -54,7 +54,7 @@ void acquireSema(pSemaphore_t sema)
     {
         enable_interrupts();
         // PUT CURRENT PROCESS TO SLEEP
-        sleep(curr_proc, curr_proc->nice);
+        //sleep(curr_proc, curr_proc->nice);
         curr_proc->nextBlocked = sema->blocked;
         sema->blocked = curr_proc;
         return;
@@ -71,7 +71,7 @@ inline void releaseSema(pSemaphore_t sema)
         struct process *awakenProc = sema->blocked;
         sema->blocked = awakenProc->nextBlocked;
         awakenProc->nextBlocked = NULL;
-        wakeup(awakenProc);
+        //wakeup(awakenProc);
         return;
     }
 

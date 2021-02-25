@@ -4,7 +4,7 @@
 /*
  * Executes atomic operations on a semaphore
  */
-PUBLIC int semop(int semid, int op)
+PUBLIC int sys_semop(int semid, int op)
 {
     pSemCell_t sc = getSemCell(semid);
 
