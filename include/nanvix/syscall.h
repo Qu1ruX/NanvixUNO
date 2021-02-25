@@ -29,7 +29,6 @@
 	#include <signal.h>
 	#include <ustat.h>
 	#include <utime.h>
-	#include <sys/sem.h>
 	
 	/* Number of system calls. */
 	#define NR_SYSCALLS 51

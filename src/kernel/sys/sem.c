@@ -31,7 +31,7 @@
 typedef struct semaphore
 {
     int val;
-    struct process *blocked;
+    struct process **blocked;
 } semaphore_t, *pSemaphore_t;
 
 typedef struct semCell
@@ -55,7 +55,7 @@ void acquireSema(pSemaphore_t sema)
     {
         enable_interrupts();
         // PUT CURRENT PROCESS TO SLEEP
-        //sleep(curr_proc, curr_proc->nice);
+        sleep(NULL, curr_proc->nice);
         curr_proc->nextBlocked = sema->blocked;
         sema->blocked = curr_proc;
         return;
@@ -72,7 +72,7 @@ void releaseSema(pSemaphore_t sema)
         struct process *awakenProc = sema->blocked;
         sema->blocked = awakenProc->nextBlocked;
         awakenProc->nextBlocked = NULL;
-        //wakeup(awakenProc);
+        wakeup(NULL);
         return;
     }
 
@@ -107,6 +107,11 @@ PUBLIC int sys_semget(unsigned key)
     /*parcours du tableau afin de trouver la key*/
     for (int i = 0; i < SEMA_TABLE_SIZE; i++)
     {
+        if (semaTab[i] == NULL)
+        {
+            semaTab[i] = &((semCell_t){SV_FALSE, -1, NULL});
+        }
+
         if (semaTab[i]->valid)
         {
             if (semaTab[i]->key == key)
