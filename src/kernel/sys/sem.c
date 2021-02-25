@@ -112,7 +112,7 @@ PUBLIC int sys_semget(unsigned key)
             if (semaTab[i].key == key)
                 return i;
         }
-        else
+        else if (idx == -1)
             idx = i;
     }
 
@@ -130,20 +130,18 @@ PUBLIC int sys_semget(unsigned key)
  */
 PUBLIC int sys_semctl(int semid, int cmd, int val)
 {
-    semCell_t sc = getSemCell(semid);
-
-    if (!valid(sc))
+    if (semaTab[semid].valid != S_VALID)
         return -1;
 
     switch (cmd)
     {
     case GETVAL:
-        return sc.sema.val;
+        return semaTab[semid].sema.val;
     case SETVAL:
-        sc.sema.val = val;
+        semaTab[semid].sema.val = val;
         return 0;
     case IPC_RMID:
-        destroySema(sc.sema);
+        destroySema(semaTab[semid].sema);
         semaTab[semid].valid = S_INVALID;
         return 0;
     default:
@@ -156,21 +154,19 @@ PUBLIC int sys_semctl(int semid, int cmd, int val)
  */
 PUBLIC int sys_semop(int semid, int op)
 {
-    semCell_t sc = getSemCell(semid);
-
-    if (!valid(sc))
+    if (semaTab[semid].valid != S_VALID)
         return -1;
 
     if (op < 0)
     {
         disable_interrupts();
-        acquireSema(sc.sema);
+        acquireSema(semaTab[semid].sema);
         enable_interrupts();
     }
     else
     {
         disable_interrupts();
-        releaseSema(sc.sema);
+        releaseSema(semaTab[semid].sema);
         enable_interrupts();
     }
     return 0;
