@@ -111,27 +111,32 @@ PUBLIC void wakeup(struct process **chain)
  */
 PUBLIC void wakeupLast(struct process **chain)
 {
-	if (*chain == NULL)
-		return;
-
 	/*
 	 * Wakeup idle process. Note that here we don't
 	 * schedule the idle process for execution, once
 	 * we expect that it is the only process in the
 	 * system and it is doing some busy-waiting. 
 	 */
+
 	if (idle_chain == chain)
 	{
 		idle_chain = NULL;
 		return;
 	}
 
-	struct process **prev = chain;
-	while ((*chain)->next != NULL) {
-		*prev = (*chain);
-		*chain = (*chain)->next;
+	struct process *proc = *chain;
+	struct process *prev = proc;
+
+	if (proc == NULL)
+		return;
+
+	while (proc->next != NULL) {
+		prev = proc;
+		proc = proc->next;
 	}
-	sched(*chain);
-	
-	(*prev)->next = NULL;
+
+	prev->next = NULL;
+	proc->chain = NULL;
+
+	sched(proc);
 }

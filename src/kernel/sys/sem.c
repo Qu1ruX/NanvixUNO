@@ -72,6 +72,7 @@ void releaseSema(pSemaphore_t sema)
     if (sema->val == 0 && sema->blocked != NULL)
     {
         // AWAKE OLDEST BLOCKED PROCESS
+        //struct proces **chain_adr = &sema->blocked;
         wakeupLast(sema->blocked);
         return;
     }
@@ -81,8 +82,11 @@ void releaseSema(pSemaphore_t sema)
 
 void destroySema(pSemaphore_t sema)
 {
+    if (sema != NULL)
+        return;
+    
     while (sema->blocked != NULL)
-    {
+    {   
         struct process *p = *(sema->blocked);
         *(sema->blocked) = p->next;
         p->next = NULL;
