@@ -126,8 +126,12 @@ PUBLIC void wakeupLast(struct process **chain)
 		return;
 	}
 
-	while ((*chain)->next != NULL)
+	struct process **prev = chain;
+	while ((*chain)->next != NULL) {
+		*prev = (*chain);
 		*chain = (*chain)->next;
-
+	}
 	sched(*chain);
+	
+	(*prev)->next = NULL;
 }
