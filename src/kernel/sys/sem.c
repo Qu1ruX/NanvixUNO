@@ -131,6 +131,7 @@ PUBLIC int sys_semget(unsigned key)
 PUBLIC int sys_semctl(int semid, int cmd, int val)
 {
     pSemCell_t sc = getSemCell(semid);
+    sc->sema = semaTab[semid].sema;
 
     if (sc == NULL || !valid(sc))
         return -1;
@@ -138,13 +139,17 @@ PUBLIC int sys_semctl(int semid, int cmd, int val)
     switch (cmd)
     {
     case GETVAL:
-        return sc->sema.val;
+        return semaTab[semid].sema.val;
+        //return sc->sema.val;
     case SETVAL:
-        sc->sema.val = val;
+        semaTab[semid].sema.val = val;
+        //sc->sema.val = val;
         return 0;
     case IPC_RMID:
-        destroySema(&(sc->sema));
-        sc->valid = S_INVALID;
+        destroySema(&(semaTab[semid].sema));
+        semaTab[semid].valid = S_INVALID;
+        //destroySema(&(sc->sema));
+        //sc->valid = S_INVALID;
         return 0;
     default:
         return -1;

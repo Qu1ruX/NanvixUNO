@@ -439,14 +439,16 @@ int semaphore_test3(void)
 		return (-1);
 	
 	/* Create semaphores. */
-	SEM_CREATE(mutex, 1);
-	SEM_CREATE(empty, 2);
-	SEM_CREATE(full, 3);
+	SEM_CREATE(mutex, 1); // 0
+	SEM_CREATE(empty, 2); // 1
+	SEM_CREATE(full, 3); // 2
 		
 	/* Initialize semaphores. */
 	SEM_INIT(full, 0);
 	SEM_INIT(empty, BUFFER_SIZE);
 	SEM_INIT(mutex, 1);
+
+	printf("PASSED CREATE AND INIT\n");
 	
 	if ((pid = fork()) < 0)
 		return (-1);
@@ -484,11 +486,15 @@ int semaphore_test3(void)
 			SEM_UP(empty);
 		} while (item != (NR_ITEMS - 1));
 	}
+
+	printf("PASSED ALL DOWN GET UP\n");
 					
 	/* Destroy semaphores. */
 	SEM_DESTROY(mutex);
 	SEM_DESTROY(empty);
 	SEM_DESTROY(full);
+
+	printf("PASSED DESTROY\n");
 	
 	close(buffer_fd);
 	unlink("buffer");
