@@ -20,6 +20,7 @@
 
 /* Nanvix UNO */
 
+#include <stdio.h>
 #include <sys/sem.h>
 #include <nanvix/pm.h>
 
@@ -27,7 +28,6 @@
 
 #define S_INVALID 0
 #define S_VALID 1
-#define S_CORRUPT 2
 
 typedef struct semaphore
 {
@@ -42,7 +42,7 @@ typedef struct semCell
     semaphore_t sema;
 } semCell_t, *pSemCell_t;
 
-static semCell_t semaTab[SEMA_TABLE_SIZE];
+semCell_t semaTab[SEMA_TABLE_SIZE];
 
 int valid(pSemCell_t sc)
 {
@@ -72,7 +72,7 @@ void releaseSema(pSemaphore_t sema)
     if (sema->val == 0 && sema->blocked != NULL)
     {
         // AWAKE OLDEST BLOCKED PROCESS
-        wakeup(sema->blocked);
+        wakeupLast(sema->blocked);
         return;
     }
 
@@ -131,7 +131,6 @@ PUBLIC int sys_semget(unsigned key)
 PUBLIC int sys_semctl(int semid, int cmd, int val)
 {
     pSemCell_t sc = getSemCell(semid);
-    sc->sema = semaTab[semid].sema;
 
     if (sc == NULL || !valid(sc))
         return -1;
@@ -139,17 +138,13 @@ PUBLIC int sys_semctl(int semid, int cmd, int val)
     switch (cmd)
     {
     case GETVAL:
-        return semaTab[semid].sema.val;
-        //return sc->sema.val;
+        return sc->sema.val;
     case SETVAL:
-        semaTab[semid].sema.val = val;
-        //sc->sema.val = val;
+        sc->sema.val = val;
         return 0;
     case IPC_RMID:
-        destroySema(&(semaTab[semid].sema));
-        semaTab[semid].valid = S_INVALID;
-        //destroySema(&(sc->sema));
-        //sc->valid = S_INVALID;
+        destroySema(&(sc->sema));
+        sc->valid = S_INVALID;
         return 0;
     default:
         return -1;
@@ -178,5 +173,6 @@ PUBLIC int sys_semop(int semid, int op)
         releaseSema(&(sc->sema));
         enable_interrupts();
     }
+
     return 0;
 }

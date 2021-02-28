@@ -103,3 +103,31 @@ PUBLIC void wakeup(struct process **chain)
 		*chain = (*chain)->next;
 	}
 }
+
+/**
+ * @brief Wakes up last process that is sleeping in a chain.
+ * 
+ * @param chain Chain of sleeping processes.
+ */
+PUBLIC void wakeupLast(struct process **chain)
+{
+	if (*chain == NULL)
+		return;
+
+	/*
+	 * Wakeup idle process. Note that here we don't
+	 * schedule the idle process for execution, once
+	 * we expect that it is the only process in the
+	 * system and it is doing some busy-waiting. 
+	 */
+	if (idle_chain == chain)
+	{
+		idle_chain = NULL;
+		return;
+	}
+
+	while ((*chain)->next != NULL)
+		*chain = (*chain)->next;
+
+	sched(*chain);
+}
