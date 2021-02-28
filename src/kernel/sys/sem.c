@@ -44,9 +44,9 @@ typedef struct semCell
 
 static semCell_t semaTab[SEMA_TABLE_SIZE];
 
-int valid(semCell_t sc)
+int valid(pSemCell_t sc)
 {
-    return sc.valid == S_VALID;
+    return sc->valid == S_VALID;
 }
 
 semaphore_t createSema(int val)
@@ -54,47 +54,47 @@ semaphore_t createSema(int val)
     return (semaphore_t){val, NULL};
 }
 
-void acquireSema(semaphore_t sema)
+void acquireSema(pSemaphore_t sema)
 {
-    if (sema.val <= 0)
+    if (sema->val <= 0)
     {
         enable_interrupts();
         // PUT CURRENT PROCESS TO SLEEP
-        sleep(sema.blocked, curr_proc->nice);
+        sleep(sema->blocked, curr_proc->nice);
         return;
     }
 
-    sema.val--;
+    sema->val--;
 }
 
-void releaseSema(semaphore_t sema)
+void releaseSema(pSemaphore_t sema)
 {
-    if (sema.val == 0 && sema.blocked != NULL)
+    if (sema->val == 0 && sema->blocked != NULL)
     {
         // AWAKE OLDEST BLOCKED PROCESS
-        wakeup(sema.blocked);
+        wakeup(sema->blocked);
         return;
     }
 
-    sema.val++;
+    sema->val++;
 }
 
-void destroySema(semaphore_t sema)
+void destroySema(pSemaphore_t sema)
 {
-    while (sema.blocked != NULL)
+    while (sema->blocked != NULL)
     {
-        struct process *p = *(sema.blocked);
-        *(sema.blocked) = p->next;
+        struct process *p = *(sema->blocked);
+        *(sema->blocked) = p->next;
         p->next = NULL;
     }
 }
 
-semCell_t getSemCell(int semid)
+pSemCell_t getSemCell(int semid)
 {
     if (semid < 0 || semid >= SEMA_TABLE_SIZE)
-        return (semCell_t){S_CORRUPT, -1, {-1, NULL}};
+        return NULL;
 
-    return (semaTab[semid]);
+    return &semaTab[semid];
 }
 
 /*
@@ -107,7 +107,7 @@ PUBLIC int sys_semget(unsigned key)
     /*parcours du tableau afin de trouver la key*/
     for (int i = 0; i < SEMA_TABLE_SIZE; i++)
     {
-        if (semaTab[i].valid == S_VALID)
+        if (valid(&semaTab[i]))
         {
             if (semaTab[i].key == key)
                 return i;
@@ -130,19 +130,21 @@ PUBLIC int sys_semget(unsigned key)
  */
 PUBLIC int sys_semctl(int semid, int cmd, int val)
 {
-    if (semaTab[semid].valid != S_VALID)
+    pSemCell_t sc = getSemCell(semid);
+
+    if (sc == NULL || !valid(sc))
         return -1;
 
     switch (cmd)
     {
     case GETVAL:
-        return semaTab[semid].sema.val;
+        return sc->sema.val;
     case SETVAL:
-        semaTab[semid].sema.val = val;
+        sc->sema.val = val;
         return 0;
     case IPC_RMID:
-        destroySema(semaTab[semid].sema);
-        semaTab[semid].valid = S_INVALID;
+        destroySema(&(sc->sema));
+        sc->valid = S_INVALID;
         return 0;
     default:
         return -1;
@@ -154,19 +156,21 @@ PUBLIC int sys_semctl(int semid, int cmd, int val)
  */
 PUBLIC int sys_semop(int semid, int op)
 {
-    if (semaTab[semid].valid != S_VALID)
+    pSemCell_t sc = getSemCell(semid);
+
+    if (sc == NULL || !valid(sc))
         return -1;
 
     if (op < 0)
     {
         disable_interrupts();
-        acquireSema(semaTab[semid].sema);
+        acquireSema(&(sc->sema));
         enable_interrupts();
     }
     else
     {
         disable_interrupts();
-        releaseSema(semaTab[semid].sema);
+        releaseSema(&(sc->sema));
         enable_interrupts();
     }
     return 0;
