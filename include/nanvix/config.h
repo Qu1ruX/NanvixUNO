@@ -29,7 +29,7 @@
 	#define KEYBOARD_US           1 /* US International keyboard. */
 	
 	/* Kernel configuration. */
-	#define MULTIUSER              0 /* Multiuser support?              */
+	#define MULTIUSER              1 /* Multiuser support?              */
 	#define KERNEL_VERSION     "1.2" /* Kernel version.                 */
 	#define PROC_MAX              64 /* Maximum number of process.      */
 	#define PROC_SIZE_MAX  0x4000000 /* Maximum process size.           */
