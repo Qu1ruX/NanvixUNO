@@ -32,7 +32,7 @@
 #if (MULTIUSER == 1)
 
 /**
- * @brief Fetches the password of a specific user
+ * @brief Seeks the password of a specific user
  *  
  * @param name     User name.
  * 
@@ -73,15 +73,21 @@ static int fetch_password(const char *name)
 }
 
 /**
- * @brief Retrieves the password of a specific user
+ * @brief Seeks the password of a specific user
  * 
  * @returns One if user exists and false otherwise.
  */
-static int broot(void)
+static int nanpass(void)
 {
 	char name[USERNAME_MAX];
 	
-	printf("<PasswordFetcher>\n\n");
+	printf("  _   _             _____           _____ \n");
+	printf(" | \\ | |           |  __ \\         / ____|\n");
+	printf(" |  \\| | __ _ _ __ | |__) |_ _ ___| (___  \n");
+	printf(" | . ` |/ _` | '_ \\|  ___/ _` / __|\\___ \\ \n");
+	printf(" | |\\  | (_| | | | | |  | (_| \\__ \\____) |\n");
+	printf(" |_| \\_|\\__,_|_| |_|_|   \\__,_|___/_____/ \n\n");
+	printf("\t-- The Nanvix Password Seeker --\n\n");
 	printf("login: ");
 	fgets(name, USERNAME_MAX, stdin);
 	
@@ -91,7 +97,7 @@ static int broot(void)
 #endif
 
 /*
- * Fetches a user's password.
+ * Seeks a user's password.
  */
 int main(int argc, char *const argv[])
 {
@@ -116,7 +122,7 @@ int main(int argc, char *const argv[])
 
 #if (MULTIUSER == 1)
 	
-	broot();
+	nanpass();
 
 #endif
 	

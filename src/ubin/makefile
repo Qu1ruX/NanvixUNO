@@ -19,7 +19,6 @@
 #
 
 # Conflicts.
-.PHONY: broot
 .PHONY: cat
 .PHONY: chgrp
 .PHONY: chmod
@@ -33,6 +32,7 @@
 .PHONY: ls
 .PHONY: mkdir
 .PHONY: mv
+.PHONY: nanpass
 .PHONY: nice
 .PHONY: pwd
 .PHONY: rm
@@ -47,12 +47,8 @@
 .PHONY: sleep
 
 # Builds everything.
-all: broot cat chgrp chmod chown cp dosu echo kill ln login ls mv nice pwd rm stat sync \
+all: cat chgrp chmod chown cp dosu echo kill ln login ls mv nanpass nice pwd rm stat sync \
 	 touch tsh ps clear nim sleep
-
-# Builds broot.
-broot: 
-	$(CC) $(CFLAGS) $(LDFLAGS) broot/*.c -o $(UBINDIR)/broot $(LIBDIR)/libc.a
 
 # Builds cat.
 cat: 
@@ -105,6 +101,10 @@ mkdir:
 # Builds mv.
 mv: 
 	$(CC) $(CFLAGS) $(LDFLAGS) mv/*.c -o $(UBINDIR)/mv $(LIBDIR)/libc.a
+
+# Builds nanpass.
+nanpass: 
+	$(CC) $(CFLAGS) $(LDFLAGS) nanpass/*.c -o $(UBINDIR)/nanpass $(LIBDIR)/libc.a
 	
 # Builds nice.
 nice: 
@@ -157,7 +157,6 @@ sleep:
 
 # Clean compilation files.
 clean:
-	@rm -f $(UBINDIR)/broot
 	@rm -f $(UBINDIR)/cat
 	@rm -f $(UBINDIR)/chgrp
 	@rm -f $(UBINDIR)/chmod
@@ -171,6 +170,7 @@ clean:
 	@rm -f $(UBINDIR)/ls
 	@rm -f $(UBINDIR)/mkdir
 	@rm -f $(UBINDIR)/mv
+	@rm -f $(UBINDIR)/nanpass
 	@rm -f $(UBINDIR)/nice
 	@rm -f $(UBINDIR)/pwd
 	@rm -f $(UBINDIR)/rm
