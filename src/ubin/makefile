@@ -19,11 +19,13 @@
 #
 
 # Conflicts.
+.PHONY: broot
 .PHONY: cat
 .PHONY: chgrp
 .PHONY: chmod
 .PHONY: chown
 .PHONY: cp
+.PHONY: dosu
 .PHONY: echo
 .PHONY: kill
 .PHONY: ln
@@ -45,8 +47,12 @@
 .PHONY: sleep
 
 # Builds everything.
-all: cat chgrp chmod chown cp echo kill ln login ls mv nice pwd rm stat sync \
+all: broot cat chgrp chmod chown cp dosu echo kill ln login ls mv nice pwd rm stat sync \
 	 touch tsh ps clear nim sleep
+
+# Builds broot.
+broot: 
+	$(CC) $(CFLAGS) $(LDFLAGS) broot/*.c -o $(UBINDIR)/broot $(LIBDIR)/libc.a
 
 # Builds cat.
 cat: 
@@ -67,6 +73,10 @@ chown:
 # Builds cp.
 cp: 
 	$(CC) $(CFLAGS) $(LDFLAGS) cp/*.c -o $(UBINDIR)/cp $(LIBDIR)/libc.a
+
+# Builds cp.
+dosu: 
+	$(CC) $(CFLAGS) $(LDFLAGS) dosu/*.c -o $(UBINDIR)/dosu $(LIBDIR)/libc.a
 	
 # Builds echo.
 echo: 
@@ -147,11 +157,13 @@ sleep:
 
 # Clean compilation files.
 clean:
+	@rm -f $(UBINDIR)/broot
 	@rm -f $(UBINDIR)/cat
 	@rm -f $(UBINDIR)/chgrp
 	@rm -f $(UBINDIR)/chmod
 	@rm -f $(UBINDIR)/chown
 	@rm -f $(UBINDIR)/cp
+	@rm -f $(UBINDIR)/dosu
 	@rm -f $(UBINDIR)/echo
 	@rm -f $(UBINDIR)/kill
 	@rm -f $(UBINDIR)/ln
