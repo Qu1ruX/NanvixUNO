@@ -24,6 +24,7 @@
 .PHONY: chmod
 .PHONY: chown
 .PHONY: cp
+.PHONY: crash
 .PHONY: dosu
 .PHONY: echo
 .PHONY: kill
@@ -47,7 +48,7 @@
 .PHONY: sleep
 
 # Builds everything.
-all: cat chgrp chmod chown cp dosu echo kill ln login ls mv nanpass nice pwd rm stat sync \
+all: cat chgrp chmod chown cp crash dosu echo kill ln login ls mv nanpass nice pwd rm stat sync \
 	 touch tsh ps clear nim sleep
 
 # Builds cat.
@@ -70,7 +71,11 @@ chown:
 cp: 
 	$(CC) $(CFLAGS) $(LDFLAGS) cp/*.c -o $(UBINDIR)/cp $(LIBDIR)/libc.a
 
-# Builds cp.
+# Builds crash.
+crash: 
+	$(CC) $(CFLAGS) $(LDFLAGS) crash/*.c -o $(UBINDIR)/crash $(LIBDIR)/libc.a
+
+# Builds dosu.
 dosu: 
 	$(CC) $(CFLAGS) $(LDFLAGS) dosu/*.c -o $(UBINDIR)/dosu $(LIBDIR)/libc.a
 	
