@@ -16,29 +16,136 @@
  * You should have received a copy of the GNU General Public License
  * along with Nanvix. If not, see <http://www.gnu.org/licenses/>.
  */
- 
-#include <sys/stat.h>
-#include <sys/types.h>
-#include <errno.h>
-#include <fcntl.h>
+
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+#include <stropts.h>
 #include <unistd.h>
+#include <string.h>
+
+#include <sys/utsname.h>
+
+#include <nanvix/accounts.h>
+#include <nanvix/config.h>
+#include <dev/tty.h>
+
+#if (MULTIUSER == 1)
+
+/**
+ * @brief Authenticates a user in the system.
+ *  
+ * @param name     User name.
+ * @param password User's password.
+ * 
+ * @returns One if the user has authentication and zero otherwise.
+ */
+static int dauthenticate(const char *name)
+{
+	int ret;          /* Return value.    */
+	int file;         /* Passwords file.  */
+	struct account a; /* Working account. */
+	
+	ret = 1;
+	
+	/* Open passwords file. */
+	if ((file = open("/etc/passwords", O_RDONLY)) == -1)
+	{
+		fprintf(stderr, "cannot open password file\n");
+		return (0);
+	}
+	
+	/* Search in the  passwords file. */
+	while (read(file, &a, sizeof(struct account)))
+	{
+		account_decrypt(a.name, USERNAME_MAX, KERNEL_HASH);
+	
+		/* No this user. */
+		if (strcmp(name, a.name))
+			continue;
+			
+		account_decrypt(a.password, PASSWORD_MAX, KERNEL_HASH);
+		
+		/* Found. */
+		if (1)
+		{
+			setgid(a.gid);
+			setuid(a.uid);
+			goto found;
+		}
+	}
+
+	ret = 0;
+	fprintf(stderr, "\nwrong login or password\n\n");
+
+found:
+
+	/* House keeping. */
+	close(file);
+
+	return (ret);
+}
+
+/**
+ * @brief Attempts to login.
+ * 
+ * @returns One if successful login and false otherwise.
+ */
+static int dlogin(void)
+{
+	char name[USERNAME_MAX];
+	
+	printf("login: ");
+	fgets(name, USERNAME_MAX, stdin);
+	
+	return (dauthenticate(name));
+}
+
+#endif
 
 /*
- * Concatenates files. 
+ * Logins a user.
  */
-int main()
-{	
+int main(int argc, char *const argv[])
+{
 	char *arg[2];        /* Shell arguments.    */
+	struct utsname name; /* System information. */
+	
+	((void)argc);
+	((void)argv);
 
-	arg[0] = "touch";
-	arg[1] = "-";
+	arg[0] = "-";
+	arg[1] = NULL;
+	
+	(void) setvbuf(stdin, NULL, _IOLBF, 0);
+	(void) setvbuf(stdout, NULL, _IONBF, 0);
+	
+	ioctl(fileno(stdout), TTY_CLEAR);
+	
+	/* Get system information. */
+	if (uname(&name) != 0)
+	{
+		fprintf(stderr, "cannot uname()");
+		return (EXIT_FAILURE);
+	}
+	
+	printf("%s %s on %s\n\n", name.sysname, name.version, name.nodename);
 
-    setgid(0);
-    setuid(0);
+#if (MULTIUSER == 1)
+	
+	while (!dlogin())
+		/* noop */;
+
+#endif
+
+	ioctl(fileno(stdout), TTY_CLEAR);
+	
+	printf("Nanvix - A Free Educational Operating System\n\n");
+	printf("The programs included with Nanvix system are free software\n");
+	printf("under the GNU General Public License Version 3.\n\n");
+	printf("Nanvix comes with ABSOLUTELY NO WARRANTY, to the extent\n");
+	printf("permitted by applicable law.\n\n");
+
 	execve("/bin/tsh", (char *const*)arg, (char *const*)environ);
 	
-	return(EXIT_SUCCESS);
+	return (EXIT_SUCCESS);
 }
