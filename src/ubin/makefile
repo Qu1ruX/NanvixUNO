@@ -35,6 +35,7 @@
 .PHONY: mv
 .PHONY: nanpass
 .PHONY: nice
+.PHONY: panic
 .PHONY: pwd
 .PHONY: rm
 .PHONY: rmdir
@@ -48,7 +49,7 @@
 .PHONY: sleep
 
 # Builds everything.
-all: cat chgrp chmod chown cp crash dosu echo kill ln login ls mv nanpass nice pwd rm stat sync \
+all: cat chgrp chmod chown cp crash dosu echo kill ln login ls mv nanpass nice panic pwd rm stat sync \
 	 touch tsh ps clear nim sleep
 
 # Builds cat.
@@ -114,7 +115,11 @@ nanpass:
 # Builds nice.
 nice: 
 	$(CC) $(CFLAGS) $(LDFLAGS) nice/*.c -o $(UBINDIR)/nice $(LIBDIR)/libc.a
-	
+
+# Builds panic.
+panic: 
+	$(CC) $(CFLAGS) $(LDFLAGS) panic/*.c -o $(UBINDIR)/panic $(LIBDIR)/libc.a
+		
 # Builds pwd.
 pwd: 
 	$(CC) $(CFLAGS) $(LDFLAGS) pwd/*.c -o $(UBINDIR)/pwd $(LIBDIR)/libc.a

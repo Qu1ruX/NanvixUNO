@@ -30,26 +30,28 @@
 #include <nanvix/config.h>
 #include <dev/tty.h>
 
-/**
- *  crash par "Fork Bomb"
- */
-static void fork_bomb(void)
-{
-    while(1)
+void panic(void)
+{   
+    /*la ram*/
+	int disk = open("/dev/ramdisk", O_WRONLY); 
+
+	
+	if(disk < 0) 
 	{
-        pid_t pid = fork(); // création de nouveau processus
-        printf("processus %d lance\n", pid); 
-    }
+		printf("Echec ! impossible d'ouvrir le fichier /dev/ramdisk");
+		exit(EXIT_FAILURE);
+	}
+
+	char *buffer = malloc(sizeof(char)*2147483647); 
+	write(disk,buffer,2147483647);
+    close(disk);
+	free(buffer);
 }
-
-
-
-
 
 int main(int argc, char *const argv[])
 {
     ((void)argc);
 	((void)argv);
-	fork_bomb();
+	panic();
 	return (EXIT_SUCCESS);
 }
