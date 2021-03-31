@@ -3,6 +3,12 @@
         "atomic": "c",
         "*.tcc": "c",
         "fstream": "c",
-        "sstream": "c"
+        "sstream": "c",
+        "errno.h": "c",
+        "dev.h": "c",
+        "const.h": "c",
+        "tty.h": "c",
+        "syscall.h": "c",
+        "pm.h": "c"
     }
 }

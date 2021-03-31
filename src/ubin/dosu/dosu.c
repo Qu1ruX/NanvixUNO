@@ -29,13 +29,13 @@
 #include <nanvix/config.h>
 #include <dev/tty.h>
 
+
 #if (MULTIUSER == 1)
 
 /**
  * @brief Authenticates a user in the system.
  *  
  * @param name     User name.
- * @param password User's password.
  * 
  * @returns One if the user has authentication and zero otherwise.
  */
@@ -62,20 +62,14 @@ static int dauthenticate(const char *name)
 		/* No this user. */
 		if (strcmp(name, a.name))
 			continue;
-			
-		account_decrypt(a.password, PASSWORD_MAX, KERNEL_HASH);
-		
-		/* Found. */
-		if (1)
-		{
-			setgid(a.gid);
-			setuid(a.uid);
-			goto found;
-		}
+
+		setgid(a.gid);
+		setuid(a.uid);
+		goto found;
 	}
 
 	ret = 0;
-	fprintf(stderr, "\nwrong login or password\n\n");
+	fprintf(stderr, "\nuser does not exist\n\n");
 
 found:
 
@@ -93,6 +87,11 @@ found:
 static int dlogin(void)
 {
 	char name[USERNAME_MAX];
+	
+	//const char *argv[] = { "init", "/etc/inittab", NULL };
+	//const char *envp[] = { "PATH=/bin:/sbin", "HOME=/", NULL };
+		
+	//execve("/sbin/init", argv, envp);
 	
 	printf("login: ");
 	fgets(name, USERNAME_MAX, stdin);
@@ -129,6 +128,7 @@ int main(int argc, char *const argv[])
 	}
 	
 	printf("%s %s on %s\n\n", name.sysname, name.version, name.nodename);
+	printf("\t<< DOSU >>\n\n");
 
 #if (MULTIUSER == 1)
 	
